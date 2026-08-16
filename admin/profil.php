@@ -368,58 +368,10 @@ $equipe = $userModel->getAllAdmins();
 </head>
 <body>
 
-<aside class="sidebar">
-    <div class="sidebar-header">
-        <a href="dashboard.php" class="sidebar-logo"><i class="fas fa-crown"></i><span><?= htmlspecialchars(hotel_short_name()) ?></span></a>
-    </div>
-    <nav class="sidebar-nav">
-        <div class="nav-section">Principal</div>
-        <?php if (AdminAuth::can('dashboard')): ?>
-            <a href="dashboard.php" class="nav-item"><i class="fas fa-chart-line"></i><span>Dashboard</span></a>
-        <?php endif; ?>
-        <?php if (AdminAuth::can('calendrier')): ?>
-            <a href="calendrier.php" class="nav-item"><i class="fas fa-calendar-alt"></i><span>Calendrier</span></a>
-        <?php endif; ?>
-        
-        <div class="nav-section" style="margin-top:14px;">Gestion</div>
-        <?php if (AdminAuth::can('reservations')): ?>
-            <a href="reservations.php" class="nav-item"><i class="fas fa-book"></i><span>Réservations</span></a>
-        <?php endif; ?>
-        <?php if (AdminAuth::can('room_service')): ?>
-            <a href="room-service.php" class="nav-item"><i class="fas fa-concierge-bell"></i><span>Room Service</span></a>
-        <?php endif; ?>
-        <?php if (AdminAuth::can('evenements')): ?>
-            <a href="evenements.php" class="nav-item"><i class="fas fa-glass-cheers"></i><span>Devis Événements</span></a>
-        <?php endif; ?>
-        <?php if (AdminAuth::can('clients')): ?>
-            <a href="clients.php" class="nav-item"><i class="fas fa-users"></i><span>Clients</span></a>
-        <?php endif; ?>
-        <?php if (AdminAuth::can('chambres')): ?>
-            <a href="chambres.php" class="nav-item"><i class="fas fa-bed"></i><span>Chambres</span></a>
-        <?php endif; ?>
-        <?php if (AdminAuth::can('avis')): ?>
-            <a href="avis.php" class="nav-item"><i class="fas fa-star"></i><span>Avis Clients</span></a>
-        <?php endif; ?>
-        <?php if (AdminAuth::can('codes_promo')): ?>
-            <a href="codes-promo.php" class="nav-item"><i class="fas fa-tags"></i><span>Codes Promo</span></a>
-        <?php endif; ?>
-        <?php if (AdminAuth::can('profil')): ?>
-            <a href="profil.php" class="nav-item active"><i class="fas fa-user-shield"></i><span>Équipe &amp; Profil</span></a>
-        <?php endif; ?>
-    </nav>
-    <div class="sidebar-footer">
-        <div class="admin-info">
-            <div class="admin-avatar"><?= strtoupper(substr($_SESSION['user_prenom']??'A',0,1)) ?></div>
-            <div class="admin-details">
-                <h4><?= htmlspecialchars(($_SESSION['user_prenom']??'').' '.($_SESSION['user_nom']??'')) ?></h4>
-                <p>Super Administrateur</p>
-            </div>
-        </div>
-        <a href="../pages/deconnexion.php" style="display:flex; align-items:center; gap:8px; margin-top:10px; color:rgba(250,248,243,0.6); text-decoration:none; font-size:0.75rem;">
-            <i class="fas fa-sign-out-alt"></i> Déconnexion
-        </a>
-    </div>
-</aside>
+<?php 
+    $active_page = 'profil';
+    include __DIR__ . '/sidebar.php'; 
+?>
 
 <main class="main-content">
     <div class="top-bar">
