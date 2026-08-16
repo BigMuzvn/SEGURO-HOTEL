@@ -20,7 +20,7 @@
         
         <!-- Logo -->
         <div class="logo">
-            <a href="../pages/accueil.php">
+            <a href="../index.php">
                 <h1>Hôtel Seguro</h1>
             </a>
         </div>
@@ -35,15 +35,15 @@
         <!-- Navigation -->
         <nav class="nav-menu">
             <ul>
-                <li><a href="../pages/accueil.php">Accueil</a></li>
+                <li><a href="../index.php">Accueil</a></li>
                 <li><a href="../pages/chambres.php">Chambres</a></li>
                 <li><a href="../pages/services.php">Services</a></li>
-                <li><a href="../pages/galeries.php">Galeries</a></li>
-                <li><a href="../pages/offers.php">Offres</a></li>
-                <li><a href="../pages/apropos.php">À propos</a></li>
+                <li><a href="../pages/galerie.php">Galerie</a></li>
+                <li><a href="../pages/evenements.php">Événements</a></li>
+                <li><a href="../pages/about.php">À propos</a></li>
                 <li><a href="../pages/contact.php">Contact</a></li>
                 <li>
-                    <a href="../pages/reservation.php" class="btn-reserver">
+                    <a href="../pages/reservation-system.php" class="btn-reserver">
                         Réserver
                     </a>
                 </li>

@@ -718,6 +718,7 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
     <nav>
       <a href="<?= $baseUrl ?>/pages/chambres.php" class="nav-link-item">Chambres</a>
       <a href="<?= $baseUrl ?>/pages/services.php" class="nav-link-item">Services</a>
+      <a href="<?= $baseUrl ?>/pages/room-service.php" class="nav-link-item">Room Service</a>
       <a href="<?= $baseUrl ?>/pages/evenements.php" class="nav-link-item">Événements</a>
       <a href="<?= $baseUrl ?>/pages/galerie.php" class="nav-link-item">Galerie</a>
       <a href="<?= $baseUrl ?>/pages/about.php" class="nav-link-item">À Propos</a>

@@ -283,10 +283,10 @@ include(__DIR__ . '/../layouts/header.php');
 
     <!-- Actions -->
     <div class="confirm-actions">
-        <a href="/ACATHON/pages/connexion-client.php" class="btn-primary-confirm">
+        <a href="mon-compte.php" class="btn-primary-confirm">
             <i class="fas fa-user"></i> Accéder à mon espace
         </a>
-        <a href="/ACATHON/index.php" class="btn-outline-confirm">
+        <a href="../index.php" class="btn-outline-confirm">
             <i class="fas fa-home"></i> Retour à l'accueil
         </a>
     </div>

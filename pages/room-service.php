@@ -474,7 +474,7 @@ body {
                     <div style="color:#555; font-size:0.85rem; margin-top:2px;">Le service d'étage est exclusivement réservé à nos hôtes résidant à l'hôtel ayant effectué leur Check-in.</div>
                 </div>
                 <?php if (!$userId): ?>
-                    <a href="connexion.php" style="background:var(--vert); color:var(--or); border:1px solid var(--vert); padding:8px 18px; border-radius:6px; text-decoration:none; font-size:0.8rem; font-weight:600;">
+                    <a href="connexion-client.php" style="background:var(--vert); color:var(--or); border:1px solid var(--vert); padding:8px 18px; border-radius:6px; text-decoration:none; font-size:0.8rem; font-weight:600;">
                         <i class="fas fa-sign-in-alt"></i> Se Connecter
                     </a>
                 <?php endif; ?>
@@ -652,7 +652,7 @@ body {
                 <div style="font-size:0.78rem; color:#666; margin:8px 0 16px; line-height:1.5;">
                     Le service d'étage est réservé aux clients séjournant actuellement dans notre établissement.
                 </div>
-                <a href="nos-chambres.php" style="background:var(--vert); color:var(--or); padding:9px 18px; border-radius:6px; font-size:0.75rem; text-decoration:none; font-weight:600; display:inline-block;">
+                <a href="chambres.php" style="background:var(--vert); color:var(--or); padding:9px 18px; border-radius:6px; font-size:0.75rem; text-decoration:none; font-weight:600; display:inline-block;">
                     Réserver une Chambre
                 </a>
             </div>
@@ -663,7 +663,7 @@ body {
                 <div style="font-size:0.78rem; color:#666; margin:8px 0 16px; line-height:1.5;">
                     Connectez-vous à votre compte client pour commander directement dans votre chambre.
                 </div>
-                <a href="connexion.php" style="background:var(--vert); color:var(--or); padding:9px 20px; border-radius:6px; font-size:0.75rem; text-decoration:none; font-weight:600; display:inline-block;">
+                <a href="connexion-client.php" style="background:var(--vert); color:var(--or); padding:9px 20px; border-radius:6px; font-size:0.75rem; text-decoration:none; font-weight:600; display:inline-block;">
                     <i class="fas fa-sign-in-alt"></i> Se Connecter
                 </a>
             </div>
