@@ -353,8 +353,17 @@ body {
 }
 
 @media (max-width: 900px) {
-    .rs-container { grid-template-columns: 1fr; }
+    .rs-container { grid-template-columns: 1fr; width: 95%; margin: 20px auto 60px; }
     .rs-tray-box { position: static; }
+}
+@media (max-width: 600px) {
+    .rs-hero { padding: 50px 16px 36px; }
+    .rs-hero-title { font-size: 1.9rem; }
+    .rs-hero-sub { font-size: 0.92rem; }
+    .rs-menu-section { padding: 18px 14px; }
+    .rs-items-grid { grid-template-columns: 1fr; }
+    .rs-tray-box { padding: 18px 14px; }
+    .rs-categories { padding-bottom: 8px; }
 }
 </style>
 

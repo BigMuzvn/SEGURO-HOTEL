@@ -318,6 +318,11 @@
     .interlocuteurs-inner { padding: 0 24px; }
     .interlocuteur-card { padding: 32px 24px; }
   }
+  @media (max-width: 576px) {
+    .map-access-bar { grid-template-columns: 1fr; }
+    .contact-hero-text { padding: 48px 20px; }
+    .contact-form-wrap, .contact-info-wrap { padding: 36px 18px; }
+  }
 </style>
 
 <!-- HERO SPLIT -->

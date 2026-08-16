@@ -533,16 +533,37 @@ include(__DIR__ . '/../layouts/header.php');
 
 @media (max-width: 768px) {
     .reservation-system {
-        padding: 20px 16px;
+        padding: 20px 14px;
+        margin-top: 80px !important;
     }
     
     .form-section {
-        padding: 24px;
+        padding: 20px 16px;
     }
     
     .etape-indicator {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 6px;
+        margin-bottom: 30px;
+    }
+    
+    .etape {
+        padding: 0 4px;
         flex-direction: column;
-        gap: 16px;
+        gap: 4px;
+        text-align: center;
+    }
+    
+    .etape-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .etape-text {
+        font-size: 0.65rem;
     }
     
     .etape:not(:last-child)::after {
@@ -551,6 +572,10 @@ include(__DIR__ . '/../layouts/header.php');
     
     .chambre-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr !important;
     }
 }
 </style>

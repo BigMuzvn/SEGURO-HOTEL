@@ -355,8 +355,15 @@ include(__DIR__ . '/../layouts/header.php');
 }
 
 @media (max-width: 768px) {
+    .event-hero { padding: 60px 18px 40px; }
+    .event-hero-title { font-size: 2.2rem; }
+    .event-spaces-section { padding: 0 16px; }
+    .spaces-grid { grid-template-columns: 1fr; gap: 20px; }
+    .space-body { padding: 20px 18px; }
+    .devis-section { padding: 0 16px; margin-bottom: 60px; }
     .form-grid-2 { grid-template-columns: 1fr; gap: 0; }
-    .devis-box { padding: 32px 20px; }
+    .devis-box { padding: 28px 18px; }
+    .services-checkboxes { grid-template-columns: 1fr; padding: 14px 16px; }
 }
 </style>
 

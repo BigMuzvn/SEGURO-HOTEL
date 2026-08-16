@@ -230,6 +230,15 @@ include(__DIR__ . '/../layouts/header.php');
 .lightbox-close:hover {
     color: var(--or);
 }
+
+@media (max-width: 768px) {
+    .galerie-hero { padding: 60px 18px 36px; }
+    .galerie-hero-title { font-size: 2.1rem; }
+    .galerie-container { padding: 0 16px 60px; }
+    .galerie-grid { grid-template-columns: 1fr; gap: 18px; }
+    .galerie-card { height: 240px; }
+    .galerie-filters { padding-bottom: 8px; margin-bottom: 24px; }
+}
 </style>
 
 <!-- HERO -->

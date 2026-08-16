@@ -134,15 +134,37 @@
     window.addEventListener('scroll', updateHeader);
     window.addEventListener('resize', updateHeader);
 
-    // ── Mobile menu ────────────────────────
+    // ── Mobile menu drawer ────────────────────────
     function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('active');
-      document.getElementById('hamburger').classList.toggle('open');
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('hamburger');
+      if (!menu) return;
+      const isActive = menu.classList.contains('active');
+      if (isActive) {
+        closeMenu();
+      } else {
+        menu.classList.add('active');
+        if (btn) btn.classList.add('open');
+        menu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
     }
+
     function closeMenu() {
-      document.getElementById('mobileMenu').classList.remove('active');
-      document.getElementById('hamburger').classList.remove('open');
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('hamburger');
+      if (menu) {
+        menu.classList.remove('active');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+      if (btn) btn.classList.remove('open');
+      document.body.style.overflow = '';
     }
+
+    // Fermeture avec la touche Échap
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
   </script>
 </body>
 </html>

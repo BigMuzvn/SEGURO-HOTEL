@@ -286,47 +286,328 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
     .hamburger {
       display: none;
       flex-direction: column;
-      gap: 5px;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
       cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      border-radius: 6px;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+    .hamburger:hover {
+      border-color: var(--or);
+      background: rgba(201, 168, 76, 0.15);
     }
     .hamburger span {
       display: block;
-      width: 24px; height: 1px;
-      background: #ffffff;    /* blanc sur hero */
-      transition: background 0.4s, transform 0.3s, opacity 0.3s;
+      width: 20px;
+      height: 1.5px;
+      background: #ffffff;
+      transition: background 0.3s, transform 0.3s, opacity 0.3s;
+      transform-origin: center;
     }
-    #header.scrolled .hamburger span { background: #1a1a1a; } /* sombre après scroll */
+    #header.scrolled .hamburger {
+      background: rgba(26, 58, 42, 0.05);
+      border-color: rgba(26, 58, 42, 0.2);
+    }
+    #header.scrolled .hamburger span {
+      background: var(--vert);
+    }
 
-    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); background: var(--or); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); background: var(--or); }
 
-    /* ── Menu mobile plein écran ── */
+    /* ────────────────────────────────────────
+       LUXURY MOBILE DRAWER (PANEL LATÉRAL HAUT DE GAMME)
+    ──────────────────────────────────────── */
     .mobile-menu {
-      display: none;
       position: fixed;
       inset: 0;
-      background: rgba(17, 17, 17, 0.97);
-      z-index: 999;
+      z-index: 99999;
+      pointer-events: none;
+      visibility: hidden;
+      transition: visibility 0.4s ease;
+    }
+    .mobile-menu.active {
+      pointer-events: auto;
+      visibility: visible;
+    }
+
+    .mobile-menu-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 14, 11, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-menu.active .mobile-menu-backdrop {
+      opacity: 1;
+    }
+
+    .mobile-menu-panel {
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 86%;
+      max-width: 380px;
+      background: #0d1a13;
+      background: linear-gradient(180deg, #102118 0%, #0a150f 100%);
+      border-left: 1px solid rgba(201, 168, 76, 0.25);
+      display: flex;
       flex-direction: column;
+      box-shadow: -15px 0 45px rgba(0, 0, 0, 0.6);
+      transform: translateX(100%);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-menu.active .mobile-menu-panel {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      background: rgba(14, 28, 20, 0.7);
+    }
+
+    .mobile-menu-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 168, 76, 0.35);
+      background: rgba(201, 168, 76, 0.08);
+      color: var(--or);
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 40px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    .mobile-menu.active { display: flex; }
-    .mobile-menu a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      color: var(--blanc);
+    .mobile-menu-close:hover {
+      background: var(--or);
+      color: #111;
+      transform: rotate(90deg);
+    }
+
+    .mobile-menu-body {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 20px 20px 36px;
+    }
+    .mobile-menu-body::-webkit-scrollbar {
+      width: 4px;
+    }
+    .mobile-menu-body::-webkit-scrollbar-thumb {
+      background: rgba(201, 168, 76, 0.2);
+      border-radius: 2px;
+    }
+
+    .mobile-menu-category {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(201, 168, 76, 0.65);
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .mobile-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mobile-nav-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 11px 14px;
+      border-radius: 6px;
       text-decoration: none;
-      transition: color 0.3s;
+      color: rgba(255, 255, 255, 0.88);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.22rem;
+      letter-spacing: 0.04em;
+      background: transparent;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
     }
-    .mobile-menu a:hover { color: var(--or); }
+    .mobile-nav-link:hover, .mobile-nav-link:active {
+      background: rgba(201, 168, 76, 0.12);
+      color: var(--or);
+      border-color: rgba(201, 168, 76, 0.25);
+      transform: translateX(4px);
+    }
+    .mobile-nav-icon {
+      width: 22px;
+      color: var(--or);
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mobile-nav-arrow {
+      margin-left: auto;
+      font-size: 0.70rem;
+      color: rgba(255, 255, 255, 0.25);
+      transition: transform 0.2s;
+    }
+    .mobile-nav-link:hover .mobile-nav-arrow {
+      transform: translateX(3px);
+      color: var(--or);
+    }
+    .mobile-nav-badge {
+      margin-left: auto;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.52rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--or);
+      border: 1px solid var(--or);
+      padding: 2px 7px;
+      border-radius: 12px;
+    }
+
+    .mobile-menu-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0 16px;
+    }
+    .mobile-menu-divider span {
+      display: block;
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,0.25));
+    }
+    .mobile-menu-divider span.r {
+      background: linear-gradient(to left, transparent, rgba(201,168,76,0.25));
+    }
+    .mobile-menu-divider i {
+      width: 5px; height: 5px;
+      border: 1px solid rgba(201,168,76,0.45);
+      transform: rotate(45deg);
+      display: block;
+    }
+
+    .mobile-user-box {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .mobile-user-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 11px 16px;
+      border: 1px solid var(--or);
+      background: rgba(201, 168, 76, 0.12);
+      color: var(--or);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    .mobile-user-btn:hover {
+      background: var(--or);
+      color: #111;
+    }
+    .mobile-user-btn.admin {
+      border-color: #f1c40f;
+      background: rgba(241, 196, 15, 0.15);
+      color: #f1c40f;
+    }
+    .mobile-logout-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: #ff9090;
+      text-decoration: none;
+      padding: 6px 0;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+    .mobile-logout-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .mobile-btn-reserve {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      padding: 14px 20px;
+      background: var(--or);
+      color: #111111 !important;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.20em;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
+      transition: all 0.3s;
+      margin-top: 12px;
+    }
+    .mobile-btn-reserve:hover {
+      background: var(--or-clair);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201, 168, 76, 0.45);
+    }
+
+    .mobile-contact-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+    }
+    .mobile-contact-item {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .mobile-contact-item:hover {
+      color: var(--or);
+    }
+    .mobile-contact-item.wa {
+      color: #25D366;
+    }
 
     /* ════════════════════════════════════════════
        HERO
@@ -711,6 +992,18 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       .hamburger { display: flex; }
       .hero-corner { display: none; }
     }
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      .footer-nav-col {
+        margin-bottom: 32px;
+      }
+    }
     @media (max-width: 576px) {
       .hero-cta-wrap { flex-direction: column; gap: 20px; }
       .footer-bottom { padding: 20px 24px; flex-direction: column; text-align: center; }
@@ -720,26 +1013,114 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
 </head>
 <body>
 
-  <!-- MENU MOBILE -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="<?= $baseUrl ?>/pages/chambres.php"      onclick="closeMenu()"><i class="fas fa-bed" style="width:20px; color:var(--or);"></i> Chambres</a>
-    <a href="<?= $baseUrl ?>/pages/services.php"      onclick="closeMenu()"><i class="fas fa-concierge-bell" style="width:20px; color:var(--or);"></i> Services &amp; Expériences</a>
-    <a href="<?= $baseUrl ?>/pages/room-service.php"  onclick="closeMenu()"><i class="fas fa-utensils" style="width:20px; color:var(--or);"></i> Room Service</a>
-    <a href="<?= $baseUrl ?>/pages/evenements.php"    onclick="closeMenu()"><i class="fas fa-calendar-alt" style="width:20px; color:var(--or);"></i> Événements &amp; Séminaires</a>
-    <a href="<?= $baseUrl ?>/pages/galerie.php"       onclick="closeMenu()"><i class="fas fa-images" style="width:20px; color:var(--or);"></i> Galerie Photos</a>
-    <a href="<?= $baseUrl ?>/pages/about.php"         onclick="closeMenu()"><i class="fas fa-hotel" style="width:20px; color:var(--or);"></i> À Propos</a>
-    <a href="<?= $baseUrl ?>/pages/contact.php"       onclick="closeMenu()"><i class="fas fa-envelope" style="width:20px; color:var(--or);"></i> Contact</a>
-    <?php if (!empty($_SESSION['user_id'])): ?>
-      <?php if (in_array($_SESSION['user_role'] ?? '', ['admin', 'super_admin'])): ?>
-        <a href="<?= $baseUrl ?>/admin/dashboard.php" onclick="closeMenu()" style="color:var(--or);"><i class="fas fa-crown" style="width:20px;"></i> Espace Admin</a>
-      <?php else: ?>
-        <a href="<?= $baseUrl ?>/pages/mon-compte.php" onclick="closeMenu()" style="color:var(--or);"><i class="fas fa-user-circle" style="width:20px;"></i> Mon Compte</a>
-      <?php endif; ?>
-      <a href="<?= $baseUrl ?>/pages/deconnexion.php" onclick="closeMenu()" style="color:#ff8080;"><i class="fas fa-sign-out-alt" style="width:20px;"></i> Déconnexion</a>
-    <?php else: ?>
-      <a href="<?= $baseUrl ?>/pages/connexion-client.php" onclick="closeMenu()" style="color:var(--or);"><i class="fas fa-user-lock" style="width:20px;"></i> Connexion Client</a>
-    <?php endif; ?>
-    <a href="<?= $baseUrl ?>/pages/reservation-system.php" onclick="closeMenu()" style="color:var(--or);font-style:italic; font-weight:600;"><i class="fas fa-calendar-check" style="width:20px;"></i> Réserver mon séjour</a>
+  <!-- MENU MOBILE DRAWER HAUTE QUALITÉ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-backdrop" onclick="closeMenu()"></div>
+    <div class="mobile-menu-panel">
+      <!-- Header du tiroir -->
+      <div class="mobile-menu-header">
+        <a href="<?= $baseUrl ?>/index.php" class="logo" onclick="closeMenu()" title="<?= htmlspecialchars(hotel_name()) ?>">
+          <div class="logo-crest">
+            <span class="crest-crown"><i class="fas fa-crown"></i></span>
+            <span class="crest-letters"><?= htmlspecialchars(hotel_initials()) ?></span>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name"><?= htmlspecialchars(hotel_short_name()) ?></span>
+            <span class="logo-sub"><?= htmlspecialchars(hotel_city()) ?></span>
+          </div>
+        </a>
+        <button class="mobile-menu-close" onclick="closeMenu()" aria-label="Fermer le menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <!-- Corps déroulant -->
+      <div class="mobile-menu-body">
+        <span class="mobile-menu-category">Navigation Principale</span>
+        <nav class="mobile-nav-list">
+          <a href="<?= $baseUrl ?>/index.php" class="mobile-nav-link" onclick="closeMenu()">
+            <span class="mobile-nav-icon"><i class="fas fa-home"></i></span>
+            <span class="mobile-nav-text">Accueil</span>
+            <span class="mobile-nav-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="<?= $baseUrl ?>/pages/chambres.php" class="mobile-nav-link" onclick="closeMenu()">
+            <span class="mobile-nav-icon"><i class="fas fa-bed"></i></span>
+            <span class="mobile-nav-text">Chambres &amp; Suites</span>
+            <span class="mobile-nav-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="<?= $baseUrl ?>/pages/services.php" class="mobile-nav-link" onclick="closeMenu()">
+            <span class="mobile-nav-icon"><i class="fas fa-concierge-bell"></i></span>
+            <span class="mobile-nav-text">Services &amp; Expériences</span>
+            <span class="mobile-nav-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="<?= $baseUrl ?>/pages/room-service.php" class="mobile-nav-link" onclick="closeMenu()">
+            <span class="mobile-nav-icon"><i class="fas fa-utensils"></i></span>
+            <span class="mobile-nav-text">Room Service 24h/24</span>
+            <span class="mobile-nav-badge">Direct</span>
+          </a>
+          <a href="<?= $baseUrl ?>/pages/evenements.php" class="mobile-nav-link" onclick="closeMenu()">
+            <span class="mobile-nav-icon"><i class="fas fa-calendar-alt"></i></span>
+            <span class="mobile-nav-text">Événements &amp; Séminaires</span>
+            <span class="mobile-nav-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="<?= $baseUrl ?>/pages/galerie.php" class="mobile-nav-link" onclick="closeMenu()">
+            <span class="mobile-nav-icon"><i class="fas fa-images"></i></span>
+            <span class="mobile-nav-text">Galerie Photos</span>
+            <span class="mobile-nav-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="<?= $baseUrl ?>/pages/about.php" class="mobile-nav-link" onclick="closeMenu()">
+            <span class="mobile-nav-icon"><i class="fas fa-hotel"></i></span>
+            <span class="mobile-nav-text">À Propos</span>
+            <span class="mobile-nav-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+          <a href="<?= $baseUrl ?>/pages/contact.php" class="mobile-nav-link" onclick="closeMenu()">
+            <span class="mobile-nav-icon"><i class="fas fa-envelope"></i></span>
+            <span class="mobile-nav-text">Contact &amp; Accès</span>
+            <span class="mobile-nav-arrow"><i class="fas fa-chevron-right"></i></span>
+          </a>
+        </nav>
+
+        <div class="mobile-menu-divider">
+          <span></span><i></i><span class="r"></span>
+        </div>
+
+        <div class="mobile-user-box">
+          <?php if (!empty($_SESSION['user_id'])): ?>
+            <?php if (in_array($_SESSION['user_role'] ?? '', ['admin', 'super_admin'])): ?>
+              <a href="<?= $baseUrl ?>/admin/dashboard.php" class="mobile-user-btn admin" onclick="closeMenu()">
+                <i class="fas fa-crown"></i> Tableau de bord Admin
+              </a>
+            <?php else: ?>
+              <a href="<?= $baseUrl ?>/pages/mon-compte.php" class="mobile-user-btn" onclick="closeMenu()">
+                <i class="fas fa-user-circle"></i> Mon Compte Privilège
+              </a>
+            <?php endif; ?>
+            <a href="<?= $baseUrl ?>/pages/deconnexion.php" class="mobile-logout-link" onclick="closeMenu()">
+              <i class="fas fa-sign-out-alt"></i> Se déconnecter
+            </a>
+          <?php else: ?>
+            <a href="<?= $baseUrl ?>/pages/connexion-client.php" class="mobile-user-btn" onclick="closeMenu()">
+              <i class="fas fa-user-lock"></i> Connexion Client / Hôte
+            </a>
+          <?php endif; ?>
+        </div>
+
+        <div class="mobile-cta-box">
+          <a href="<?= $baseUrl ?>/pages/reservation-system.php" class="mobile-btn-reserve" onclick="closeMenu()">
+            <i class="fas fa-calendar-check"></i> Réserver mon séjour
+          </a>
+        </div>
+
+        <div class="mobile-contact-bar">
+          <a href="tel:<?= htmlspecialchars(hotel_phone()) ?>" class="mobile-contact-item">
+            <i class="fas fa-phone-alt"></i> <?= htmlspecialchars(hotel_phone()) ?>
+          </a>
+          <a href="https://wa.me/<?= htmlspecialchars(hotel_whatsapp()) ?>" target="_blank" class="mobile-contact-item wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- HEADER -->
