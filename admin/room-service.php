@@ -124,12 +124,13 @@ $stats = $stats_stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room Service &amp; Restauration — Admin SEGURO</title>
+    <title>Room Service &amp; Restauration — Admin <?= htmlspecialchars(hotel_name()) ?></title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <?= hotel_theme_css() ?>
     
     <style>
         :root {
@@ -607,7 +608,7 @@ $stats = $stats_stmt->fetch(PDO::FETCH_ASSOC);
         <div class="sidebar-header">
             <a href="dashboard.php" class="sidebar-logo">
                 <i class="fas fa-crown"></i>
-                <span>Hôtel Seguro</span>
+                <span><?= htmlspecialchars(hotel_short_name()) ?></span>
             </a>
         </div>
         
@@ -885,7 +886,7 @@ $stats = $stats_stmt->fetch(PDO::FETCH_ASSOC);
 
                             <?php if (!empty($cleanTel)): ?>
                                 <?php
-                                    $msgWa = rawurlencode("Bonjour {$cmd['client_nom']}, votre commande Room Service [{$cmd['reference']}] pour la {$cmd['chambre_numero']} est bien prise en charge par notre conciergerie SEGURO.");
+                                    $msgWa = rawurlencode("Bonjour {$cmd['client_nom']}, votre commande Room Service [{$cmd['reference']}] pour la {$cmd['chambre_numero']} est bien prise en charge par notre conciergerie " . hotel_short_name() . ".");
                                 ?>
                                 <a href="https://wa.me/<?= $cleanTel ?>?text=<?= $msgWa ?>" target="_blank" class="btn-whatsapp">
                                     <i class="fab fa-whatsapp"></i> Notifier via WhatsApp

@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $clientExiste = $u->getById($reservation->user_id);
                 $ch = $db->prepare("SELECT nom FROM chambres WHERE id = ?");
                 $ch->execute([$reservation->chambre_id]);
-                $chNom = $ch->fetchColumn() ?: 'Chambre SEGURO';
+                $chNom = $ch->fetchColumn() ?: 'Chambre Standard';
 
                 if ($statut === 'en_sejour') {
                     $reservation->checkIn($_SESSION['user_id'] ?? null);
@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ($u->getById($reservation->user_id)) {
                         $ch = $db->prepare("SELECT nom FROM chambres WHERE id = ?");
                         $ch->execute([$reservation->chambre_id]);
-                        $chNom = $ch->fetchColumn() ?: 'Chambre SEGURO';
+                        $chNom = $ch->fetchColumn() ?: 'Chambre Standard';
                         Mail::sendStatusUpdate($u->email, $u->prenom . ' ' . $u->nom, $reservation->reference, 'validee', $chNom, $reservation->note_admin);
                     }
                 }
@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if ($u->getById($reservation->user_id)) {
                         $ch = $db->prepare("SELECT nom FROM chambres WHERE id = ?");
                         $ch->execute([$reservation->chambre_id]);
-                        $chNom = $ch->fetchColumn() ?: 'Chambre SEGURO';
+                        $chNom = $ch->fetchColumn() ?: 'Chambre Standard';
                         Mail::sendStatusUpdate($u->email, $u->prenom . ' ' . $u->nom, $reservation->reference, 'annulee', $chNom, $reservation->note_admin);
                     }
                 }
@@ -202,9 +202,10 @@ $statuts_labels = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservations — Hôtel Seguro</title>
+    <title>Réservations — <?= htmlspecialchars(hotel_name()) ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <?= hotel_theme_css() ?>
     <style>
         :root{--vert:#1a3a2a;--vert-clair:#2d5c40;--or:#c9a84c;--blanc:#faf8f3;--gris:#f5f5f5;--gris-fonce:#666;--danger:#dc3545;--success:#28a745;}
         *{box-sizing:border-box;margin:0;padding:0;}
@@ -370,7 +371,7 @@ $statuts_labels = [
 
 <aside class="sidebar">
     <div class="sidebar-header">
-        <a href="dashboard.php" class="sidebar-logo"><i class="fas fa-crown"></i><span>Hôtel Seguro</span></a>
+        <a href="dashboard.php" class="sidebar-logo"><i class="fas fa-crown"></i><span><?= htmlspecialchars(hotel_short_name()) ?></span></a>
     </div>
     <nav class="sidebar-nav">
         <div class="nav-section">Principal</div>

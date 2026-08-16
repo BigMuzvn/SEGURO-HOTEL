@@ -1,5 +1,6 @@
 <?php 
 if(session_status()===PHP_SESSION_NONE) session_start(); 
+require_once __DIR__ . '/../includes/config.php';
 $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
 ?>
 <!DOCTYPE html>
@@ -7,7 +8,7 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hôtel Seguro — LOMÉ</title>
+  <title><?= htmlspecialchars(hotel_name()) ?> — <?= htmlspecialchars(hotel_city()) ?></title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -677,6 +678,7 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       .footer-bottom { padding: 20px 24px; flex-direction: column; text-align: center; }
     }
   </style>
+  <?= hotel_theme_css() ?>
 </head>
 <body>
 
@@ -711,8 +713,8 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
         <span class="logo-diamond"></span>
         <span class="logo-line right"></span>
       </div>
-      <span class="logo-name">Seguro</span>
-      <span class="logo-sub">Hôtel &amp; Nature · Agbodrafo, Togo</span>
+      <span class="logo-name"><?= htmlspecialchars(hotel_short_name()) ?></span>
+      <span class="logo-sub"><?= htmlspecialchars(hotel_tagline()) ?></span>
     </a>
 
     <nav>

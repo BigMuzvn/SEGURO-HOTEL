@@ -555,8 +555,9 @@ class Reservation {
      * Génère une référence de réservation unique
      */
     private function generateReference() {
+        $prefix = defined('HOTEL_REF_PREFIX') ? HOTEL_REF_PREFIX : 'HTL';
         do {
-            $reference = 'SEGURO-' . date('Y') . '-' . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
+            $reference = $prefix . '-' . date('Y') . '-' . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
             $query = "SELECT id FROM " . $this->table_name . " WHERE reference = ? LIMIT 1";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(1, $reference);
@@ -667,10 +668,11 @@ class Reservation {
     }
     
     /**
-     * Formate le prix en FCFA
+     * Formate le prix avec la devise configurée
      */
     public function getPrixTotalFormate() {
-        return number_format($this->prix_total, 0, ',', ' ') . ' FCFA';
+        $currency = defined('HOTEL_CURRENCY') ? HOTEL_CURRENCY : 'FCFA';
+        return number_format($this->prix_total, 0, ',', ' ') . ' ' . $currency;
     }
     
     /**

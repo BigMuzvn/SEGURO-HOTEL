@@ -387,14 +387,15 @@ class User {
      * Génère un code client unique
      */
     private function generateCodeClient() {
-        $year  = date('Y');
-        $chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        $prefix = defined('HOTEL_CLIENT_PREFIX') ? HOTEL_CLIENT_PREFIX : 'CLI';
+        $year   = date('Y');
+        $chars  = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
         do {
             $suffix = '';
             for ($i = 0; $i < 4; $i++) {
                 $suffix .= $chars[random_int(0, strlen($chars) - 1)];
             }
-            $code = "SEG-{$year}-{$suffix}";
+            $code = "{$prefix}-{$year}-{$suffix}";
             $query = "SELECT id FROM " . $this->table_name . " WHERE code_client = ? LIMIT 1";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(1, $code);

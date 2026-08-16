@@ -349,12 +349,12 @@
         <span class="quick-info-text"><a href="mailto:contact@hotelseguro.com">contact@hotelseguro.com</a></span>
       </div>
       <div class="quick-info-item">
-        <div class="quick-info-icon"><i class="fas fa-globe" style="color:var(--or-texte);"></i></div>
-        <span class="quick-info-text"><a href="http://www.hotelseguro.com">www.hotelseguro.com</a></span>
+        <div class="quick-info-icon"><i class="fas fa-envelope" style="color:var(--or-texte);"></i></div>
+        <span class="quick-info-text"><a href="mailto:<?= htmlspecialchars(hotel_email()) ?>"><?= htmlspecialchars(hotel_email()) ?></a></span>
       </div>
       <div class="quick-info-item">
         <div class="quick-info-icon"><i class="fas fa-map-marker-alt" style="color:var(--or-texte);"></i></div>
-        <span class="quick-info-text">Agbodrafo, entrée de Aného — Togo</span>
+        <span class="quick-info-text"><?= htmlspecialchars(hotel_location()) ?></span>
       </div>
     </div>
   </div>
@@ -394,7 +394,7 @@
         </div>
         <div class="form-group">
           <label for="tel">Téléphone</label>
-          <input type="tel" id="tel" name="tel" placeholder="+228 00 00 00 00">
+          <input type="tel" id="tel" name="tel" placeholder="<?= htmlspecialchars(hotel_phone()) ?>">
         </div>
       </div>
       <div class="form-group">
@@ -403,8 +403,8 @@
           <option value="" disabled selected>Sélectionnez un sujet…</option>
           <option value="reservation">Réservation de chambre</option>
           <option value="evenement">Séminaire / Conférence / Événement</option>
-          <option value="skibar">Privatisation du Skibar</option>
-          <option value="nautique">Jet Ski &amp; Croisière Yacht</option>
+          <option value="skibar">Privatisation d'espaces</option>
+          <option value="nautique">Expériences &amp; Loisirs</option>
           <option value="partenariat">Partenariat stratégique</option>
           <option value="presse">Demande Presse &amp; Médias</option>
           <option value="autre">Autre demande</option>
@@ -428,7 +428,7 @@
         <input type="checkbox" id="consent" name="consent" required>
         <label for="consent">
           J'accepte que mes données soient utilisées pour traiter ma demande,
-          conformément à la <a href="#">politique de confidentialité</a> de l'Hôtel SEGURO.
+          conformément à la <a href="#">politique de confidentialité</a> de <?= htmlspecialchars(hotel_name()) ?>.
         </label>
       </div>
       <button type="submit" class="btn-send">Envoyer le message</button>
@@ -443,40 +443,33 @@
 
     <!-- §7.1 Coordonnées -->
     <div class="info-block">
-      <h5>§ 7.1 · Coordonnées de l'Hôtel</h5>
+      <h5>§ 7.1 · Coordonnées de l'Établissement</h5>
       <div class="info-item">
         <span class="info-item-icon"><i class="fas fa-map-marker-alt" style="color:var(--or);"></i></span>
         <div>
           <span class="info-item-label">Adresse</span>
-          <span class="info-item-value">Hôtel SEGURO<br>Agbodrafo, entrée de Aného<br>Togo, Afrique de l'Ouest</span>
+          <span class="info-item-value"><?= htmlspecialchars(hotel_name()) ?><br><?= htmlspecialchars(hotel_location()) ?><br><?= htmlspecialchars(hotel_country()) ?></span>
         </div>
       </div>
       <div class="info-item">
         <span class="info-item-icon"><i class="fas fa-phone-alt" style="color:var(--or);"></i></span>
         <div>
           <span class="info-item-label">Téléphone Principal</span>
-          <span class="info-item-value"><a href="tel:+22800000000">+228 00 00 00 00</a></span>
+          <span class="info-item-value"><a href="tel:<?= htmlspecialchars(hotel_phone()) ?>"><?= htmlspecialchars(hotel_phone()) ?></a></span>
         </div>
       </div>
       <div class="info-item">
         <span class="info-item-icon"><i class="fas fa-calendar-check" style="color:var(--or);"></i></span>
         <div>
           <span class="info-item-label">Réservations</span>
-          <span class="info-item-value"><a href="mailto:reservations@hotelseguro.com">reservations@hotelseguro.com</a></span>
+          <span class="info-item-value"><a href="mailto:<?= htmlspecialchars(hotel_email()) ?>"><?= htmlspecialchars(hotel_email()) ?></a></span>
         </div>
       </div>
       <div class="info-item">
         <span class="info-item-icon"><i class="fas fa-envelope" style="color:var(--or);"></i></span>
         <div>
           <span class="info-item-label">Informations Générales</span>
-          <span class="info-item-value"><a href="mailto:contact@hotelseguro.com">contact@hotelseguro.com</a></span>
-        </div>
-      </div>
-      <div class="info-item">
-        <span class="info-item-icon"><i class="fas fa-globe" style="color:var(--or);"></i></span>
-        <div>
-          <span class="info-item-label">Site Web</span>
-          <span class="info-item-value"><a href="http://www.hotelseguro.com" target="_blank">www.hotelseguro.com</a></span>
+          <span class="info-item-value"><a href="mailto:<?= htmlspecialchars(defined('HOTEL_CONTACT_EMAIL') ? HOTEL_CONTACT_EMAIL : hotel_email()) ?>"><?= htmlspecialchars(defined('HOTEL_CONTACT_EMAIL') ? HOTEL_CONTACT_EMAIL : hotel_email()) ?></a></span>
         </div>
       </div>
     </div>

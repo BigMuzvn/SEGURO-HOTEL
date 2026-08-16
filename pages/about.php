@@ -76,7 +76,7 @@
   /* ── Mot de la direction ── */
   .story-section { padding: 120px 0; position: relative; overflow: hidden; }
   .story-section::before {
-    content: 'S'; position: absolute; top: -60px; right: -40px;
+    content: '<?= substr(hotel_short_name(), 0, 1) ?>'; position: absolute; top: -60px; right: -40px;
     font-family: 'Cormorant Garamond', serif; font-size: 40vw;
     color: rgba(26,58,42,0.03); line-height: 1; pointer-events: none; user-select: none;
   }
@@ -593,7 +593,7 @@
       « Le vrai luxe ne réside pas dans l'ostentation,<br>
       mais dans la tranquillité d'esprit<br>
       et la qualité des prestations. »
-      <em>— La Philosophie SEGURO</em>
+      <em>— La Philosophie de l'Établissement</em>
     </p>
     <div class="about-hero-ornament">
       <span class="orn-line"></span><span class="orn-dot"></span><span class="orn-line r"></span>
@@ -609,25 +609,25 @@
 <section class="story-section">
   <div class="story-inner">
     <div class="story-image-wrap reveal-left">
-      <img class="story-main-img" src="https://images.pexels.com/photos/37610710/pexels-photo-37610710.jpeg" alt="Hôtel SEGURO Togo">
-      <img class="story-float-img" src="https://images.unsplash.com/photo-1612965607446-25e1332775ae?w=600&q=80" alt="Accueil togolais SEGURO">
+      <img class="story-main-img" src="https://images.pexels.com/photos/37610710/pexels-photo-37610710.jpeg" alt="<?= htmlspecialchars(hotel_name()) ?>">
+      <img class="story-float-img" src="https://images.unsplash.com/photo-1612965607446-25e1332775ae?w=600&q=80" alt="Accueil <?= htmlspecialchars(hotel_name()) ?>">
     </div>
     <div class="story-text reveal-right">
       <span class="section-label">Mot de la Direction</span>
-      <h2 class="section-heading">Bienvenue à<br>l'Hôtel <em>SEGURO</em></h2>
+      <h2 class="section-heading">Bienvenue à<br><?= htmlspecialchars(hotel_name()) ?></h2>
       <div class="story-divider"><span></span><i></i></div>
       <div class="story-body">
         <p>
-          Plus qu'un nouvel établissement au cœur d'Agbodrafo, SEGURO est la
+          Plus qu'un établissement hôtelier d'exception à <?= htmlspecialchars(hotel_location()) ?>, <?= htmlspecialchars(hotel_name()) ?> est la
           concrétisation d'une vision : offrir une promesse de sérénité et d'excellence
-          dans un cadre qui allie l'élégance contemporaine à la chaleur de l'accueil togolais.
+          dans un cadre qui allie l'élégance contemporaine à la chaleur de l'accueil traditionnel.
         </p>
         <p>
-          Chaque détail de notre hôtel a été pensé pour créer un véritable refuge
-          urbain. Un lieu où nos clients d'affaires peuvent travailler et se ressourcer
+          Chaque détail de notre établissement a été pensé pour créer un véritable refuge.
+          Un lieu où nos clients d'affaires peuvent travailler et se ressourcer
           en toute confiance, où les voyageurs découvrent la région en toute quiétude,
           et où chaque hôte trouve un espace raffiné pour ses moments de détente
-          et ses événements importants.
+          et ses événements d'exception.
         </p>
         <p>
           Notre ambition n'est pas seulement d'être un lieu de passage, mais une
@@ -639,8 +639,8 @@
       <div class="signature-block">
         <div class="signature-or"></div>
         <div>
-          <span class="signature-name">Marius WATEBA</span>
-          <span class="signature-role">Directeur Général · Hôtel SEGURO</span>
+          <span class="signature-name">La Direction Générale</span>
+          <span class="signature-role">Direction · <?= htmlspecialchars(hotel_name()) ?></span>
         </div>
       </div>
     </div>
@@ -652,13 +652,12 @@
   <div class="vision-inner">
     <div class="vision-top reveal">
       <h2 class="vision-heading">
-        Redéfinir l'expérience<br>hôtelière à <em>Lomé</em>
+        Redéfinir l'expérience<br>hôtelière d'<em>Excellence</em>
       </h2>
       <div class="vision-intro">
         <p>
-          Lomé, capitale dynamique et carrefour de l'Afrique de l'Ouest, mérite une offre
-          hôtelière à la hauteur de ses ambitions. L'hôtel SEGURO se positionne avec une
-          ambition claire : devenir la référence du séjour de confiance au Togo.
+          Une offre hôtelière haut de gamme à la hauteur des plus grandes exigences. <?= htmlspecialchars(hotel_name()) ?> se positionne avec une
+          ambition claire : devenir la référence du séjour de confiance.
           Un choix évident. Une garantie de qualité. Une tranquillité absolue.
         </p>
       </div>
@@ -671,7 +670,7 @@
         <p class="pillar-desc">
           Nous créons un environnement apaisant et assurons un service fluide et
           anticipatif pour libérer nos clients de tout tracas. Franchir les portes
-          de SEGURO, c'est entrer dans un havre de paix où le tumulte de la ville s'estompe.
+          de notre hôtel, c'est entrer dans un havre de paix où le tumulte s'estompe.
         </p>
       </div>
       <div class="pillar">
@@ -680,31 +679,31 @@
         <h3 class="pillar-name">Raffinement</h3>
         <p class="pillar-desc">
           Une attention méticuleuse à chaque détail, du design de nos espaces à la
-          qualité de notre gastronomie. Du Skibar panoramique à nos suites, chaque
+          qualité de notre gastronomie. De nos espaces panoramiques à nos suites, chaque
           instant est une expérience esthétique et sensorielle.
         </p>
       </div>
       <div class="pillar">
         <span class="pillar-num">03</span>
         <span class="pillar-icon"><img src="../assets/images/skin-type.png" alt="" srcset=""></span>
-        <h3 class="pillar-name">Pour Tous</h3>
+        <h3 class="pillar-name">Excellence Accessible</h3>
         <p class="pillar-desc">
-          Nous démocratisons l'accès à l'excellence par une offre intelligente et
-          une atmosphère chaleureuse — loin de toute intimidation. Le luxe chez
-          SEGURO, c'est une question d'expérience, pas de prix.
+          Nous créons des séjours d'exception par une offre intelligente et
+          une atmosphère chaleureuse — loin de toute intimidation. L'art de vivre chez
+          nous, c'est une question d'expérience et d'harmonie.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRIPLE PROMESSE SEGURO -->
+<!-- TRIPLE PROMESSE -->
 <section class="promise-section">
   <div class="promise-inner">
     <div class="promise-header reveal">
       <span class="section-label">Notre Contrat avec Vous</span>
       <h2 class="section-heading" style="font-size:clamp(2rem,3.5vw,3rem);max-width:560px;margin:0 auto;">
-        La Triple Promesse <em>SEGURO</em>
+        La Triple Promesse <em>d'Excellence</em>
       </h2>
     </div>
     <div class="promise-grid reveal">
@@ -712,8 +711,8 @@
         <span class="promise-icon"><img src="../assets/images/quality-assurance.png" alt="" srcset=""></span>
         <h3 class="promise-title">La Sérénité</h3>
         <p class="promise-text">
-          Franchir les portes de SEGURO, c'est entrer dans un refuge. C'est l'assurance
-          de trouver un havre de paix, une bulle de quiétude où le tumulte de la ville
+          Franchir nos portes, c'est entrer dans un refuge. C'est l'assurance
+          de trouver un havre de paix, une bulle de quiétude où le stress
           s'estompe. C'est la certitude d'un séjour sécurisé et reposant, en toute confiance.
         </p>
         <span class="promise-quote">« Un havre où tout s'apaise. »</span>
@@ -722,10 +721,9 @@
         <span class="promise-icon"><img src="../assets/images/premium-badge.png" alt="" srcset=""></span>
         <h3 class="promise-title">La Qualité</h3>
         <p class="promise-text">
-          SEGURO, c'est l'assurance d'un standard d'excellence constant — une connexion
-          fibre optique qui fonctionne toujours, une propreté irréprochable, un personnel
-          formé aux standards internationaux. Une valeur sûre, un investissement certain
-          dans votre confort.
+          L'assurance d'un standard d'excellence constant — une connexion
+          fibre haut débit, une propreté irréprochable, un personnel
+          formé aux standards internationaux. Une valeur sûre pour votre confort.
         </p>
         <span class="promise-quote">« L'excellence à chaque instant. »</span>
       </div>
@@ -733,10 +731,9 @@
         <span class="promise-icon"><img src="../assets/images/trustworthiness.png" alt="" srcset=""></span>
         <h3 class="promise-title">La Confiance</h3>
         <p class="promise-text">
-          En séjournant à l'hôtel SEGURO, nos clients se sentent valorisés et confiants.
+          En séjournant à <?= htmlspecialchars(hotel_name()) ?>, nos clients se sentent valorisés et sereins.
           Ils savent qu'ils ont fait le bon choix — un choix éclairé qui reflète leur propre
-          standard d'exigence. Nous leur offrons le cadre qui renforce leur statut
-          et leur bien-être.
+          standard d'exigence. Nous leur offrons le cadre parfait pour leur bien-être.
         </p>
         <span class="promise-quote">« Le choix évident, la garantie absolue. »</span>
       </div>
@@ -748,12 +745,12 @@
 <section class="gastro-section">
   <div class="gastro-inner">
     <div class="gastro-header reveal">
-      <span class="section-label">3.2 · L'Art de Recevoir</span>
+      <span class="section-label">L'Art de Recevoir</span>
       <h2 class="section-heading">
-        Gastronomie &amp;<br><em>Saveurs de Lomé</em>
+        Gastronomie &amp;<br><em>Saveurs Raffinées</em>
       </h2>
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#999;margin-top:12px;max-width:560px;">
-        L'art de recevoir selon SEGURO passe par une offre de restauration riche et variée,
+        L'art de recevoir selon <?= htmlspecialchars(hotel_name()) ?> passe par une offre de restauration riche et variée,
         adaptée à chaque moment de la journée.
       </p>
     </div>
@@ -1174,7 +1171,7 @@
   </div>
   <div class="gallery-mosaic reveal">
     <div class="mosaic-item">
-      <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=900&q=80" alt="Hôtel SEGURO Togo">
+      <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=900&q=80" alt="<?= htmlspecialchars(hotel_name()) ?>">
       <div class="mosaic-caption">L'hôtel · Vue d'ensemble</div>
     </div>
     <div class="mosaic-item">
@@ -1186,12 +1183,12 @@
       <div class="mosaic-caption">Restaurant Signature</div>
     </div>
     <div class="mosaic-item">
-      <img src="https://images.unsplash.com/photo-1612965607446-25e1332775ae?w=600&q=80" alt="Suite SEGURO">
+      <img src="https://images.unsplash.com/photo-1612965607446-25e1332775ae?w=600&q=80" alt="Suites d'exception">
       <div class="mosaic-caption">Suite avec vue</div>
     </div>
     <div class="mosaic-item">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Côte togolaise">
-      <div class="mosaic-caption">Golfe de Guinée · Côte togolaise</div>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="<?= htmlspecialchars(hotel_location()) ?>">
+      <div class="mosaic-caption"><?= htmlspecialchars(hotel_location()) ?></div>
     </div>
   </div>
 </section>
@@ -1199,7 +1196,7 @@
 <!-- ÉQUIPE -->
 <section class="team-section">
   <div class="team-header reveal">
-    <span class="section-label">Les Ambassadeurs SEGURO</span>
+    <span class="section-label">Les Ambassadeurs de l'Excellence</span>
     <h2 class="section-heading" style="font-size:clamp(2rem,3.5vw,3rem);color:var(--vert);max-width:500px;margin:0 auto;">
       Une équipe passionnée,<br>à votre <em>service</em>
     </h2>
@@ -1207,13 +1204,13 @@
   <div class="team-grid reveal">
     <div class="team-card">
       <div class="team-photo">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80" alt="Directeur Général">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80" alt="Direction Générale">
         <div class="team-photo-overlay"></div>
       </div>
       <div class="team-info">
-        <h4 class="team-name">Marius WATEBA</h4>
-        <span class="team-role">Directeur Général</span>
-        <p class="team-bio">Visionnaire de l'hôtellerie togolaise, il incarne la philosophie SEGURO : excellence accessible, authenticité et service irréprochable.</p>
+        <h4 class="team-name">Direction Générale</h4>
+        <span class="team-role">Management &amp; Qualité</span>
+        <p class="team-bio">Incarne au quotidien notre philosophie : excellence du service, hospitalité attentive et prestations irréprochables.</p>
       </div>
     </div>
     <div class="team-card">
@@ -1246,7 +1243,7 @@
       <div class="team-info">
         <h4 class="team-name">Notre Équipe Événements</h4>
         <span class="team-role">Séminaires & Événements Corporate</span>
-        <p class="team-bio">Du Skibar privatisé aux salles de conférence modulables, notre équipe orchestre chaque événement pour qu'il marque les esprits.</p>
+        <p class="team-bio">Des espaces privatisés aux salles de conférence modulables, notre équipe orchestre chaque événement pour qu'il marque les esprits.</p>
       </div>
     </div>
   </div>
@@ -1265,25 +1262,25 @@
       <div class="value-dot"></div>
       <span class="value-icon">🕊️</span>
       <h4 class="value-name">Sérénité</h4>
-      <p class="value-desc">Chaque espace, chaque interaction est pensée pour libérer nos clients du stress. SEGURO est un vrai refuge dans la ville.</p>
+      <p class="value-desc">Chaque espace, chaque interaction est pensée pour libérer nos clients du stress. Un vrai havre de paix dédié au ressourcement.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
       <span class="value-icon">🎯</span>
       <h4 class="value-name">Excellence</h4>
-      <p class="value-desc">Des standards internationaux dans chaque prestation : fibre optique, literie haut de gamme, gastronomie soignée, propreté irréprochable.</p>
+      <p class="value-desc">Des standards internationaux dans chaque prestation : connectivité haut débit, literie de prestige, gastronomie soignée, propreté irréprochable.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
       <span class="value-icon">❤️</span>
       <h4 class="value-name">Hospitalité</h4>
-      <p class="value-desc">La chaleur authentique de l'accueil togolais au service de standards internationaux — nous ne vous servons pas, nous prenons soin de vous.</p>
+      <p class="value-desc">La chaleur authentique de l'accueil attentionné au service de vos attentes — nous veillons sur chaque instant de votre séjour.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
       <span class="value-icon">💡</span>
-      <h4 class="value-name">Accessibilité</h4>
-      <p class="value-desc">Le luxe accessible n'est pas un compromis — c'est une philosophie. Se sentir parfaitement à sa place dans un cadre exceptionnel.</p>
+      <h4 class="value-name">Harmonie</h4>
+      <p class="value-desc">Le raffinement harmonieux n'est pas un compromis — c'est une philosophie. Se sentir parfaitement privilégié dans un cadre exceptionnel.</p>
     </div>
   </div>
 </section>
@@ -1292,13 +1289,13 @@
 <section class="about-cta">
   <div class="about-cta-bg"></div>
   <div class="about-cta-content reveal">
-    <span class="about-cta-label">Vivez l'expérience SEGURO</span>
+    <span class="about-cta-label">Vivez l'expérience <?= htmlspecialchars(hotel_short_name()) ?></span>
     <h2 class="about-cta-title">
       Faites de votre séjour<br>une <em>promesse tenue</em>
     </h2>
     <p class="about-cta-text">
       Nous sommes impatients de vous accueillir et de faire de votre séjour une
-      expérience mémorable. SEGURO — votre refuge d'excellence à Agbodrafo, Togo.
+      expérience mémorable. <?= htmlspecialchars(hotel_name()) ?> — votre refuge d'excellence à <?= htmlspecialchars(hotel_location()) ?>.
     </p>
     <div class="about-cta-btns">
       <a href="<?= $baseUrl ?>/pages/reservation-system.php" class="btn-cta-or">Réserver maintenant</a>

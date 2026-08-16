@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_commande'])) {
             $statutLib = $reservation_attente['statut'] === 'validee' ? 'Validée (En attente de Check-in à la réception)' : 'En attente de validation';
             $erreur = "Accès restreint : Votre réservation n° {$reservation_attente['reference']} est actuellement au statut '{$statutLib}'. Le Room Service sera automatiquement activé dès votre arrivée à l'hôtel une fois le Check-in validé par la réception.";
         } else {
-            $erreur = "Accès non autorisé : Le Room Service est exclusivement réservé aux clients résidant actuellement à l'Hôtel SEGURO ayant effectué leur Check-in à la réception (Statut : En séjour).";
+            $erreur = "Accès non autorisé : Le Room Service est exclusivement réservé aux clients séjournant actuellement à " . hotel_name() . " ayant effectué leur Check-in à la réception (Statut : En séjour).";
         }
     } elseif (empty($client_nom)) {
         $erreur = "Veuillez renseigner votre nom pour la livraison.";
@@ -508,12 +508,12 @@ body {
             <!-- Article 2 -->
             <div class="rs-item-card" data-cat="dejeuner">
                 <div>
-                    <h4 class="rs-item-title">Petit-déjeuner Royal SEGURO</h4>
+                    <h4 class="rs-item-title">Petit-déjeuner Royal Signature</h4>
                     <p class="rs-item-desc">Assortiment continental complet, fruits tropicaux découpés, saumon fumé, coupe de champagne, pancakes au miel.</p>
                 </div>
                 <div class="rs-item-footer">
                     <span class="rs-item-price">12 000 F</span>
-                    <button type="button" class="btn-add-tray" onclick="addToTray('Petit-déjeuner Royal SEGURO', 12000)">+ Ajouter</button>
+                    <button type="button" class="btn-add-tray" onclick="addToTray('Petit-déjeuner Royal Signature', 12000)">+ Ajouter</button>
                 </div>
             </div>
 

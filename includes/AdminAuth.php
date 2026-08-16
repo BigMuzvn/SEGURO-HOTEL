@@ -2,7 +2,7 @@
 /**
  * ════════════════════════════════════════════════════════
  * AdminAuth.php — Gestionnaire RBAC des Rôles & Permissions
- * Administration Hôtel SEGURO
+ * HospitOS — Administration Modulaire
  * ════════════════════════════════════════════════════════
  */
 

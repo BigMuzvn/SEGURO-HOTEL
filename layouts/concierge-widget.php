@@ -1,12 +1,13 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * WIDGET CONCIERGERIE & ASSISTANCE VIP FLOTTANT — Hôtel SEGURO
+ * WIDGET CONCIERGERIE & ASSISTANCE VIP FLOTTANT — HospitOS
  * ════════════════════════════════════════════════════════
  */
-$hotelPhone = "+228 90 00 00 00";
-$hotelWhatsApp = "22890000000";
-$hotelEmail = "reservations@hotelseguro.com";
+require_once __DIR__ . '/../includes/config.php';
+$hotelPhone = defined('HOTEL_PHONE') ? HOTEL_PHONE : '+228 90 00 00 00';
+$hotelWhatsApp = defined('HOTEL_WHATSAPP') ? HOTEL_WHATSAPP : '22890000000';
+$hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige-hotel.com';
 ?>
 <style>
 /* ── Bouton Conciergerie Flottant ── */
@@ -243,7 +244,7 @@ $hotelEmail = "reservations@hotelseguro.com";
 <div class="concierge-floating-btn" id="btnConciergeOpen" onclick="toggleConcierge(true)">
   <span class="concierge-pulse-dot"></span>
   <i class="fas fa-concierge-bell"></i>
-  <span class="concierge-btn-text">Conciergerie SEGURO</span>
+  <span class="concierge-btn-text">Conciergerie Privée</span>
 </div>
 
 <!-- Modal / Drawer -->
@@ -262,7 +263,7 @@ $hotelEmail = "reservations@hotelseguro.com";
 
   <div class="concierge-body">
     <!-- Bouton WhatsApp -->
-    <a href="https://wa.me/<?= $hotelWhatsApp ?>?text=<?= urlencode("Bonjour Conciergerie SEGURO, je souhaiterais des renseignements concernant vos chambres et prestations.") ?>" target="_blank" class="whatsapp-action-btn">
+    <a href="https://wa.me/<?= $hotelWhatsApp ?>?text=<?= urlencode("Bonjour, je souhaiterais des renseignements concernant vos chambres et prestations à " . hotel_name() . ".") ?>" target="_blank" class="whatsapp-action-btn">
       <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i>
       Discuter sur WhatsApp Direct
     </a>
@@ -324,7 +325,7 @@ $hotelEmail = "reservations@hotelseguro.com";
   </div>
 
   <div class="concierge-footer">
-    Hôtel SEGURO · Boulevard de la Marina, Lomé
+    <?= htmlspecialchars(hotel_name()) ?> · <?= htmlspecialchars(hotel_location()) ?>
   </div>
 </div>
 

@@ -68,10 +68,11 @@ if ($statut_filtre) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avis &amp; Évaluations — Administration Hôtel SEGURO</title>
+    <title>Avis &amp; Évaluations — Administration <?= htmlspecialchars(hotel_name()) ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <?= hotel_theme_css() ?>
     <style>
         :root {
             --vert: #1a3a2a;
@@ -286,7 +287,7 @@ if ($statut_filtre) {
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            <a href="dashboard.php" class="sidebar-logo"><i class="fas fa-crown"></i><span>Hôtel Seguro</span></a>
+            <a href="dashboard.php" class="sidebar-logo"><i class="fas fa-crown"></i><span><?= htmlspecialchars(hotel_short_name()) ?></span></a>
         </div>
         <nav class="sidebar-nav">
             <div class="nav-section">Principal</div>
@@ -478,7 +479,7 @@ if ($statut_filtre) {
 
                 <div class="form-group">
                     <label class="form-label">Réponse officielle de l'établissement (affichée sous l'avis)</label>
-                    <textarea name="reponse_hotel" id="mod_reponse" class="form-control" rows="5" placeholder="Ex: Cher(e) client(e), toute l'équipe de l'Hôtel SEGURO vous remercie chaleureusement pour votre retour élogieux..."></textarea>
+                    <textarea name="reponse_hotel" id="mod_reponse" class="form-control" rows="5" placeholder="Ex: Cher(e) client(e), toute l'équipe de <?= htmlspecialchars(hotel_name()) ?> vous remercie chaleureusement pour votre retour élogieux..."></textarea>
                 </div>
 
                 <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:24px;">

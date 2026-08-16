@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $u = new User($db);
                 if ($u->getById($reservation->user_id)) {
                     $chInfo = $chambre->getById($reservation->chambre_id);
-                    $chNom = ($chInfo && isset($chInfo->nom)) ? $chInfo->nom : 'Chambre SEGURO';
+                    $chNom = ($chInfo && isset($chInfo->nom)) ? $chInfo->nom : 'Chambre Standard';
                     Mail::sendStatusUpdate($u->email, $u->prenom . ' ' . $u->nom, $reservation->reference, 'validee', $chNom, $reservation->note_admin);
                 }
             } catch (Exception $mailErr) {
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $u = new User($db);
                 if ($u->getById($reservation->user_id)) {
                     $chInfo = $chambre->getById($reservation->chambre_id);
-                    $chNom = ($chInfo && isset($chInfo->nom)) ? $chInfo->nom : 'Chambre SEGURO';
+                    $chNom = ($chInfo && isset($chInfo->nom)) ? $chInfo->nom : 'Chambre Standard';
                     Mail::sendStatusUpdate($u->email, $u->prenom . ' ' . $u->nom, $reservation->reference, 'annulee', $chNom, $reservation->note_admin);
                 }
             } catch (Exception $mailErr) {
@@ -119,11 +119,12 @@ $typesStats = $stmtTypes->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin — Hôtel Seguro</title>
+    <title>Dashboard Admin — <?= htmlspecialchars(hotel_name()) ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <?= hotel_theme_css() ?>
     <style>
         :root {
             --vert: #1a3a2a;
@@ -549,7 +550,7 @@ $typesStats = $stmtTypes->fetchAll(PDO::FETCH_ASSOC);
         <div class="sidebar-header">
             <a href="dashboard.php" class="sidebar-logo">
                 <i class="fas fa-crown"></i>
-                <span>Hôtel Seguro</span>
+                <span><?= htmlspecialchars(hotel_short_name()) ?></span>
             </a>
         </div>
         
@@ -885,14 +886,14 @@ $typesStats = $stmtTypes->fetchAll(PDO::FETCH_ASSOC);
                             <i class="fas fa-envelope" style="color: var(--or);"></i>
                             <div>
                                 <p style="font-size: 0.8rem; color: #888;">Contact réservations</p>
-                                <p style="font-size: 0.9rem; color: var(--vert);">reservations@hotelseguro.com</p>
+                                <p style="font-size: 0.9rem; color: var(--vert);"><?= htmlspecialchars(hotel_email()) ?></p>
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0;">
                             <i class="fas fa-phone" style="color: var(--or);"></i>
                             <div>
                                 <p style="font-size: 0.8rem; color: #888;">Téléphone</p>
-                                <p style="font-size: 0.9rem; color: var(--vert);">+228 90 00 00 00</p>
+                                <p style="font-size: 0.9rem; color: var(--vert);"><?= htmlspecialchars(hotel_phone()) ?></p>
                             </div>
                         </div>
                     </div>

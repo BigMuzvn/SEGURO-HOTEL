@@ -12,11 +12,12 @@ require_once __DIR__ . '/connexion.php';
 
 // ════════════════════════════════════════════════════════
 // GÉNÉRATION DU CODE CLIENT
-// Format : SEG-AAAA-XXXX (ex: SEG-2025-7K3M)
+// Format : CLI-AAAA-XXXX (ex: CLI-2026-7K3M)
 // ════════════════════════════════════════════════════════
 function genererCodeClient(): string {
-    $pdo  = getPDO();
-    $year = date('Y');
+    $pdo    = getPDO();
+    $year   = date('Y');
+    $prefix = defined('HOTEL_CLIENT_PREFIX') ? HOTEL_CLIENT_PREFIX : 'CLI';
 
     do {
         $chars  = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // sans 0/O/1/I
@@ -24,7 +25,7 @@ function genererCodeClient(): string {
         for ($i = 0; $i < 4; $i++) {
             $suffix .= $chars[random_int(0, strlen($chars) - 1)];
         }
-        $code = "SEG-{$year}-{$suffix}";
+        $code = "{$prefix}-{$year}-{$suffix}";
 
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE code_client = ?");
         $stmt->execute([$code]);
@@ -35,15 +36,16 @@ function genererCodeClient(): string {
 
 // ════════════════════════════════════════════════════════
 // GÉNÉRATION DE LA RÉFÉRENCE DE RÉSERVATION
-// Format : SEGURO-2025-XXXX (ex: SEGURO-2025-4821)
+// Format : HTL-2026-XXXX (ex: HTL-2026-4821)
 // ════════════════════════════════════════════════════════
 function genererReferenceReservation(): string {
-    $pdo  = getPDO();
-    $year = date('Y');
+    $pdo    = getPDO();
+    $year   = date('Y');
+    $prefix = defined('HOTEL_REF_PREFIX') ? HOTEL_REF_PREFIX : 'HTL';
 
     do {
         $num = random_int(1000, 9999);
-        $ref = "SEGURO-{$year}-{$num}";
+        $ref = "{$prefix}-{$year}-{$num}";
 
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM reservations WHERE reference = ?");
         $stmt->execute([$ref]);
@@ -216,14 +218,16 @@ function requireAdmin(): void {
 // ════════════════════════════════════════════════════════
 // EMAIL — Bienvenue avec code client
 // ════════════════════════════════════════════════════════
+// EMAIL — Bienvenue avec code client
+// ════════════════════════════════════════════════════════
 function envoyerEmailBienvenue(array $user): void {
     $to      = $user['email'];
-    $subject = "Bienvenue à l'Hôtel SEGURO — Votre code d'accès";
+    $subject = "Bienvenue à " . hotel_name() . " — Votre code d'accès";
 
     $message = "
     Bonjour {$user['prenom']} {$user['nom']},
 
-    Votre compte Hôtel SEGURO a été créé avec succès.
+    Votre compte " . hotel_name() . " a été créé avec succès.
 
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     Votre email       : {$user['email']}
@@ -237,25 +241,20 @@ function envoyerEmailBienvenue(array $user): void {
 
     Pour vous connecter : " . BASE_URL . "/pages/connexion-client.php
 
-    L'équipe Hôtel SEGURO
-    Agbodrafo, Togo · contact@hotelseguro.com
+    L'équipe " . hotel_name() . "
+    " . hotel_location() . " · " . hotel_email() . "
     ";
 
-    $headers  = "From: noreply@hotelseguro.com\r\n";
+    $headers  = "From: " . hotel_email() . "\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    // En développement MAMP : mail() peut ne pas fonctionner
-    // Décommenter en production ou utiliser PHPMailer/SMTP
-    // mail($to, $subject, $message, $headers);
-
-    // Pour dev : afficher dans les logs
     error_log("EMAIL BIENVENUE → {$to} | Code: {$user['code_client']}");
 }
 
 // Email de confirmation de réservation
 function envoyerEmailConfirmationResa(array $user, array $reservation): void {
     $to      = $user['email'];
-    $subject = "Réservation {$reservation['reference']} — Hôtel SEGURO";
+    $subject = "Réservation {$reservation['reference']} — " . hotel_name();
 
     $message = "
     Bonjour {$user['prenom']},
@@ -267,7 +266,7 @@ function envoyerEmailConfirmationResa(array $user, array $reservation): void {
     Chambre   : {$reservation['chambre_nom']}
     Arrivée   : {$reservation['date_arrivee']}
     Départ    : {$reservation['date_depart']}
-    Total     : " . number_format($reservation['prix_total'], 0, ',', ' ') . " FCFA
+    Total     : " . number_format($reservation['prix_total'], 0, ',', ' ') . " " . hotel_currency() . "
     Statut    : En attente de validation
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -276,17 +275,16 @@ function envoyerEmailConfirmationResa(array $user, array $reservation): void {
 
     Suivre votre réservation : " . BASE_URL . "/pages/mon-compte.php
 
-    L'équipe Hôtel SEGURO
+    L'équipe " . hotel_name() . "
     ";
 
     error_log("EMAIL RESA → {$to} | Réf: {$reservation['reference']}");
-    // mail($to, $subject, $message, "From: noreply@hotelseguro.com\r\n");
 }
 
 // Email quand admin valide
 function envoyerEmailValidation(array $user, array $reservation): void {
     $to      = $user['email'];
-    $subject = "Réservation confirmée — {$reservation['reference']} — Hôtel SEGURO";
+    $subject = "Réservation confirmée — {$reservation['reference']} — " . hotel_name();
 
     $message = "
     Bonjour {$user['prenom']},
@@ -298,16 +296,15 @@ function envoyerEmailValidation(array $user, array $reservation): void {
     Chambre   : {$reservation['chambre_nom']}
     Arrivée   : {$reservation['date_arrivee']} dès 14h00
     Départ    : {$reservation['date_depart']} avant 12h00
-    Total     : " . number_format($reservation['prix_total'], 0, ',', ' ') . " FCFA
+    Total     : " . number_format($reservation['prix_total'], 0, ',', ' ') . " " . hotel_currency() . "
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
     Nous avons hâte de vous accueillir.
 
-    L'équipe Hôtel SEGURO · +228 00 00 00 00
+    L'équipe " . hotel_name() . " · " . hotel_phone() . "
     ";
 
     error_log("EMAIL VALIDATION → {$to} | Réf: {$reservation['reference']}");
-    // mail($to, $subject, $message, "From: noreply@hotelseguro.com\r\n");
 }
 
 // ════════════════════════════════════════════════════════

@@ -43,7 +43,7 @@ CREATE TABLE users (
 
 -- ────────────────────────────────────────────────────────
 -- TABLE : chambres
--- Catalogue des hébergements SEGURO
+-- Catalogue des hébergements
 -- ────────────────────────────────────────────────────────
 CREATE TABLE chambres (
   id                CHAR(36)        NOT NULL DEFAULT (UUID()),
@@ -313,7 +313,7 @@ DELIMITER ;
 -- DONNÉES INITIALES
 -- ════════════════════════════════════════════════════════
 
--- Chambres SEGURO (issues du brief §3.1)
+-- Chambres initiales
 INSERT INTO chambres (id, nom, type, superficie_m2, prix_nuit, capacite_max, capacite_enfants, description, amenities, image_principale, disponible, etage, numero) VALUES
 (UUID(), 'Standard Confort',        'standard',   28,  55000,  2, 0, 'Literie haut de gamme, espace de travail ergonomique, Smart TV, salle de bain avec douche à l\'italienne.',       '["Wifi fibre","Smart TV","Clim","Coffre-fort","Minibar"]',           'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&q=80', 1, 1, 101),
 (UUID(), 'Standard Confort Plus',   'standard',   32,  65000,  2, 1, 'Même prestations qu\'une Standard, avec un espace légèrement plus généreux et une vue sur le jardin.',          '["Wifi fibre","Smart TV","Clim","Coffre-fort","Vue jardin"]',         'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80', 1, 1, 102),
@@ -333,11 +333,11 @@ INSERT INTO options (id, nom, description, prix, unite, actif) VALUES
 (UUID(), 'Excursion Ganvié',      'Pirogue guidée sur le lac Nokoué, village lacustre de Ganvié. Par personne.',           20000,  'par personne',   1),
 (UUID(), 'Accueil Champagne',     'Bouteille de champagne et assortiment de fruits de saison à l\'arrivée.',               15000,  'par réservation',1),
 (UUID(), 'Session Jet Ski',       'Session de jet ski 30 min sur le Golfe de Guinée. Par personne.',                      30000,  'par personne',   1),
-(UUID(), 'Croisière Yacht',       'Sortie en mer privée sur le yacht SEGURO. Coucher de soleil inclus.',                  150000, 'par croisière',  1);
+(UUID(), 'Croisière Yacht',       'Sortie en mer privée sur yacht privé. Coucher de soleil inclus.',                       150000, 'par croisière',  1);
 
 -- Super admin par défaut
 INSERT INTO users (id, nom, prenom, email, code_client, telephone, role)
-VALUES (UUID(), 'WATEBA', 'Marius', 'direction@hotelseguro.com', 'ADMIN-001', '+228 00 00 00 00', 'super_admin');
+VALUES (UUID(), 'ADMIN', 'Super', 'admin@hotel.com', 'ADMIN-001', '+228 00 00 00 00', 'super_admin');
 
 -- ════════════════════════════════════════════════════════
 -- VUE : Calendrier des indisponibilités

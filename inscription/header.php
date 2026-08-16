@@ -4,14 +4,18 @@
 </nav>
 
 
-<?php session_start(); ?>
+<?php 
+if(session_status()===PHP_SESSION_NONE) session_start(); 
+require_once __DIR__ . '/../includes/config.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hôtel Seguro</title>
+    <title><?= htmlspecialchars(hotel_name()) ?></title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <?= hotel_theme_css() ?>
 </head>
 <body>
 
@@ -21,7 +25,7 @@
         <!-- Logo -->
         <div class="logo">
             <a href="../index.php">
-                <h1>Hôtel Seguro</h1>
+                <h1><?= htmlspecialchars(hotel_short_name()) ?></h1>
             </a>
         </div>
 

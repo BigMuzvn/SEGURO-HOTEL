@@ -1,12 +1,13 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * FACTURE & REÇU OFFICIEL — Hôtel SEGURO
+ * FACTURE & REÇU OFFICIEL — HospitOS
  * ════════════════════════════════════════════════════════
  */
 
 session_start();
 
+require_once __DIR__ . '/../includes/config.php';
 require_once __DIR__ . '/../includes/database.php';
 require_once __DIR__ . '/../includes/Reservation.php';
 require_once __DIR__ . '/../includes/User.php';
@@ -54,15 +55,15 @@ $numFacture = "FACT-" . date('Y', strtotime($resa->created_at)) . "-" . substr(s
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facture <?= htmlspecialchars($resa->reference) ?> — Hôtel SEGURO</title>
+    <title>Facture <?= htmlspecialchars($resa->reference) ?> — <?= htmlspecialchars(hotel_name()) ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --vert: #1a3a2a;
+            --vert: <?= THEME_COLOR_PRIMARY ?>;
             --vert-fonce: #0e2218;
-            --or: #c9a84c;
+            --or: <?= THEME_COLOR_ACCENT ?>;
             --or-fonce: #9c7b28;
             --gris-fond: #f8f6f0;
             --texte: #2b2b2b;
@@ -90,10 +91,10 @@ $numFacture = "FACT-" . date('Y', strtotime($resa->created_at)) . "-" . substr(s
             left: 50%;
             transform: translate(-50%, -50%) rotate(-30deg);
             font-family: 'Cormorant Garamond', serif;
-            font-size: 7rem;
+            font-size: 6rem;
             color: rgba(201,168,76,0.04);
             font-weight: 700;
-            letter-spacing: 15px;
+            letter-spacing: 12px;
             pointer-events: none;
             text-transform: uppercase;
         }
@@ -322,28 +323,28 @@ $numFacture = "FACT-" . date('Y', strtotime($resa->created_at)) . "-" . substr(s
     </div>
 
     <div class="facture-container">
-        <div class="watermark">SEGURO</div>
+        <div class="watermark"><?= htmlspecialchars(hotel_short_name()) ?></div>
 
         <!-- HEADER -->
         <div class="header-grid">
             <div>
-                <div class="logo-title">HÔTEL SEGURO</div>
-                <div class="logo-sub">Resort &amp; Nature de Luxe</div>
+                <div class="logo-title"><?= htmlspecialchars(hotel_name()) ?></div>
+                <div class="logo-sub"><?= htmlspecialchars(hotel_tagline()) ?></div>
                 <div class="hotel-coords">
-                    Boulevard de la Marina, Lomé — Togo<br>
-                    Tél : +228 90 00 00 00 | Email : contact@hotel-seguro.com<br>
-                    NIF : 1000123456 | RCCM : TG-LOM-2024-B-999
+                    <?= htmlspecialchars(hotel_location()) ?>, <?= htmlspecialchars(hotel_city()) ?> — <?= htmlspecialchars(hotel_country()) ?><br>
+                    Tél : <?= htmlspecialchars(hotel_phone()) ?> | Email : <?= htmlspecialchars(hotel_email()) ?><br>
+                    RCCM &amp; NIF : Enregistré auprès des autorités compétentes
                 </div>
             </div>
             <div class="facture-meta">
                 <div class="facture-badge">
-                    <?= in_array($resa->statut, ['validee', 'terminee']) ? 'FACTURE OFFICIELLE' : 'REÇU PROVISOIRE' ?>
+                    <?= in_array($resa->statut, ['validee', 'terminee', 'en_sejour']) ? 'FACTURE OFFICIELLE' : 'REÇU PROVISOIRE' ?>
                 </div>
                 <div class="meta-item">N° Facture : <strong><?= htmlspecialchars($numFacture) ?></strong></div>
                 <div class="meta-item">Réf. Réservation : <strong><?= htmlspecialchars($resa->reference) ?></strong></div>
                 <div class="meta-item">Date d'émission : <strong><?= date('d/m/Y', strtotime($resa->created_at)) ?></strong></div>
                 <div class="meta-item">Statut : 
-                    <strong style="color:<?= $resa->statut==='validee' ? '#28a745' : ($resa->statut==='en_cours' ? '#e67e22' : '#2b2b2b') ?>;">
+                    <strong style="color:<?= in_array($resa->statut, ['validee', 'en_sejour']) ? '#28a745' : ($resa->statut==='en_cours' ? '#e67e22' : '#2b2b2b') ?>;">
                         <?= strtoupper($resModel->getStatutLibelle($resa->statut)) ?>
                     </strong>
                 </div>
@@ -354,22 +355,22 @@ $numFacture = "FACT-" . date('Y', strtotime($resa->created_at)) . "-" . substr(s
         <div class="addresses-grid">
             <div class="addr-box">
                 <div class="addr-title">Facturé à :</div>
-                <div class="addr-name"><?= htmlspecialchars(($client ? $client->prenom . ' ' . $client->nom : 'Client SEGURO')) ?></div>
+                <div class="addr-name"><?= htmlspecialchars(($client ? $client->prenom . ' ' . $client->nom : 'Client VIP')) ?></div>
                 <div class="addr-text">
                     Code Client : <strong><?= htmlspecialchars($client ? $client->code_client : 'N/A') ?></strong><br>
                     Email : <?= htmlspecialchars($client ? $client->email : '') ?><br>
                     Tél : <?= htmlspecialchars($client ? ($client->telephone ?: 'Non renseigné') : '') ?><br>
-                    Pays : <?= htmlspecialchars($client ? ($client->pays ?: 'Togo') : 'Togo') ?>
+                    Pays : <?= htmlspecialchars($client ? ($client->pays ?: hotel_country()) : hotel_country()) ?>
                 </div>
             </div>
             <div class="addr-box">
                 <div class="addr-title">Établissement émetteur :</div>
-                <div class="addr-name">Hôtel SEGURO SARL</div>
+                <div class="addr-name"><?= htmlspecialchars(hotel_name()) ?></div>
                 <div class="addr-text">
                     Service Facturation &amp; Conciergerie<br>
-                    Boulevard de la Marina, Lomé, Togo<br>
-                    Réception 24h/24 : +228 90 00 00 01<br>
-                    Banque : Ecobank Togo | IBAN : TG54 TG05 4010 0100 1234 5678 9012
+                    <?= htmlspecialchars(hotel_location()) ?>, <?= htmlspecialchars(hotel_country()) ?><br>
+                    Réception 24h/24 : <?= htmlspecialchars(hotel_phone()) ?><br>
+                    Règlement : Réception, Mobile Money &amp; Cartes Bancaires
                 </div>
             </div>
         </div>
@@ -378,7 +379,7 @@ $numFacture = "FACT-" . date('Y', strtotime($resa->created_at)) . "-" . substr(s
         <div class="sejour-details">
             <div class="sejour-col">
                 Hébergement :
-                <strong><?= htmlspecialchars($chambre ? $chambre->nom : 'Chambre SEGURO') ?> (<?= ucfirst($chambre ? $chambre->type : '') ?>)</strong>
+                <strong><?= htmlspecialchars($chambre ? $chambre->nom : 'Chambre Standard') ?> (<?= ucfirst($chambre ? $chambre->type : '') ?>)</strong>
             </div>
             <div class="sejour-col">
                 Période de séjour :
@@ -413,8 +414,8 @@ $numFacture = "FACT-" . date('Y', strtotime($resa->created_at)) . "-" . substr(s
                     </td>
                     <td style="text-align:center;">par nuit</td>
                     <td style="text-align:center;"><?= $nbNuits ?></td>
-                    <td style="text-align:right;"><?= number_format($resa->prix_nuit, 0, ',', ' ') ?> FCFA</td>
-                    <td style="text-align:right; font-weight:600;"><?= number_format($prixHebergement, 0, ',', ' ') ?> FCFA</td>
+                    <td style="text-align:right;"><?= number_format($resa->prix_nuit, 0, ',', ' ') ?> <?= hotel_currency() ?></td>
+                    <td style="text-align:right; font-weight:600;"><?= number_format($prixHebergement, 0, ',', ' ') ?> <?= hotel_currency() ?></td>
                 </tr>
 
                 <?php if (!empty($options)): ?>
@@ -428,8 +429,8 @@ $numFacture = "FACT-" . date('Y', strtotime($resa->created_at)) . "-" . substr(s
                         </td>
                         <td style="text-align:center;"><?= htmlspecialchars($opt['unite']) ?></td>
                         <td style="text-align:center;"><?= $opt['quantite'] ?></td>
-                        <td style="text-align:right;"><?= number_format($opt['prix_unitaire'], 0, ',', ' ') ?> FCFA</td>
-                        <td style="text-align:right; font-weight:600;"><?= number_format($optTotal, 0, ',', ' ') ?> FCFA</td>
+                        <td style="text-align:right;"><?= number_format($opt['prix_unitaire'], 0, ',', ' ') ?> <?= hotel_currency() ?></td>
+                        <td style="text-align:right; font-weight:600;"><?= number_format($optTotal, 0, ',', ' ') ?> <?= hotel_currency() ?></td>
                     </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -441,40 +442,40 @@ $numFacture = "FACT-" . date('Y', strtotime($resa->created_at)) . "-" . substr(s
             <div class="totaux-box">
                 <div class="totaux-row">
                     <span>Sous-total Hébergement :</span>
-                    <strong><?= number_format($prixHebergement, 0, ',', ' ') ?> FCFA</strong>
+                    <strong><?= number_format($prixHebergement, 0, ',', ' ') ?> <?= hotel_currency() ?></strong>
                 </div>
 
                 <?php if ($prixOptions > 0): ?>
                 <div class="totaux-row">
                     <span>Sous-total Options &amp; Services :</span>
-                    <strong><?= number_format($prixOptions, 0, ',', ' ') ?> FCFA</strong>
+                    <strong><?= number_format($prixOptions, 0, ',', ' ') ?> <?= hotel_currency() ?></strong>
                 </div>
                 <?php endif; ?>
 
                 <?php if ($montantReduction > 0): ?>
                 <div class="totaux-row remise">
                     <span><i class="fas fa-tag"></i> Remise Code Promotionnel :</span>
-                    <span>-<?= number_format($montantReduction, 0, ',', ' ') ?> FCFA</span>
+                    <span>-<?= number_format($montantReduction, 0, ',', ' ') ?> <?= hotel_currency() ?></span>
                 </div>
                 <?php endif; ?>
 
                 <div class="totaux-row">
                     <span>Taxes de séjour &amp; TVA (incluses) :</span>
-                    <span>0 FCFA</span>
+                    <span>0 <?= hotel_currency() ?></span>
                 </div>
 
                 <div class="totaux-row total-final">
                     <span>Total Net à Régler :</span>
-                    <span class="valeur"><?= number_format($prixTotal, 0, ',', ' ') ?> FCFA</span>
+                    <span class="valeur"><?= number_format($prixTotal, 0, ',', ' ') ?> <?= hotel_currency() ?></span>
                 </div>
             </div>
         </div>
 
         <!-- FOOTER -->
         <div class="facture-footer">
-            <p><strong>Conditions de règlement :</strong> Règlement à la réception lors du check-in ou par Mobile Money / Virement bancaire.</p>
-            <p>Pour toute question relative à cette facture, veuillez contacter notre conciergerie à <em>facturation@hotel-seguro.com</em> en rappelant la référence <strong><?= htmlspecialchars($resa->reference) ?></strong>.</p>
-            <p style="margin-top:10px; color:#aaa;">Hôtel SEGURO — L'art de l'hospitalité d'exception.</p>
+            <p><strong>Conditions de règlement :</strong> Règlement à la réception lors du check-in ou par Mobile Money / Carte bancaire / Virement.</p>
+            <p>Pour toute question relative à cette facture, veuillez contacter notre conciergerie à <em><?= htmlspecialchars(hotel_email()) ?></em> en rappelant la référence <strong><?= htmlspecialchars($resa->reference) ?></strong>.</p>
+            <p style="margin-top:10px; color:#aaa;"><?= htmlspecialchars(hotel_name()) ?> — L'art de l'hospitalité d'exception.</p>
         </div>
     </div>
 

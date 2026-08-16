@@ -7,8 +7,8 @@
         <div class="footer-divider">
           <span></span><i></i><span class="right"></span>
         </div>
-        <p class="footer-logo-name">SEGURO</p>
-        <p class="footer-logo-tagline">La Sérénité · La Qualité · La Confiance</p>
+        <p class="footer-logo-name"><?= htmlspecialchars(hotel_short_name()) ?></p>
+        <p class="footer-logo-tagline"><?= htmlspecialchars(hotel_tagline()) ?></p>
         <div class="footer-divider" style="margin-top:16px;">
           <span></span><i></i><span class="right"></span>
         </div>
@@ -36,7 +36,7 @@
         <!-- L'Hôtel -->
         <div class="col-lg-3 col-md-6">
           <div class="footer-nav-col">
-            <h6>L'Hôtel SEGURO</h6>
+            <h6><?= htmlspecialchars(hotel_name()) ?></h6>
             <ul>
               <li><a href="<?= $baseUrl ?>/pages/about.php">Notre Histoire</a></li>
               <li><a href="<?= $baseUrl ?>/pages/about.php#vision">Notre Vision</a></li>
@@ -52,14 +52,14 @@
             <h6>Contact</h6>
             <div class="footer-contact-text">
               <p>
-                Hôtel SEGURO<br>
-                Agbodrafo, entrée de Aného<br>
-                Togo, Afrique de l'Ouest
+                <?= htmlspecialchars(hotel_name()) ?><br>
+                <?= htmlspecialchars(hotel_location()) ?><br>
+                <?= htmlspecialchars(hotel_country()) ?>
               </p>
               <br>
-              <p><a href="tel:+22800000000">+228 00 00 00 00</a></p>
-              <p><a href="mailto:reservations@hotelseguro.com">reservations@hotelseguro.com</a></p>
-              <p><a href="mailto:contact@hotelseguro.com">contact@hotelseguro.com</a></p>
+              <p><a href="tel:<?= htmlspecialchars(hotel_phone()) ?>"><?= htmlspecialchars(hotel_phone()) ?></a></p>
+              <p><a href="mailto:<?= htmlspecialchars(hotel_email()) ?>"><?= htmlspecialchars(hotel_email()) ?></a></p>
+              <p><a href="mailto:<?= htmlspecialchars(defined('HOTEL_CONTACT_EMAIL') ? HOTEL_CONTACT_EMAIL : hotel_email()) ?>"><?= htmlspecialchars(defined('HOTEL_CONTACT_EMAIL') ? HOTEL_CONTACT_EMAIL : hotel_email()) ?></a></p>
             </div>
             <div class="footer-social mt-4">
               <a href="#" title="Instagram">IG</a>
@@ -74,8 +74,8 @@
           <div class="footer-nav-col">
             <h6>Restez Informé</h6>
             <p class="footer-contact-text" style="margin-bottom:24px;">
-              Offres exclusives, événements et instants de vie
-              à l'Hôtel SEGURO — directement dans votre boîte mail.
+              Offres exclusives, événements et instants d'exception
+              à <?= htmlspecialchars(hotel_name()) ?> — directement dans votre boîte mail.
             </p>
             <div class="footer-newsletter">
               <input type="email" placeholder="Votre adresse e-mail">
@@ -89,7 +89,7 @@
 
     <!-- Footer bottom -->
     <div class="footer-bottom">
-      <p>&copy; 2025 Hôtel SEGURO · Agbodrafo, Togo · Tous droits réservés</p>
+      <p>&copy; <?= date('Y') ?> <?= htmlspecialchars(hotel_name()) ?> · <?= htmlspecialchars(hotel_location()) ?> · Tous droits réservés</p>
       <div class="footer-bottom-links">
         <a href="<?= $baseUrl ?>/pages/contact.php">Politique de confidentialité</a>
         <a href="<?= $baseUrl ?>/pages/contact.php">Mentions légales</a>

@@ -28,14 +28,33 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
         }
     }
 
-    // Identité Établissement
-    define('HOTEL_NAME', getenv('HOTEL_NAME') ?: 'Hôtel SEGURO');
-    define('HOTEL_TAGLINE', getenv('HOTEL_TAGLINE') ?: 'La Sérénité · La Qualité · La Confiance');
-    define('HOTEL_LOCATION', getenv('HOTEL_LOCATION') ?: 'Agbodrafo, entrée de Aného, Togo');
+    // ── Moteur Logiciel (SaaS / White-Label) ──
+    define('SYSTEM_NAME', getenv('SYSTEM_NAME') ?: 'HospitOS');
+    define('SYSTEM_VERSION', getenv('SYSTEM_VERSION') ?: '2.0.0');
+
+    // ── Identité Établissement (Personnalisable par hôtel) ──
+    define('HOTEL_NAME', getenv('HOTEL_NAME') ?: 'Hôtel Grand Prestige & Spa');
+    define('HOTEL_NAME_SHORT', getenv('HOTEL_NAME_SHORT') ?: 'Grand Prestige');
+    define('HOTEL_TAGLINE', getenv('HOTEL_TAGLINE') ?: 'L\'Excellence · Le Confort · L\'Hospitalité');
+    define('HOTEL_LOCATION', getenv('HOTEL_LOCATION') ?: 'Avenue Océane, Front de Mer');
+    define('HOTEL_CITY', getenv('HOTEL_CITY') ?: 'Lomé');
+    define('HOTEL_COUNTRY', getenv('HOTEL_COUNTRY') ?: 'Togo');
     define('HOTEL_PHONE', getenv('HOTEL_PHONE') ?: '+228 90 00 00 00');
     define('HOTEL_WHATSAPP', getenv('HOTEL_WHATSAPP') ?: '22890000000');
-    define('HOTEL_EMAIL', getenv('HOTEL_EMAIL') ?: 'reservations@hotelseguro.com');
-    define('HOTEL_CONTACT_EMAIL', getenv('HOTEL_CONTACT_EMAIL') ?: 'contact@hotelseguro.com');
+    define('HOTEL_EMAIL', getenv('HOTEL_EMAIL') ?: 'reservations@grandprestige-hotel.com');
+    define('HOTEL_CONTACT_EMAIL', getenv('HOTEL_CONTACT_EMAIL') ?: 'contact@grandprestige-hotel.com');
+    define('HOTEL_CURRENCY', getenv('HOTEL_CURRENCY') ?: 'FCFA');
+    define('HOTEL_REF_PREFIX', getenv('HOTEL_REF_PREFIX') ?: 'HTL');
+    define('HOTEL_CLIENT_PREFIX', getenv('HOTEL_CLIENT_PREFIX') ?: 'CLI');
+
+    // ── Tokens de Design & Charte Graphique Dynamique ──
+    define('THEME_COLOR_PRIMARY', getenv('THEME_COLOR_PRIMARY') ?: '#1a3a2a');
+    define('THEME_COLOR_PRIMARY_LIGHT', getenv('THEME_COLOR_PRIMARY_LIGHT') ?: '#2d5c40');
+    define('THEME_COLOR_ACCENT', getenv('THEME_COLOR_ACCENT') ?: '#b89035');
+    define('THEME_COLOR_ACCENT_LIGHT', getenv('THEME_COLOR_ACCENT_LIGHT') ?: '#d4a948');
+    define('THEME_COLOR_ACCENT_PALE', getenv('THEME_COLOR_ACCENT_PALE') ?: '#f5e9c4');
+    define('THEME_COLOR_DARK', getenv('THEME_COLOR_DARK') ?: '#111111');
+    define('THEME_COLOR_LIGHT', getenv('THEME_COLOR_LIGHT') ?: '#faf8f3');
 
     // Base de données
     define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
@@ -46,8 +65,8 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
 
     // Brevo API Mail
     define('BREVO_API_KEY', getenv('BREVO_API_KEY') ?: '');
-    define('BREVO_SENDER_EMAIL', getenv('BREVO_SENDER_EMAIL') ?: 'reservations@hotelseguro.com');
-    define('BREVO_SENDER_NAME', getenv('BREVO_SENDER_NAME') ?: 'Hôtel SEGURO — Conciergerie');
+    define('BREVO_SENDER_EMAIL', getenv('BREVO_SENDER_EMAIL') ?: HOTEL_EMAIL);
+    define('BREVO_SENDER_NAME', getenv('BREVO_SENDER_NAME') ?: (HOTEL_NAME . ' — Conciergerie'));
 
     // Environnement
     define('APP_ENV', getenv('APP_ENV') ?: 'production');
@@ -105,6 +124,35 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
             return false;
         }
         return hash_equals($_SESSION['csrf_token'], $token);
+    }
+
+    // ── Helper Functions Marque Blanche ──
+    function hotel_name(): string { return HOTEL_NAME; }
+    function hotel_short_name(): string { return HOTEL_NAME_SHORT; }
+    function hotel_tagline(): string { return HOTEL_TAGLINE; }
+    function hotel_location(): string { return HOTEL_LOCATION; }
+    function hotel_city(): string { return HOTEL_CITY; }
+    function hotel_country(): string { return HOTEL_COUNTRY; }
+    function hotel_phone(): string { return HOTEL_PHONE; }
+    function hotel_whatsapp(): string { return HOTEL_WHATSAPP; }
+    function hotel_email(): string { return HOTEL_EMAIL; }
+    function hotel_currency(): string { return HOTEL_CURRENCY; }
+    function hotel_ref_prefix(): string { return HOTEL_REF_PREFIX; }
+    function hotel_client_prefix(): string { return HOTEL_CLIENT_PREFIX; }
+
+    function hotel_theme_css(): string {
+        return '<style id="hotel-theme-vars">
+            :root {
+                --vert: ' . THEME_COLOR_PRIMARY . ' !important;
+                --vert-clair: ' . THEME_COLOR_PRIMARY_LIGHT . ' !important;
+                --or: ' . THEME_COLOR_ACCENT . ' !important;
+                --or-clair: ' . THEME_COLOR_ACCENT_LIGHT . ' !important;
+                --or-pale: ' . THEME_COLOR_ACCENT_PALE . ' !important;
+                --noir: ' . THEME_COLOR_DARK . ' !important;
+                --blanc: ' . THEME_COLOR_LIGHT . ' !important;
+                --bordure-form: rgba(184, 144, 53, 0.45);
+            }
+        </style>';
     }
 }
 

@@ -44,10 +44,10 @@
         <span class="hero-orn-line right"></span>
       </div>
 
-      <h1 class="hero-title">Hôtel<br><em>Seguro</em></h1>
+      <h1 class="hero-title"><?= htmlspecialchars(hotel_short_name()) ?></h1>
 
       <p class="hero-subtitle">
-        La nature est là. Le calme est là.<br>Rien n'a été sacrifié sur l'autel du confort.
+        <?= htmlspecialchars(hotel_tagline()) ?><br>Rien n'a été sacrifié sur l'autel du confort et de l'excellence.
       </p>
 
       <div class="hero-cta-wrap">
@@ -59,7 +59,7 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       PRÉSENTATION — L'expérience Seguro
+       PRÉSENTATION — L'expérience
   ══════════════════════════════════════════ -->
   <section style="padding: 120px 60px; background: var(--blanc);">
     <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
@@ -74,10 +74,10 @@
       </h2>
       
       <p style="font-size: 1.1rem; color: #555; line-height: 1.8; max-width: 700px; margin: 0 auto 48px;">
-        Niché sur les rives paisibles d'Agbodrafo, l'Hôtel Seguro vous invite à découvrir 
+        Niché au cœur d'un environnement privilégié à <?= htmlspecialchars(hotel_location()) ?>, <?= htmlspecialchars(hotel_name()) ?> vous invite à découvrir 
         l'harmonie parfaite entre nature préservée et confort raffiné. Notre établissement 
-        de charme vous offre un refuge hors du temps où chaque détail a été pensé pour 
-        sublimer votre séjour au Togo.
+        d'exception vous offre un refuge hors du temps où chaque détail a été pensé pour 
+        sublimer votre séjour.
       </p>
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 48px; margin-top: 64px;">

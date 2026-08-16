@@ -100,9 +100,18 @@ class Mail {
     }
 
     /**
-     * Template HTML global aux couleurs de l'Hôtel SEGURO (#1a3a2a & #c9a84c)
+     * Template HTML global aux couleurs configurées de l'établissement
      */
     private static function wrapTemplate($title, $bodyContent): string {
+        $hotelName     = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige & Spa';
+        $hotelTagline  = defined('HOTEL_TAGLINE') ? HOTEL_TAGLINE : 'L\'Excellence · Le Confort · L\'Hospitalité';
+        $hotelLocation = defined('HOTEL_LOCATION') ? HOTEL_LOCATION : 'Avenue Océane, Front de Mer';
+        $hotelPhone    = defined('HOTEL_PHONE') ? HOTEL_PHONE : '+228 90 00 00 00';
+        $hotelEmail    = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'contact@grandprestige-hotel.com';
+        $primaryColor  = defined('THEME_COLOR_PRIMARY') ? THEME_COLOR_PRIMARY : '#1a3a2a';
+        $accentColor   = defined('THEME_COLOR_ACCENT') ? THEME_COLOR_ACCENT : '#b89035';
+        $year          = date('Y');
+
         return <<<HTML
 <!DOCTYPE html>
 <html lang="fr">
@@ -113,26 +122,26 @@ class Mail {
 <style>
     body { margin: 0; padding: 0; background-color: #f4f2eb; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #2b2b2b; }
     .email-container { max-width: 600px; margin: 30px auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-    .email-header { background: #1a3a2a; padding: 40px 30px; text-align: center; color: #ffffff; }
-    .header-logo { font-family: Georgia, serif; font-size: 28px; font-weight: bold; letter-spacing: 4px; color: #c9a84c; text-transform: uppercase; margin: 0; }
+    .email-header { background: {$primaryColor}; padding: 40px 30px; text-align: center; color: #ffffff; }
+    .header-logo { font-family: Georgia, serif; font-size: 26px; font-weight: bold; letter-spacing: 3px; color: {$accentColor}; text-transform: uppercase; margin: 0; }
     .header-tagline { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.7); text-transform: uppercase; margin-top: 6px; }
-    .gold-divider { height: 2px; background: linear-gradient(90deg, transparent, #c9a84c, transparent); margin: 20px 0; }
+    .gold-divider { height: 2px; background: linear-gradient(90deg, transparent, {$accentColor}, transparent); margin: 20px 0; }
     .email-body { padding: 40px 35px; line-height: 1.7; font-size: 15px; color: #444444; }
-    .greeting { font-family: Georgia, serif; font-size: 22px; color: #1a3a2a; margin-bottom: 18px; }
-    .code-box { background: #fdfbf7; border: 2px dashed #c9a84c; border-radius: 10px; padding: 25px; text-align: center; margin: 25px 0; }
+    .greeting { font-family: Georgia, serif; font-size: 22px; color: {$primaryColor}; margin-bottom: 18px; }
+    .code-box { background: #fdfbf7; border: 2px dashed {$accentColor}; border-radius: 10px; padding: 25px; text-align: center; margin: 25px 0; }
     .code-title { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #888888; margin-bottom: 8px; }
-    .code-value { font-size: 32px; font-weight: bold; letter-spacing: 6px; color: #1a3a2a; font-family: monospace; }
-    .btn-action { display: inline-block; background: #1a3a2a; color: #c9a84c !important; text-decoration: none; padding: 14px 32px; border-radius: 6px; font-weight: bold; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; margin-top: 20px; transition: background 0.3s; }
-    .info-card { background: #faf8f3; border-left: 4px solid #c9a84c; padding: 18px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; color: #555555; }
+    .code-value { font-size: 30px; font-weight: bold; letter-spacing: 5px; color: {$primaryColor}; font-family: monospace; }
+    .btn-action { display: inline-block; background: {$primaryColor}; color: {$accentColor} !important; text-decoration: none; padding: 14px 32px; border-radius: 6px; font-weight: bold; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; margin-top: 20px; transition: background 0.3s; }
+    .info-card { background: #faf8f3; border-left: 4px solid {$accentColor}; padding: 18px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; color: #555555; }
     .email-footer { background: #12281d; padding: 30px; text-align: center; color: rgba(255,255,255,0.6); font-size: 12px; line-height: 1.6; }
-    .footer-links a { color: #c9a84c; text-decoration: none; margin: 0 10px; }
+    .footer-links a { color: {$accentColor}; text-decoration: none; margin: 0 10px; }
 </style>
 </head>
 <body>
     <div class="email-container">
         <div class="email-header">
-            <div class="header-logo">Hôtel Seguro</div>
-            <div class="header-tagline">Lomé · Agbodrafo · Togo</div>
+            <div class="header-logo">{$hotelName}</div>
+            <div class="header-tagline">{$hotelTagline}</div>
             <div class="gold-divider"></div>
         </div>
 
@@ -141,14 +150,9 @@ class Mail {
         </div>
 
         <div class="email-footer">
-            <p style="margin:0 0 10px 0; color:#ffffff; font-weight:bold;">Hôtel SEGURO ****</p>
-            <p style="margin:0 0 15px 0;">Agbodrafo, entrée d'Aného, Togo — Afrique de l'Ouest<br>Tél : +228 00 00 00 00 | Email : contact@hotelseguro.com</p>
-            <div class="footer-links">
-                <a href="https://hotelseguro.com/pages/chambres.php">Nos Chambres</a> ·
-                <a href="https://hotelseguro.com/pages/services.php">Services</a> ·
-                <a href="https://hotelseguro.com/pages/contact.php">Contact</a>
-            </div>
-            <p style="margin-top:20px; font-size:11px; color:rgba(255,255,255,0.4);">&copy; 2026 Hôtel SEGURO. Tous droits réservés.</p>
+            <p style="margin:0 0 10px 0; color:#ffffff; font-weight:bold;">{$hotelName}</p>
+            <p style="margin:0 0 15px 0;">{$hotelLocation}<br>Tél : {$hotelPhone} | Email : {$hotelEmail}</p>
+            <p style="margin-top:20px; font-size:11px; color:rgba(255,255,255,0.4);">&copy; {$year} {$hotelName}. Tous droits réservés.</p>
         </div>
     </div>
 </body>
@@ -160,7 +164,8 @@ HTML;
      * Email 1 : Code OTP de vérification d'adresse email
      */
     public static function sendOTP($toEmail, $nomPrenom, $otpCode): bool {
-        $subject = "Votre code de vérification OTP — Hôtel SEGURO";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Votre code de vérification OTP — {$hotelName}";
         $content = <<<HTML
         <div class="greeting">Bonjour {$nomPrenom},</div>
         <p>Afin de valider votre adresse email et de sécuriser l'accès à votre espace personnel client, voici votre code de vérification à usage unique (OTP) :</p>
@@ -184,10 +189,11 @@ HTML;
      * Email 2 : Bienvenue & Code Client
      */
     public static function sendWelcomeClientCode($toEmail, $nomPrenom, $codeClient): bool {
-        $subject = "Bienvenue à l'Hôtel SEGURO — Vos identifiants client";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Bienvenue à {$hotelName} — Vos identifiants client";
         $content = <<<HTML
         <div class="greeting">Bienvenue {$nomPrenom},</div>
-        <p>Nous sommes ravis de vous compter parmi les hôtes privilégiés de l'Hôtel SEGURO.</p>
+        <p>Nous sommes ravis de vous compter parmi les hôtes privilégiés de {$hotelName}.</p>
         <p>Votre compte client a été créé avec succès. Voici votre code d'accès personnel :</p>
         
         <div class="code-box">
@@ -208,7 +214,8 @@ HTML;
      * Email 3 : Confirmation de création de réservation (Client)
      */
     public static function sendReservationConfirmation($toEmail, $nomPrenom, $reference, $chambreNom, $dateArrivee, $dateDepart, $prixTotalFormatted, $optionsList = [], $promoCode = null, $paiementInfo = null, $demandesSpeciales = null): bool {
-        $subject = "Réservation enregistrée [{$reference}] — Hôtel SEGURO";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Réservation enregistrée [{$reference}] — {$hotelName}";
         $arrFmt = date('d/m/Y', strtotime($dateArrivee));
         $depFmt = date('d/m/Y', strtotime($dateDepart));
         
@@ -269,7 +276,8 @@ HTML;
      * Email 4 : Notification de nouvelle réservation aux Administrateurs
      */
     public static function sendAdminNewReservationNotification($adminEmails, $reference, $clientNom, $clientEmail, $chambreNom, $dateArrivee, $dateDepart, $prixTotalFormatted, $optionsList = [], $promoCode = null, $paiementInfo = null, $demandesSpeciales = null): bool {
-        $subject = "[ADMIN] Nouvelle réservation reçue [{$reference}] — Hôtel SEGURO";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "[ADMIN] Nouvelle réservation reçue [{$reference}] — {$hotelName}";
         $arrFmt  = date('d/m/Y', strtotime($dateArrivee));
         $depFmt  = date('d/m/Y', strtotime($dateDepart));
 
@@ -344,12 +352,13 @@ HTML;
      * Email 5 : Mise à jour de statut (Validation / Annulation)
      */
     public static function sendStatusUpdate($toEmail, $nomPrenom, $reference, $newStatut, $chambreNom, $noteAdmin = null): bool {
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
         $isValidee = ($newStatut === 'validee');
         $statutTxt = $isValidee ? "VALIDÉE ✓" : "ANNULÉE";
-        $subject   = "Statut de votre réservation [{$reference}] : {$statutTxt} — Hôtel SEGURO";
+        $subject   = "Statut de votre réservation [{$reference}] : {$statutTxt} — {$hotelName}";
         $colorStat = $isValidee ? "#28a745" : "#dc3545";
         $introText = $isValidee 
-            ? "Nous avons le plaisir de vous informer que votre réservation a été <strong>validée avec succès</strong> par l'équipe de l'Hôtel SEGURO !" 
+            ? "Nous avons le plaisir de vous informer que votre réservation a été <strong>validée avec succès</strong> par l'équipe de {$hotelName} !" 
             : "Votre réservation a été annulée. Si vous pensez qu'il s'agit d'une erreur, contactez notre équipe.";
 
         $noteHtml = '';
@@ -386,7 +395,8 @@ HTML;
      * Email 6 : Alerte Admin lors d'une MODIFICATION de réservation par le client
      */
     public static function sendAdminReservationModificationNotification($adminEmails, $reference, $clientNom, $clientEmail, $chambreNom, $dateArrivee, $dateDepart, $prixTotalFormatted, $demandes = ''): bool {
-        $subject = "[ADMIN] Réservation MODIFIÉE par le client [{$reference}] — Hôtel SEGURO";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "[ADMIN] Réservation MODIFIÉE par le client [{$reference}] — {$hotelName}";
         $arrFmt  = date('d/m/Y', strtotime($dateArrivee));
         $depFmt  = date('d/m/Y', strtotime($dateDepart));
 
@@ -431,7 +441,8 @@ HTML;
      * Email 7 : Alerte Admin lors d'une ANNULATION de réservation par le client
      */
     public static function sendAdminReservationCancellationNotification($adminEmails, $reference, $clientNom, $clientEmail, $chambreNom, $dateArrivee, $dateDepart): bool {
-        $subject = "[ADMIN] Réservation ANNULÉE par le client [{$reference}] — Hôtel SEGURO";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "[ADMIN] Réservation ANNULÉE par le client [{$reference}] — {$hotelName}";
         $arrFmt  = date('d/m/Y', strtotime($dateArrivee));
         $depFmt  = date('d/m/Y', strtotime($dateDepart));
 
@@ -473,7 +484,8 @@ HTML;
      * Email 8 : Invitation automatique à laisser un avis suite au Check-out
      */
     public static function sendReviewInvitation($toEmail, $nomPrenom, $reference, $chambreNom): bool {
-        $subject = "Votre expérience à l'Hôtel SEGURO — Donnez votre avis [{$reference}]";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Votre expérience à {$hotelName} — Donnez votre avis [{$reference}]";
         $content = <<<HTML
         <div class="greeting">Cher(e) {$nomPrenom},</div>
         <p>Nous espérons que votre séjour au sein de notre établissement (<strong>{$chambreNom}</strong>) s'est déroulé à la hauteur de vos attentes.</p>
@@ -500,10 +512,11 @@ HTML;
      * Email 9 : Récupération du Code Client / Identifiants
      */
     public static function sendClientCodeRecovery($toEmail, $nomPrenom, $codeClient): bool {
-        $subject = "Récupération de vos identifiants — Hôtel SEGURO [{$codeClient}]";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Récupération de vos identifiants — {$hotelName} [{$codeClient}]";
         $content = <<<HTML
         <div class="greeting">Cher(e) {$nomPrenom},</div>
-        <p>Vous avez demandé la récupération de vos identifiants de connexion à votre espace personnel <strong>Hôtel SEGURO</strong>.</p>
+        <p>Vous avez demandé la récupération de vos identifiants de connexion à votre espace personnel <strong>{$hotelName}</strong>.</p>
         
         <div class="code-box">
             <div class="code-title">Votre Code Client Confidentiel</div>
@@ -526,10 +539,11 @@ HTML;
      * Email 10 : Demande de Nouveau Code Client
      */
     public static function sendNewCodeClientRequest($toEmail, $nomPrenom, $newCodeClient): bool {
-        $subject = "Votre nouveau Code Client — Hôtel SEGURO [{$newCodeClient}]";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Votre nouveau Code Client — {$hotelName} [{$newCodeClient}]";
         $content = <<<HTML
         <div class="greeting">Cher(e) {$nomPrenom},</div>
-        <p>Vous avez demandé la génération d'un <strong>nouveau Code Client</strong> pour votre espace personnel Hôtel SEGURO.</p>
+        <p>Vous avez demandé la génération d'un <strong>nouveau Code Client</strong> pour votre espace personnel {$hotelName}.</p>
         
         <div class="code-box">
             <div class="code-title">Votre Nouveau Code Client</div>
@@ -552,7 +566,8 @@ HTML;
      * Email 11 : Confirmation de réception de demande de Devis Événement (Prospect)
      */
     public static function sendEventQuoteConfirmation($toEmail, $nomContact, $reference, $typeEvent, $dateEvent): bool {
-        $subject = "Votre demande de devis événement — Hôtel SEGURO [{$reference}]";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Votre demande de devis événement — {$hotelName} [{$reference}]";
         $content = <<<HTML
         <div class="greeting">Cher(e) {$nomContact},</div>
         <p>Nous avons bien reçu votre demande de devis concernant votre événement : <strong>{$typeEvent}</strong> prévu le <strong>{$dateEvent}</strong>.</p>
@@ -579,10 +594,11 @@ HTML;
      * Email 12 : Alerte Admin Nouvelle Demande de Devis Événement
      */
     public static function sendAdminNewEventQuoteNotification($adminEmails, $reference, $nomContact, $entreprise, $email, $tel, $typeEvent, $espace, $dateEvent, $nbParticipants): bool {
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
         $subject = "[DEVIS ÉVÉNEMENT] Nouvelle demande {$typeEvent} - {$reference}";
         $content = <<<HTML
         <div class="greeting">Alerte Direction &amp; Événements,</div>
-        <p>Une nouvelle demande de devis événement a été soumise sur le site de l'Hôtel SEGURO :</p>
+        <p>Une nouvelle demande de devis événement a été soumise sur la plateforme de {$hotelName} :</p>
         
         <div class="info-card" style="border-left-color: #1a3a2a;">
             <table style="width:100%; border-collapse:collapse; font-size:14px;">
@@ -632,7 +648,8 @@ HTML;
             $statutBg = '#ffebee';
         }
 
-        $subject = "Mise à jour de votre demande de devis [{$reference}] — Hôtel SEGURO";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Mise à jour de votre demande de devis [{$reference}] — {$hotelName}";
 
         $reponseHtml = '';
         if (!empty($messageReponse)) {
@@ -653,7 +670,7 @@ HTML;
 
         $content = <<<HTML
         <div class="greeting">Cher(e) {$nomContact},</div>
-        <p>Nous faisons suite à votre demande de devis n° <strong>{$reference}</strong> concernant votre événement <strong>{$typeEvent}</strong> à l'Hôtel SEGURO.</p>
+        <p>Nous faisons suite à votre demande de devis n° <strong>{$reference}</strong> concernant votre événement <strong>{$typeEvent}</strong> à {$hotelName}.</p>
         
         <div style="background: {$statutBg}; border: 1.5px solid {$statutColor}; border-radius: 8px; padding: 14px 18px; margin: 20px 0; text-align: center;">
             <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin-bottom: 4px;">État de votre dossier</div>
@@ -684,7 +701,8 @@ HTML;
      * Email 14 : Confirmation de Commande Room Service (Client)
      */
     public static function sendRoomServiceConfirmation($toEmail, $clientNom, $reference, $chambreNumero, $items, $totalEstime, $instructions = null): bool {
-        $subject = "Commande Room Service confirmée [{$reference}] — Hôtel SEGURO";
+        $hotelName = defined('HOTEL_NAME') ? HOTEL_NAME : 'Hôtel Grand Prestige';
+        $subject = "Commande Room Service confirmée [{$reference}] — {$hotelName}";
 
         $itemsRows = '';
         if (is_array($items)) {

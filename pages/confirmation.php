@@ -234,7 +234,7 @@ include(__DIR__ . '/../layouts/header.php');
             <div class="confirm-row">
                 <span class="confirm-label">Total</span>
                 <span class="confirm-value" style="font-size:1.1rem;color:var(--or);">
-                    <?= number_format($resa->prix_total ?? 0, 0, ',', ' ') ?> FCFA
+                    <?= number_format($resa->prix_total ?? 0, 0, ',', ' ') ?> <?= hotel_currency() ?>
                 </span>
             </div>
         </div>
@@ -278,7 +278,7 @@ include(__DIR__ . '/../layouts/header.php');
         <i class="fas fa-info-circle" style="color:var(--or);margin-right:8px;"></i>
         Notre équipe validera votre réservation sous <strong>24 heures</strong>.
         Vous recevrez un email de confirmation. Pour toute question :
-        <strong>contact@hotelseguro.com</strong> ou <strong>+228 00 00 00 00</strong>.
+        <strong><?= htmlspecialchars(hotel_email()) ?></strong> ou <strong><?= htmlspecialchars(hotel_phone()) ?></strong>.
     </div>
 
     <!-- Actions -->

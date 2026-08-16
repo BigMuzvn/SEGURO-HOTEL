@@ -66,7 +66,7 @@ function sanitize_csv_cell($value): string {
 }
 
 // Headers pour téléchargement de fichier CSV avec BOM UTF-8
-$filename = "reservations_seguro_" . date('Y-m-d_His') . ".csv";
+$filename = "reservations_export_" . date('Y-m-d_His') . ".csv";
 header('Content-Type: text/csv; charset=UTF-8');
 header('Content-Disposition: attachment; filename="' . $filename . '"');
 header('Pragma: no-cache');

@@ -161,12 +161,13 @@ $stats = $stats_stmt->fetch(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devis Événements &amp; Séminaires — Admin SEGURO</title>
+    <title>Devis Événements &amp; Séminaires — Admin <?= htmlspecialchars(hotel_name()) ?></title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <?= hotel_theme_css() ?>
     
     <style>
         :root {
@@ -651,7 +652,7 @@ $stats = $stats_stmt->fetch(PDO::FETCH_ASSOC);
         <div class="sidebar-header">
             <a href="dashboard.php" class="sidebar-logo">
                 <i class="fas fa-crown"></i>
-                <span>Hôtel Seguro</span>
+                <span><?= htmlspecialchars(hotel_short_name()) ?></span>
             </a>
         </div>
         
@@ -990,7 +991,7 @@ $stats = $stats_stmt->fetch(PDO::FETCH_ASSOC);
         document.getElementById('m_propos_subtitle').textContent = `Dossier ${d.reference} · ${d.type_evenement} (${d.date_evenement})`;
         document.getElementById('m_devis_dest').value = `${d.nom_contact} <${d.email}>` + (d.entreprise ? ` (${d.entreprise})` : '');
         document.getElementById('m_devis_montant').value = d.budget_estime || '';
-        document.getElementById('m_devis_msg').value = `Bonjour ${d.nom_contact},\n\nNous avons le plaisir de vous transmettre notre proposition personnalisée pour votre événement "${d.type_evenement}" prévu le ${d.date_evenement} à l'Hôtel SEGURO.\n\nNotre formule comprend la mise à disposition de l'espace "${d.espace_souhaite}", l'accueil personnalisé de vos ${d.nb_participants} participants ainsi que les prestations de restauration et d'équipements techniques dédiées.\n\nRestant à votre écoute pour organiser une visite des lieux ou ajuster cette offre selon vos souhaits.`;
+        document.getElementById('m_devis_msg').value = `Bonjour ${d.nom_contact},\n\nNous avons le plaisir de vous transmettre notre proposition personnalisée pour votre événement "${d.type_evenement}" prévu le ${d.date_evenement} à <?= addslashes(hotel_name()) ?>.\n\nNotre formule comprend la mise à disposition de l'espace "${d.espace_souhaite}", l'accueil personnalisé de vos ${d.nb_participants} participants ainsi que les prestations de restauration et d'équipements techniques dédiées.\n\nRestant à votre écoute pour organiser une visite des lieux ou ajuster cette offre selon vos souhaits.`;
         
         const modal = document.getElementById('proposalModal');
         modal.style.display = 'flex';

@@ -277,7 +277,7 @@ include(__DIR__ . '/../layouts/header.php');
                     </a>
                 </div>
                 <input type="text" name="code_client" class="form-control" 
-                       placeholder="Ex: SEG-2026-AB3K" required style="letter-spacing: 0.08em; text-transform: uppercase;">
+                       placeholder="Ex: <?= htmlspecialchars(hotel_client_prefix()) ?>-2026-AB3K" required style="letter-spacing: 0.08em; text-transform: uppercase;">
                 <small style="color: #777; font-size: 0.82rem; margin-top: 6px; display: block;">
                     Ce code confidentiel unique vous a été envoyé par email lors de votre réservation.
                 </small>

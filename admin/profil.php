@@ -165,9 +165,10 @@ $equipe = $userModel->getAllAdmins();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Équipe &amp; Permissions RBAC — Admin Hôtel SEGURO</title>
+    <title>Équipe &amp; Permissions RBAC — Admin <?= htmlspecialchars(hotel_name()) ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <?= hotel_theme_css() ?>
     <style>
         :root {
             --vert:#1a3a2a; --vert-clair:#2d5c40; --or:#c9a84c; --or-clair:#dfc278;
@@ -371,7 +372,7 @@ $equipe = $userModel->getAllAdmins();
 
 <aside class="sidebar">
     <div class="sidebar-header">
-        <a href="dashboard.php" class="sidebar-logo"><i class="fas fa-crown"></i><span>Hôtel Seguro</span></a>
+        <a href="dashboard.php" class="sidebar-logo"><i class="fas fa-crown"></i><span><?= htmlspecialchars(hotel_short_name()) ?></span></a>
     </div>
     <nav class="sidebar-nav">
         <div class="nav-section">Principal</div>
@@ -484,7 +485,7 @@ $equipe = $userModel->getAllAdmins();
                 </div>
                 <div class="form-group">
                     <label>Email professionnel</label>
-                    <input type="email" name="email" required placeholder="ex: marc.koffi@hotelseguro.com">
+                    <input type="email" name="email" required placeholder="ex: contact@<?= parse_url(defined('BASE_URL') ? BASE_URL : 'hotel.com', PHP_URL_HOST) ?: 'hotel.com' ?>">
                 </div>
                 <div class="form-group">
                     <label>Téléphone / WhatsApp</label>
