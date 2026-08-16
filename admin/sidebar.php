@@ -541,6 +541,13 @@ $admin_role_label = ($_SESSION['user_role'] ?? '') === 'super_admin' ? 'Super Ad
             </a>
         <?php endif; ?>
 
+        <?php if (AdminAuth::isSuperAdmin()): ?>
+            <a href="<?= $baseUrl ?>/setup/index.php" target="_blank" class="nav-item" style="color:var(--or) !important; border:1px dashed rgba(201,168,76,0.4); margin-top:6px; background:rgba(201,168,76,0.06);" title="Studio de Déploiement Multi-Hôtels">
+                <i class="fas fa-layer-group" style="color:var(--or);"></i>
+                <span>Master Multi-Hôtels</span>
+            </a>
+        <?php endif; ?>
+
         <!-- Raccourci vers le site public -->
         <a href="<?= $baseUrl ?>/index.php" target="_blank" class="nav-item public-link" title="Ouvrir le site public">
             <i class="fas fa-external-link-alt"></i>

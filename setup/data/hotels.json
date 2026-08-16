@@ -1,0 +1,50 @@
+{
+    "hotels": [
+        {
+            "id": "hotel_default",
+            "code": "GP-001",
+            "name": "Hôtel Grand Prestige & Spa",
+            "short_name": "Grand Prestige",
+            "initials": "GP",
+            "tagline": "L'Excellence · Le Confort · L'Hospitalité",
+            "subtitle": "Rien n'a été sacrifié sur l'autel du confort et de l'excellence.",
+            "description": "Niché au cœur d'un environnement privilégié à Lomé, l'Hôtel Grand Prestige & Spa vous invite à découvrir l'harmonie parfaite entre nature préservée et confort raffiné.",
+            "city": "Lomé",
+            "country": "Togo",
+            "location": "Avenue Océane, Front de Mer",
+            "address": "Boulevard de la Marina, BP 1245",
+            "maps_url": "https:\/\/maps.google.com",
+            "phone": "+228 90 00 00 00",
+            "whatsapp": "22890000000",
+            "email": "reservations@grandprestige-hotel.com",
+            "contact_email": "contact@grandprestige-hotel.com",
+            "currency": "FCFA",
+            "ref_prefix": "HTL",
+            "client_prefix": "CLI",
+            "checkin_time": "14:00",
+            "checkout_time": "12:00",
+            "tva_rate": "18",
+            "tourist_tax": "1000",
+            "theme_preset": "emerald_gold",
+            "theme_colors": {
+                "id": "emerald_gold",
+                "name": "Émeraude Royal & Or",
+                "desc": "Luxe intemporel, nature et prestige (Idéal Resort, Hôtel Spa & Palace)",
+                "primary": "#1a3a2a",
+                "primary_light": "#2d5c40",
+                "accent": "#b89035",
+                "accent_light": "#d4a948",
+                "accent_pale": "#f5e9c4",
+                "dark": "#111111",
+                "light": "#faf8f3"
+            },
+            "hero_media": "video",
+            "is_active": true,
+            "created_at": "2026-08-01 10:00:00",
+            "updated_at": "2026-08-16 13:48:02",
+            "notes": "Établissement vitrine de référence du système HospitOS."
+        }
+    ],
+    "active_hotel_id": "hotel_default",
+    "system_version": "2.0.0"
+}
