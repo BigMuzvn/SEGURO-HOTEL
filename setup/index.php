@@ -468,7 +468,7 @@ require_once __DIR__ . '/includes/header.php';
         <div class="hotel-palette-preview">
           <span style="font-size:0.68rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; margin-right:auto;">Charte :</span>
           <div class="color-dot" style="background:<?= $colors['primary'] ?>;" title="Primaire : <?= $colors['primary'] ?>"></div>
-          <div class="color-dot" style="background:<?= $colors['accent'] ?>;" title="Accent Or : <?= $colors['accent'] ?>"></div>
+          <div class="color-dot" style="background:<?= $colors['accent'] ?>;" title="Accent : <?= $colors['accent'] ?>"></div>
           <div class="color-dot" style="background:<?= $colors['dark'] ?>;" title="Sombre : <?= $colors['dark'] ?>"></div>
           <div class="color-dot" style="background:<?= $colors['light'] ?>;" title="Fond Clair : <?= $colors['light'] ?>"></div>
         </div>

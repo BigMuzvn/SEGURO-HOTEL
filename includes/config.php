@@ -48,14 +48,18 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
     define('HOTEL_REF_PREFIX', getenv('HOTEL_REF_PREFIX') ?: 'HTL');
     define('HOTEL_CLIENT_PREFIX', getenv('HOTEL_CLIENT_PREFIX') ?: 'CLI');
 
-    // ── Tokens de Design & Charte Graphique Dynamique ──
-    define('THEME_COLOR_PRIMARY', getenv('THEME_COLOR_PRIMARY') ?: '#1a3a2a');
-    define('THEME_COLOR_PRIMARY_LIGHT', getenv('THEME_COLOR_PRIMARY_LIGHT') ?: '#2d5c40');
-    define('THEME_COLOR_ACCENT', getenv('THEME_COLOR_ACCENT') ?: '#b89035');
-    define('THEME_COLOR_ACCENT_LIGHT', getenv('THEME_COLOR_ACCENT_LIGHT') ?: '#d4a948');
-    define('THEME_COLOR_ACCENT_PALE', getenv('THEME_COLOR_ACCENT_PALE') ?: '#f5e9c4');
-    define('THEME_COLOR_DARK', getenv('THEME_COLOR_DARK') ?: '#111111');
-    define('THEME_COLOR_LIGHT', getenv('THEME_COLOR_LIGHT') ?: '#faf8f3');
+    // ── Tokens de Design & Charte Graphique Dynamique (4 Codes Couleurs) ──
+    define('THEME_COLOR_PRIMARY', getenv('THEME_COLOR_PRIMARY') ?: '#143323');
+    define('THEME_COLOR_PRIMARY_LIGHT', getenv('THEME_COLOR_PRIMARY_LIGHT') ?: '#24523a');
+    define('THEME_COLOR_PRIMARY_DARK', getenv('THEME_COLOR_PRIMARY_DARK') ?: '#0b1d14');
+    define('THEME_COLOR_ACCENT', getenv('THEME_COLOR_ACCENT') ?: '#c9a84c');
+    define('THEME_COLOR_ACCENT_LIGHT', getenv('THEME_COLOR_ACCENT_LIGHT') ?: '#dcbe68');
+    define('THEME_COLOR_ACCENT_DARK', getenv('THEME_COLOR_ACCENT_DARK') ?: '#9c7b2c');
+    define('THEME_COLOR_ACCENT_PALE', getenv('THEME_COLOR_ACCENT_PALE') ?: '#f5ecd1');
+    define('THEME_COLOR_DARK', getenv('THEME_COLOR_DARK') ?: '#07130c');
+    define('THEME_COLOR_DARK_SURFACE', getenv('THEME_COLOR_DARK_SURFACE') ?: '#0f2418');
+    define('THEME_COLOR_LIGHT', getenv('THEME_COLOR_LIGHT') ?: '#fbf9f4');
+    define('THEME_COLOR_LIGHT_SURFACE', getenv('THEME_COLOR_LIGHT_SURFACE') ?: '#ffffff');
 
     // Base de données
     define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
@@ -95,6 +99,18 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
     }
 
     /**
+     * Convertit un code Hexadécimal en triplet RGB (ex: "201, 168, 76")
+     */
+    function color_hex_to_rgb(string $hex): string {
+        $hex = ltrim($hex, '#');
+        if (strlen($hex) === 3) {
+            $hex = $hex[0].$hex[0].$hex[1].$hex[1].$hex[2].$hex[2];
+        }
+        if (strlen($hex) !== 6) return '0, 0, 0';
+        return hexdec(substr($hex, 0, 2)) . ', ' . hexdec(substr($hex, 2, 2)) . ', ' . hexdec(substr($hex, 4, 2));
+    }
+
+    /**
      * Génère un jeton CSRF et le stocke en session
      */
     function csrf_token(): string {
@@ -127,7 +143,7 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
         return hash_equals($_SESSION['csrf_token'], $token);
     }
 
-    // ── Helper Functions Marque Blanche ──
+    // ── Helper Functions Marque Blanche & Thème ──
     function hotel_name(): string { return HOTEL_NAME; }
     function hotel_short_name(): string { return HOTEL_NAME_SHORT; }
     function hotel_initials(): string {
@@ -151,20 +167,154 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
     function hotel_currency(): string { return HOTEL_CURRENCY; }
     function hotel_ref_prefix(): string { return HOTEL_REF_PREFIX; }
     function hotel_client_prefix(): string { return HOTEL_CLIENT_PREFIX; }
+    function hotel_theme_primary(): string { return THEME_COLOR_PRIMARY; }
+    function hotel_theme_accent(): string { return THEME_COLOR_ACCENT; }
+    function hotel_theme_dark(): string { return THEME_COLOR_DARK; }
+    function hotel_theme_light(): string { return THEME_COLOR_LIGHT; }
 
     function hotel_theme_css(): string {
+        $primaryRgb = color_hex_to_rgb(THEME_COLOR_PRIMARY);
+        $accentRgb  = color_hex_to_rgb(THEME_COLOR_ACCENT);
+        $darkRgb    = color_hex_to_rgb(THEME_COLOR_DARK);
+        $lightRgb   = color_hex_to_rgb(THEME_COLOR_LIGHT);
+
         return '<style id="hotel-theme-vars">
             :root {
-                --vert: ' . THEME_COLOR_PRIMARY . ' !important;
-                --vert-clair: ' . THEME_COLOR_PRIMARY_LIGHT . ' !important;
-                --or: ' . THEME_COLOR_ACCENT . ' !important;
-                --or-clair: ' . THEME_COLOR_ACCENT_LIGHT . ' !important;
-                --or-pale: ' . THEME_COLOR_ACCENT_PALE . ' !important;
-                --noir: ' . THEME_COLOR_DARK . ' !important;
-                --blanc: ' . THEME_COLOR_LIGHT . ' !important;
-                --bordure-form: rgba(184, 144, 53, 0.45);
+                --color-primary: ' . THEME_COLOR_PRIMARY . ';
+                --color-primary-rgb: ' . $primaryRgb . ';
+                --color-primary-light: ' . THEME_COLOR_PRIMARY_LIGHT . ';
+                --color-primary-dark: ' . THEME_COLOR_PRIMARY_DARK . ';
+                
+                --color-accent: ' . THEME_COLOR_ACCENT . ';
+                --color-accent-rgb: ' . $accentRgb . ';
+                --color-accent-light: ' . THEME_COLOR_ACCENT_LIGHT . ';
+                --color-accent-dark: ' . THEME_COLOR_ACCENT_DARK . ';
+                --color-accent-pale: ' . THEME_COLOR_ACCENT_PALE . ';
+
+                --color-dark: ' . THEME_COLOR_DARK . ';
+                --color-dark-rgb: ' . $darkRgb . ';
+                --color-dark-surface: ' . THEME_COLOR_DARK_SURFACE . ';
+
+                --color-light: ' . THEME_COLOR_LIGHT . ';
+                --color-light-rgb: ' . $lightRgb . ';
+                --color-light-surface: ' . THEME_COLOR_LIGHT_SURFACE . ';
+
+                /* Aliases Rétrocompatibles */
+                --vert: var(--color-primary) !important;
+                --vert-clair: var(--color-primary-light) !important;
+                --vert-sombre: var(--color-primary-dark) !important;
+                --or: var(--color-accent) !important;
+                --or-clair: var(--color-accent-light) !important;
+                --or-pale: var(--color-accent-pale) !important;
+                --or-texte: var(--color-accent-dark) !important;
+                --noir: var(--color-dark) !important;
+                --noir-surface: var(--color-dark-surface) !important;
+                --blanc: var(--color-light) !important;
+                --blanc-surface: var(--color-light-surface) !important;
+                --bordure-form: rgba(' . $accentRgb . ', 0.45) !important;
+            }
+
+            /* ── Application Globale sur tout le site ── */
+            body {
+                background-color: var(--color-light) !important;
+                color: var(--color-dark) !important;
+            }
+
+            /* Titres, textes & accents */
+            .text-or, .gold-text, .accent-text, .section-subtitle, .badge-or {
+                color: var(--color-accent) !important;
+            }
+            .text-vert, .primary-text {
+                color: var(--color-primary) !important;
+            }
+
+            /* SVG Hero Frame & Ornements */
+            .hero-corner svg path, .hero-corner svg rect, .hero-corner svg line, .hero-corner svg circle {
+                stroke: var(--color-accent) !important;
+            }
+
+            /* Blasons Monogramme & Couronnes */
+            .logo-crest, .brand-crest, .crest-box {
+                border-color: var(--color-accent) !important;
+                background: var(--color-primary) !important;
+                color: var(--color-accent) !important;
+            }
+            .crest-crown, .crest-letters {
+                color: var(--color-accent) !important;
+            }
+
+            /* Boutons d\'Action */
+            .btn-or, .btn-gold, a.btn-or, button.btn-or, .btn-accent {
+                background: var(--color-accent) !important;
+                background-color: var(--color-accent) !important;
+                border-color: var(--color-accent) !important;
+                color: #111111 !important;
+            }
+            .btn-or:hover, a.btn-or:hover, button.btn-or:hover, .btn-accent:hover {
+                background: var(--color-accent-light) !important;
+                border-color: var(--color-accent-light) !important;
+                color: #000000 !important;
+                box-shadow: 0 6px 20px rgba(' . $accentRgb . ', 0.35) !important;
+            }
+            .btn-vert, .btn-primary, a.btn-vert, button.btn-vert, .btn-primary-hotel {
+                background: var(--color-primary) !important;
+                background-color: var(--color-primary) !important;
+                border-color: var(--color-primary) !important;
+                color: #ffffff !important;
+            }
+            .btn-vert:hover, a.btn-vert:hover, button.btn-vert:hover {
+                background: var(--color-primary-light) !important;
+                border-color: var(--color-primary-light) !important;
+                color: #ffffff !important;
+                box-shadow: 0 6px 20px rgba(' . $primaryRgb . ', 0.35) !important;
+            }
+            .btn-outline-or {
+                border-color: var(--color-accent) !important;
+                color: var(--color-accent) !important;
+                background: transparent !important;
+            }
+            .btn-outline-or:hover {
+                background: var(--color-accent) !important;
+                color: #111111 !important;
+            }
+
+            /* Sections & Arrière-plans */
+            section, .section-light {
+                background-color: var(--color-light) !important;
+            }
+            section.section-dark, .section-primary-dark, footer#footer, .footer-section {
+                background-color: var(--color-dark) !important;
+            }
+            .footer-title, .footer-heading {
+                color: var(--color-accent) !important;
+            }
+
+            /* Cartes & Surfaces */
+            .card, .room-card, .service-card, .menu-card, .testimonial-card, .feature-box, .stat-card {
+                background-color: var(--color-light-surface) !important;
+                border-color: rgba(' . $accentRgb . ', 0.2) !important;
+            }
+            .card:hover, .room-card:hover {
+                border-color: var(--color-accent) !important;
+            }
+
+            /* Étoiles & Badges */
+            .fa-star, .stars, .star-rating, .rating-badge {
+                color: var(--color-accent) !important;
+            }
+            .badge-gold, .tag-accent {
+                background: rgba(' . $accentRgb . ', 0.15) !important;
+                color: var(--color-accent-dark) !important;
+                border: 1px solid rgba(' . $accentRgb . ', 0.35) !important;
+            }
+
+            /* Formulaires & Champs */
+            .form-control:focus, input:focus, select:focus, textarea:focus {
+                border-color: var(--color-accent) !important;
+                box-shadow: 0 0 0 3px rgba(' . $accentRgb . ', 0.18) !important;
             }
         </style>';
     }
 }
+
 

@@ -312,36 +312,36 @@ require_once __DIR__ . '/includes/header.php';
     <div class="review-box">
       <div class="review-box-title"><i class="fas fa-palette"></i> Charte Visuelle Attribuée</div>
       
-      <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:12px;">Échantillons de Couleurs :</div>
+      <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:12px;">Les 4 Codes Couleurs de l'Établissement :</div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:18px;">
         <div style="background:<?= $colors['primary'] ?>; padding:12px; border-radius:6px; font-size:0.7rem; color:#fff; border:1px solid rgba(255,255,255,0.15);">
-          <div>Primaire</div>
+          <div>1. Primaire (Identité)</div>
           <strong><?= $colors['primary'] ?></strong>
         </div>
         <div style="background:<?= $colors['accent'] ?>; padding:12px; border-radius:6px; font-size:0.7rem; color:#111; font-weight:600;">
-          <div>Accent Or</div>
+          <div>2. Accent & Métal</div>
           <strong><?= $colors['accent'] ?></strong>
         </div>
         <div style="background:<?= $colors['dark'] ?>; padding:12px; border-radius:6px; font-size:0.7rem; color:#fff; border:1px solid rgba(255,255,255,0.15);">
-          <div>Fond Sombre</div>
+          <div>3. Fond Sombre (Nuit)</div>
           <strong><?= $colors['dark'] ?></strong>
         </div>
         <div style="background:<?= $colors['light'] ?>; padding:12px; border-radius:6px; font-size:0.7rem; color:#111;">
-          <div>Fond Clair</div>
+          <div>4. Fond Clair (Surface)</div>
           <strong><?= $colors['light'] ?></strong>
         </div>
       </div>
 
       <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">Aperçu des Composants UI :</div>
-      <div class="ui-simulation-frame">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <div class="ui-simulation-frame" style="background:<?= $colors['light'] ?>; border:1px solid <?= $colors['accent'] ?>; padding:16px; border-radius:10px;">
+        <div style="background:<?= $colors['primary'] ?>; padding:10px 14px; border-radius:6px; display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid <?= $colors['accent'] ?>;">
           <div style="font-family:'Cormorant Garamond', serif; font-size:1.1rem; color:<?= $colors['accent'] ?>; font-weight:700;">
             <?= htmlspecialchars($hotel['short_name']) ?>
           </div>
-          <span class="sim-button-primary">Réserver</span>
+          <span style="background:<?= $colors['accent'] ?>; color:#111; padding:4px 10px; border-radius:4px; font-size:0.7rem; font-weight:700;">Réserver</span>
         </div>
-        <div class="sim-card-sample">
-          <div style="font-size:0.8rem; font-weight:600;">Suite Royale Vue Océan</div>
+        <div style="background:#ffffff; border:1px solid <?= $colors['accent'] ?>; border-radius:6px; padding:12px;">
+          <div style="font-size:0.8rem; font-weight:600; color:<?= $colors['primary'] ?>;">Suite Royale Vue Mer</div>
           <div style="font-size:0.7rem; color:#666; margin-top:2px;">150 000 <?= htmlspecialchars($hotel['currency']) ?> / nuit</div>
         </div>
       </div>
@@ -362,6 +362,8 @@ HOTEL_WHATSAPP="<?= addslashes($hotel['whatsapp']) ?>"
 HOTEL_CURRENCY="<?= addslashes($hotel['currency']) ?>"
 THEME_COLOR_PRIMARY="<?= $colors['primary'] ?>"
 THEME_COLOR_ACCENT="<?= $colors['accent'] ?>"
+THEME_COLOR_DARK="<?= $colors['dark'] ?>"
+THEME_COLOR_LIGHT="<?= $colors['light'] ?>"
       </div>
     </div>
 

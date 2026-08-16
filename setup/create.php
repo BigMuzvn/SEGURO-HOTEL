@@ -38,6 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'tva_rate'       => trim($_POST['tva_rate'] ?? '18'),
             'tourist_tax'    => trim($_POST['tourist_tax'] ?? '1000'),
             'theme_preset'   => $_POST['theme_preset'] ?? 'emerald_gold',
+            'theme_primary'  => trim($_POST['theme_primary'] ?? '#143323'),
+            'theme_accent'   => trim($_POST['theme_accent'] ?? '#c9a84c'),
+            'theme_dark'     => trim($_POST['theme_dark'] ?? '#07130c'),
+            'theme_light'    => trim($_POST['theme_light'] ?? '#fbf9f4'),
             'set_active'     => !empty($_POST['set_active']),
             'notes'          => trim($_POST['notes'] ?? ''),
         ];
@@ -128,8 +132,16 @@ require_once __DIR__ . '/includes/header.php';
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
   }
+  .form-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  @media(max-width:992px){
+    .form-grid-4 { grid-template-columns: 1fr 1fr; }
+  }
   @media(max-width:768px){
-    .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
+    .form-grid-2, .form-grid-3, .form-grid-4 { grid-template-columns: 1fr; }
   }
 
   .form-group {
@@ -164,44 +176,126 @@ require_once __DIR__ . '/includes/header.php';
     background: rgba(12, 24, 18, 0.95);
   }
 
-  /* ── THEME PRESETS SELECTOR ── */
-  .theme-presets-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 16px;
-    margin-top: 14px;
-  }
-  .theme-option-card {
-    background: rgba(0, 0, 0, 0.3);
-    border: 1.5px solid rgba(255, 255, 255, 0.12);
+  /* ── 4 COLOR PICKERS BOXES ── */
+  .color-picker-card {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 16px;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     transition: all 0.25s ease;
-    position: relative;
   }
-  .theme-option-card:hover {
-    border-color: rgba(201, 168, 76, 0.6);
+  .color-picker-card:hover {
+    border-color: rgba(201, 168, 76, 0.5);
     transform: translateY(-2px);
   }
-  .theme-option-card input[type="radio"] {
-    position: absolute;
-    top: 14px; right: 14px;
-    accent-color: var(--gold-primary);
-    width: 18px; height: 18px;
-  }
-  .theme-option-card.selected {
-    border-color: var(--gold-primary);
-    background: rgba(201, 168, 76, 0.1);
-    box-shadow: 0 4px 15px rgba(201, 168, 76, 0.15);
-  }
-  .theme-palette-bar {
+  .color-role-title {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--gold-primary);
     display: flex;
-    height: 28px;
+    align-items: center;
+    gap: 6px;
+  }
+  .color-role-desc {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+    min-height: 34px;
+  }
+  .color-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(10, 20, 15, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 6px;
+    padding: 4px 8px;
+  }
+  .color-input-wrap input[type="color"] {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+  }
+  .color-input-wrap input[type="text"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    outline: none;
+  }
+
+  /* ── PRESETS INSPIRATION CARDS ── */
+  .presets-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .preset-pill-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+  }
+  .preset-pill-card:hover {
+    border-color: var(--gold-primary);
+    background: rgba(201, 168, 76, 0.08);
+  }
+  .preset-pill-name {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .preset-mini-palette {
+    display: flex;
+    height: 16px;
+    border-radius: 4px;
     overflow: hidden;
-    margin: 10px 0 12px;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* ── LIVE INTERACTIVE SIMULATOR ── */
+  .live-simulator-container {
+    margin-top: 24px;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .simulator-bar {
+    background: #0c1611;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    color: var(--gold-primary);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .sim-view {
+    padding: 24px;
+    transition: background-color 0.3s;
   }
 </style>
 
@@ -213,14 +307,14 @@ require_once __DIR__ . '/includes/header.php';
     Assistant de Déploiement Nouvel Hôtel
   </h1>
   <p style="color:var(--text-muted); font-size:0.9rem;">
-    Configurez un nouvel établissement en quelques instants pour l'intégrer à votre suite HospitOS.
+    Configurez un nouvel établissement avec son identité, ses 4 codes couleurs personnalisés et ses paramètres de gestion.
   </p>
 </div>
 
 <!-- BARRE D'ÉTAPES -->
 <div class="wizard-step-bar">
   <div class="step-pill active"><span class="step-num">1</span> Identité & Marque</div>
-  <div class="step-pill active"><span class="step-num">2</span> Charte Graphique</div>
+  <div class="step-pill active"><span class="step-num">2</span> 4 Codes Couleurs & Thème</div>
   <div class="step-pill active"><span class="step-num">3</span> Coordonnées & WhatsApp</div>
   <div class="step-pill active"><span class="step-num">4</span> Politiques & Tarifs</div>
 </div>
@@ -231,7 +325,7 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 <?php endif; ?>
 
-<form action="create.php" method="POST">
+<form action="create.php" method="POST" id="hotelForm">
 
   <!-- ══════════════════════════════════════════
        SECTION 1 : IDENTITÉ & MARQUE
@@ -243,24 +337,24 @@ require_once __DIR__ . '/includes/header.php';
     <div class="form-grid-2">
       <div class="form-group">
         <label>Nom Complet de l'Hôtel <span class="req">*</span></label>
-        <input type="text" name="name" class="form-control" placeholder="ex: Grand Hôtel du Golfe & Spa" required>
+        <input type="text" name="name" id="input_name" class="form-control" placeholder="ex: Grand Hôtel du Golfe & Spa" required oninput="updateSimHotelName()">
       </div>
 
       <div class="form-group">
         <label>Nom Court / Usuel</label>
-        <input type="text" name="short_name" class="form-control" placeholder="ex: Grand Hôtel du Golfe">
+        <input type="text" name="short_name" id="input_short_name" class="form-control" placeholder="ex: Grand Hôtel du Golfe" oninput="updateSimHotelName()">
       </div>
     </div>
 
     <div class="form-grid-3">
       <div class="form-group">
         <label>Initiales du Blason (2 ou 3 lettres) <span class="req">*</span></label>
-        <input type="text" name="initials" class="form-control" placeholder="ex: GHG" maxlength="4" style="text-transform:uppercase; font-weight:700;">
+        <input type="text" name="initials" id="input_initials" class="form-control" placeholder="ex: GHG" maxlength="4" style="text-transform:uppercase; font-weight:700;" oninput="updateSimInitials()">
       </div>
 
       <div class="form-group">
-        <label>Ville</label>
-        <input type="text" name="city" class="form-control" placeholder="ex: Lomé" value="Lomé">
+        <label>Ville d'Implantation <span class="req">*</span></label>
+        <input type="text" name="city" class="form-control" placeholder="ex: Lomé" value="Lomé" required>
       </div>
 
       <div class="form-group">
@@ -271,7 +365,7 @@ require_once __DIR__ . '/includes/header.php';
 
     <div class="form-group">
       <label>Slogan / Devise de l'Hôtel</label>
-      <input type="text" name="tagline" class="form-control" placeholder="ex: L'Élégance au Cœur de la Cité">
+      <input type="text" name="tagline" id="input_tagline" class="form-control" placeholder="ex: L'Élégance au Cœur de la Cité" oninput="updateSimTagline()">
     </div>
 
     <div class="form-group">
@@ -281,28 +375,151 @@ require_once __DIR__ . '/includes/header.php';
   </div>
 
   <!-- ══════════════════════════════════════════
-       SECTION 2 : CHARTE GRAPHIQUE & THÈME
+       SECTION 2 : CHARTE GRAPHIQUE & 4 CODES COULEURS
   ══════════════════════════════════════════ -->
   <div class="form-section">
-    <div class="section-title"><i class="fas fa-palette"></i> 2. Charte Graphique & Palette de Couleurs</div>
-    <div class="section-desc">Choisissez l'univers visuel qui correspond le mieux au positionnement de cet hôtel.</div>
+    <div class="section-title"><i class="fas fa-palette"></i> 2. Charte Graphique — Les 4 Codes Couleurs Fondamentaux</div>
+    <div class="section-desc">
+      Personnalisez librement les 4 codes couleurs hexadécimaux (#RRGGBB). L'ensemble de la plateforme (fonds, textes, boutons, cartes, ornements, hero, footer) s'adaptera instantanément.
+    </div>
 
-    <div class="theme-presets-grid">
-      <?php foreach (HotelManager::$THEME_PRESETS as $key => $preset): ?>
-        <label class="theme-option-card <?= $key === 'emerald_gold' ? 'selected' : '' ?>">
-          <input type="radio" name="theme_preset" value="<?= $key ?>" <?= $key === 'emerald_gold' ? 'checked' : '' ?> onchange="updateThemeSelection(this)">
-          <div style="font-weight:600; color:#fff; font-size:0.95rem;"><?= htmlspecialchars($preset['name']) ?></div>
-          <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;"><?= htmlspecialchars($preset['desc']) ?></div>
-          
-          <div class="theme-palette-bar">
-            <div style="flex:2; background:<?= $preset['primary'] ?>;" title="Primaire"></div>
-            <div style="flex:1; background:<?= $preset['accent'] ?>;" title="Or / Accent"></div>
-            <div style="flex:1; background:<?= $preset['dark'] ?>;" title="Sombre"></div>
-            <div style="flex:1; background:<?= $preset['light'] ?>;" title="Clair"></div>
+    <!-- PALETTES D'INSPIRATION RAPIDE (1 CLIC) -->
+    <div style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px; font-weight:600;">
+      <i class="fas fa-magic"></i> Palettes de Prestige Prêtes à l'Emploi (cliquez pour pré-remplir les 4 codes) :
+    </div>
+
+    <div class="presets-strip">
+      <?php foreach (HotelManager::$THEME_PRESETS as $key => $p): ?>
+        <div class="preset-pill-card" onclick="applyPreset('<?= $key ?>', '<?= $p['primary'] ?>', '<?= $p['accent'] ?>', '<?= $p['dark'] ?>', '<?= $p['light'] ?>')">
+          <div class="preset-pill-name"><?= htmlspecialchars($p['name']) ?></div>
+          <div class="preset-mini-palette">
+            <div style="flex:2; background:<?= $p['primary'] ?>;" title="Primaire"></div>
+            <div style="flex:1.5; background:<?= $p['accent'] ?>;" title="Accent"></div>
+            <div style="flex:1; background:<?= $p['dark'] ?>;" title="Sombre"></div>
+            <div style="flex:1; background:<?= $p['light'] ?>;" title="Clair"></div>
           </div>
-        </label>
+        </div>
       <?php endforeach; ?>
     </div>
+
+    <input type="hidden" name="theme_preset" id="theme_preset_input" value="custom">
+
+    <!-- LES 4 SÉLECTEURS DE COULEURS LIBRES -->
+    <div class="form-grid-4">
+      
+      <!-- 1. PRIMAIRE -->
+      <div class="color-picker-card">
+        <div class="color-role-title"><i class="fas fa-square" id="icon_primary"></i> 1. Primaire (Identité)</div>
+        <div class="color-role-desc">En-têtes sombres, boutons principaux, barres de navigation et identité de marque.</div>
+        <div class="color-input-wrap">
+          <input type="color" id="picker_primary" value="#143323" oninput="syncColorInput('primary', this.value)">
+          <input type="text" name="theme_primary" id="text_primary" value="#143323" maxlength="7" oninput="syncPickerInput('primary', this.value)">
+        </div>
+      </div>
+
+      <!-- 2. ACCENTUATION -->
+      <div class="color-picker-card">
+        <div class="color-role-title"><i class="fas fa-gem" id="icon_accent"></i> 2. Accentuation & Métal</div>
+        <div class="color-role-desc">Boutons de réservation, blason, étoiles, ornements & bordures (Or, Argent, Cuivre, etc.).</div>
+        <div class="color-input-wrap">
+          <input type="color" id="picker_accent" value="#c9a84c" oninput="syncColorInput('accent', this.value)">
+          <input type="text" name="theme_accent" id="text_accent" value="#c9a84c" maxlength="7" oninput="syncPickerInput('accent', this.value)">
+        </div>
+      </div>
+
+      <!-- 3. FOND SOMBRE -->
+      <div class="color-picker-card">
+        <div class="color-role-title"><i class="fas fa-moon" id="icon_dark"></i> 3. Fond Sombre (Nuit)</div>
+        <div class="color-role-desc">Pied de page (footer), modales, arrière-plan du Hero et sections sombres.</div>
+        <div class="color-input-wrap">
+          <input type="color" id="picker_dark" value="#07130c" oninput="syncColorInput('dark', this.value)">
+          <input type="text" name="theme_dark" id="text_dark" value="#07130c" maxlength="7" oninput="syncPickerInput('dark', this.value)">
+        </div>
+      </div>
+
+      <!-- 4. FOND CLAIR -->
+      <div class="color-picker-card">
+        <div class="color-role-title"><i class="fas fa-sun" id="icon_light"></i> 4. Fond Clair (Surface)</div>
+        <div class="color-role-desc">Arrière-plan global du site, cartes claires, zones de lecture (remplace le blanc pur).</div>
+        <div class="color-input-wrap">
+          <input type="color" id="picker_light" value="#fbf9f4" oninput="syncColorInput('light', this.value)">
+          <input type="text" name="theme_light" id="text_light" value="#fbf9f4" maxlength="7" oninput="syncPickerInput('light', this.value)">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIMULATEUR LIVE EN TEMPS RÉEL -->
+    <div class="live-simulator-container">
+      <div class="simulator-bar">
+        <span><i class="fas fa-eye"></i> Aperçu Interactif en Direct de votre Palette</span>
+        <span style="font-weight:400; color:rgba(255,255,255,0.6);">Réagit instantanément à vos 4 couleurs</span>
+      </div>
+
+      <div class="sim-view" id="sim_surface_light" style="background:#fbf9f4; color:#111;">
+        
+        <!-- Fausse Navbar -->
+        <div id="sim_navbar" style="background:#143323; padding:14px 20px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:2px solid #c9a84c;">
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div id="sim_crest" style="width:40px; height:40px; border-radius:6px; border:1.5px solid #c9a84c; background:#143323; color:#c9a84c; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.1rem; line-height:1;">
+              <span style="font-size:0.55rem;">👑</span>
+              <span id="sim_crest_letters">HTL</span>
+            </div>
+            <div>
+              <div id="sim_brand_name" style="font-family:'Cormorant Garamond', serif; font-size:1.15rem; font-weight:700; color:#fff;">Nom de l'Hôtel</div>
+              <div id="sim_tagline_text" style="font-size:0.65rem; color:#c9a84c; letter-spacing:0.1em;">L'EXCELLENCE & LE CONFORT</div>
+            </div>
+          </div>
+          <button type="button" id="sim_btn_accent" style="background:#c9a84c; color:#111; border:none; padding:7px 16px; border-radius:4px; font-weight:600; font-size:0.75rem; cursor:pointer;">
+            Réserver un Séjour
+          </button>
+        </div>
+
+        <!-- Fausse Section Carte & Contenu -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+          
+          <!-- Carte Surface Claire -->
+          <div id="sim_card" style="background:#ffffff; border:1px solid #c9a84c; border-radius:8px; padding:16px;">
+            <div id="sim_badge" style="display:inline-block; background:rgba(201,168,76,0.15); color:#9c7b2c; border:1px solid rgba(201,168,76,0.4); padding:2px 8px; border-radius:20px; font-size:0.65rem; font-weight:600; text-transform:uppercase; margin-bottom:8px;">
+              ⭐ Suite Présidentielle
+            </div>
+            <div id="sim_card_title" style="font-family:'Cormorant Garamond', serif; font-size:1.2rem; font-weight:700; color:#143323; margin-bottom:6px;">
+              Prestige & Vue Panoramique
+            </div>
+            <div style="font-size:0.75rem; color:#666; line-height:1.4; margin-bottom:12px;">
+              Surface de détente avec jacuzzi privé, service majordome 24/7 et vue mer imprenable.
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span id="sim_card_price" style="font-weight:700; font-size:0.95rem; color:#143323;">150 000 FCFA</span>
+              <button type="button" id="sim_btn_primary" style="background:#143323; color:#fff; border:none; padding:5px 12px; border-radius:4px; font-size:0.72rem;">
+                Découvrir
+              </button>
+            </div>
+          </div>
+
+          <!-- Carte Surface Sombre (Footer preview) -->
+          <div id="sim_surface_dark" style="background:#07130c; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:16px; color:#fff;">
+            <div id="sim_footer_title" style="font-family:'Cormorant Garamond', serif; font-size:1.15rem; color:#c9a84c; margin-bottom:6px; font-weight:600;">
+              Conciergerie & Réception 24h/24
+            </div>
+            <div style="font-size:0.72rem; color:rgba(255,255,255,0.7); line-height:1.4; margin-bottom:10px;">
+              Une équipe dévouée pour sublimer votre séjour à chaque instant.
+            </div>
+            <div style="display:flex; gap:8px;">
+              <span id="sim_pill_accent" style="background:#c9a84c; color:#111; font-size:0.65rem; font-weight:700; padding:3px 8px; border-radius:4px;">
+                WhatsApp Direct
+              </span>
+              <span style="border:1px solid rgba(255,255,255,0.3); color:#fff; font-size:0.65rem; padding:3px 8px; border-radius:4px;">
+                Room Service
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <!-- ══════════════════════════════════════════
@@ -374,63 +591,159 @@ require_once __DIR__ . '/includes/header.php';
 
     <div class="form-grid-2">
       <div class="form-group">
-        <label>Taux de TVA (%)</label>
-        <input type="number" name="tva_rate" class="form-control" value="18" min="0" max="100">
+        <label>Taux TVA applicable (%)</label>
+        <input type="number" name="tva_rate" class="form-control" value="18" min="0" max="100" step="0.1">
       </div>
 
       <div class="form-group">
-        <label>Taxe de Séjour forfaitaire par nuitée</label>
-        <input type="number" name="tourist_tax" class="form-control" value="1000" min="0">
-      </div>
-    </div>
-
-    <div class="form-grid-2">
-      <div class="form-group">
-        <label>Préfixe Références Réservation</label>
-        <input type="text" name="ref_prefix" class="form-control" placeholder="ex: HTL" maxlength="6" style="text-transform:uppercase;">
-      </div>
-
-      <div class="form-group">
-        <label>Préfixe Codes Clients</label>
-        <input type="text" name="client_prefix" class="form-control" placeholder="ex: CLI" maxlength="6" style="text-transform:uppercase;">
+        <label>Taxe de Séjour Forfaitaire (par nuitée)</label>
+        <input type="number" name="tourist_tax" class="form-control" value="1000" min="0" step="50">
       </div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════
-       SECTION 5 : ACTIVATION & FINALISATION
-  ══════════════════════════════════════════ -->
-  <div class="form-section" style="background:rgba(20, 44, 34, 0.85); border-color:var(--gold-primary);">
-    <div class="section-title"><i class="fas fa-rocket"></i> 5. Activation & Déploiement Immédiat</div>
-    
-    <label style="display:flex; align-items:center; gap:12px; cursor:pointer; padding:14px; background:rgba(0,0,0,0.3); border-radius:8px; margin-bottom:16px;">
+  <!-- ACTIVATION IMMÉDIATE -->
+  <div class="form-section" style="border-color:rgba(201,168,76,0.4);">
+    <label style="display:flex; align-items:center; gap:12px; cursor:pointer;">
       <input type="checkbox" name="set_active" value="1" checked style="width:20px; height:20px; accent-color:var(--gold-primary);">
       <div>
-        <strong style="color:#fff; font-size:0.95rem;">Activer cet hôtel immédiatement en production sur le site web</strong>
-        <div style="font-size:0.75rem; color:var(--text-muted);">Le fichier de configuration .env sera synchronisé dès la validation du formulaire.</div>
+        <div style="font-weight:600; color:#fff; font-size:0.95rem;">Définir immédiatement comme hôtel actif sur la plateforme web</div>
+        <div style="font-size:0.75rem; color:var(--text-muted);">Génèrera le fichier .env et basculera le site client sur cette nouvelle identité dès l'enregistrement.</div>
       </div>
     </label>
+  </div>
 
-    <div class="form-group">
-      <label>Notes & Commentaires internes pour ce client / hôtel</label>
-      <input type="text" name="notes" class="form-control" placeholder="ex: Contact gérant : M. Koffi / Contrat signé le 15 août">
-    </div>
-
-    <div style="display:flex; justify-content:flex-end; gap:16px; margin-top:24px;">
-      <a href="index.php" class="btn-master-secondary">Annuler</a>
-      <button type="submit" class="btn-master-primary">
-        <i class="fas fa-check-circle"></i> Enregistrer & Déployer l'Hôtel
-      </button>
-    </div>
+  <div style="display:flex; justify-content:flex-end; gap:16px; margin-bottom:60px;">
+    <a href="index.php" class="btn-master-secondary" style="padding:12px 24px;">Annuler</a>
+    <button type="submit" class="btn-master-primary" style="padding:12px 32px; font-size:0.9rem;">
+      <i class="fas fa-check"></i> Déployer cet Hôtel & Sauvegarder
+    </button>
   </div>
 
 </form>
 
 <script>
-  function updateThemeSelection(radio) {
-    document.querySelectorAll('.theme-option-card').forEach(c => c.classList.remove('selected'));
-    radio.closest('.theme-option-card').classList.add('selected');
+function syncColorInput(type, val) {
+  if (!val.startsWith('#')) val = '#' + val;
+  document.getElementById('text_' + type).value = val.toLowerCase();
+  refreshSimulator();
+}
+
+function syncPickerInput(type, val) {
+  if (!val.startsWith('#')) val = '#' + val;
+  if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
+    document.getElementById('picker_' + type).value = val;
+    refreshSimulator();
   }
+}
+
+function applyPreset(key, primary, accent, dark, light) {
+  document.getElementById('theme_preset_input').value = key;
+  
+  document.getElementById('picker_primary').value = primary;
+  document.getElementById('text_primary').value = primary.toLowerCase();
+
+  document.getElementById('picker_accent').value = accent;
+  document.getElementById('text_accent').value = accent.toLowerCase();
+
+  document.getElementById('picker_dark').value = dark;
+  document.getElementById('text_dark').value = dark.toLowerCase();
+
+  document.getElementById('picker_light').value = light;
+  document.getElementById('text_light').value = light.toLowerCase();
+
+  refreshSimulator();
+}
+
+function refreshSimulator() {
+  const primary = document.getElementById('text_primary').value || '#143323';
+  const accent  = document.getElementById('text_accent').value  || '#c9a84c';
+  const dark    = document.getElementById('text_dark').value    || '#07130c';
+  const light   = document.getElementById('text_light').value   || '#fbf9f4';
+
+  // Surface Claire
+  const simSurfaceLight = document.getElementById('sim_surface_light');
+  if (simSurfaceLight) simSurfaceLight.style.backgroundColor = light;
+
+  // Navbar
+  const simNavbar = document.getElementById('sim_navbar');
+  if (simNavbar) {
+    simNavbar.style.backgroundColor = primary;
+    simNavbar.style.borderBottomColor = accent;
+  }
+
+  // Blason
+  const simCrest = document.getElementById('sim_crest');
+  if (simCrest) {
+    simCrest.style.borderColor = accent;
+    simCrest.style.backgroundColor = primary;
+    simCrest.style.color = accent;
+  }
+
+  // Slogan & Titres
+  const simTagline = document.getElementById('sim_tagline_text');
+  if (simTagline) simTagline.style.color = accent;
+
+  // Boutons Accent
+  const simBtnAccent = document.getElementById('sim_btn_accent');
+  if (simBtnAccent) {
+    simBtnAccent.style.backgroundColor = accent;
+  }
+  const simPillAccent = document.getElementById('sim_pill_accent');
+  if (simPillAccent) simPillAccent.style.backgroundColor = accent;
+
+  // Carte
+  const simCard = document.getElementById('sim_card');
+  if (simCard) simCard.style.borderColor = accent;
+
+  const simBadge = document.getElementById('sim_badge');
+  if (simBadge) {
+    simBadge.style.color = accent;
+    simBadge.style.borderColor = accent;
+  }
+
+  const simCardTitle = document.getElementById('sim_card_title');
+  if (simCardTitle) simCardTitle.style.color = primary;
+
+  const simCardPrice = document.getElementById('sim_card_price');
+  if (simCardPrice) simCardPrice.style.color = primary;
+
+  const simBtnPrimary = document.getElementById('sim_btn_primary');
+  if (simBtnPrimary) simBtnPrimary.style.backgroundColor = primary;
+
+  // Surface Sombre
+  const simSurfaceDark = document.getElementById('sim_surface_dark');
+  if (simSurfaceDark) simSurfaceDark.style.backgroundColor = dark;
+
+  const simFooterTitle = document.getElementById('sim_footer_title');
+  if (simFooterTitle) simFooterTitle.style.color = accent;
+}
+
+function updateSimHotelName() {
+  const name = document.getElementById('input_name').value || document.getElementById('input_short_name').value || 'Nom de l\'Hôtel';
+  const target = document.getElementById('sim_brand_name');
+  if (target) target.innerText = name;
+}
+
+function updateSimInitials() {
+  const initials = document.getElementById('input_initials').value || 'HTL';
+  const target = document.getElementById('sim_crest_letters');
+  if (target) target.innerText = initials.toUpperCase();
+}
+
+function updateSimTagline() {
+  const tagline = document.getElementById('input_tagline').value || 'L\'EXCELLENCE & LE CONFORT';
+  const target = document.getElementById('sim_tagline_text');
+  if (target) target.innerText = tagline.toUpperCase();
+}
+
+// Initialisation au chargement
+document.addEventListener('DOMContentLoaded', () => {
+  refreshSimulator();
+  updateSimHotelName();
+  updateSimInitials();
+  updateSimTagline();
+});
 </script>
 
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

@@ -11,29 +11,29 @@
 
     <div class="hero-overlay"></div>
 
-    <!-- Coins décoratifs dorés -->
+    <!-- Coins décoratifs dynamiques selon couleur d'accent -->
     <div class="hero-corner tl">
       <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-        <path d="M0 50 L0 0 L50 0" stroke="#c9a84c" stroke-width="1" fill="none"/>
-        <rect x="3" y="3" width="10" height="10" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+        <path d="M0 50 L0 0 L50 0" stroke="var(--color-accent)" stroke-width="1" fill="none"/>
+        <rect x="3" y="3" width="10" height="10" stroke="var(--color-accent)" stroke-width="0.5" fill="none"/>
       </svg>
     </div>
     <div class="hero-corner tr">
       <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-        <path d="M0 50 L0 0 L50 0" stroke="#c9a84c" stroke-width="1" fill="none"/>
-        <rect x="3" y="3" width="10" height="10" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+        <path d="M0 50 L0 0 L50 0" stroke="var(--color-accent)" stroke-width="1" fill="none"/>
+        <rect x="3" y="3" width="10" height="10" stroke="var(--color-accent)" stroke-width="0.5" fill="none"/>
       </svg>
     </div>
     <div class="hero-corner bl">
       <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-        <path d="M0 50 L0 0 L50 0" stroke="#c9a84c" stroke-width="1" fill="none"/>
-        <rect x="3" y="3" width="10" height="10" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+        <path d="M0 50 L0 0 L50 0" stroke="var(--color-accent)" stroke-width="1" fill="none"/>
+        <rect x="3" y="3" width="10" height="10" stroke="var(--color-accent)" stroke-width="0.5" fill="none"/>
       </svg>
     </div>
     <div class="hero-corner br">
       <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-        <path d="M0 50 L0 0 L50 0" stroke="#c9a84c" stroke-width="1" fill="none"/>
-        <rect x="3" y="3" width="10" height="10" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+        <path d="M0 50 L0 0 L50 0" stroke="var(--color-accent)" stroke-width="1" fill="none"/>
+        <rect x="3" y="3" width="10" height="10" stroke="var(--color-accent)" stroke-width="0.5" fill="none"/>
       </svg>
     </div>
 
