@@ -1,6 +1,6 @@
 <?php
 /**
- * CALENDRIER DES DISPONIBILITÉS — Hôtel SEGURO
+ * CALENDRIER DES DISPONIBILITÉS
  */
 
 require_once __DIR__ . '/../includes/database.php';

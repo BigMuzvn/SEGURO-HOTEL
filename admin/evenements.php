@@ -1,8 +1,6 @@
 <?php
 /**
- * ════════════════════════════════════════════════════════
- * GESTION DES DEVIS ÉVÉNEMENTS — Administration Hôtel SEGURO
- * ════════════════════════════════════════════════════════
+ * GESTION DES DEVIS ÉVÉNEMENTS
  */
 
 session_start();

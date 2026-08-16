@@ -326,31 +326,31 @@
     <div class="contact-hero-img-bg"></div>
     <div class="contact-hero-img-overlay"></div>
     <div class="hero-img-badge">
-      <span class="hero-img-badge-title">Hôtel SEGURO</span>
-      <span class="hero-img-badge-sub">Agbodrafo · Togo · Afrique de l'Ouest</span>
+      <span class="hero-img-badge-title"><?= htmlspecialchars(hotel_name()) ?></span>
+      <span class="hero-img-badge-sub"><?= htmlspecialchars(hotel_location()) ?> · <?= htmlspecialchars(hotel_country()) ?></span>
     </div>
   </div>
   <div class="contact-hero-text">
-    <span class="contact-eyebrow">§ 7 · Contact &amp; Partenariats</span>
+    <span class="contact-eyebrow">Contact &amp; Conciergerie Dédiée</span>
     <h1 class="contact-hero-title">
-      Prêt à vivre<br>l'expérience <em>SEGURO</em> ?
+      Prêt à vivre<br>l'expérience <em><?= htmlspecialchars(hotel_short_name()) ?></em> ?
     </h1>
     <p class="contact-hero-desc">
       Toutes les informations pour nous rejoindre, réserver votre séjour
-      ou discuter d'une future collaboration avec nos équipes.
+      ou échanger avec nos équipes de conciergerie.
     </p>
     <div class="contact-quick-info">
       <div class="quick-info-item">
         <div class="quick-info-icon"><i class="fas fa-phone-alt" style="color:var(--or-texte);"></i></div>
-        <span class="quick-info-text"><a href="tel:+22800000000">+228 00 00 00 00</a></span>
-      </div>
-      <div class="quick-info-item">
-        <div class="quick-info-icon"><i class="fas fa-envelope" style="color:var(--or-texte);"></i></div>
-        <span class="quick-info-text"><a href="mailto:contact@hotelseguro.com">contact@hotelseguro.com</a></span>
+        <span class="quick-info-text"><a href="tel:<?= htmlspecialchars(hotel_phone()) ?>"><?= htmlspecialchars(hotel_phone()) ?></a></span>
       </div>
       <div class="quick-info-item">
         <div class="quick-info-icon"><i class="fas fa-envelope" style="color:var(--or-texte);"></i></div>
         <span class="quick-info-text"><a href="mailto:<?= htmlspecialchars(hotel_email()) ?>"><?= htmlspecialchars(hotel_email()) ?></a></span>
+      </div>
+      <div class="quick-info-item">
+        <div class="quick-info-icon"><i class="fab fa-whatsapp" style="color:var(--or-texte);"></i></div>
+        <span class="quick-info-text"><a href="https://wa.me/<?= htmlspecialchars(hotel_whatsapp()) ?>" target="_blank">WhatsApp Direct</a></span>
       </div>
       <div class="quick-info-item">
         <div class="quick-info-icon"><i class="fas fa-map-marker-alt" style="color:var(--or-texte);"></i></div>
@@ -540,7 +540,7 @@
       <p class="interlocuteurs-intro">
         Notre équipe de direction se tient à votre disposition pour toute demande spécifique.
         Que ce soit pour un événement corporate, un partenariat ou une demande stratégique,
-        vous avez un contact direct et dédié chez SEGURO.
+        vous avez un contact direct et dédié auprès de nos équipes.
       </p>
     </div>
 
@@ -555,20 +555,20 @@
         <p class="interlocuteur-desc">
           Pour l'organisation de vos séminaires, conférences et événements privés.
           Nos espaces modulables accueillent de 10 à 120 personnes. Privatisation
-          du Skibar panoramique sur demande. Devis personnalisé sous 24h.
+          de nos salons panoramiques sur demande. Devis personnalisé sous 24h.
         </p>
         <div class="interlocuteur-contacts">
           <div class="interlocuteur-contact-line">
             <span class="interlocuteur-contact-icon"><i class="fas fa-user-tie" style="color:var(--or);"></i></span>
-            Responsable Commercial SEGURO
+            Responsable Commercial &amp; Événements
           </div>
           <div class="interlocuteur-contact-line">
             <span class="interlocuteur-contact-icon"><i class="fas fa-envelope" style="color:var(--or);"></i></span>
-            <a href="mailto:commercial@hotelseguro.com">commercial@hotelseguro.com</a>
+            <a href="mailto:<?= htmlspecialchars(hotel_email()) ?>"><?= htmlspecialchars(hotel_email()) ?></a>
           </div>
           <div class="interlocuteur-contact-line">
             <span class="interlocuteur-contact-icon"><i class="fas fa-phone-alt" style="color:var(--or);"></i></span>
-            <a href="tel:+22800000000">Ligne directe sur demande</a>
+            <a href="tel:<?= htmlspecialchars(hotel_phone()) ?>"><?= htmlspecialchars(hotel_phone()) ?></a>
           </div>
         </div>
       </div>
@@ -581,21 +581,21 @@
         </h3>
         <p class="interlocuteur-desc">
           Pour les demandes de partenariats stratégiques, collaborations institutionnelles,
-          demandes presse et médias, ou toute proposition de coopération avec l'Hôtel SEGURO.
-          Marius WATEBA, Directeur Général, se tient personnellement à votre disposition.
+          demandes presse et médias, ou toute proposition de coopération avec <?= htmlspecialchars(hotel_name()) ?>.
+          La Direction Générale se tient personnellement à votre disposition.
         </p>
         <div class="interlocuteur-contacts">
           <div class="interlocuteur-contact-line">
             <span class="interlocuteur-contact-icon"><i class="fas fa-user-tie" style="color:var(--or);"></i></span>
-            Marius WATEBA — Directeur Général
+            Direction Générale
           </div>
           <div class="interlocuteur-contact-line">
             <span class="interlocuteur-contact-icon"><i class="fas fa-envelope" style="color:var(--or);"></i></span>
-            <a href="mailto:direction@hotelseguro.com">direction@hotelseguro.com</a>
+            <a href="mailto:<?= htmlspecialchars(hotel_email()) ?>"><?= htmlspecialchars(hotel_email()) ?></a>
           </div>
           <div class="interlocuteur-contact-line">
-            <span class="interlocuteur-contact-icon"><i class="fas fa-globe" style="color:var(--or);"></i></span>
-            <a href="http://www.hotelseguro.com" target="_blank">www.hotelseguro.com</a>
+            <span class="interlocuteur-contact-icon"><i class="fas fa-phone-alt" style="color:var(--or);"></i></span>
+            <a href="tel:<?= htmlspecialchars(hotel_phone()) ?>"><?= htmlspecialchars(hotel_phone()) ?></a>
           </div>
         </div>
       </div>
@@ -612,10 +612,10 @@
       <h2 class="map-heading">Accès &amp; <em>Localisation</em></h2>
     </div>
     <div class="map-address">
-      Hôtel SEGURO<br>
-      Agbodrafo, entrée de Aného<br>
-      Togo, Afrique de l'Ouest<br>
-      <a href="https://maps.google.com/?q=Agbodrafo,Togo" target="_blank"
+      <?= htmlspecialchars(hotel_name()) ?><br>
+      <?= htmlspecialchars(hotel_location()) ?><br>
+      <?= htmlspecialchars(hotel_country()) ?><br>
+      <a href="https://maps.google.com/?q=<?= urlencode(hotel_name() . ' ' . hotel_location()) ?>" target="_blank"
          style="color:var(--or);text-decoration:none;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;">
         Ouvrir dans Google Maps →
       </a>
@@ -627,7 +627,7 @@
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126916.28!2d1.5!3d6.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023f00a0a0a0a0a%3A0x0!2sAgbodrafo%2C+Togo!5e0!3m2!1sfr!2sfr!4v1"
     allowfullscreen="" loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
-    title="Hôtel SEGURO — Agbodrafo, Togo">
+    title="<?= htmlspecialchars(hotel_name()) ?> — <?= htmlspecialchars(hotel_city()) ?>">
   </iframe>
 
   <div class="map-access-bar reveal">
@@ -700,13 +700,13 @@
 
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">
-        Peut-on privatiser le Skibar pour un événement ?
+        Peut-on privatiser nos espaces pour un événement ?
         <span class="faq-q-icon">+</span>
       </div>
       <div class="faq-a">
-        Oui, le Skibar panoramique est privatisable pour vos lancements de produits,
+        Oui, nos salons panoramiques et terrasses sont privatisables pour vos lancements,
         cocktails d'entreprise et soirées privées. Contactez notre Département Commercial
-        à commercial@hotelseguro.com pour un devis personnalisé sous 24h.
+        à <?= htmlspecialchars(hotel_email()) ?> pour un devis personnalisé sous 24h.
       </div>
     </div>
 
@@ -717,21 +717,19 @@
       </div>
       <div class="faq-a">
         Les annulations effectuées plus de 48h avant la date d'arrivée sont entièrement
-        remboursées. En dessous de 48h, une nuit est retenue. Pour les séjours de groupe,
-        les événements et les activités nautiques, des conditions spécifiques s'appliquent.
+        remboursées. En dessous de 48h, des conditions spécifiques s'appliquent.
       </div>
     </div>
 
     <div class="faq-item" onclick="toggleFaq(this)">
       <div class="faq-q">
-        Comment proposer un partenariat avec l'Hôtel SEGURO ?
+        Comment proposer un partenariat avec <?= htmlspecialchars(hotel_name()) ?> ?
         <span class="faq-q-icon">+</span>
       </div>
       <div class="faq-a">
         Pour toute proposition de partenariat stratégique, collaboration institutionnelle
         ou demande presse, contactez directement notre Direction Générale à
-        direction@hotelseguro.com. Marius WATEBA répond personnellement à toutes
-        les demandes de partenariat.
+        <?= htmlspecialchars(hotel_email()) ?>.
       </div>
     </div>
 

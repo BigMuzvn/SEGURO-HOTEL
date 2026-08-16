@@ -760,7 +760,7 @@
       <!-- Restaurant Signature -->
       <div class="gastro-card">
         <div class="gastro-card-img">
-          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=900&q=80" alt="Restaurant Signature SEGURO">
+          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=900&q=80" alt="Restaurant Signature">
           <div class="gastro-card-img-overlay"></div>
           <span class="gastro-card-tag">Restaurant Principal</span>
         </div>
@@ -778,7 +778,7 @@
       <!-- Skibar Panoramique -->
       <div class="gastro-card">
         <div class="gastro-card-img">
-          <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=600&q=80" alt="Skibar SEGURO">
+          <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=600&q=80" alt="Skibar Panoramique">
           <div class="gastro-card-img-overlay"></div>
           <span class="gastro-card-tag">Rooftop · Vue Panoramique</span>
         </div>
@@ -796,7 +796,7 @@
       <!-- Lounge & Bar -->
       <div class="gastro-card">
         <div class="gastro-card-img">
-          <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80" alt="Lounge Bar SEGURO">
+          <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80" alt="Lounge Bar Lobby">
           <div class="gastro-card-img-overlay"></div>
           <span class="gastro-card-tag">Lobby · Lounge</span>
         </div>
@@ -821,7 +821,7 @@
 
     <div class="bienetre-top reveal">
       <div>
-        <span class="section-label" style="color:rgba(201,168,76,0.7);">3.3 · Détente &amp; Évasion</span>
+        <span class="section-label" style="color:rgba(201,168,76,0.7);">Détente &amp; Évasion</span>
         <h2 class="bienetre-heading">
           Bien-être &amp;<br><em>Loisirs</em>
         </h2>
@@ -838,13 +838,13 @@
       <!-- Piscine & Jacuzzi -->
       <div class="bienetre-card">
         <div class="bienetre-card-img">
-          <img src="https://images.pexels.com/photos/37585969/pexels-photo-37585969.jpeg" alt="Piscine SEGURO">
+          <img src="https://images.pexels.com/photos/37585969/pexels-photo-37585969.jpeg" alt="Piscine &amp; Jacuzzi">
         </div>
         <div class="bienetre-card-body">
           <span class="bienetre-card-icon"><img src="../assets/images/swimming-man.png" alt="" srcset=""></span>
           <h3 class="bienetre-card-name">La Piscine &amp; son Jacuzzi</h3>
           <p class="bienetre-card-desc">
-            Entourée d'un solarium aménagé, notre piscine est une véritable oasis urbaine.
+            Entourée d'un solarium aménagé, notre piscine est une véritable oasis.
             Parfaite pour quelques longueurs matinales ou pour se prélasser au soleil.
             Le jacuzzi attenant promet des moments de détente absolue.
           </p>
@@ -854,7 +854,7 @@
       <!-- Espace Fitness -->
       <div class="bienetre-card">
         <div class="bienetre-card-img">
-          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Fitness SEGURO">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Espace Fitness">
         </div>
         <div class="bienetre-card-body">
           <span class="bienetre-card-icon"><img src="../assets/images/weightlifting.png" alt="" srcset=""></span>
@@ -944,7 +944,7 @@
       <div class="events-img-wrap reveal-right">
         <img class="events-main-img"
           src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=900&q=80"
-          alt="Salle de conférence SEGURO">
+          alt="Salle de conférence &amp; séminaires">
         <div class="events-img-badge">
           <span class="events-img-badge-num">120</span>
           <span class="events-img-badge-label">Personnes max<br>· Capacité événement ·</span>
@@ -963,31 +963,31 @@
   <!-- 4.1 Nautique -->
   <div class="nautique-wrap reveal">
     <div class="nautique-img">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=85" alt="Côte togolaise Golfe de Guinée SEGURO">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=85" alt="Côte maritime et océan">
       <div class="nautique-img-overlay"></div>
     </div>
     <div class="nautique-content">
-      <span class="nautique-tag">§ 4.1 · Exclusivité Nautique</span>
+      <span class="nautique-tag">Exclusivité &amp; Évasion</span>
       <h2 class="nautique-title">
         Séjournez en ville,<br><em>évadez-vous sur l'océan</em>
       </h2>
       <p class="nautique-desc">
-        SEGURO est le seul hôtel de sa catégorie à Lomé à vous ouvrir les portes
-        de l'évasion maritime avec sa propre flotte de loisirs.
+        <?= htmlspecialchars(hotel_name()) ?> vous ouvre les portes
+        de l'évasion maritime avec ses prestations exclusives et ses partenaires de prestige.
       </p>
       <div class="nautique-items">
         <div class="nautique-item">
           <span class="nautique-item-icon"><img src="../assets/images/jet-ski.png" alt="" srcset=""></span>
           <div>
-            <span class="nautique-item-name">Adrénaline en Jet Ski</span>
-            <span class="nautique-item-desc">Sessions de jet ski pour découvrir la côte togolaise sous un angle nouveau et vivifiant.</span>
+            <span class="nautique-item-name">Sensations en Jet Ski</span>
+            <span class="nautique-item-desc">Sessions nautiques pour découvrir le littoral sous un angle nouveau et vivifiant.</span>
           </div>
         </div>
         <div class="nautique-item">
           <span class="nautique-item-icon"><img src="../assets/images/cruise-ship.png" alt="" srcset=""></span>
           <div>
             <span class="nautique-item-name">Croisières Privées en Yacht</span>
-            <span class="nautique-item-desc">Apéritif au coucher du soleil, réunion confidentielle ou célébration privée au large de Lomé — des souvenirs impérissables.</span>
+            <span class="nautique-item-desc">Apéritif au coucher du soleil, réunion confidentielle ou célébration privée au large — des souvenirs impérissables.</span>
           </div>
         </div>
       </div>
@@ -1001,11 +1001,11 @@
       <div class="exp-card-bg" style="background-image:url('https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=900&q=85');"></div>
       <div class="exp-card-overlay"></div>
       <div class="exp-card-body">
-        <span class="exp-card-tag">§ 4.2 · Le Nouveau Cœur Vibrant de Lomé</span>
+        <span class="exp-card-tag">Lieu d'Exception</span>
         <h3 class="exp-card-title">Le <em>Skibar</em><br>Panoramique</h3>
         <div class="exp-card-items">
-          <div class="exp-card-item">Le Spot Panoramique : l'une des vues les plus spectaculaires de la ville, idéal pour admirer le coucher de soleil.</div>
-          <div class="exp-card-item">Espace privatisable exclusif pour lancements de produits, cocktails d'entreprise ou soirées privées.</div>
+          <div class="exp-card-item">Le Spot Panoramique : l'une des vues les plus spectaculaires, idéal pour admirer le coucher de soleil.</div>
+          <div class="exp-card-item">Espace privatisable exclusif pour lancements, cocktails d'entreprise ou soirées d'exception.</div>
           <div class="exp-card-item">Clientèle internationale et locale dans une atmosphère chic et décontractée.</div>
         </div>
       </div>
@@ -1015,12 +1015,12 @@
       <div class="exp-card-bg" style="background-image:url('https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=85');"></div>
       <div class="exp-card-overlay"></div>
       <div class="exp-card-body">
-        <span class="exp-card-tag">§ 4.3 · Notre Garantie Business</span>
+        <span class="exp-card-tag">Garantie Business</span>
         <h3 class="exp-card-title">Connexion<br><em>Sans Faille</em></h3>
         <div class="exp-card-items">
-          <div class="exp-card-item">Technologie Fibre Optique dans l'ensemble de l'hôtel — navigation fluide, visioconférences sans coupure.</div>
-          <div class="exp-card-item">Wi-Fi Intelligent et Gratuit, signal stable et performant dans toutes les chambres et salles de réunion.</div>
-          <div class="exp-card-item">Pour nos clients professionnels, la connexion n'est pas un luxe — c'est une garantie fondamentale.</div>
+          <div class="exp-card-item">Technologie Fibre Optique dans l'ensemble de l'établissement — navigation fluide, visioconférences sans coupure.</div>
+          <div class="exp-card-item">Wi-Fi Sécurisé et Gratuit, signal stable et performant dans toutes les chambres et salons de réunion.</div>
+          <div class="exp-card-item">Pour nos clients professionnels, la connectivité est une garantie fondamentale.</div>
         </div>
       </div>
     </div>
@@ -1035,46 +1035,46 @@
   <div class="location-inner">
 
     <div class="reveal">
-      <span class="section-label">§ 5 · Notre Ancrage</span>
+      <span class="section-label">Notre Ancrage</span>
       <h2 class="section-heading">
-        Lomé, un emplacement<br><em>stratégique</em>
+        <?= htmlspecialchars(hotel_city()) ?>, un emplacement<br><em>stratégique</em>
       </h2>
     </div>
 
     <div class="location-layout">
       <div class="reveal">
         <p class="location-intro">
-          Idéalement situé à Agbodrafo, à l'entrée de la ville d'Aného,
-          l'hôtel SEGURO offre le parfait équilibre entre l'effervescence
-          urbaine et la quiétude nécessaire à votre repos.
+          Idéalement situé à <?= htmlspecialchars(hotel_location()) ?>,
+          <?= htmlspecialchars(hotel_name()) ?> offre le parfait équilibre entre l'effervescence
+          et la quiétude nécessaire à votre repos.
         </p>
         <div style="display:flex;flex-direction:column;">
           <div class="location-item">
             <div class="location-item-icon">💼</div>
             <div>
               <span class="location-item-name">Clientèle d'Affaires</span>
-              <span class="location-item-desc">Proximité immédiate avec les centres décisionnels, ambassades et sièges d'entreprises. Le camp de base idéal pour optimiser un agenda chargé.</span>
+              <span class="location-item-desc">Proximité avec les centres d'affaires et pôles décisionnels. Le cadre idéal pour optimiser votre séjour.</span>
             </div>
           </div>
           <div class="location-item">
             <div class="location-item-icon">🌴</div>
             <div>
               <span class="location-item-name">Voyageurs Loisirs</span>
-              <span class="location-item-desc">Point de départ parfait pour les merveilles de Lomé — marchés animés, plages et sites culturels emblématiques à quelques minutes.</span>
+              <span class="location-item-desc">Point de départ parfait pour découvrir les merveilles de la région et ses paysages authentiques.</span>
             </div>
           </div>
           <div class="location-item">
             <div class="location-item-icon">✈️</div>
             <div>
               <span class="location-item-name">Accès Facilité</span>
-              <span class="location-item-desc">Accès rapide aux principaux axes routiers. Service de transfert aéroport disponible sur réservation, 24h/24.</span>
+              <span class="location-item-desc">Accès rapide aux grands axes. Service de transfert privé disponible sur réservation.</span>
             </div>
           </div>
           <div class="location-item">
             <div class="location-item-icon">🅿️</div>
             <div>
               <span class="location-item-name">Parking Sécurisé</span>
-              <span class="location-item-desc">Espace de stationnement privé et surveillé à la disposition de notre clientèle pour une tranquillité d'esprit totale.</span>
+              <span class="location-item-desc">Espace de stationnement privé et surveillé 24h/24 pour une totale sérénité.</span>
             </div>
           </div>
         </div>
@@ -1086,15 +1086,15 @@
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31797.28!2d1.60!3d6.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023ef94b4b4b4b4%3A0x0!2sAgbodrafo%2C+Togo!5e0!3m2!1sfr!2sfr!4v1"
           allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Hôtel SEGURO — Agbodrafo, Togo">
+          title="<?= htmlspecialchars(hotel_name()) ?>">
         </iframe>
         <div class="location-address-card">
-          <span class="location-address-label">Adresse complète</span>
+          <span class="location-address-label">Adresse de l'établissement</span>
           <div class="location-address-text">
-            Hôtel SEGURO<br>
-            Agbodrafo, entrée de Aného<br>
-            Togo, Afrique de l'Ouest
-            <a href="https://maps.google.com/?q=Agbodrafo,Togo" target="_blank">
+            <?= htmlspecialchars(hotel_name()) ?><br>
+            <?= htmlspecialchars(hotel_location()) ?><br>
+            <?= htmlspecialchars(hotel_country()) ?>
+            <a href="https://maps.google.com/?q=<?= urlencode(hotel_name() . ' ' . hotel_location()) ?>" target="_blank">
               Ouvrir dans Google Maps →
             </a>
           </div>
@@ -1112,13 +1112,13 @@
 
     <div class="services6-top reveal">
       <div>
-        <span class="section-label" style="color:rgba(201,168,76,0.7);">§ 6 · Notre Engagement</span>
+        <span class="section-label" style="color:rgba(201,168,76,0.7);">Notre Engagement</span>
         <h2 class="services6-heading">
           L'Excellence<br>du <em>Service</em>
         </h2>
       </div>
       <p class="services6-intro">
-        La véritable âme de l'hôtel SEGURO réside dans la passion de nos équipes.
+        La véritable âme de <?= htmlspecialchars(hotel_name()) ?> réside dans la passion de nos équipes.
         De la réception à la restauration, en passant par le service d'étage et
         la conciergerie, vous trouverez toujours un interlocuteur disponible,
         souriant et proactif. Nous ne nous contentons pas de vous servir ;

@@ -5,7 +5,7 @@ exit;
 
 <style>
   /* ════════════════════════════════════════════
-     PAGE RÉSERVATION — Hôtel Seguro
+     PAGE RÉSERVATION
      Direction : Funnel multi-étapes · Luxe fonctionnel
      Split layout : formulaire gauche / résumé droite
   ════════════════════════════════════════════ */
@@ -867,7 +867,7 @@ exit;
   <div class="resa-hero-content">
     <div class="resa-hero-left">
       <span class="resa-eyebrow">Réservation en ligne</span>
-      <h1 class="resa-hero-title">Votre séjour<br><em>Seguro</em></h1>
+      <h1 class="resa-hero-title">Votre séjour<br><em><?= htmlspecialchars(hotel_short_name()) ?></em></h1>
     </div>
     <div class="resa-guarantees">
       <div class="guarantee-item">
@@ -1239,7 +1239,7 @@ exit;
         <input type="checkbox" id="cgv" required style="margin-top:3px;accent-color:var(--vert);flex-shrink:0;">
         <label for="cgv" style="font-family:'Jost',sans-serif;font-weight:200;font-size:0.68rem;color:#aaa;letter-spacing:0.03em;line-height:1.7;cursor:pointer;">
           J'accepte les <a href="#" style="color:var(--or);text-decoration:none;">conditions générales de vente</a>
-          et la <a href="#" style="color:var(--or);text-decoration:none;">politique d'annulation</a> de l'Hôtel Seguro.
+          et la <a href="#" style="color:var(--or);text-decoration:none;">politique d'annulation</a> de <?= htmlspecialchars(hotel_name()) ?>.
         </label>
       </div>
 
@@ -1303,7 +1303,7 @@ exit;
       </div>
       <div style="text-align:right;">
         <span class="total-amount" id="sum-total">95 000</span>
-        <small style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--or);"> FCFA</small>
+        <small style="font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--or);"> <?= htmlspecialchars(hotel_currency()) ?></small>
         <span class="total-nights" id="sum-total-detail">1 nuit · sans options</span>
       </div>
     </div>
@@ -1316,8 +1316,8 @@ exit;
 
     <div class="summary-help">
       <p>Besoin d'aide ? Contactez notre équipe au<br>
-        <a href="tel:+22900000000">+229 00 00 00 00</a> ou par
-        <a href="mailto:reservations@hotelseguro.com">e-mail</a>.
+        <a href="tel:<?= htmlspecialchars(hotel_phone()) ?>"><?= htmlspecialchars(hotel_phone()) ?></a> ou par
+        <a href="mailto:<?= htmlspecialchars(hotel_email()) ?>"><?= htmlspecialchars(hotel_email()) ?></a>.
       </p>
     </div>
 
@@ -1330,14 +1330,14 @@ exit;
     <div class="confirm-icon">✦</div>
     <span class="confirm-ref">Réservation confirmée</span>
     <h2 class="confirm-title">
-      Bienvenue à<br>l'Hôtel <em>Seguro</em>
+      Bienvenue à<br><?= htmlspecialchars(hotel_name()) ?>
     </h2>
     <p class="confirm-text">
       Votre réservation a été enregistrée avec succès. Un e-mail de confirmation
       vous a été envoyé avec tous les détails de votre séjour.
       Notre équipe a hâte de vous accueillir.
     </p>
-    <span class="confirm-ref-num" id="confirmRefNum">SEGURO-2025-0001</span>
+    <span class="confirm-ref-num" id="confirmRefNum"><?= htmlspecialchars(hotel_ref_prefix()) ?>-<?= date('Y') ?>-0001</span>
     <div style="font-family:'Jost',sans-serif;font-weight:200;font-size:0.6rem;color:#bbb;letter-spacing:0.3em;">
       Numéro de réservation
     </div>
@@ -1516,7 +1516,7 @@ exit;
     }
 
     // Générer numéro de réservation
-    const ref = 'SEGURO-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
+    const ref = '<?= addslashes(hotel_ref_prefix()) ?>-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
     document.getElementById('confirmRefNum').textContent = ref;
 
     // Masquer le résumé, afficher la confirmation

@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * CONNEXION CLIENT — Espace personnel Hôtel SEGURO
+ * CONNEXION CLIENT — Espace personnel
  * ════════════════════════════════════════════════════════
  */
 

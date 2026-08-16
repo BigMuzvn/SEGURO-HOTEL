@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * GALERIE & EXPÉRIENCE IMMERSIVE — Hôtel SEGURO
+ * GALERIE & EXPÉRIENCE IMMERSIVE
  * ════════════════════════════════════════════════════════
  */
 
@@ -235,11 +235,11 @@ include(__DIR__ . '/../layouts/header.php');
 <!-- HERO -->
 <div class="galerie-hero">
     <span style="text-transform:uppercase; letter-spacing:3px; color:var(--or); font-size:0.8rem; font-weight:600; display:block; margin-bottom:12px;">
-        Immersion Visuelle · Hôtel SEGURO
+        Immersion Visuelle · <?= htmlspecialchars(hotel_name()) ?>
     </span>
     <h1 class="galerie-hero-title">Galerie &amp; <em>Expérience des Lieux</em></h1>
     <p class="galerie-hero-sub">
-        Explorez en haute résolution les suites d'exception, les jardins tropicaux, la gastronomie et l'atmosphère envoûtante du lac Togo.
+        Explorez en haute résolution les suites d'exception, les jardins tropicaux, la gastronomie et l'atmosphère envoûtante de notre établissement.
     </p>
 </div>
 

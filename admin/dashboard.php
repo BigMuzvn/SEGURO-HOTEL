@@ -1,8 +1,6 @@
 <?php
 /**
- * ════════════════════════════════════════════════════════
- * DASHBOARD ADMIN — Hôtel SEGURO (Version Sidebar)
- * ════════════════════════════════════════════════════════
+ * DASHBOARD ADMIN
  */
 
 session_start();

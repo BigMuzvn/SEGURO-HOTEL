@@ -1,8 +1,6 @@
 <?php
 /**
- * ════════════════════════════════════════════════════════
- * GESTION PROFIL & ÉQUIPE ADMIN (RBAC) — Hôtel SEGURO
- * ════════════════════════════════════════════════════════
+ * GESTION PROFIL & ÉQUIPE ADMIN (RBAC)
  */
 
 session_start();

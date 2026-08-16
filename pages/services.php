@@ -5,7 +5,7 @@
 
 <style>
   /* ════════════════════════════════════════════
-     PAGE SERVICES — Hôtel Seguro
+     PAGE SERVICES
   ════════════════════════════════════════════ */
 
   /* Hero de page — sobre, pas de vidéo */
@@ -520,7 +520,7 @@
 ══════════════════════════════════════════ -->
 <section class="page-hero">
   <div class="page-hero-content">
-    <p class="page-eyebrow">Hôtel Seguro · Calavi</p>
+    <p class="page-eyebrow"><?= htmlspecialchars(hotel_name()) ?> · <?= htmlspecialchars(hotel_city()) ?></p>
     <h1 class="page-title">Nos <em>Services</em></h1>
     <div class="page-ornament">
       <span class="page-orn-line"></span>
@@ -550,7 +550,7 @@
       <span></span><i></i><span class="r"></span>
     </div>
     <p class="section-desc">
-      À l'Hôtel Seguro, le service n'est pas une prestation —
+      À <?= htmlspecialchars(hotel_name()) ?>, le service n'est pas une prestation —
       c'est une attention constante, discrète et sincère,
       qui transforme chaque moment en souvenir.
     </p>
@@ -568,7 +568,7 @@
       <div class="col-lg-4 col-md-6 reveal">
         <div class="service-card h-100">
           <div class="service-img">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Spa Seguro">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Spa &amp; Bien-être">
             <div class="service-img-overlay"></div>
             <span class="service-num">01</span>
             <span class="service-icon"></span>
@@ -589,7 +589,7 @@
       <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.1s">
         <div class="service-card h-100">
           <div class="service-img">
-            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant Seguro">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant Gastronomique">
             <div class="service-img-overlay"></div>
             <span class="service-num">02</span>
             <span class="service-icon"></span>
@@ -597,9 +597,9 @@
           <div class="service-body">
             <h3 class="service-name">Restaurant Gastronomique</h3>
             <p class="service-desc">
-              Une cuisine fusion afro-méditerranéenne qui célèbre
-              les saveurs du Bénin. Ingrédients locaux, produits frais
-              du marché, chef exécutif primé — une expérience gustative unique.
+              Une cuisine fusion raffinée qui célèbre
+              les saveurs du terroir. Ingrédients locaux, produits frais
+              du marché, chef exécutif passionné — une expérience gustative unique.
             </p>
             <a href="#restaurant" class="service-link">Découvrir le menu →</a>
           </div>
@@ -610,7 +610,7 @@
       <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.2s">
         <div class="service-card h-100">
           <div class="service-img">
-            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80" alt="Piscine Seguro">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80" alt="Piscine &amp; Lounge">
             <div class="service-img-overlay"></div>
             <span class="service-num">03</span>
             <span class="service-icon"></span>
@@ -702,11 +702,11 @@
   <div class="signature-content">
     <span class="signature-label">Service Signature</span>
     <h2 class="signature-title">
-      Le Conciergerie<br><em>Seguro</em>
+      La Conciergerie<br><em><?= htmlspecialchars(hotel_short_name()) ?></em>
     </h2>
     <p class="signature-text">
       Notre équipe de conciergerie est disponible 24h/24, 7j/7.
-      Réservations de restaurant, billets d'avion, organisation d'événements privés,
+      Réservations de restaurant, transferts privés, organisation d'événements,
       recommandations personnalisées — nous anticipons chacun de vos besoins
       avant même que vous ne les exprimiez.
     </p>
@@ -732,26 +732,26 @@
         <div class="extra-item reveal">
           <span class="extra-icon"><img src="../assets/images/room-service.png" alt="" srcset=""></span>
           <div class="extra-body">
-            <h4 class="extra-name">Room Service 24h/24</h4>
-            <p class="extra-desc">Menu complet disponible à toute heure dans votre chambre, servi avec élégance.</p>
+            <h4 class="extra-name">Room Service Connecté</h4>
+            <p class="extra-desc">Menu gastronomique et carte en chambre disponibles avec commande directe et suivi en direct.</p>
           </div>
-          <span class="extra-badge">Inclus</span>
+          <span class="extra-badge">Disponible</span>
         </div>
 
         <div class="extra-item reveal">
           <span class="extra-icon"><img src="../assets/images/morning-coffee.png" alt="" srcset=""></span>
           <div class="extra-body">
-            <h4 class="extra-name">Petit-déjeuner Buffet</h4>
-            <p class="extra-desc">Buffet tropical chaque matin : fruits frais, viennoiseries, œufs à la demande, jus naturels.</p>
+            <h4 class="extra-name">Petit-déjeuner Signature</h4>
+            <p class="extra-desc">Buffet complet chaque matin : fruits frais, viennoiseries, mets savoureux et jus naturels.</p>
           </div>
-          <span class="extra-badge">Inclus</span>
+          <span class="extra-badge">Option</span>
         </div>
 
         <div class="extra-item reveal">
           <span class="extra-icon"><img src="../assets/images/closet.png" alt="" srcset=""></span>
           <div class="extra-body">
-            <h4 class="extra-name">Ménage Quotidien</h4>
-            <p class="extra-desc">Service de chambre deux fois par jour, renouvellement du linge et des serviettes.</p>
+            <h4 class="extra-name">Housekeeping Quotidien</h4>
+            <p class="extra-desc">Entretien soigné de votre chambre, renouvellement du linge de lit et des serviettes de bain.</p>
           </div>
           <span class="extra-badge">Inclus</span>
         </div>
@@ -759,8 +759,8 @@
         <div class="extra-item reveal">
           <span class="extra-icon"><img src="../assets/images/wi-fi.png" alt="" srcset=""></span>
           <div class="extra-body">
-            <h4 class="extra-name">Wi-Fi Haut Débit</h4>
-            <p class="extra-desc">Connexion fibre optique dans toutes les chambres et espaces communs de l'hôtel.</p>
+            <h4 class="extra-name">Wi-Fi Fibre Haut Débit</h4>
+            <p class="extra-desc">Connexion fibre optique sécurisée dans toutes les chambres et espaces de l'établissement.</p>
           </div>
           <span class="extra-badge">Inclus</span>
         </div>
@@ -773,7 +773,7 @@
           <span class="extra-icon"><img src="../assets/images/protection.png" alt="" srcset=""></span>
           <div class="extra-body">
             <h4 class="extra-name">Parking Sécurisé</h4>
-            <p class="extra-desc">Parking privé gardienné et éclairé, accès direct à l'hôtel via ascenseur dédié.</p>
+            <p class="extra-desc">Espace de stationnement privé, clos et surveillé 24h/24 pour une tranquillité totale.</p>
           </div>
           <span class="extra-badge">Inclus</span>
         </div>
@@ -781,8 +781,8 @@
         <div class="extra-item reveal">
           <span class="extra-icon"><img src="../assets/images/dumbbell.png" alt="" srcset=""></span>
           <div class="extra-body">
-            <h4 class="extra-name">Salle de Sport</h4>
-            <p class="extra-desc">Équipements cardio et musculation modernes, cours de yoga au lever du soleil sur demande.</p>
+            <h4 class="extra-name">Espace Bien-être &amp; Fitness</h4>
+            <p class="extra-desc">Équipements cardio et de détente modernes pour prendre soin de votre vitalité.</p>
           </div>
           <span class="extra-badge">Inclus</span>
         </div>
@@ -790,17 +790,17 @@
         <div class="extra-item reveal">
           <span class="extra-icon"><img src="../assets/images/pacifier.png" alt="" srcset=""></span>
           <div class="extra-body">
-            <h4 class="extra-name">Baby-sitting</h4>
-            <p class="extra-desc">Service de garde d'enfants certifié sur réservation, pour vos soirées en toute sérénité.</p>
+            <h4 class="extra-name">Accueil Personnalisé</h4>
+            <p class="extra-desc">Accueil attentionné dès votre arrivée pour un séjour fluide et sur-mesure.</p>
           </div>
-          <span class="extra-badge">Sur demande</span>
+          <span class="extra-badge">Inclus</span>
         </div>
 
         <div class="extra-item reveal">
           <span class="extra-icon"><img src="../assets/images/laundry.png" alt="" srcset=""></span>
           <div class="extra-body">
             <h4 class="extra-name">Pressing &amp; Blanchisserie</h4>
-            <p class="extra-desc">Service express en 4 heures ou standard 24h, livraison directement dans votre chambre.</p>
+            <p class="extra-desc">Service soigné pour vos vêtements avec livraison directement dans votre chambre.</p>
           </div>
           <span class="extra-badge">Sur demande</span>
         </div>
@@ -817,14 +817,14 @@
   <div class="container">
     <span class="section-label">Prêt à vivre l'expérience ?</span>
     <h2 class="section-heading">
-      Réservez votre séjour<br>à l'Hôtel <em>Seguro</em>
+      Réservez votre séjour<br>à <?= htmlspecialchars(hotel_name()) ?>
     </h2>
     <div class="section-divider">
       <span></span><i></i><span class="r"></span>
     </div>
-    <p>Chaque réservation inclut l'accès à tous nos services.</p>
+    <p>Chaque réservation inclut l'accès à nos services de prestige.</p>
     <div class="cta-group">
-      <a href="../pages/reservation.php" class="btn-cta-main">Réserver maintenant</a>
+      <a href="../pages/reservation-system.php" class="btn-cta-main">Réserver maintenant</a>
       <a href="../pages/contact.php" class="btn-cta-outline">Nous contacter</a>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * ADMIN CLIENTS — Hôtel SEGURO
+ * ADMIN CLIENTS
  */
 
 session_start();

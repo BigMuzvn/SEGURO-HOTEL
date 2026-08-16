@@ -22,7 +22,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 <style>
   /* ════════════════════════════════════════════
-     PAGE CHAMBRES — Hôtel Seguro
+     PAGE CHAMBRES
      Direction : Editorial luxe · Asymétrie · Espace
   ════════════════════════════════════════════ */
 
@@ -600,7 +600,7 @@ include(__DIR__ . '/../layouts/header.php');
   }
 
   .chambre-cta::before {
-    content: 'SEGURO';
+    content: '<?= addslashes(strtoupper(hotel_initials())) ?>';
     position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -723,11 +723,11 @@ include(__DIR__ . '/../layouts/header.php');
 <section class="page-hero">
   <div class="page-hero-bg"></div>
   <div class="page-hero-content">
-    <span class="page-eyebrow">Hôtel Seguro · Lomé </span>
+    <span class="page-eyebrow"><?= htmlspecialchars(hotel_name()) ?> · <?= htmlspecialchars(hotel_city()) ?></span>
     <h1 class="page-title">Nos <em>Chambres</em><br>&amp; Suites</h1>
     <div class="title-bar">
       <span class="title-bar-line"></span>
-      <span class="title-bar-text">8 types d'hébergement · Vue nature</span>
+      <span class="title-bar-text">Hébergements d'Exception · Confort Absolu</span>
     </div>
   </div>
 </section>
@@ -902,7 +902,7 @@ $TYPES = ['standard'=>'Standard','superieure'=>'Supérieure','suite'=>'Suite','v
 ══════════════════════════════════════════ -->
 <div class="interlude reveal">
   <div class="interlude-text">
-    <span class="interlude-label">L'Hôtel Seguro en chiffres</span>
+    <span class="interlude-label"><?= htmlspecialchars(hotel_name()) ?> en chiffres</span>
     <h3 class="interlude-title">
       Un cadre pensé pour<br>votre <em>confort total</em>
     </h3>

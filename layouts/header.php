@@ -50,7 +50,7 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      padding: 26px 60px;
+      padding: 16px 36px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -63,63 +63,89 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      padding: 14px 60px;
+      padding: 11px 36px;
       box-shadow: 0 2px 24px rgba(0,0,0,0.08);
       border-bottom: 1px solid rgba(201, 168, 76, 0.2);
     }
 
     /* ────────────────────────────────────────
-       LOGO
+       LOGO — MONOGRAM CREST & COMPACT BRAND
     ──────────────────────────────────────── */
     .logo {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
       flex-shrink: 0;
     }
 
-    .logo-ornament {
+    .logo-crest {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 2px;
-    }
-
-    .logo-line {
-      width: 28px; height: 1px;
-      background: linear-gradient(to right, transparent, var(--or));
-      transition: background 0.5s;
-    }
-    .logo-line.right {
-      background: linear-gradient(to left, transparent, var(--or));
-    }
-
-    .logo-diamond {
-      width: 4px; height: 4px;
-      background: var(--or);
-      transform: rotate(45deg);
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--or);
+      background: rgba(184, 144, 53, 0.08);
+      transition: all 0.3s ease;
       flex-shrink: 0;
+    }
+    .logo:hover .logo-crest {
+      background: var(--or);
+      border-color: var(--or);
+    }
+    .logo:hover .logo-crest .crest-crown,
+    .logo:hover .logo-crest .crest-letters {
+      color: #111111;
+    }
+
+    .crest-crown {
+      font-size: 0.50rem;
+      color: var(--or);
+      line-height: 1;
+      margin-bottom: 1px;
+      transition: color 0.3s;
+    }
+
+    .crest-letters {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 1.10rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--or);
+      transition: color 0.3s;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .logo-name {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 1.6rem;
-      letter-spacing: 0.35em;
+      font-weight: 400;
+      font-size: 1.10rem;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      line-height: 1;
+      line-height: 1.1;
       color: var(--or);
+      white-space: nowrap;
     }
 
     .logo-sub {
       font-family: 'Jost', sans-serif;
-      font-weight: 200;
-      font-size: 0.52rem;
-      letter-spacing: 0.5em;
+      font-weight: 300;
+      font-size: 0.48rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      margin-top: 4px;
       color: rgba(201,168,76,0.7);
+      white-space: nowrap;
+      line-height: 1;
+      margin-top: 3px;
     }
 
     /* ────────────────────────────────────────
@@ -128,7 +154,7 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
     nav {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 16px;
       flex-wrap: nowrap;
     }
 
@@ -136,7 +162,7 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       font-family: 'Jost', sans-serif;
       font-weight: 300;
       font-size: 0.68rem;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       text-decoration: none;
       position: relative;
@@ -168,18 +194,18 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-left: 10px;
+      gap: 8px;
+      margin-left: 8px;
       flex-shrink: 0;
     }
 
     .nav-btn-account {
       font-family: 'Jost', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: 0.62rem;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      padding: 9px 20px;
+      padding: 7px 14px;
       border: 1px solid var(--or);
       color: var(--or) !important;
       background: transparent;
@@ -187,8 +213,9 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       transition: all 0.35s ease;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
       white-space: nowrap;
+      flex-shrink: 0;
     }
     .nav-btn-account:hover {
       background: var(--or);
@@ -207,13 +234,14 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border: 1px solid rgba(255,255,255,0.35);
       color: rgba(255,255,255,0.8) !important;
-      font-size: 0.75rem;
+      font-size: 0.70rem;
       transition: all 0.35s ease;
       text-decoration: none;
+      flex-shrink: 0;
     }
     .nav-btn-logout:hover {
       border-color: #e74c3c;
@@ -231,11 +259,11 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
 
     .nav-btn-reserver {
       font-family: 'Jost', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: 0.62rem;
-      letter-spacing: 0.32em;
+      letter-spacing: 0.20em;
       text-transform: uppercase;
-      padding: 10px 24px;
+      padding: 8px 18px;
       background: var(--or) !important;
       color: var(--noir) !important;
       border: 1px solid var(--or);
@@ -243,6 +271,7 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       white-space: nowrap;
       display: inline-block;
+      flex-shrink: 0;
     }
     .nav-btn-reserver:hover {
       background: var(--or-clair) !important;
@@ -666,9 +695,18 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
     /* ════════════════════════════════════════════
        RESPONSIVE
     ════════════════════════════════════════════ */
+    @media (max-width: 1200px) and (min-width: 992px) {
+      #header { padding: 14px 20px; }
+      nav { gap: 12px; }
+      nav a.nav-link-item { font-size: 0.64rem; letter-spacing: 0.12em; }
+      .logo-name { font-size: 0.95rem; }
+      .logo-sub { display: none; }
+      .nav-btn-account { padding: 6px 10px; font-size: 0.58rem; letter-spacing: 0.12em; }
+      .nav-btn-reserver { padding: 7px 14px; font-size: 0.58rem; letter-spacing: 0.14em; }
+    }
     @media (max-width: 991px) {
-      #header { padding: 20px 30px; }
-      #header.scrolled { padding: 14px 30px; }
+      #header { padding: 18px 24px; }
+      #header.scrolled { padding: 12px 24px; }
       nav { display: none; }
       .hamburger { display: flex; }
       .hero-corner { display: none; }
@@ -707,14 +745,15 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
   <!-- HEADER -->
   <header id="header">
 
-    <a href="<?= $baseUrl ?>/index.php" class="logo">
-      <div class="logo-ornament">
-        <span class="logo-line"></span>
-        <span class="logo-diamond"></span>
-        <span class="logo-line right"></span>
+    <a href="<?= $baseUrl ?>/index.php" class="logo" title="<?= htmlspecialchars(hotel_name()) ?>">
+      <div class="logo-crest">
+        <span class="crest-crown"><i class="fas fa-crown"></i></span>
+        <span class="crest-letters"><?= htmlspecialchars(hotel_initials()) ?></span>
       </div>
-      <span class="logo-name"><?= htmlspecialchars(hotel_short_name()) ?></span>
-      <span class="logo-sub"><?= htmlspecialchars(hotel_tagline()) ?></span>
+      <div class="logo-text">
+        <span class="logo-name"><?= htmlspecialchars(hotel_short_name()) ?></span>
+        <span class="logo-sub"><?= htmlspecialchars(hotel_city()) ?></span>
+      </div>
     </a>
 
     <nav>

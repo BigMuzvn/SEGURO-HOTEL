@@ -1,8 +1,6 @@
 <?php
 /**
- * ════════════════════════════════════════════════════════
- * GESTION DU ROOM SERVICE — Administration Hôtel SEGURO
- * ════════════════════════════════════════════════════════
+ * GESTION DU ROOM SERVICE — Administration
  */
 
 session_start();

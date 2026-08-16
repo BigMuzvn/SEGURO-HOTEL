@@ -35,6 +35,7 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
     // ── Identité Établissement (Personnalisable par hôtel) ──
     define('HOTEL_NAME', getenv('HOTEL_NAME') ?: 'Hôtel Grand Prestige & Spa');
     define('HOTEL_NAME_SHORT', getenv('HOTEL_NAME_SHORT') ?: 'Grand Prestige');
+    define('HOTEL_INITIALS', getenv('HOTEL_INITIALS') ?: 'GP');
     define('HOTEL_TAGLINE', getenv('HOTEL_TAGLINE') ?: 'L\'Excellence · Le Confort · L\'Hospitalité');
     define('HOTEL_LOCATION', getenv('HOTEL_LOCATION') ?: 'Avenue Océane, Front de Mer');
     define('HOTEL_CITY', getenv('HOTEL_CITY') ?: 'Lomé');
@@ -129,6 +130,17 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
     // ── Helper Functions Marque Blanche ──
     function hotel_name(): string { return HOTEL_NAME; }
     function hotel_short_name(): string { return HOTEL_NAME_SHORT; }
+    function hotel_initials(): string {
+        if (defined('HOTEL_INITIALS') && !empty(HOTEL_INITIALS)) {
+            return HOTEL_INITIALS;
+        }
+        $words = explode(' ', trim(hotel_short_name()));
+        $initials = '';
+        foreach ($words as $w) {
+            if (!empty($w)) $initials .= mb_substr($w, 0, 1);
+        }
+        return strtoupper(substr($initials, 0, 3)) ?: 'HTL';
+    }
     function hotel_tagline(): string { return HOTEL_TAGLINE; }
     function hotel_location(): string { return HOTEL_LOCATION; }
     function hotel_city(): string { return HOTEL_CITY; }

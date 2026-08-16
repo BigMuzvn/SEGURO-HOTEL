@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * MODÉRATION DES AVIS CLIENTS — Admin Hôtel SEGURO
+ * MODÉRATION DES AVIS CLIENTS
  * ════════════════════════════════════════════════════════
  */
 

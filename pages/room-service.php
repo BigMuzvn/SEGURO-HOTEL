@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * ROOM SERVICE & CARTE EN CHAMBRE — Hôtel SEGURO
+ * ROOM SERVICE & CARTE EN CHAMBRE
  * ════════════════════════════════════════════════════════
  */
 
@@ -365,7 +365,7 @@ body {
     </span>
     <h1 class="rs-hero-title">Room Service &amp; <em>Saveurs en Chambre</em></h1>
     <p class="rs-hero-sub">
-        Savourez l'excellence gastronomique de l'Hôtel SEGURO directement dans l'intimité de votre chambre, suite ou terrasse privative.
+        Savourez l'excellence gastronomique de <?= htmlspecialchars(hotel_name()) ?> directement dans l'intimité de votre chambre, suite ou terrasse privative.
     </p>
     
     <!-- Barre de suivi rapide -->

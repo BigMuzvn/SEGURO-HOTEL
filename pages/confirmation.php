@@ -1,6 +1,6 @@
 <?php
 /**
- * CONFIRMATION DE RÉSERVATION — Hôtel SEGURO
+ * CONFIRMATION DE RÉSERVATION
  */
 session_start();
 

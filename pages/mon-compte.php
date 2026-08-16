@@ -1,6 +1,6 @@
 <?php
 /**
- * MON COMPTE — Espace client Hôtel SEGURO
+ * MON COMPTE — Espace client
  */
 session_start();
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $adminList = $user->getAllAdmins();
                         $adminEmails = array_column($adminList, 'email');
                         $chInfo = $chambre->getById($targetChambreId);
-                        $chNom = ($chInfo && isset($chInfo->nom)) ? $chInfo->nom : 'Chambre SEGURO';
+                        $chNom = ($chInfo && isset($chInfo->nom)) ? $chInfo->nom : ('Hébergement ' . hotel_short_name());
                         $nomClient = $user->prenom . ' ' . $user->nom;
                         Mail::sendAdminReservationModificationNotification(
                             $adminEmails,
@@ -108,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $adminList = $user->getAllAdmins();
                         $adminEmails = array_column($adminList, 'email');
                         $chInfo = $chambre->getById($chId);
-                        $chNom = ($chInfo && isset($chInfo->nom)) ? $chInfo->nom : 'Chambre SEGURO';
+                        $chNom = ($chInfo && isset($chInfo->nom)) ? $chInfo->nom : ('Hébergement ' . hotel_short_name());
                         $nomClient = $user->prenom . ' ' . $user->nom;
                         Mail::sendAdminReservationCancellationNotification(
                             $adminEmails,
@@ -627,7 +627,7 @@ include(__DIR__ . '/../layouts/header.php');
     
     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
       <div>
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--or); font-weight: 500;">Programme Privilège SEGURO</div>
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--or); font-weight: 500;">Programme Privilège <?= htmlspecialchars(hotel_short_name()) ?></div>
         <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin: 4px 0 0 0; color: #fff; display: flex; align-items: center; gap: 10px;">
           <i class="fas fa-crown" style="color: <?= $fidelite['badge_color'] ?>;"></i>
           <?= htmlspecialchars($fidelite['grade_label']) ?>
@@ -762,7 +762,7 @@ include(__DIR__ . '/../layouts/header.php');
         <div class="empty-state">
           <div class="empty-state-icon">📅</div>
           <div class="empty-state-title">Aucune réservation</div>
-          <p>Vous n'avez pas encore effectué de réservation à l'Hôtel SEGURO.</p>
+          <p>Vous n'avez pas encore effectué de réservation à <?= htmlspecialchars(hotel_name()) ?>.</p>
           <a href="<?= $baseUrl ?>/pages/reservation-system.php" class="btn-action btn-modifier"
              style="padding:12px 32px;">
             Faire une réservation

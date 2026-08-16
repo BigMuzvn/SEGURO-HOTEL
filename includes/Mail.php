@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * CLASS MAIL — Envoi d'emails HTML Luxe Hôtel SEGURO
+ * CLASS MAIL — Envoi d'emails transactionnels Luxe
  * ════════════════════════════════════════════════════════
  */
 
@@ -14,11 +14,11 @@ class Mail {
     }
 
     private static function getFromName(): string {
-        return defined('BREVO_SENDER_NAME') ? BREVO_SENDER_NAME : (getenv('BREVO_SENDER_NAME') ?: "Hôtel SEGURO — Conciergerie");
+        return defined('BREVO_SENDER_NAME') ? BREVO_SENDER_NAME : (getenv('BREVO_SENDER_NAME') ?: (hotel_name() . " — Conciergerie"));
     }
 
     private static function getFromEmail(): string {
-        return defined('BREVO_SENDER_EMAIL') ? BREVO_SENDER_EMAIL : (getenv('BREVO_SENDER_EMAIL') ?: "reservations@hotelseguro.com");
+        return defined('BREVO_SENDER_EMAIL') ? BREVO_SENDER_EMAIL : (getenv('BREVO_SENDER_EMAIL') ?: hotel_email());
     }
 
     /**

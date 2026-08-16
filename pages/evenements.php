@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * ÉVÉNEMENTS & SÉMINAIRES B2B — Hôtel SEGURO
+ * ÉVÉNEMENTS & SÉMINAIRES B2B
  * ════════════════════════════════════════════════════════
  */
 
@@ -363,7 +363,7 @@ include(__DIR__ . '/../layouts/header.php');
 <!-- HERO SECTION -->
 <div class="event-hero">
     <span style="text-transform:uppercase; letter-spacing:3px; color:var(--or); font-size:0.8rem; font-weight:600; display:block; margin-bottom:12px;">
-        Hôtel SEGURO · Espaces Professionnels &amp; Réceptions
+        <?= htmlspecialchars(hotel_name()) ?> · Espaces Professionnels &amp; Réceptions
     </span>
     <h1 class="event-hero-title">Événements d'Exception &amp; <em>Séminaires</em></h1>
     <p class="event-hero-sub">

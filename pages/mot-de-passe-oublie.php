@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * RÉCUPÉRATION DU CODE CLIENT / IDENTIFIANTS — Hôtel SEGURO
+ * RÉCUPÉRATION DU CODE CLIENT / IDENTIFIANTS
  * ════════════════════════════════════════════════════════
  */
 

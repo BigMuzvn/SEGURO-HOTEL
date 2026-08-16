@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * SYSTÈME DE RÉSERVATION — Hôtel SEGURO
+ * SYSTÈME DE RÉSERVATION EN LIGNE
  * ════════════════════════════════════════════════════════
  */
 
@@ -173,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             // Récupérer la liste des options et le nom de la chambre
                             $chambreInfo = $chambre->getById($chambre_id);
-                            $chambreNom  = ($chambreInfo && isset($chambreInfo->nom)) ? $chambreInfo->nom : 'Chambre SEGURO';
+                            $chambreNom  = ($chambreInfo && isset($chambreInfo->nom)) ? $chambreInfo->nom : ('Hébergement ' . hotel_short_name());
                             $optionsChoisies = $new_reservation->getOptions();
                             $promoTexte = !empty($code_promo) ? ($code_promo . ' (-' . number_format($new_reservation->montant_reduction, 0, ',', ' ') . ' FCFA)') : null;
                             $paiementTexte = ($mode_reglement === 'acompte_30') 

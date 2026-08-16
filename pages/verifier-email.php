@@ -1,7 +1,7 @@
 <?php
 /**
  * ════════════════════════════════════════════════════════
- * VÉRIFICATION EMAIL (OTP) — Hôtel SEGURO
+ * VÉRIFICATION EMAIL (OTP) — Plateforme Hôtelière
  * ════════════════════════════════════════════════════════
  */
 
@@ -239,7 +239,7 @@ include(__DIR__ . '/../layouts/header.php');
                 <strong>Email Vérifié !</strong><br>
                 Votre adresse email <strong><?= htmlspecialchars($user->email) ?></strong> est confirmée.
             </div>
-            <p class="otp-subtitle">Vous bénéficiez d'un compte hôte certifié à l'Hôtel SEGURO.</p>
+            <p class="otp-subtitle">Vous bénéficiez d'un compte hôte certifié auprès de <?= htmlspecialchars(hotel_name()) ?>.</p>
             <a href="mon-compte.php" class="btn-otp-primary" style="display:block; text-decoration:none; text-align:center;">
                 Accéder à Mon Compte
             </a>

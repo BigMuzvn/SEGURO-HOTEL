@@ -1,6 +1,6 @@
 <?php
 /**
- * pages/deconnexion.php — Déconnexion sécurisée SEGURO
+ * pages/deconnexion.php — Déconnexion sécurisée
  */
 session_start();
 

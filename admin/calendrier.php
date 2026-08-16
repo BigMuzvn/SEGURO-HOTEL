@@ -1,6 +1,6 @@
 <?php
 /**
- * CALENDRIER ADMIN — Hôtel SEGURO
+ * CALENDRIER ADMIN
  */
 
 session_start();

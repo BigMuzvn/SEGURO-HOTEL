@@ -141,4 +141,4 @@ THEME_COLOR_ACCENT_PALE="#f5e9c4"
 ---
 
 ## 📄 Licence
-Ce projet est développé sous licence privée pour l'**Hôtel SEGURO**. Tous droits réservés.
+Propriété logicielle privée — Moteur commercialisé sous licence d'exploitation hôtelière. Tous droits réservés.

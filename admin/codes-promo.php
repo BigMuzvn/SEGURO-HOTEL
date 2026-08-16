@@ -1,8 +1,6 @@
 <?php
 /**
- * ════════════════════════════════════════════════════════
- * GESTION DES CODES PROMO — Administration Hôtel SEGURO
- * ════════════════════════════════════════════════════════
+ * GESTION DES CODES PROMO — Administration
  */
 
 session_start();

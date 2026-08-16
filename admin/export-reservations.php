@@ -1,8 +1,6 @@
 <?php
 /**
- * ════════════════════════════════════════════════════════
- * EXPORT DES RÉSERVATIONS EN CSV / EXCEL — Admin Hôtel SEGURO
- * ════════════════════════════════════════════════════════
+ * EXPORT DES RÉSERVATIONS EN CSV / EXCEL
  */
 
 session_start();
