@@ -792,13 +792,21 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       50%      { opacity: 1;   transform: scaleY(1); }
     }
 
-    /* Coins décoratifs */
-    .hero-corner { position: absolute; z-index: 5; }
-    .hero-corner.tl { top: 36px; left: 56px; }
-    .hero-corner.tr { top: 36px; right: 56px; transform: scaleX(-1); }
-    .hero-corner.bl { bottom: 36px; left: 56px; transform: scaleY(-1); }
-    .hero-corner.br { bottom: 36px; right: 56px; transform: scale(-1); }
-    .hero-corner svg { opacity: 0.35; }
+    /* Coins décoratifs dorés aux sommets du hero */
+    .hero-corner { 
+      position: absolute; 
+      z-index: 5; 
+      pointer-events: none;
+    }
+    .hero-corner.tl { top: 10px; left: 14px; }
+    .hero-corner.tr { top: 10px; right: 14px; transform: scaleX(-1); }
+    .hero-corner.bl { bottom: 12px; left: 14px; transform: scaleY(-1); }
+    .hero-corner.br { bottom: 12px; right: 14px; transform: scale(-1); }
+    .hero-corner svg { 
+      display: block;
+      opacity: 0.55; 
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
 
     /* ════════════════════════════════════════════
        FOOTER
