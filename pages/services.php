@@ -169,17 +169,14 @@
     position: relative;
     overflow: hidden;
     background: #fff;
-    border-radius: 12px;
-    border: 1px solid rgba(var(--or-rgb), 0.2);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
-    transition: box-shadow 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
+    border: 1px solid rgba(201,168,76,0.1);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
     cursor: pointer;
   }
 
   .service-card:hover {
-    box-shadow: 0 20px 60px rgba(var(--vert-rgb),0.12);
-    transform: translateY(-5px);
-    border-color: var(--or);
+    box-shadow: 0 20px 60px rgba(var(--vert-rgb),0.1);
+    transform: translateY(-4px);
   }
 
   /* Image du service */

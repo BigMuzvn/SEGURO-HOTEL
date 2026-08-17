@@ -59,292 +59,196 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       PRÉSENTATION — L'Art de Vivre & Sérénité
+       PRÉSENTATION — L'expérience
   ══════════════════════════════════════════ -->
-  <section class="section-experience" style="padding: 120px 40px; background: var(--blanc); position: relative; overflow: hidden;">
-    
-    <div style="max-width: 1240px; margin: 0 auto; position: relative; z-index: 2;">
-      
-      <div style="text-align: center; max-width: 780px; margin: 0 auto 70px;">
-        <div style="display: inline-flex; align-items: center; gap: 14px; margin-bottom: 20px;">
-          <span style="display: block; width: 40px; height: 1px; background: linear-gradient(to right, transparent, var(--or));"></span>
-          <span style="font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--or); font-weight: 500;">Sanctuaire d'Exception</span>
-          <span style="display: block; width: 40px; height: 1px; background: linear-gradient(to left, transparent, var(--or));"></span>
-        </div>
-        
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4.5vw, 3.6rem); color: var(--vert); margin-bottom: 24px; font-weight: 300; line-height: 1.2;">
-          Une parenthèse de <em>sérénité absolue</em>
-        </h2>
-        
-        <p style="font-size: 1.05rem; color: #555; line-height: 1.9; font-weight: 300;">
-          Niché au cœur d'un environnement privilégié à <?= htmlspecialchars(hotel_location()) ?>, <strong><?= htmlspecialchars(hotel_name()) ?></strong> vous invite à découvrir 
-          l'harmonie parfaite entre nature préservée et confort raffiné. Un refuge hors du temps où chaque instant a été pensé pour sublimer votre séjour.
-        </p>
+  <section style="padding: 120px 60px; background: var(--blanc);">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+      <div style="margin-bottom: 32px;">
+        <span style="display: inline-block; width: 60px; height: 1px; background: var(--or); vertical-align: middle;"></span>
+        <span style="display: inline-block; width: 8px; height: 8px; background: var(--or); transform: rotate(45deg); margin: 0 16px; vertical-align: middle;"></span>
+        <span style="display: inline-block; width: 60px; height: 1px; background: var(--or); vertical-align: middle;"></span>
       </div>
       
-      <!-- Grille des 4 Piliers d'Excellence -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
-        
-        <div class="pillar-card" style="background: var(--blanc-surface, #ffffff); border: 1px solid rgba(var(--or-rgb), 0.22); border-radius: 12px; padding: 40px 30px; text-align: center; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 30px rgba(0,0,0,0.03); position: relative;">
-          <div style="width: 70px; height: 70px; margin: 0 auto 24px; border: 1.5px solid var(--or); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(var(--or-rgb), 0.08); color: var(--or); font-size: 1.6rem;">
-            <i class="fas fa-leaf"></i>
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--vert); margin-bottom: 12px; font-weight: 600;">Nature Préservée</h3>
-          <p style="font-size: 0.92rem; color: #666; line-height: 1.7; font-weight: 300; margin: 0;">Un cadre tropical luxuriant à quelques pas des vagues de l'océan Atlantique.</p>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; color: var(--vert); margin-bottom: 24px; font-weight: 300;">
+        Une parenthèse de sérénité
+      </h2>
+      
+      <p style="font-size: 1.1rem; color: #555; line-height: 1.8; max-width: 700px; margin: 0 auto 48px;">
+        Niché au cœur d'un environnement privilégié à <?= htmlspecialchars(hotel_location()) ?>, <?= htmlspecialchars(hotel_name()) ?> vous invite à découvrir 
+        l'harmonie parfaite entre nature préservée et confort raffiné. Notre établissement 
+        d'exception vous offre un refuge hors du temps où chaque détail a été pensé pour 
+        sublimer votre séjour.
+      </p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 48px; margin-top: 64px;">
+        <div style="text-align: center;">
+          <div style="width: 90px; height: 90px; margin: 0 auto 20px; border: 1px solid var(--or); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"> <img src="./assets/images/leaf.png" alt="Nature Préservée" srcset=""></div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--vert); margin-bottom: 12px;">Nature Préservée</h3>
+          <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">Un cadre verdoyant à quelques pas de l'océan Atlantique</p>
         </div>
-
-        <div class="pillar-card" style="background: var(--blanc-surface, #ffffff); border: 1px solid rgba(var(--or-rgb), 0.22); border-radius: 12px; padding: 40px 30px; text-align: center; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 30px rgba(0,0,0,0.03); position: relative;">
-          <div style="width: 70px; height: 70px; margin: 0 auto 24px; border: 1.5px solid var(--or); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(var(--or-rgb), 0.08); color: var(--or); font-size: 1.6rem;">
-            <i class="fas fa-gem"></i>
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--vert); margin-bottom: 12px; font-weight: 600;">Luxe Authentique</h3>
-          <p style="font-size: 0.92rem; color: #666; line-height: 1.7; font-weight: 300; margin: 0;">Des espaces architecturaux célébrant l'art de vivre et l'artisanat de prestige.</p>
+        <div style="text-align: center;">
+          <div style="width: 90px; height: 90px; margin: 0 auto 20px; border: 1px solid var(--or); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"> <img src="./assets/images/diamonds.png" alt="Luxueux & Authentique" srcset=""></div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--vert); margin-bottom: 12px;">Luxueux & Authentique</h3>
+          <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">Des espaces raffinés célébrant l'art de vivre togolais</p>
         </div>
-
-        <div class="pillar-card" style="background: var(--blanc-surface, #ffffff); border: 1px solid rgba(var(--or-rgb), 0.22); border-radius: 12px; padding: 40px 30px; text-align: center; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 30px rgba(0,0,0,0.03); position: relative;">
-          <div style="width: 70px; height: 70px; margin: 0 auto 24px; border: 1.5px solid var(--or); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(var(--or-rgb), 0.08); color: var(--or); font-size: 1.6rem;">
-            <i class="fas fa-utensils"></i>
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--vert); margin-bottom: 12px; font-weight: 600;">Haute Gastronomie</h3>
-          <p style="font-size: 0.92rem; color: #666; line-height: 1.7; font-weight: 300; margin: 0;">Une table d'exception fusionnant saveurs africaines et haute cuisine contemporaine.</p>
+        <div style="text-align: center;">
+          <div style="width: 90px; height: 90px; margin: 0 auto 20px; border: 1px solid var(--or); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"> <img src="./assets/images/restaurants.png" alt="Gastronomie Locale" srcset=""></div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--vert); margin-bottom: 12px;">Gastronomie Locale</h3>
+          <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">Une cuisine fusion entre saveurs africaines et techniques modernes</p>
         </div>
-
-        <div class="pillar-card" style="background: var(--blanc-surface, #ffffff); border: 1px solid rgba(var(--or-rgb), 0.22); border-radius: 12px; padding: 40px 30px; text-align: center; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 30px rgba(0,0,0,0.03); position: relative;">
-          <div style="width: 70px; height: 70px; margin: 0 auto 24px; border: 1.5px solid var(--or); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(var(--or-rgb), 0.08); color: var(--or); font-size: 1.6rem;">
-            <i class="fas fa-sun"></i>
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--vert); margin-bottom: 12px; font-weight: 600;">Couchers de Soleil</h3>
-          <p style="font-size: 0.92rem; color: #666; line-height: 1.7; font-weight: 300; margin: 0;">Des panoramas infinis contemplés dans l'intimité de votre suite ou terrasse.</p>
+        <div style="text-align: center;">
+          <div style="width: 90px; height: 90px; margin: 0 auto 20px; border: 1px solid var(--or); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;"> <img src="./assets/images/sun.png" alt="Couchers de Soleil" srcset=""></div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--vert); margin-bottom: 12px;">Couchers de Soleil</h3>
+          <p style="font-size: 0.95rem; color: #666; line-height: 1.6;">Des vues imprenables sur l'océan depuis votre terrasse privée</p>
         </div>
-
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════
-       CHAMBRES & SUITES D'EXCEPTION
+       CHAMBRES EN VEDETTE
   ══════════════════════════════════════════ -->
-  <section style="padding: 120px 40px; background: linear-gradient(180deg, var(--blanc) 0%, rgba(var(--or-rgb), 0.05) 50%, var(--blanc) 100%);">
-    <div style="max-width: 1240px; margin: 0 auto;">
-      
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px;">
-        <div>
-          <span style="font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--or); font-weight: 500;">Collection Privée</span>
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); color: var(--vert); margin-top: 8px; font-weight: 300; line-height: 1.2;">
-            Chambres & Suites <em>de Prestige</em>
-          </h2>
-        </div>
-        <a href="pages/chambres.php" class="btn-card-action" style="background: transparent; color: var(--vert); border: 1.5px solid var(--vert); padding: 12px 28px; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; transition: all 0.3s;">
-          Explorer toute la collection <i class="fas fa-arrow-right" style="margin-left: 6px;"></i>
-        </a>
+  <section style="padding: 120px 60px; background: linear-gradient(to bottom, #f8f6f1, var(--blanc));">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <span style="font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--or);">Nos Hébergements</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; color: var(--vert); margin-top: 16px; font-weight: 300;">
+          Des espaces pensés pour votre confort
+        </h2>
       </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 36px;">
-        
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px;">
         <!-- Suite Royale -->
-        <div class="luxury-room-card" style="background: var(--blanc-surface, #ffffff); border-radius: 12px; overflow: hidden; border: 1px solid rgba(var(--or-rgb), 0.2); box-shadow: 0 12px 36px rgba(0,0,0,0.06); transition: all 0.4s ease;">
-          <div style="height: 290px; overflow: hidden; position: relative;">
-            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&q=85" 
+        <div style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+          <div style="height: 280px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&h=400&fit=crop" 
                  alt="Suite Royale - Vue océan" 
-                 style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-            <span style="position: absolute; top: 18px; left: 18px; background: rgba(var(--vert-rgb), 0.85); color: var(--or); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; backdrop-filter: blur(8px); border: 1px solid rgba(var(--or-rgb), 0.3);">
-              <i class="fas fa-crown"></i> Suite Signature
-            </span>
+                 style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
           </div>
-          <div style="padding: 32px 28px;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
-              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--vert); margin: 0; font-weight: 600;">Suite Royale Vue Océan</h3>
-            </div>
-            <p style="font-size: 0.82rem; color: var(--or-texte, var(--or)); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; font-weight: 500;">
-              80 m² • Vue Mer Panoramique • Jacuzzi Privatif
-            </p>
-            <p style="font-size: 0.92rem; color: #666; line-height: 1.7; margin-bottom: 24px; font-weight: 300;">
-              Terrasse suspendue face au large, majordome dédié 24h/24 et salon d'apparat baigné de lumière naturelle.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 18px; border-top: 1px solid rgba(var(--or-rgb), 0.15);">
-              <div>
-                <span style="font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; display: block;">Tarif Privilège</span>
-                <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--vert); font-weight: 700;">185 000 <?= htmlspecialchars(hotel_currency()) ?> <small style="font-size: 0.8rem; color: #888; font-weight: 300;">/ nuit</small></span>
-              </div>
-              <a href="pages/reservation-system.php" class="btn-action-view" style="background: var(--or); color: #111; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; transition: all 0.3s;">
-                Réserver
-              </a>
+          <div style="padding: 32px;">
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--vert); margin-bottom: 8px;">Suite Royale</h3>
+            <p style="font-size: 0.9rem; color: #888; margin-bottom: 16px;">80 m² • Vue océan • Jacuzzi privé</p>
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 24px;">Notre suite d'exception avec terrasse panoramique, jacuzzi extérieur et service de majordome.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--or); font-weight: 600;">185 000 FCFA<span style="font-size: 0.8rem; color: #888; font-weight: 300;">/nuit</span></span>
+              <a href="pages/chambres.php" style="font-size: 0.8rem; color: var(--vert); text-decoration: none; border-bottom: 1px solid var(--or); padding-bottom: 2px;">Découvrir →</a>
             </div>
           </div>
         </div>
         
         <!-- Villa Privée -->
-        <div class="luxury-room-card" style="background: var(--blanc-surface, #ffffff); border-radius: 12px; overflow: hidden; border: 1px solid rgba(var(--or-rgb), 0.2); box-shadow: 0 12px 36px rgba(0,0,0,0.06); transition: all 0.4s ease;">
-          <div style="height: 290px; overflow: hidden; position: relative;">
-            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=85" 
-                 alt="Villa Privée avec Piscine" 
-                 style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-            <span style="position: absolute; top: 18px; left: 18px; background: rgba(var(--vert-rgb), 0.85); color: var(--or); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; backdrop-filter: blur(8px); border: 1px solid rgba(var(--or-rgb), 0.3);">
-              <i class="fas fa-water"></i> Villa & Piscine
-            </span>
+        <div style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+          <div style="height: 280px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop" 
+                 alt="Villa Privée - Piscine privée" 
+                 style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
           </div>
-          <div style="padding: 32px 28px;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
-              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--vert); margin: 0; font-weight: 600;">Villa Privée Sanctuaire</h3>
-            </div>
-            <p style="font-size: 0.82rem; color: var(--or-texte, var(--or)); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; font-weight: 500;">
-              120 m² • Jardin Tropical • Bassin Privé
-            </p>
-            <p style="font-size: 0.92rem; color: #666; line-height: 1.7; margin-bottom: 24px; font-weight: 300;">
-              L'intimité la plus exclusive avec piscine privée, salon en plein air et accès direct au rivage.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 18px; border-top: 1px solid rgba(var(--or-rgb), 0.15);">
-              <div>
-                <span style="font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; display: block;">Tarif Privilège</span>
-                <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--vert); font-weight: 700;">320 000 <?= htmlspecialchars(hotel_currency()) ?> <small style="font-size: 0.8rem; color: #888; font-weight: 300;">/ nuit</small></span>
-              </div>
-              <a href="pages/reservation-system.php" class="btn-action-view" style="background: var(--or); color: #111; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; transition: all 0.3s;">
-                Réserver
-              </a>
+          <div style="padding: 32px;">
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--vert); margin-bottom: 8px;">Villa Privée</h3>
+            <p style="font-size: 0.9rem; color: #888; margin-bottom: 16px;">120 m² • Jardin privatif • Piscine</p>
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 24px;">Une villa indépendante avec piscine privée, jardin tropical et espace de réception pour 4 personnes.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--or); font-weight: 600;">320 000 FCFA<span style="font-size: 0.8rem; color: #888; font-weight: 300;">/nuit</span></span>
+              <a href="pages/chambres.php" style="font-size: 0.8rem; color: var(--vert); text-decoration: none; border-bottom: 1px solid var(--or); padding-bottom: 2px;">Découvrir →</a>
             </div>
           </div>
         </div>
         
         <!-- Chambre Supérieure -->
-        <div class="luxury-room-card" style="background: var(--blanc-surface, #ffffff); border-radius: 12px; overflow: hidden; border: 1px solid rgba(var(--or-rgb), 0.2); box-shadow: 0 12px 36px rgba(0,0,0,0.06); transition: all 0.4s ease;">
-          <div style="height: 290px; overflow: hidden; position: relative;">
-            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=85" 
-                 alt="Chambre Supérieure" 
-                 style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;">
-            <span style="position: absolute; top: 18px; left: 18px; background: rgba(var(--vert-rgb), 0.85); color: var(--or); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; backdrop-filter: blur(8px); border: 1px solid rgba(var(--or-rgb), 0.3);">
-              <i class="fas fa-spa"></i> Confort Deluxe
-            </span>
+        <div style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+          <div style="height: 280px; overflow: hidden;">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&h=400&fit=crop" 
+                 alt="Chambre Supérieure - Vue jardin" 
+                 style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
           </div>
-          <div style="padding: 32px 28px;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
-              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--vert); margin: 0; font-weight: 600;">Chambre Deluxe Jardin</h3>
-            </div>
-            <p style="font-size: 0.82rem; color: var(--or-texte, var(--or)); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; font-weight: 500;">
-              45 m² • Balcon Privatif • Bain en Marbre
-            </p>
-            <p style="font-size: 0.92rem; color: #666; line-height: 1.7; margin-bottom: 24px; font-weight: 300;">
-              Une atmosphère apaisante ornée de bois nobles avec vue dégagée sur les allées de palmiers.
-            </p>
-            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 18px; border-top: 1px solid rgba(var(--or-rgb), 0.15);">
-              <div>
-                <span style="font-size: 0.72rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; display: block;">Tarif Privilège</span>
-                <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--vert); font-weight: 700;">85 000 <?= htmlspecialchars(hotel_currency()) ?> <small style="font-size: 0.8rem; color: #888; font-weight: 300;">/ nuit</small></span>
-              </div>
-              <a href="pages/reservation-system.php" class="btn-action-view" style="background: var(--or); color: #111; padding: 10px 20px; border-radius: 4px; text-decoration: none; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; transition: all 0.3s;">
-                Réserver
-              </a>
+          <div style="padding: 32px;">
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--vert); margin-bottom: 8px;">Chambre Supérieure</h3>
+            <p style="font-size: 0.9rem; color: #888; margin-bottom: 16px;">40 m² • Vue jardin • Terrasse</p>
+            <p style="font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 24px;">Confort élégant avec terrasse privée donnant sur notre jardin tropical et accès direct à la piscine.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--or); font-weight: 600;">85 000 FCFA<span style="font-size: 0.8rem; color: #888; font-weight: 300;">/nuit</span></span>
+              <a href="pages/chambres.php" style="font-size: 0.8rem; color: var(--vert); text-decoration: none; border-bottom: 1px solid var(--or); padding-bottom: 2px;">Découvrir →</a>
             </div>
           </div>
         </div>
-
       </div>
-
+      
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="pages/chambres.php" class="cta-primary" style="display: inline-block; background: var(--vert); color: var(--or-pale); padding: 16px 40px; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px;">Voir toutes les chambres</a>
+      </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════
-       EXPÉRIENCES & SENSORIALITÉ
+       EXPÉRIENCES
   ══════════════════════════════════════════ -->
-  <section style="padding: 120px 40px; background: linear-gradient(135deg, var(--vert) 0%, var(--vert-sombre, var(--color-dark)) 100%); color: #ffffff; position: relative; overflow: hidden;">
-    
-    <div style="max-width: 1240px; margin: 0 auto; position: relative; z-index: 2;">
-      
-      <div style="text-align: center; max-width: 760px; margin: 0 auto 64px;">
-        <span style="font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--or); font-weight: 500;">Moments d'Exception</span>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); color: #ffffff; margin-top: 8px; font-weight: 300;">
-          S'évader, se ressourcer, <em>se réinventer</em>
-        </h2>
-        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); margin-top: 14px; font-weight: 300; line-height: 1.8;">
-          Chaque journée à <?= htmlspecialchars(hotel_name()) ?> s'articule autour d'expériences exclusives sur-mesure orchestrées par notre conciergerie.
-        </p>
+  <section style="padding: 120px 60px; background: var(--vert); color: var(--blanc);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 64px;">
+        <span style="font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--or);">Expériences</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; margin-top: 16px; font-weight: 300;">S'évader, se ressourcer, se découvrir</h2>
       </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/mastery.png" alt="" srcset=""> Détente & Bien-être</h3>
+          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Spa ouvert sur la nature, massages traditionnels aux huiles locales, yoga au lever du soleil sur la plage.</p>
+        </div>
+        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/food.png" alt="" srcset=""> Gastronomie & Mixologie</h3>
+          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Restaurant gastronomique, bar à cocktails avec vue océan, dégustations de vins et accords mets-vins.</p>
+        </div>
+        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/sport.png" alt="" srcset=""> Activités Nautiques</h3>
+          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Plongée sous-marine, pêche sportive, excursions en bateau traditionnel, paddle et kayak dans la mangrove.</p>
+        </div>
+        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/theater.png" alt="" srcset=""> Culture & Découverte</h3>
+          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Visites des villages voisins, ateliers de tissage traditionnel, marchés locaux et rencontres avec les artisans.</p>
+        </div>
+        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/theater.png" alt="" srcset=""> Culture & Découverte</h3>
+          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Visites des villages voisins, ateliers de tissage traditionnel, marchés locaux et rencontres avec les artisans.</p>
+        </div>
+        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/sport.png" alt="" srcset=""> Activités Nautiques</h3>
+          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Plongée sous-marine, pêche sportive, excursions en bateau traditionnel, paddle et kayak dans la mangrove.</p>
+        </div>
         
-        <div class="exp-box" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(var(--or-rgb), 0.25); border-radius: 12px; padding: 40px 32px; transition: all 0.3s ease;">
-          <div style="font-size: 2rem; color: var(--or); margin-bottom: 20px;">
-            <i class="fas fa-spa"></i>
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--or); margin-bottom: 12px;">Détente & Spa Holistique</h3>
-          <p style="font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.75); font-weight: 300; margin: 0;">
-            Massages signatures aux huiles essentielles rares d'Afrique de l'Ouest, sauna et rituels de relaxation face à l'océan.
-          </p>
-        </div>
-
-        <div class="exp-box" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(var(--or-rgb), 0.25); border-radius: 12px; padding: 40px 32px; transition: all 0.3s ease;">
-          <div style="font-size: 2rem; color: var(--or); margin-bottom: 20px;">
-            <i class="fas fa-wine-glass-alt"></i>
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--or); margin-bottom: 12px;">Gastronomie & Mixologie</h3>
-          <p style="font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.75); font-weight: 300; margin: 0;">
-            Dîners gastronomiques privés sur le sable étoilé, accords mets-vins prestigieux et bar à cocktails signature.
-          </p>
-        </div>
-
-        <div class="exp-box" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(var(--or-rgb), 0.25); border-radius: 12px; padding: 40px 32px; transition: all 0.3s ease;">
-          <div style="font-size: 2rem; color: var(--or); margin-bottom: 20px;">
-            <i class="fas fa-ship"></i>
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--or); margin-bottom: 12px;">Évasions Nautiques</h3>
-          <p style="font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.75); font-weight: 300; margin: 0;">
-            Excursions privées en pirogue artisanale, paddle dans la lagune et croisières coucher de soleil au champagne.
-          </p>
-        </div>
-
-        <div class="exp-box" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(var(--or-rgb), 0.25); border-radius: 12px; padding: 40px 32px; transition: all 0.3s ease;">
-          <div style="font-size: 2rem; color: var(--or); margin-bottom: 20px;">
-            <i class="fas fa-compass"></i>
-          </div>
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--or); margin-bottom: 12px;">Immersion & Culture</h3>
-          <p style="font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.75); font-weight: 300; margin: 0;">
-            Rencontres privilégiées avec les maîtres artisans sculpteurs, ateliers de tissage et découverte des trésors locaux.
-          </p>
-        </div>
-
       </div>
-
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════
-       TÉMOIGNAGES — Paroles d'Hôtes Privilégiés
+       TÉMOIGNAGES
   ══════════════════════════════════════════ -->
-  <section style="padding: 110px 40px; background: var(--blanc); position: relative;">
-    <div style="max-width: 920px; margin: 0 auto; text-align: center;">
-      
-      <div style="margin-bottom: 24px;">
-        <span style="font-family:'Cormorant Garamond',serif; font-size: 3.8rem; color: var(--or); line-height: 1; display: inline-block;">❝</span>
+  <section style="padding: 120px 60px; background: var(--blanc);">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <div style="margin-bottom: 32px;">
+        <span style="display: inline-block; width: 40px; height: 1px; background: var(--or); vertical-align: middle;"></span>
+        <span style="display: inline-block; font-size: 1.5rem; margin: 0 16px; vertical-align: middle;">❝</span>
+        <span style="display: inline-block; width: 40px; height: 1px; background: var(--or); vertical-align: middle;"></span>
       </div>
       
-      <blockquote style="font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.1rem); color: var(--vert); font-style: italic; line-height: 1.6; margin: 0 0 32px 0; font-weight: 300;">
-        « Un havre de paix intemporel. De l'accueil personnalisé de la conciergerie à la perfection des suites face au couchant, chaque détail témoigne d'une quête absolue de perfection. »
+      <blockquote style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--vert); font-style: italic; line-height: 1.6; margin-bottom: 32px;">
+        "Un havre de paix où le temps semble s'arrêter. L'accueil chaleureux, les paysages à couper le souffle et le raffinement des lieux ont fait de notre séjour une expérience inoubliable."
       </blockquote>
       
-      <div style="font-size: 0.92rem; color: #666; font-family: 'Jost', sans-serif;">
-        <strong style="color: var(--vert); font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;">Marie & Jean-Pierre L.</strong>
-        <span style="display: block; font-size: 0.75rem; color: var(--or); margin-top: 4px; letter-spacing: 0.2em; text-transform: uppercase;">Séjour en Suite Royale · Paris, France</span>
+      <div style="font-size: 0.9rem; color: #666;">
+        <strong style="color: var(--vert); font-weight: 400;">Marie & Jean-Pierre L.</strong> — Paris, France
       </div>
-      
-      <div style="margin-top: 14px; color: var(--or); font-size: 1.1rem; letter-spacing: 4px;">★★★★★</div>
+      <div style="margin-top: 8px; color: var(--or); font-size: 1.2rem;">★★★★★</div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════════
-       CALL TO ACTION — Réservez votre Évasion
+       CALL TO ACTION
   ══════════════════════════════════════════ -->
-  <section style="padding: 100px 40px; background: linear-gradient(135deg, var(--vert-clair) 0%, var(--vert) 100%); text-align: center; position: relative; border-top: 2px solid rgba(var(--or-rgb), 0.3);">
-    <div style="max-width: 700px; margin: 0 auto;">
-      <span style="font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--or-pale); font-weight: 600; display: block; margin-bottom: 12px;">Votre Écrin de Sérénité</span>
-      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4.5vw, 3.6rem); color: #ffffff; margin-bottom: 20px; font-weight: 300; line-height: 1.2;">
-        Réservez votre <em>séjour inoubliable</em>
-      </h2>
-      <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); margin-bottom: 38px; line-height: 1.8; font-weight: 300;">
-        Profitez de nos offres exclusives et d'un accueil VIP sur-mesure dès votre arrivée à l'hôtel.
-      </p>
-      <a href="pages/reservation-system.php" style="display: inline-block; background: var(--or); color: #111; padding: 18px 48px; text-decoration: none; font-size: 0.78rem; letter-spacing: 0.25em; text-transform: uppercase; border-radius: 4px; font-weight: 700; box-shadow: 0 10px 30px rgba(var(--or-rgb), 0.35); transition: all 0.3s ease;">
-        <i class="fas fa-calendar-check" style="margin-right: 8px;"></i> Réserver Maintenant
-      </a>
+  <section style="padding: 100px 60px; background: linear-gradient(135deg, var(--vert-clair) 0%, var(--vert) 100%); text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--or-pale); margin-bottom: 24px; font-weight: 300;">Réservez votre évasion</h2>
+      <p style="font-size: 1rem; color: rgba(250,248,243,0.8); margin-bottom: 40px; line-height: 1.7;">Profitez de nos offres spéciales pour les séjours de 3 nuits ou plus. Petit-déjeuner gastronomique inclus.</p>
+      <a href="pages/reservation-system.php" style="display: inline-block; background: var(--or); color: #111; padding: 18px 48px; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px; font-weight: 600;">Réserver maintenant</a>
     </div>
   </section>
 

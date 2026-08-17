@@ -36,41 +36,11 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--blanc, #faf8f3);
+      background: #ffffff;
       color: #1a1a1a;
       font-family: 'Jost', sans-serif;
       font-weight: 300;
       overflow-x: hidden;
-    }
-
-    /* ── Styles & Micro-interactions Prestige ── */
-    .pillar-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--or) !important;
-      box-shadow: 0 16px 36px rgba(var(--or-rgb), 0.12) !important;
-    }
-    .luxury-room-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--or) !important;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.12) !important;
-    }
-    .luxury-room-card:hover img {
-      transform: scale(1.06) !important;
-    }
-    .exp-box:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.08) !important;
-      border-color: var(--or) !important;
-    }
-    .btn-action-view:hover {
-      background: var(--or-clair) !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(var(--or-rgb), 0.35);
-    }
-    .btn-card-action:hover {
-      background: var(--vert) !important;
-      color: var(--or-pale) !important;
-      border-color: var(--vert) !important;
     }
 
     /* ════════════════════════════════════════════
