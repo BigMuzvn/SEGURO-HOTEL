@@ -94,7 +94,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 <style>
 .event-hero {
-    background: linear-gradient(rgba(var(--vert-rgb),0.82), rgba(var(--noir-rgb),0.92)), 
+    background: linear-gradient(180deg, rgba(var(--noir-rgb),0.82) 0%, rgba(var(--noir-rgb),0.92) 100%), 
                 url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920&q=80') center/cover no-repeat;
     padding: 140px 24px 80px;
     text-align: center;
@@ -177,7 +177,8 @@ include(__DIR__ . '/../layouts/header.php');
 .space-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    color: var(--vert);
+    color: var(--noir, #111111);
+    font-weight: 500;
     margin-bottom: 12px;
 }
 
@@ -218,13 +219,14 @@ include(__DIR__ . '/../layouts/header.php');
     border-radius: 16px;
     padding: 50px 48px;
     box-shadow: 0 15px 50px rgba(0,0,0,0.06);
-    border-left: 5px solid var(--vert);
+    border-left: 5px solid var(--or);
 }
 
 .devis-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.2rem;
-    color: var(--vert);
+    color: var(--noir, #111111);
+    font-weight: 500;
     margin-bottom: 8px;
     text-align: center;
 }
@@ -332,15 +334,15 @@ include(__DIR__ . '/../layouts/header.php');
 }
 
 .btn-submit-devis {
-    background: var(--vert) !important;
-    color: #ffffff !important;
-    border: 1px solid var(--vert);
-    padding: 15px 42px;
+    background: var(--or) !important;
+    color: var(--noir, #111111) !important;
+    border: 1px solid var(--or);
+    padding: 16px 42px;
     font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 0.65rem;
+    font-weight: 500;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.35em;
+    letter-spacing: 0.3em;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     display: block;
@@ -348,10 +350,11 @@ include(__DIR__ . '/../layouts/header.php');
 }
 
 .btn-submit-devis:hover {
-    background: var(--vert-clair) !important;
-    color: #ffffff !important;
+    background: var(--or-clair) !important;
+    border-color: var(--or-clair) !important;
+    color: var(--noir, #111111) !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(var(--vert-rgb),0.25);
+    box-shadow: 0 8px 24px rgba(var(--or-rgb),0.25);
 }
 
 @media (max-width: 768px) {

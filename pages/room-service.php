@@ -133,7 +133,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 <style>
 .rs-hero {
-    background: linear-gradient(rgba(var(--vert-rgb),0.85), rgba(var(--noir-rgb),0.92)), 
+    background: linear-gradient(180deg, rgba(var(--noir-rgb),0.82) 0%, rgba(var(--noir-rgb),0.92) 100%), 
                 url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1920&q=80') center/cover no-repeat;
     padding: 130px 24px 70px;
     text-align: center;
@@ -215,9 +215,9 @@ body {
 }
 
 .rs-cat-btn.active {
-    background: var(--vert);
-    color: var(--or);
-    border-color: var(--vert);
+    background: var(--noir, #111111);
+    color: var(--or-pale);
+    border-color: var(--noir, #111111);
     font-weight: 600;
 }
 
@@ -248,13 +248,13 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--vert);
+    color: var(--noir, #111111);
     margin-bottom: 6px;
 }
 
 .rs-item-desc {
     font-size: 0.82rem;
-    color: #666;
+    color: #4a5568;
     line-height: 1.5;
     margin-bottom: 14px;
 }
@@ -274,23 +274,24 @@ body {
 }
 
 .btn-add-tray {
-    background: var(--vert);
-    color: var(--or);
-    border: 1px solid var(--vert);
+    background: var(--or);
+    color: var(--noir, #111111);
+    border: 1px solid var(--or);
     padding: 8px 16px;
     font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.35s ease;
+    border-radius: 4px;
 }
 
 .btn-add-tray:hover {
-    background: var(--vert-clair);
-    color: #ffffff;
-    border-color: var(--vert-clair);
+    background: var(--or-clair);
+    border-color: var(--or-clair);
+    color: var(--noir, #111111);
     transform: translateY(-1px);
 }
 

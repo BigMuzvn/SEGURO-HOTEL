@@ -42,7 +42,7 @@ include(__DIR__ . '/../layouts/header.php');
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(105deg, rgba(var(--vert-rgb),0.75) 0%, rgba(var(--vert-rgb),0.3) 55%, transparent 100%),
+      linear-gradient(105deg, rgba(var(--noir-rgb),0.85) 0%, rgba(var(--noir-rgb),0.55) 60%, rgba(var(--noir-rgb),0.25) 100%),
       url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920&q=85') center/cover no-repeat;
     transform-origin: center;
     animation: slowZoom 14s ease-in-out infinite alternate;
@@ -207,13 +207,13 @@ include(__DIR__ . '/../layouts/header.php');
 
   .section-heading {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(2rem, 3.5vw, 3rem);
-    color: var(--vert);
+    color: var(--noir, #111111);
     line-height: 1.15;
     letter-spacing: 0.03em;
   }
-  .section-heading em { font-style: italic; color: var(--or); }
+  .section-heading em { font-style: italic; color: var(--or-texte); }
 
   .intro-right {
     max-width: 420px;
@@ -527,27 +527,30 @@ include(__DIR__ . '/../layouts/header.php');
   }
 
   /* ════════════════════════════════════════════
-     SECTION EXPÉRIENCE — interlude vert
+     SECTION EXPÉRIENCE — interlude noble sombre
   ════════════════════════════════════════════ */
   .interlude {
-    background: var(--vert);
+    background: linear-gradient(145deg, var(--noir, #111111) 0%, var(--noir-surface, #181818) 100%);
+    border: 1px solid rgba(var(--or-rgb), 0.22);
+    border-radius: 12px;
     padding: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
     margin: 0 80px 60px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.2);
   }
 
   .interlude-text { flex: 1; }
 
   .interlude-label {
     font-family: 'Jost', sans-serif;
-    font-weight: 200;
-    font-size: 0.52rem;
-    letter-spacing: 0.6em;
+    font-weight: 400;
+    font-size: 0.58rem;
+    letter-spacing: 0.5em;
     text-transform: uppercase;
-    color: rgba(201,168,76,0.7);
+    color: var(--or);
     margin-bottom: 16px;
     display: block;
   }
@@ -556,7 +559,7 @@ include(__DIR__ . '/../layouts/header.php');
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-size: clamp(1.8rem, 3vw, 2.6rem);
-    color: #fff;
+    color: #ffffff;
     line-height: 1.25;
   }
   .interlude-title em { font-style: italic; color: var(--or-pale); }
@@ -579,11 +582,11 @@ include(__DIR__ . '/../layouts/header.php');
   }
   .stat-label {
     font-family: 'Jost', sans-serif;
-    font-weight: 200;
-    font-size: 0.52rem;
-    letter-spacing: 0.4em;
+    font-weight: 300;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.78);
     margin-top: 8px;
     display: block;
   }
@@ -620,12 +623,12 @@ include(__DIR__ . '/../layouts/header.php');
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-size: clamp(2rem, 4vw, 3.2rem);
-    color: var(--vert);
+    color: var(--noir, #111111);
     line-height: 1.2;
     margin-bottom: 12px;
     position: relative;
   }
-  .chambre-cta-title em { font-style: italic; color: var(--or); }
+  .chambre-cta-title em { font-style: italic; color: var(--or-texte); }
 
   .chambre-cta p {
     font-family: 'Cormorant Garamond', serif;

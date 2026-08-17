@@ -70,7 +70,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 <style>
 .galerie-hero {
-    background: linear-gradient(rgba(var(--vert-rgb),0.85), rgba(var(--noir-rgb),0.92)), 
+    background: linear-gradient(180deg, rgba(var(--noir-rgb),0.82) 0%, rgba(var(--noir-rgb),0.92) 100%), 
                 url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80') center/cover no-repeat;
     padding: 140px 24px 75px;
     text-align: center;
@@ -117,16 +117,16 @@ include(__DIR__ . '/../layouts/header.php');
 }
 
 .g-filter-btn {
-    background: #faf8f3;
-    border: 1px solid rgba(201,168,76,0.35);
-    padding: 9px 16px;
+    background: #ffffff;
+    border: 1px solid rgba(var(--or-rgb),0.35);
+    padding: 9px 18px;
     border-radius: 25px;
     font-family: 'Jost', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--vert);
+    color: var(--noir, #111111);
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.35s ease;
@@ -134,9 +134,10 @@ include(__DIR__ . '/../layouts/header.php');
 }
 
 .g-filter-btn.active, .g-filter-btn:hover {
-    background: var(--vert);
-    color: var(--or);
-    border-color: var(--vert);
+    background: var(--noir, #111111);
+    color: var(--or-pale);
+    border-color: var(--noir, #111111);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
 
 .galerie-grid {
@@ -174,7 +175,7 @@ include(__DIR__ . '/../layouts/header.php');
 .galerie-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(var(--vert-rgb),0.92) 100%);
+    background: linear-gradient(180deg, transparent 35%, rgba(var(--noir-rgb),0.92) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

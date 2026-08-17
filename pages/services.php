@@ -115,7 +115,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-size: clamp(2rem, 4vw, 3.2rem);
-    color: var(--vert);
+    color: var(--noir, #111111);
     letter-spacing: 0.04em;
     line-height: 1.2;
     max-width: 680px;
@@ -244,9 +244,9 @@
 
   .service-name {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1.4rem;
-    color: var(--vert);
+    color: var(--noir, #111111);
     letter-spacing: 0.04em;
     margin-bottom: 12px;
   }
@@ -298,7 +298,7 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(90deg, rgba(var(--vert-rgb),0.92) 0%, rgba(var(--vert-rgb),0.7) 50%, transparent 100%),
+      linear-gradient(90deg, rgba(var(--noir-rgb),0.94) 0%, rgba(var(--noir-rgb),0.78) 55%, rgba(var(--noir-rgb),0.4) 100%),
       url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=85') center/cover no-repeat;
     z-index: 0;
   }
@@ -392,9 +392,9 @@
 
   .extra-name {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: var(--vert);
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--noir, #111111);
     margin-bottom: 6px;
     letter-spacing: 0.03em;
   }
