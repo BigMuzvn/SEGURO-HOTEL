@@ -1108,23 +1108,23 @@ include(__DIR__ . '/../layouts/header.php');
           <?php
             $rItems = json_decode($ro['elements_commande'], true) ?: [];
             $rStatut = $ro['statut'];
-            $stBadge = '🟡 Reçue';
+            $stBadge = '<i class="fas fa-clock" style="margin-right:4px;"></i> Reçue';
             $stBg = '#faf8f3';
             $stColor = '#c9a84c';
             $stStep = 1;
 
             if ($rStatut === 'en_preparation') {
-              $stBadge = '🟠 En Cuisine / Préparation';
+              $stBadge = '<i class="fas fa-utensils" style="margin-right:4px;"></i> En Cuisine / Préparation';
               $stBg = '#fff8e1';
               $stColor = '#e67e22';
               $stStep = 2;
             } elseif ($rStatut === 'livree') {
-              $stBadge = '🟢 Livrée en Chambre';
+              $stBadge = '<i class="fas fa-check-circle" style="margin-right:4px;"></i> Livrée en Chambre';
               $stBg = '#e8f5e9';
               $stColor = '#28a745';
               $stStep = 3;
             } elseif ($rStatut === 'annulee') {
-              $stBadge = '🔴 Annulée';
+              $stBadge = '<i class="fas fa-times-circle" style="margin-right:4px;"></i> Annulée';
               $stBg = '#ffebee';
               $stColor = '#dc3545';
               $stStep = 0;

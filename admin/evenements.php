@@ -810,9 +810,9 @@ $stats = $stats_stmt->fetch(PDO::FETCH_ASSOC);
                                 
                                 <label style="font-size:0.75rem; color:#666; display:block; margin-bottom:4px;">Statut dossier :</label>
                                 <select name="statut" class="form-select-sm">
-                                    <option value="en_attente" <?= $d['statut'] === 'en_attente' ? 'selected' : '' ?>>🟡 En attente</option>
-                                    <option value="traite" <?= $d['statut'] === 'traite' ? 'selected' : '' ?>>🟢 Devis Traité / Envoyé</option>
-                                    <option value="rejete" <?= $d['statut'] === 'rejete' ? 'selected' : '' ?>>🔴 Rejeté / Indisponible</option>
+                                    <option value="en_attente" <?= $d['statut'] === 'en_attente' ? 'selected' : '' ?>>En attente</option>
+                                    <option value="traite" <?= $d['statut'] === 'traite' ? 'selected' : '' ?>>Devis Traité / Envoyé</option>
+                                    <option value="rejete" <?= $d['statut'] === 'rejete' ? 'selected' : '' ?>>Rejeté / Indisponible</option>
                                 </select>
 
                                 <label style="font-size:0.75rem; color:#666; display:block; margin-bottom:4px;">Note / Commentaire :</label>

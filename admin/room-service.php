@@ -786,10 +786,10 @@ $stats = $stats_stmt->fetch(PDO::FETCH_ASSOC);
                                 
                                 <label style="font-size:0.72rem; color:#666; display:block; margin-bottom:4px;">Statut actuel :</label>
                                 <select name="statut" class="form-select-sm">
-                                    <option value="recue" <?= $cmd['statut'] === 'recue' ? 'selected' : '' ?>>🟡 Reçue (En attente)</option>
-                                    <option value="en_preparation" <?= $cmd['statut'] === 'en_preparation' ? 'selected' : '' ?>>🔵 En Cuisine / Préparation</option>
-                                    <option value="livree" <?= $cmd['statut'] === 'livree' ? 'selected' : '' ?>>🟢 Livrée en chambre</option>
-                                    <option value="annulee" <?= $cmd['statut'] === 'annulee' ? 'selected' : '' ?>>🔴 Annulée</option>
+                                    <option value="recue" <?= $cmd['statut'] === 'recue' ? 'selected' : '' ?>>Reçue (En attente)</option>
+                                    <option value="en_preparation" <?= $cmd['statut'] === 'en_preparation' ? 'selected' : '' ?>>En Cuisine / Préparation</option>
+                                    <option value="livree" <?= $cmd['statut'] === 'livree' ? 'selected' : '' ?>>Livrée en chambre</option>
+                                    <option value="annulee" <?= $cmd['statut'] === 'annulee' ? 'selected' : '' ?>>Annulée</option>
                                 </select>
 
                                 <button type="submit" class="btn-update-statut">Mettre à jour</button>

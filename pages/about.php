@@ -18,6 +18,40 @@
     50%      { transform: scaleY(1);   opacity: 1; }
   }
 
+  /* ── Icon Badges de Luxe ── */
+  .about-icon-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(var(--or-rgb), 0.12);
+    border: 1.5px solid rgba(var(--or-rgb), 0.35);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--or);
+    font-size: 1.3rem;
+    transition: all 0.35s ease;
+    flex-shrink: 0;
+  }
+  .about-icon-badge-lg {
+    width: 64px;
+    height: 64px;
+    font-size: 1.55rem;
+    margin-bottom: 22px;
+  }
+  .pillar:hover .about-icon-badge,
+  .promise-card:hover .about-icon-badge,
+  .bienetre-card:hover .about-icon-badge,
+  .event-item:hover .about-icon-badge,
+  .nautique-item:hover .about-icon-badge,
+  .service6-card:hover .about-icon-badge,
+  .value-item:hover .about-icon-badge {
+    background: var(--or);
+    color: var(--noir, #111111);
+    border-color: var(--or);
+    transform: scale(1.08);
+  }
+
   .about-hero {
     position: relative; width: 100%; height: 100vh;
     min-height: 600px; overflow: hidden;
@@ -30,34 +64,34 @@
   }
   .about-hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(var(--noir-rgb),0.2) 0%, rgba(var(--noir-rgb),0.55) 50%, rgba(var(--noir-rgb),0.85) 100%);
+    background: linear-gradient(180deg, rgba(var(--noir-rgb),0.3) 0%, rgba(var(--noir-rgb),0.65) 50%, rgba(var(--noir-rgb),0.9) 100%);
   }
   .about-hero-content {
     position: relative; z-index: 2;
     text-align: center; max-width: 760px; padding: 0 32px;
   }
   .about-eyebrow {
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.56rem;
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.6rem;
     letter-spacing: 0.8em; text-transform: uppercase; color: var(--or);
     display: block; margin-bottom: 28px; animation: fadeUp 1.4s ease 0.3s both;
   }
   .about-hero-quote {
     font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
-    font-size: clamp(1.8rem, 4vw, 3.2rem); color: #fff; line-height: 1.5;
+    font-size: clamp(1.8rem, 4vw, 3.2rem); color: #ffffff; line-height: 1.5;
     letter-spacing: 0.02em; animation: fadeUp 1.4s ease 0.5s both;
   }
   .about-hero-quote em {
     font-style: normal; color: var(--or-pale); display: block;
     font-size: 0.65em; letter-spacing: 0.14em; text-transform: uppercase;
-    font-family: 'Jost', sans-serif; font-weight: 200; margin-top: 24px;
+    font-family: 'Jost', sans-serif; font-weight: 300; margin-top: 24px;
   }
   .about-hero-ornament {
     display: flex; align-items: center; justify-content: center;
     gap: 16px; margin-top: 36px; animation: fadeUp 1.4s ease 0.7s both;
   }
-  .orn-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.6)); }
-  .orn-line.r { background: linear-gradient(to left, transparent, rgba(201,168,76,0.6)); }
-  .orn-dot { width: 6px; height: 6px; border: 1px solid rgba(201,168,76,0.7); transform: rotate(45deg); }
+  .orn-line { width: 60px; height: 1px; background: linear-gradient(to right, transparent, rgba(var(--or-rgb),0.6)); }
+  .orn-line.r { background: linear-gradient(to left, transparent, rgba(var(--or-rgb),0.6)); }
+  .orn-dot { width: 6px; height: 6px; border: 1px solid rgba(var(--or-rgb),0.7); transform: rotate(45deg); }
   .about-scroll {
     position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
     z-index: 5; text-align: center; animation: fadeIn 2s ease 1.5s both;
@@ -65,31 +99,31 @@
   .about-scroll span {
     display: block; font-family: 'Jost', sans-serif; font-weight: 200;
     font-size: 0.46rem; letter-spacing: 0.5em; text-transform: uppercase;
-    color: rgba(255,255,255,0.4); margin-bottom: 10px;
+    color: rgba(255,255,255,0.7); margin-bottom: 10px;
   }
   .about-scroll-line {
     width: 1px; height: 50px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
     margin: 0 auto; animation: scrollPulse 2.2s ease-in-out infinite;
   }
 
   /* ── Mot de la direction ── */
-  .story-section { padding: 120px 0; position: relative; overflow: hidden; }
+  .story-section { padding: 120px 0; position: relative; overflow: hidden; background: #ffffff; }
   .story-section::before {
     content: '<?= substr(hotel_short_name(), 0, 1) ?>'; position: absolute; top: -60px; right: -40px;
     font-family: 'Cormorant Garamond', serif; font-size: 40vw;
-    color: rgba(var(--vert-rgb),0.03); line-height: 1; pointer-events: none; user-select: none;
+    color: rgba(var(--noir-rgb),0.02); line-height: 1; pointer-events: none; user-select: none;
   }
   .story-inner {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 80px; align-items: center; padding: 0 80px;
   }
   .story-image-wrap { position: relative; }
-  .story-main-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+  .story-main-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; border-radius: 8px; }
   .story-float-img {
     position: absolute; bottom: -40px; right: -40px;
     width: 55%; aspect-ratio: 4/3; object-fit: cover;
-    border: 6px solid #fff; box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border: 6px solid #fff; box-shadow: 0 20px 60px rgba(0,0,0,0.15); border-radius: 8px;
   }
   .story-image-wrap::before {
     content: ''; position: absolute; top: 30px; left: -20px;
@@ -97,13 +131,13 @@
   }
   .story-text { padding-top: 20px; }
   .section-label {
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.55rem;
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.58rem;
     letter-spacing: 0.65em; text-transform: uppercase; color: var(--or);
     display: block; margin-bottom: 20px;
   }
   .section-heading {
     font-family: 'Cormorant Garamond', serif; font-weight: 300;
-    font-size: clamp(2rem, 3.5vw, 3rem); color: var(--vert);
+    font-size: clamp(2rem, 3.5vw, 3rem); color: var(--noir, #111111);
     line-height: 1.2; letter-spacing: 0.03em; margin-bottom: 32px;
   }
   .section-heading em { font-style: italic; color: var(--or); }
@@ -111,40 +145,43 @@
   .story-divider span { display: block; height: 1px; width: 40px; background: linear-gradient(to right, var(--or), transparent); }
   .story-divider i { width: 5px; height: 5px; background: var(--or); transform: rotate(45deg); display: block; }
   .story-body p {
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.82rem;
-    color: #666; line-height: 2.1; letter-spacing: 0.03em; margin-bottom: 20px;
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem;
+    color: #4a5568; line-height: 2.1; letter-spacing: 0.02em; margin-bottom: 20px;
   }
   .story-body p:first-child {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 1.15rem; color: #555; line-height: 1.9;
+    font-size: 1.18rem; color: var(--noir, #111111); line-height: 1.9;
   }
   .signature-block {
     margin-top: 40px; padding-top: 32px;
-    border-top: 1px solid rgba(201,168,76,0.15);
+    border-top: 1px solid rgba(var(--or-rgb),0.2);
     display: flex; align-items: center; gap: 20px;
   }
   .signature-or { width: 3px; height: 50px; background: linear-gradient(to bottom, var(--or), transparent); flex-shrink: 0; }
   .signature-name {
-    font-family: 'Cormorant Garamond', serif; font-weight: 400;
-    font-size: 1.1rem; color: var(--vert); display: block; letter-spacing: 0.04em;
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: 1.15rem; color: var(--noir, #111111); display: block; letter-spacing: 0.04em;
   }
   .signature-role {
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.55rem;
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.58rem;
     letter-spacing: 0.4em; text-transform: uppercase; color: var(--or);
     display: block; margin-top: 4px;
   }
 
-  /* ── Vision ── */
-  #vision { background: var(--vert); padding: 120px 0; position: relative; overflow: hidden; }
+  /* ── Vision (Fond Sombre Noble Garanti) ── */
+  #vision {
+    background: linear-gradient(145deg, var(--noir, #111111) 0%, var(--noir-surface, #181818) 100%);
+    padding: 120px 0; position: relative; overflow: hidden;
+  }
   #vision::before {
     content: ''; position: absolute; top: -100px; left: -100px;
     width: 500px; height: 500px; border-radius: 50%;
-    border: 1px solid rgba(201,168,76,0.06);
+    border: 1px solid rgba(var(--or-rgb),0.1);
   }
   #vision::after {
     content: ''; position: absolute; bottom: -150px; right: -80px;
     width: 600px; height: 600px; border-radius: 50%;
-    border: 1px solid rgba(201,168,76,0.05);
+    border: 1px solid rgba(var(--or-rgb),0.08);
   }
   .vision-inner { padding: 0 80px; position: relative; z-index: 2; }
   .vision-top {
@@ -153,66 +190,72 @@
   }
   .vision-heading {
     font-family: 'Cormorant Garamond', serif; font-weight: 300;
-    font-size: clamp(2.5rem, 5vw, 4.5rem); color: #fff;
+    font-size: clamp(2.5rem, 5vw, 4.5rem); color: #ffffff;
     line-height: 1.1; letter-spacing: 0.04em; max-width: 560px;
   }
   .vision-heading em { font-style: italic; color: var(--or-pale); }
   .vision-intro { max-width: 380px; flex-shrink: 0; }
   .vision-intro p {
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.8rem;
-    color: rgba(255,255,255,0.55); line-height: 2; letter-spacing: 0.04em;
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem;
+    color: rgba(255,255,255,0.78); line-height: 2; letter-spacing: 0.03em;
   }
   .vision-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
   .pillar {
-    padding: 48px 40px; background: rgba(255,255,255,0.03);
-    border-top: 1px solid rgba(201,168,76,0.15); transition: background 0.4s;
+    padding: 48px 40px; background: rgba(255,255,255,0.04);
+    border-top: 1px solid rgba(var(--or-rgb),0.25); transition: background 0.4s, transform 0.3s;
   }
-  .pillar:hover { background: rgba(255,255,255,0.06); }
+  .pillar:hover { background: rgba(255,255,255,0.08); }
   .pillar-num {
     font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 3.5rem;
-    color: rgba(201,168,76,0.2); line-height: 1; display: block; margin-bottom: 20px;
+    color: rgba(var(--or-rgb),0.35); line-height: 1; display: block; margin-bottom: 16px;
   }
-  .pillar-icon { font-size: 1.8rem; display: block; margin-bottom: 16px; }
-  .pillar-name { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.4rem; color: #fff; margin-bottom: 12px; letter-spacing: 0.03em; }
-  .pillar-desc { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.75rem; color: rgba(255,255,255,0.45); line-height: 2; letter-spacing: 0.03em; }
+  .pillar-name { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.4rem; color: #ffffff; margin-bottom: 12px; letter-spacing: 0.03em; }
+  .pillar-desc { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.78rem; color: rgba(255,255,255,0.75); line-height: 2; letter-spacing: 0.03em; }
 
   /* ── Triple promesse ── */
-  .promise-section { padding: 120px 0; background: #fff; }
+  .promise-section { padding: 120px 0; background: #ffffff; }
   .promise-inner { padding: 0 80px; }
   .promise-header { text-align: center; margin-bottom: 72px; }
-  .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .promise-card {
-    padding: 48px 36px; background: #f9f7f2;
-    border-top: 2px solid transparent; transition: all 0.4s;
+    padding: 48px 36px; background: var(--blanc, #fbf9f4);
+    border: 1px solid rgba(var(--or-rgb),0.15);
+    border-top: 3px solid transparent; transition: all 0.4s;
   }
   .promise-card:hover {
-    background: #fff; border-top-color: var(--or);
-    box-shadow: 0 20px 60px rgba(var(--vert-rgb),0.07);
+    background: #ffffff; border-top-color: var(--or);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06);
   }
-  .promise-icon { font-size: 2rem; display: block; margin-bottom: 20px; }
-  .promise-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.5rem; color: var(--vert); margin-bottom: 16px; letter-spacing: 0.03em; }
-  .promise-text { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.78rem; color: #777; line-height: 2; letter-spacing: 0.03em; }
+  .promise-title { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.5rem; color: var(--noir, #111111); margin-bottom: 16px; letter-spacing: 0.03em; }
+  .promise-text { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.82rem; color: #4a5568; line-height: 2; letter-spacing: 0.02em; }
   .promise-quote {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 1rem; color: var(--or); display: block;
-    margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(201,168,76,0.15);
+    font-size: 1.05rem; color: var(--or); display: block;
+    margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(var(--or-rgb),0.2);
   }
 
   /* ── Gastronomie ── */
-  .gastro-section { padding: 120px 0; background: #fff; }
+  .gastro-section { padding: 120px 0; background: var(--blanc, #fbf9f4); }
   .gastro-inner { padding: 0 80px; }
   .gastro-header { margin-bottom: 64px; }
 
   .gastro-grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr 0.8fr;
-    gap: 2px;
+    gap: 16px;
   }
 
   .gastro-card {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    background: #ffffff;
+    border: 1px solid rgba(var(--or-rgb),0.15);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .gastro-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
   }
 
   .gastro-card-img {
@@ -227,61 +270,54 @@
   }
   .gastro-card:hover .gastro-card-img img { transform: scale(1.06); }
 
-  .gastro-card-img-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 30%, rgba(var(--noir-rgb),0.65) 100%);
-    z-index: 1;
-  }
-
   .gastro-card-tag {
     position: absolute;
     top: 20px; left: 20px; z-index: 2;
-    font-family: 'Jost', sans-serif; font-weight: 200;
-    font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase;
-    color: #fff; background: rgba(var(--vert-rgb),0.65);
-    backdrop-filter: blur(6px); padding: 5px 12px;
+    font-family: 'Jost', sans-serif; font-weight: 300;
+    font-size: 0.52rem; letter-spacing: 0.4em; text-transform: uppercase;
+    color: #ffffff; background: var(--noir, #111111);
+    padding: 6px 14px;
     border-left: 2px solid var(--or);
   }
 
   .gastro-card-body {
     padding: 28px 28px 32px;
-    background: #f9f7f2;
+    background: #ffffff;
     border-top: 2px solid transparent;
-    transition: border-color 0.4s, background 0.3s;
+    transition: border-color 0.4s;
   }
   .gastro-card:hover .gastro-card-body {
     border-top-color: var(--or);
-    background: #fff;
   }
 
   .gastro-card-name {
-    font-family: 'Cormorant Garamond', serif; font-weight: 400;
-    font-size: 1.3rem; color: var(--vert);
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: 1.35rem; color: var(--noir, #111111);
     margin-bottom: 12px; letter-spacing: 0.03em;
   }
   .gastro-card-desc {
-    font-family: 'Jost', sans-serif; font-weight: 200;
-    font-size: 0.75rem; color: #777;
-    line-height: 1.9; letter-spacing: 0.03em;
+    font-family: 'Jost', sans-serif; font-weight: 300;
+    font-size: 0.8rem; color: #4a5568;
+    line-height: 1.9; letter-spacing: 0.02em;
   }
   .gastro-card-note {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
-    font-size: 0.9rem; color: var(--or);
+    font-size: 0.95rem; color: var(--or);
     display: block; margin-top: 14px;
-    padding-top: 14px; border-top: 1px solid rgba(201,168,76,0.15);
+    padding-top: 14px; border-top: 1px solid rgba(var(--or-rgb),0.15);
   }
 
-  /* ── Bien-être & Loisirs ── */
+  /* ── Bien-être & Loisirs (Fond Sombre Garanti) ── */
   .bienetre-section {
     padding: 120px 0;
-    background: var(--vert);
+    background: linear-gradient(145deg, var(--noir, #111111) 0%, var(--noir-surface, #181818) 100%);
     position: relative; overflow: hidden;
   }
   .bienetre-section::before {
     content: '';
     position: absolute; top: -80px; right: -80px;
     width: 400px; height: 400px; border-radius: 50%;
-    border: 1px solid rgba(201,168,76,0.06);
+    border: 1px solid rgba(var(--or-rgb),0.08);
   }
   .bienetre-inner { padding: 0 80px; position: relative; z-index: 2; }
   .bienetre-top {
@@ -290,170 +326,180 @@
   }
   .bienetre-heading {
     font-family: 'Cormorant Garamond', serif; font-weight: 300;
-    font-size: clamp(2rem, 3.5vw, 3.2rem); color: #fff;
+    font-size: clamp(2rem, 3.5vw, 3.2rem); color: #ffffff;
     line-height: 1.2; letter-spacing: 0.03em;
   }
   .bienetre-heading em { font-style: italic; color: var(--or-pale); }
   .bienetre-intro {
-    font-family: 'Jost', sans-serif; font-weight: 200;
-    font-size: 0.8rem; color: rgba(255,255,255,0.55);
-    line-height: 2; letter-spacing: 0.04em;
+    font-family: 'Jost', sans-serif; font-weight: 300;
+    font-size: 0.85rem; color: rgba(255,255,255,0.78);
+    line-height: 2; letter-spacing: 0.03em;
   }
 
   .bienetre-cards {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
   }
   .bienetre-card {
     background: rgba(255,255,255,0.04);
-    border-top: 1px solid rgba(201,168,76,0.15);
+    border: 1px solid rgba(var(--or-rgb),0.22);
+    border-radius: 8px;
     display: grid; grid-template-columns: 240px 1fr;
-    transition: background 0.4s;
+    overflow: hidden;
+    transition: background 0.4s, transform 0.3s;
   }
-  .bienetre-card:hover { background: rgba(255,255,255,0.08); }
+  .bienetre-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-3px);
+  }
 
   .bienetre-card-img {
-    overflow: hidden; height: 200px;
+    overflow: hidden; height: 100%; min-height: 220px;
   }
   .bienetre-card-img img {
     width: 100%; height: 100%;
     object-fit: cover; display: block;
     transition: transform 0.6s ease;
-    filter: brightness(0.85);
   }
-  .bienetre-card:hover .bienetre-card-img img { transform: scale(1.05); filter: brightness(1); }
+  .bienetre-card:hover .bienetre-card-img img { transform: scale(1.06); }
 
-  .bienetre-card-body { padding: 28px 32px; }
-  .bienetre-card-icon { font-size: 1.6rem; display: block; margin-bottom: 12px; }
+  .bienetre-card-body { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
   .bienetre-card-name {
-    font-family: 'Cormorant Garamond', serif; font-weight: 400;
-    font-size: 1.2rem; color: #fff;
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: 1.3rem; color: #ffffff;
     margin-bottom: 10px; letter-spacing: 0.03em;
   }
   .bienetre-card-desc {
-    font-family: 'Jost', sans-serif; font-weight: 200;
-    font-size: 0.72rem; color: rgba(255,255,255,0.45);
+    font-family: 'Jost', sans-serif; font-weight: 300;
+    font-size: 0.78rem; color: rgba(255,255,255,0.75);
     line-height: 1.9; letter-spacing: 0.03em;
   }
 
   /* ── Événements & Affaires ── */
-  .events-section { padding: 120px 0; background: #f9f7f2; }
+  .events-section { padding: 120px 0; background: #ffffff; }
   .events-inner { padding: 0 80px; }
   .events-layout {
-    display: grid; grid-template-columns: 1fr 1.2fr;
-    gap: 80px; align-items: start; margin-top: 64px;
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    gap: 60px; align-items: start; margin-top: 64px;
   }
 
-  .events-list { display: flex; flex-direction: column; gap: 2px; }
+  .events-list { display: flex; flex-direction: column; gap: 12px; }
 
   .event-item {
-    display: flex; align-items: flex-start; gap: 24px;
-    padding: 28px 32px;
-    background: #fff;
-    border-left: 2px solid transparent;
-    transition: border-color 0.3s, background 0.3s;
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 24px 28px;
+    background: var(--blanc, #fbf9f4);
+    border: 1px solid rgba(var(--or-rgb),0.12);
+    border-left: 3px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s;
     cursor: default;
   }
-  .event-item:hover { border-left-color: var(--or); background: #fefdf8; }
+  .event-item:hover {
+    border-left-color: var(--or);
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transform: translateX(4px);
+  }
 
-  .event-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 4px; }
   .event-name {
-    font-family: 'Cormorant Garamond', serif; font-weight: 400;
-    font-size: 1.15rem; color: var(--vert);
-    margin-bottom: 8px; letter-spacing: 0.03em;
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: 1.2rem; color: var(--noir, #111111);
+    margin-bottom: 6px; letter-spacing: 0.02em;
   }
   .event-desc {
-    font-family: 'Jost', sans-serif; font-weight: 200;
-    font-size: 0.72rem; color: #888;
-    line-height: 1.9; letter-spacing: 0.03em;
+    font-family: 'Jost', sans-serif; font-weight: 300;
+    font-size: 0.78rem; color: #4a5568;
+    line-height: 1.9; letter-spacing: 0.02em;
   }
 
   .events-img-wrap { position: relative; }
   .events-main-img {
     width: 100%; aspect-ratio: 4/3;
     object-fit: cover; display: block;
+    border-radius: 8px;
   }
   .events-img-badge {
     position: absolute; bottom: 28px; left: -24px;
-    background: var(--vert); padding: 20px 28px;
+    background: var(--noir, #111111); padding: 20px 28px;
     border-left: 3px solid var(--or);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
   }
   .events-img-badge-num {
     font-family: 'Cormorant Garamond', serif; font-weight: 300;
-    font-size: 2rem; color: var(--or); line-height: 1; display: block;
+    font-size: 2.2rem; color: var(--or); line-height: 1; display: block;
   }
   .events-img-badge-label {
-    font-family: 'Jost', sans-serif; font-weight: 200;
-    font-size: 0.52rem; letter-spacing: 0.4em; text-transform: uppercase;
-    color: rgba(255,255,255,0.6); display: block; margin-top: 4px;
+    font-family: 'Jost', sans-serif; font-weight: 300;
+    font-size: 0.55rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: rgba(255,255,255,0.85); display: block; margin-top: 6px;
   }
 
   /* ── Galerie ── */
-  .gallery-section { padding: 120px 0; background: #fff; }
+  .gallery-section { padding: 120px 0; background: var(--blanc, #fbf9f4); }
   .gallery-header { padding: 0 80px; display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; }
-  .gallery-heading { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--vert); line-height: 1.2; }
+  .gallery-heading { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3vw, 2.8rem); color: var(--noir, #111111); line-height: 1.2; }
   .gallery-heading em { font-style: italic; color: var(--or); }
-  .gallery-note { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.68rem; color: #aaa; letter-spacing: 0.25em; text-transform: uppercase; }
-  .gallery-mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 3px; padding: 0 80px; }
+  .gallery-note { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.7rem; color: #718096; letter-spacing: 0.25em; text-transform: uppercase; }
+  .gallery-mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 4px; padding: 0 80px; }
   .mosaic-item { overflow: hidden; position: relative; }
   .mosaic-item:first-child { grid-row: span 2; }
   .mosaic-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s ease; }
   .mosaic-item:hover img { transform: scale(1.05); }
   .mosaic-caption {
     position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
-    background: linear-gradient(transparent, rgba(var(--noir-rgb),0.6));
-    font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.58rem;
-    letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.7);
+    background: linear-gradient(transparent, rgba(var(--noir-rgb),0.75));
+    font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.65rem;
+    letter-spacing: 0.25em; text-transform: uppercase; color: #ffffff;
     opacity: 0; transition: opacity 0.4s;
   }
   .mosaic-item:hover .mosaic-caption { opacity: 1; }
 
   /* ── Équipe ── */
-  .team-section { padding: 120px 0; background: #fff; }
+  .team-section { padding: 120px 0; background: #ffffff; }
   .team-header { text-align: center; padding: 0 80px; margin-bottom: 70px; }
-  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; padding: 0 80px; }
-  .team-card { position: relative; overflow: hidden; cursor: pointer; }
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0 80px; }
+  .team-card { position: relative; overflow: hidden; cursor: pointer; background: var(--blanc, #fbf9f4); border: 1px solid rgba(var(--or-rgb),0.15); }
   .team-photo { position: relative; aspect-ratio: 3/4; overflow: hidden; }
-  .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s ease; filter: grayscale(20%); }
-  .team-card:hover .team-photo img { transform: scale(1.04); filter: grayscale(0%); }
-  .team-photo-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(var(--vert-rgb),0.7) 100%); opacity: 0; transition: opacity 0.5s; }
+  .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s ease; }
+  .team-card:hover .team-photo img { transform: scale(1.04); }
+  .team-photo-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(var(--noir-rgb),0.7) 100%); opacity: 0; transition: opacity 0.5s; }
   .team-card:hover .team-photo-overlay { opacity: 1; }
-  .team-info { padding: 24px 20px; background: #fff; border-top: 2px solid transparent; transition: border-color 0.4s; }
+  .team-info { padding: 24px 20px; background: #ffffff; border-top: 2px solid transparent; transition: border-color 0.4s; }
   .team-card:hover .team-info { border-top-color: var(--or); }
-  .team-name { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.15rem; color: var(--vert); letter-spacing: 0.03em; margin-bottom: 4px; }
-  .team-role { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.58rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--or); }
-  .team-bio { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; color: #999; line-height: 1.8; letter-spacing: 0.02em; margin-top: 10px; }
+  .team-name { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.2rem; color: var(--noir, #111111); letter-spacing: 0.03em; margin-bottom: 4px; }
+  .team-role { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--or); }
+  .team-bio { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.76rem; color: #718096; line-height: 1.8; letter-spacing: 0.02em; margin-top: 10px; }
 
   /* ── Valeurs ── */
-  .values-section { padding: 100px 0; background: #f9f7f2; overflow: hidden; }
+  .values-section { padding: 100px 0; background: var(--blanc, #fbf9f4); overflow: hidden; }
   .values-header { text-align: center; margin-bottom: 70px; padding: 0 80px; }
   .values-timeline { display: flex; padding: 0 80px; position: relative; }
   .values-timeline::before {
     content: ''; position: absolute; top: 28px; left: 80px; right: 80px;
-    height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent);
+    height: 1px; background: linear-gradient(to right, transparent, rgba(var(--or-rgb),0.3), transparent);
   }
   .value-item { flex: 1; padding: 0 24px; text-align: center; position: relative; }
-  .value-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--or); background: #f9f7f2; margin: 22px auto 28px; transition: background 0.3s; }
+  .value-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--or); background: var(--blanc, #fbf9f4); margin: 22px auto 28px; transition: background 0.3s; }
   .value-item:hover .value-dot { background: var(--or); }
-  .value-icon { font-size: 1.6rem; display: block; margin-bottom: 16px; }
-  .value-name { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.2rem; color: var(--vert); margin-bottom: 10px; }
-  .value-desc { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.72rem; color: #999; line-height: 1.85; letter-spacing: 0.02em; }
+  .value-name { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.3rem; color: var(--noir, #111111); margin-bottom: 10px; }
+  .value-desc { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.78rem; color: #4a5568; line-height: 1.85; letter-spacing: 0.02em; }
 
   /* ── CTA ── */
   .about-cta { position: relative; padding: 140px 0; overflow: hidden; text-align: center; }
   .about-cta-bg {
     position: absolute; inset: 0;
-    background: linear-gradient(rgba(var(--noir-rgb),0.7), rgba(var(--noir-rgb),0.7)),
+    background: linear-gradient(rgba(var(--noir-rgb),0.75), rgba(var(--noir-rgb),0.75)),
       url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=85') center/cover no-repeat;
   }
   .about-cta-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; padding: 0 32px; }
-  .about-cta-label { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.55rem; letter-spacing: 0.65em; text-transform: uppercase; color: var(--or); display: block; margin-bottom: 24px; }
-  .about-cta-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 4vw, 3.5rem); color: #fff; line-height: 1.2; margin-bottom: 20px; }
+  .about-cta-label { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.58rem; letter-spacing: 0.65em; text-transform: uppercase; color: var(--or); display: block; margin-bottom: 24px; }
+  .about-cta-title { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 4vw, 3.5rem); color: #ffffff; line-height: 1.2; margin-bottom: 20px; }
   .about-cta-title em { font-style: italic; color: var(--or-pale); }
-  .about-cta-text { font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.8rem; color: rgba(255,255,255,0.6); letter-spacing: 0.05em; line-height: 2; margin-bottom: 48px; }
+  .about-cta-text { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem; color: rgba(255,255,255,0.8); letter-spacing: 0.03em; line-height: 2; margin-bottom: 48px; }
   .about-cta-btns { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
-  .btn-cta-or { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--noir); background: var(--or); padding: 16px 44px; text-decoration: none; display: inline-block; transition: background 0.3s, transform 0.25s; }
-  .btn-cta-or:hover { background: var(--or-clair); transform: translateY(-2px); color: var(--noir); }
-  .btn-cta-ghost { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.62rem; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.25); padding: 15px 40px; text-decoration: none; display: inline-block; transition: all 0.3s; }
+  .btn-cta-or { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--noir, #111111); background: var(--or); padding: 16px 44px; text-decoration: none; display: inline-block; transition: background 0.3s, transform 0.25s; border-radius: 4px; }
+  .btn-cta-or:hover { background: var(--or-clair); transform: translateY(-2px); color: var(--noir, #111111); }
+  .btn-cta-ghost { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.4); padding: 15px 40px; text-decoration: none; display: inline-block; transition: all 0.3s; border-radius: 4px; }
   .btn-cta-ghost:hover { border-color: var(--or); color: var(--or); }
 
   /* ── Reveal ── */
@@ -464,7 +510,7 @@
   .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
   /* ── Expérience Signature §4 ── */
-  .signature-exp-section { padding: 0; background: #fff; }
+  .signature-exp-section { padding: 0; background: #ffffff; }
 
   .nautique-wrap {
     display: grid; grid-template-columns: 1fr 1fr; min-height: 460px;
@@ -474,71 +520,74 @@
   .nautique-wrap:hover .nautique-img img { transform: scale(1.04); }
   .nautique-img-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 50%, rgba(var(--noir-rgb),0.5) 100%); }
   .nautique-content {
-    background: var(--vert); padding: 60px 56px;
+    background: linear-gradient(145deg, var(--noir, #111111) 0%, var(--noir-surface, #181818) 100%);
+    padding: 60px 56px;
     display: flex; flex-direction: column; justify-content: center; position: relative;
   }
   .nautique-content::before {
     content: ''; position: absolute; top: 40px; left: 0;
     width: 3px; height: 60px; background: linear-gradient(to bottom, var(--or), transparent);
   }
-  .nautique-tag { font-family:'Jost',sans-serif; font-weight:200; font-size:0.5rem; letter-spacing:0.6em; text-transform:uppercase; color:var(--or); display:block; margin-bottom:16px; }
-  .nautique-title { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.8rem,3vw,2.8rem); color:#fff; line-height:1.2; margin-bottom:20px; }
+  .nautique-tag { font-family:'Jost',sans-serif; font-weight:300; font-size:0.55rem; letter-spacing:0.6em; text-transform:uppercase; color:var(--or); display:block; margin-bottom:16px; }
+  .nautique-title { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(1.8rem,3vw,2.8rem); color:#ffffff; line-height:1.2; margin-bottom:20px; }
   .nautique-title em { font-style:italic; color:var(--or-pale); }
-  .nautique-desc { font-family:'Jost',sans-serif; font-weight:200; font-size:0.78rem; color:rgba(255,255,255,0.55); line-height:2; letter-spacing:0.04em; margin-bottom:32px; }
+  .nautique-desc { font-family:'Jost',sans-serif; font-weight:300; font-size:0.82rem; color:rgba(255,255,255,0.78); line-height:2; letter-spacing:0.03em; margin-bottom:32px; }
   .nautique-items { display:flex; flex-direction:column; gap:16px; }
-  .nautique-item { display:flex; align-items:flex-start; gap:14px; padding:16px 20px; background:rgba(255,255,255,0.05); border-left:2px solid rgba(201,168,76,0.3); transition:all 0.3s; }
-  .nautique-item:hover { background:rgba(255,255,255,0.09); border-left-color:var(--or); }
-  .nautique-item-icon { font-size:1.3rem; flex-shrink:0; }
-  .nautique-item-name { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1rem; color:#fff; display:block; margin-bottom:4px; }
-  .nautique-item-desc { font-family:'Jost',sans-serif; font-weight:200; font-size:0.65rem; color:rgba(255,255,255,0.45); letter-spacing:0.05em; line-height:1.7; }
+  .nautique-item { display:flex; align-items:flex-start; gap:16px; padding:18px 22px; background:rgba(255,255,255,0.05); border:1px solid rgba(var(--or-rgb),0.2); border-left:3px solid var(--or); border-radius:6px; transition:all 0.3s; }
+  .nautique-item:hover { background:rgba(255,255,255,0.09); transform: translateX(4px); }
+  .nautique-item-name { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.15rem; color:#ffffff; display:block; margin-bottom:4px; }
+  .nautique-item-desc { font-family:'Jost',sans-serif; font-weight:300; font-size:0.75rem; color:rgba(255,255,255,0.75); letter-spacing:0.02em; line-height:1.7; }
 
   .exp-duo { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:4px; }
   .exp-card { position:relative; overflow:hidden; min-height:400px; display:flex; flex-direction:column; justify-content:flex-end; }
   .exp-card-bg { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform 0.8s; }
   .exp-card:hover .exp-card-bg { transform:scale(1.05); }
-  .exp-card-overlay { position:absolute; inset:0; background:linear-gradient(180deg, transparent 20%, rgba(var(--noir-rgb),0.88) 100%); }
+  .exp-card-overlay { position:absolute; inset:0; background:linear-gradient(180deg, transparent 20%, rgba(var(--noir-rgb),0.9) 100%); }
   .exp-card-body { position:relative; z-index:2; padding:36px; }
-  .exp-card-tag { font-family:'Jost',sans-serif; font-weight:200; font-size:0.5rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--or); display:block; margin-bottom:10px; }
-  .exp-card-title { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.7rem; color:#fff; letter-spacing:0.04em; margin-bottom:12px; line-height:1.2; }
+  .exp-card-tag { font-family:'Jost',sans-serif; font-weight:300; font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--or); display:block; margin-bottom:10px; }
+  .exp-card-title { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.7rem; color:#ffffff; letter-spacing:0.04em; margin-bottom:12px; line-height:1.2; }
   .exp-card-title em { font-style:italic; color:var(--or-pale); }
   .exp-card-items { display:flex; flex-direction:column; gap:10px; margin-top:16px; }
-  .exp-card-item { display:flex; align-items:flex-start; gap:10px; font-family:'Jost',sans-serif; font-weight:200; font-size:0.68rem; color:rgba(255,255,255,0.65); letter-spacing:0.04em; line-height:1.6; }
+  .exp-card-item { display:flex; align-items:flex-start; gap:10px; font-family:'Jost',sans-serif; font-weight:300; font-size:0.75rem; color:rgba(255,255,255,0.85); letter-spacing:0.02em; line-height:1.6; }
   .exp-card-item::before { content:'—'; color:var(--or); flex-shrink:0; }
 
   /* ── Localisation §5 ── */
-  .location-section { padding: 120px 0; background: #f9f7f2; }
+  .location-section { padding: 120px 0; background: var(--blanc, #fbf9f4); }
   .location-inner { padding: 0 80px; }
   .location-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:64px; }
-  .location-intro { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:#888; line-height:1.9; margin-bottom:32px; }
-  .location-item { display:flex; align-items:flex-start; gap:18px; padding:20px 0; border-bottom:1px solid rgba(201,168,76,0.1); }
-  .location-item:first-child { border-top:1px solid rgba(201,168,76,0.1); }
-  .location-item-icon { width:40px; height:40px; flex-shrink:0; border:1px solid rgba(201,168,76,0.25); display:flex; align-items:center; justify-content:center; font-size:1rem; margin-top:2px; transition:all 0.3s; }
-  .location-item:hover .location-item-icon { background:var(--or); border-color:var(--or); }
-  .location-item-name { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.05rem; color:var(--vert); display:block; margin-bottom:4px; }
-  .location-item-desc { font-family:'Jost',sans-serif; font-weight:200; font-size:0.72rem; color:#888; line-height:1.8; letter-spacing:0.03em; }
-  .location-map-embed { width:100%; height:300px; display:block; border:none; filter:grayscale(25%); transition:filter 0.4s; }
+  .location-intro { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:#4a5568; line-height:1.9; margin-bottom:32px; }
+  .location-item { display:flex; align-items:flex-start; gap:18px; padding:20px 0; border-bottom:1px solid rgba(var(--or-rgb),0.15); }
+  .location-item:first-child { border-top:1px solid rgba(var(--or-rgb),0.15); }
+  .location-item-icon { width:44px; height:44px; flex-shrink:0; border:1px solid rgba(var(--or-rgb),0.3); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--or); margin-top:2px; transition:all 0.3s; }
+  .location-item:hover .location-item-icon { background:var(--or); color:var(--noir, #111111); border-color:var(--or); }
+  .location-item-name { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.15rem; color:var(--noir, #111111); display:block; margin-bottom:4px; }
+  .location-item-desc { font-family:'Jost',sans-serif; font-weight:300; font-size:0.78rem; color:#4a5568; line-height:1.8; letter-spacing:0.02em; }
+  .location-map-embed { width:100%; height:300px; display:block; border:none; filter:grayscale(20%); transition:filter 0.4s; border-radius: 8px 8px 0 0; }
   .location-map-embed:hover { filter:grayscale(0%); }
-  .location-address-card { background:var(--vert); padding:24px 28px; border-top:3px solid var(--or); }
-  .location-address-label { font-family:'Jost',sans-serif; font-weight:200; font-size:0.5rem; letter-spacing:0.5em; text-transform:uppercase; color:rgba(201,168,76,0.6); display:block; margin-bottom:10px; }
-  .location-address-text { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1rem; color:#fff; line-height:1.8; }
-  .location-address-text a { color:var(--or); text-decoration:none; font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase; font-family:'Jost',sans-serif; font-weight:200; display:block; margin-top:12px; transition:color 0.3s; }
+  .location-address-card { background:var(--noir, #111111); padding:26px 30px; border-top:3px solid var(--or); border-radius: 0 0 8px 8px; }
+  .location-address-label { font-family:'Jost',sans-serif; font-weight:300; font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--or); display:block; margin-bottom:10px; }
+  .location-address-text { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.1rem; color:#ffffff; line-height:1.8; }
+  .location-address-text a { color:var(--or); text-decoration:none; font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; font-family:'Jost',sans-serif; font-weight:400; display:block; margin-top:12px; transition:color 0.3s; }
   .location-address-text a:hover { color:var(--or-clair); }
 
-  /* ── Services §6 ── */
-  .services6-section { padding: 120px 0; background: #111; position:relative; overflow:hidden; }
+  /* ── Services §6 (Fond Sombre Garanti) ── */
+  .services6-section {
+    padding: 120px 0;
+    background: linear-gradient(145deg, var(--noir, #111111) 0%, var(--noir-surface, #181818) 100%);
+    position:relative; overflow:hidden;
+  }
   .services6-section::before { content:'06'; position:absolute; bottom:-40px; left:-20px; font-family:'Cormorant Garamond',serif; font-size:20vw; color:rgba(255,255,255,0.02); line-height:1; pointer-events:none; user-select:none; }
   .services6-inner { padding: 0 80px; position:relative; z-index:2; }
   .services6-top { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:end; margin-bottom:64px; }
-  .services6-heading { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(2rem,3.5vw,3.2rem); color:#fff; line-height:1.2; }
+  .services6-heading { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:clamp(2rem,3.5vw,3.2rem); color:#ffffff; line-height:1.2; }
   .services6-heading em { font-style:italic; color:var(--or-pale); }
-  .services6-intro { font-family:'Jost',sans-serif; font-weight:200; font-size:0.8rem; color:rgba(255,255,255,0.45); line-height:2; letter-spacing:0.04em; }
-  .services6-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
-  .service6-card { background:rgba(255,255,255,0.04); border-top:1px solid rgba(201,168,76,0.1); padding:36px 28px; transition:background 0.4s; }
-  .service6-card:hover { background:rgba(255,255,255,0.08); }
-  .service6-icon { font-size:1.8rem; display:block; margin-bottom:20px; }
-  .service6-name { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.1rem; color:#fff; margin-bottom:12px; letter-spacing:0.03em; }
-  .service6-desc { font-family:'Jost',sans-serif; font-weight:200; font-size:0.7rem; color:rgba(255,255,255,0.4); line-height:1.9; letter-spacing:0.03em; }
-  .service6-badge { display:inline-block; margin-top:16px; font-family:'Jost',sans-serif; font-weight:200; font-size:0.48rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--or); border:1px solid rgba(201,168,76,0.25); padding:4px 12px; }
+  .services6-intro { font-family:'Jost',sans-serif; font-weight:300; font-size:0.85rem; color:rgba(255,255,255,0.78); line-height:2; letter-spacing:0.03em; }
+  .services6-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .service6-card { background:rgba(255,255,255,0.04); border:1px solid rgba(var(--or-rgb),0.2); border-radius:8px; padding:36px 28px; transition:background 0.4s, transform 0.3s; }
+  .service6-card:hover { background:rgba(255,255,255,0.08); transform: translateY(-4px); }
+  .service6-name { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.2rem; color:#ffffff; margin-bottom:12px; letter-spacing:0.03em; }
+  .service6-desc { font-family:'Jost',sans-serif; font-weight:300; font-size:0.76rem; color:rgba(255,255,255,0.75); line-height:1.9; letter-spacing:0.02em; }
+  .service6-badge { display:inline-block; margin-top:16px; font-family:'Jost',sans-serif; font-weight:300; font-size:0.52rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--or); border:1px solid rgba(var(--or-rgb),0.35); padding:4px 12px; border-radius:4px; }
 
   @media (max-width: 1100px) {
     .story-inner, .vision-inner, .gallery-header, .gallery-mosaic,
@@ -609,38 +658,43 @@
 <section class="story-section">
   <div class="story-inner">
     <div class="story-image-wrap reveal-left">
-      <img class="story-main-img" src="https://images.pexels.com/photos/37610710/pexels-photo-37610710.jpeg" alt="<?= htmlspecialchars(hotel_name()) ?>">
-      <img class="story-float-img" src="https://images.unsplash.com/photo-1612965607446-25e1332775ae?w=600&q=80" alt="Accueil <?= htmlspecialchars(hotel_name()) ?>">
+      <img class="story-main-img"
+        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
+        alt="<?= htmlspecialchars(hotel_name()) ?> - Architecture &amp; Espaces">
+      <img class="story-float-img"
+        src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80"
+        alt="Détail de nos suites">
     </div>
     <div class="story-text reveal-right">
       <span class="section-label">Mot de la Direction</span>
-      <h2 class="section-heading">Bienvenue à<br><?= htmlspecialchars(hotel_name()) ?></h2>
-      <div class="story-divider"><span></span><i></i></div>
+      <h2 class="section-heading">
+        L'hospitalité réinventée,<br>une <em>promesse tenue</em>
+      </h2>
+      <div class="story-divider">
+        <span></span><i></i><span></span>
+      </div>
       <div class="story-body">
         <p>
-          Plus qu'un établissement hôtelier d'exception à <?= htmlspecialchars(hotel_location()) ?>, <?= htmlspecialchars(hotel_name()) ?> est la
-          concrétisation d'une vision : offrir une promesse de sérénité et d'excellence
-          dans un cadre qui allie l'élégance contemporaine à la chaleur de l'accueil traditionnel.
+          « Nous avons pensé cet établissement pour ceux qui ne veulent plus choisir
+          entre le raffinement d'un grand hôtel et la chaleur d'un accueil authentique. »
         </p>
         <p>
-          Chaque détail de notre établissement a été pensé pour créer un véritable refuge.
-          Un lieu où nos clients d'affaires peuvent travailler et se ressourcer
-          en toute confiance, où les voyageurs découvrent la région en toute quiétude,
-          et où chaque hôte trouve un espace raffiné pour ses moments de détente
-          et ses événements d'exception.
+          Implanté au cœur de <?= htmlspecialchars(hotel_city()) ?>, <?= htmlspecialchars(hotel_name()) ?> est né
+          d'une ambition claire : offrir aux voyageurs d'affaires comme aux familles
+          un séjour d'exception, alliant confort moderne, sécurité absolue et
+          standards internationaux de service.
         </p>
         <p>
-          Notre ambition n'est pas seulement d'être un lieu de passage, mais une
-          destination de choix — une valeur sûre où la qualité du service, le confort
-          de nos installations et l'attention portée à nos clients sont les piliers
-          de chaque instant.
+          De nos chambres pensées dans les moindres détails à notre Skibar panoramique,
+          chaque espace a été conçu pour faire de votre passage parmi nous un moment
+          de sérénité et d'élégance.
         </p>
       </div>
       <div class="signature-block">
         <div class="signature-or"></div>
         <div>
           <span class="signature-name">La Direction Générale</span>
-          <span class="signature-role">Direction · <?= htmlspecialchars(hotel_name()) ?></span>
+          <span class="signature-role"><?= htmlspecialchars(hotel_name()) ?> · <?= htmlspecialchars(hotel_city()) ?></span>
         </div>
       </div>
     </div>
@@ -665,7 +719,7 @@
     <div class="vision-pillars reveal">
       <div class="pillar">
         <span class="pillar-num">01</span>
-        <span class="pillar-icon"><img src="../assets/images/dove-of-peace.png" alt="" srcset=""></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-feather-alt"></i></div>
         <h3 class="pillar-name">Sérénité</h3>
         <p class="pillar-desc">
           Nous créons un environnement apaisant et assurons un service fluide et
@@ -675,7 +729,7 @@
       </div>
       <div class="pillar">
         <span class="pillar-num">02</span>
-        <span class="pillar-icon"><img src="../assets/images/rating.png" alt="" srcset=""></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-gem"></i></div>
         <h3 class="pillar-name">Raffinement</h3>
         <p class="pillar-desc">
           Une attention méticuleuse à chaque détail, du design de nos espaces à la
@@ -685,7 +739,7 @@
       </div>
       <div class="pillar">
         <span class="pillar-num">03</span>
-        <span class="pillar-icon"><img src="../assets/images/skin-type.png" alt="" srcset=""></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-hand-holding-heart"></i></div>
         <h3 class="pillar-name">Excellence Accessible</h3>
         <p class="pillar-desc">
           Nous créons des séjours d'exception par une offre intelligente et
@@ -708,7 +762,7 @@
     </div>
     <div class="promise-grid reveal">
       <div class="promise-card">
-        <span class="promise-icon"><img src="../assets/images/quality-assurance.png" alt="" srcset=""></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-shield-alt"></i></div>
         <h3 class="promise-title">La Sérénité</h3>
         <p class="promise-text">
           Franchir nos portes, c'est entrer dans un refuge. C'est l'assurance
@@ -718,7 +772,7 @@
         <span class="promise-quote">« Un havre où tout s'apaise. »</span>
       </div>
       <div class="promise-card">
-        <span class="promise-icon"><img src="../assets/images/premium-badge.png" alt="" srcset=""></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-certificate"></i></div>
         <h3 class="promise-title">La Qualité</h3>
         <p class="promise-text">
           L'assurance d'un standard d'excellence constant — une connexion
@@ -728,7 +782,7 @@
         <span class="promise-quote">« L'excellence à chaque instant. »</span>
       </div>
       <div class="promise-card">
-        <span class="promise-icon"><img src="../assets/images/trustworthiness.png" alt="" srcset=""></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-heart"></i></div>
         <h3 class="promise-title">La Confiance</h3>
         <p class="promise-text">
           En séjournant à <?= htmlspecialchars(hotel_name()) ?>, nos clients se sentent valorisés et sereins.
@@ -749,7 +803,7 @@
       <h2 class="section-heading">
         Gastronomie &amp;<br><em>Saveurs Raffinées</em>
       </h2>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#999;margin-top:12px;max-width:560px;">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#718096;margin-top:12px;max-width:560px;">
         L'art de recevoir selon <?= htmlspecialchars(hotel_name()) ?> passe par une offre de restauration riche et variée,
         adaptée à chaque moment de la journée.
       </p>
@@ -761,7 +815,6 @@
       <div class="gastro-card">
         <div class="gastro-card-img">
           <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=900&q=80" alt="Restaurant Signature">
-          <div class="gastro-card-img-overlay"></div>
           <span class="gastro-card-tag">Restaurant Principal</span>
         </div>
         <div class="gastro-card-body">
@@ -779,14 +832,13 @@
       <div class="gastro-card">
         <div class="gastro-card-img">
           <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?w=600&q=80" alt="Skibar Panoramique">
-          <div class="gastro-card-img-overlay"></div>
           <span class="gastro-card-tag">Rooftop · Vue Panoramique</span>
         </div>
         <div class="gastro-card-body">
           <h3 class="gastro-card-name">Le Skibar Panoramique</h3>
           <p class="gastro-card-desc">
             Point d'orgue de l'hôtel, notre Skibar offre une vue imprenable sur les toits
-            de Lomé. Cocktails créatifs, tapas gourmandes et ambiance musicale chic —
+            de <?= htmlspecialchars(hotel_city()) ?>. Cocktails créatifs, tapas gourmandes et ambiance musicale chic —
             le nouveau lieu de rendez-vous incontournable.
           </p>
           <span class="gastro-card-note">Fin de journée · Soirée privée · Événements</span>
@@ -797,7 +849,6 @@
       <div class="gastro-card">
         <div class="gastro-card-img">
           <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80" alt="Lounge Bar Lobby">
-          <div class="gastro-card-img-overlay"></div>
           <span class="gastro-card-tag">Lobby · Lounge</span>
         </div>
         <div class="gastro-card-body">
@@ -821,7 +872,7 @@
 
     <div class="bienetre-top reveal">
       <div>
-        <span class="section-label" style="color:rgba(201,168,76,0.7);">Détente &amp; Évasion</span>
+        <span class="section-label" style="color:var(--or);">Détente &amp; Évasion</span>
         <h2 class="bienetre-heading">
           Bien-être &amp;<br><em>Loisirs</em>
         </h2>
@@ -841,7 +892,7 @@
           <img src="https://images.pexels.com/photos/37585969/pexels-photo-37585969.jpeg" alt="Piscine &amp; Jacuzzi">
         </div>
         <div class="bienetre-card-body">
-          <span class="bienetre-card-icon"><img src="../assets/images/swimming-man.png" alt="" srcset=""></span>
+          <div class="about-icon-badge" style="margin-bottom:16px;"><i class="fas fa-water"></i></div>
           <h3 class="bienetre-card-name">La Piscine &amp; son Jacuzzi</h3>
           <p class="bienetre-card-desc">
             Entourée d'un solarium aménagé, notre piscine est une véritable oasis.
@@ -857,7 +908,7 @@
           <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Espace Fitness">
         </div>
         <div class="bienetre-card-body">
-          <span class="bienetre-card-icon"><img src="../assets/images/weightlifting.png" alt="" srcset=""></span>
+          <div class="about-icon-badge" style="margin-bottom:16px;"><i class="fas fa-dumbbell"></i></div>
           <h3 class="bienetre-card-name">L'Espace Fitness</h3>
           <p class="bienetre-card-desc">
             Pour garder la forme, notre salle de sport est équipée des dernières
@@ -876,11 +927,11 @@
   <div class="events-inner">
 
     <div class="reveal">
-      <span class="section-label">3.4 · Le Cadre de Vos Succès</span>
+      <span class="section-label">Le Cadre de Vos Succès</span>
       <h2 class="section-heading">
         Événements &amp;<br><em>Espaces Affaires</em>
       </h2>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#999;margin-top:12px;max-width:560px;">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:#718096;margin-top:12px;max-width:560px;">
         Nous offrons aux professionnels un environnement optimal pour travailler
         et se réunir, soutenu par une technologie de pointe.
       </p>
@@ -891,7 +942,7 @@
       <div class="events-list">
 
         <div class="event-item">
-          <span class="event-icon"> <img src="../assets/images/micro.png" alt="" srcset=""></span>
+          <div class="about-icon-badge"><i class="fas fa-microphone-alt"></i></div>
           <div>
             <h4 class="event-name">Salles de Séminaire &amp; Conférence</h4>
             <p class="event-desc">
@@ -904,7 +955,7 @@
         </div>
 
         <div class="event-item">
-          <span class="event-icon"> <img src="../assets/images/monitor.png" alt="" srcset=""></span>
+          <div class="about-icon-badge"><i class="fas fa-laptop"></i></div>
           <div>
             <h4 class="event-name">Le Centre d'Affaires</h4>
             <p class="event-desc">
@@ -916,7 +967,7 @@
         </div>
 
         <div class="event-item">
-          <span class="event-icon"> <img src="../assets/images/local-area-network.png" alt="" srcset=""></span>
+          <div class="about-icon-badge"><i class="fas fa-wifi"></i></div>
           <div>
             <h4 class="event-name">Connexion Fibre Optique Garantie</h4>
             <p class="event-desc">
@@ -928,12 +979,12 @@
         </div>
 
         <div class="event-item">
-          <span class="event-icon"> <img src="../assets/images/champagne.png" alt="" srcset=""></span>
+          <div class="about-icon-badge"><i class="fas fa-glass-cheers"></i></div>
           <div>
             <h4 class="event-name">Le Skibar en Privatisation</h4>
             <p class="event-desc">
               Espace privatisable unique pour vos lancements de produits, cocktails
-              d'entreprise ou soirées privées. La vue panoramique sur Lomé garantit
+              d'entreprise ou soirées privées. La vue panoramique garantit
               un événement qui marquera les esprits.
             </p>
           </div>
@@ -977,14 +1028,14 @@
       </p>
       <div class="nautique-items">
         <div class="nautique-item">
-          <span class="nautique-item-icon"><img src="../assets/images/jet-ski.png" alt="" srcset=""></span>
+          <div class="about-icon-badge"><i class="fas fa-ship"></i></div>
           <div>
             <span class="nautique-item-name">Sensations en Jet Ski</span>
             <span class="nautique-item-desc">Sessions nautiques pour découvrir le littoral sous un angle nouveau et vivifiant.</span>
           </div>
         </div>
         <div class="nautique-item">
-          <span class="nautique-item-icon"><img src="../assets/images/cruise-ship.png" alt="" srcset=""></span>
+          <div class="about-icon-badge"><i class="fas fa-compass"></i></div>
           <div>
             <span class="nautique-item-name">Croisières Privées en Yacht</span>
             <span class="nautique-item-desc">Apéritif au coucher du soleil, réunion confidentielle ou célébration privée au large — des souvenirs impérissables.</span>
@@ -1036,7 +1087,7 @@
 
     <div class="reveal">
       <span class="section-label">Notre Ancrage</span>
-      <h2 class="section-heading">
+      <h2 class="location-heading">
         <?= htmlspecialchars(hotel_city()) ?>, un emplacement<br><em>stratégique</em>
       </h2>
     </div>
@@ -1050,28 +1101,28 @@
         </p>
         <div style="display:flex;flex-direction:column;">
           <div class="location-item">
-            <div class="location-item-icon"><i class="fas fa-briefcase" style="color:var(--or);"></i></div>
+            <div class="location-item-icon"><i class="fas fa-briefcase"></i></div>
             <div>
               <span class="location-item-name">Clientèle d'Affaires</span>
               <span class="location-item-desc">Proximité avec les centres d'affaires et pôles décisionnels. Le cadre idéal pour optimiser votre séjour.</span>
             </div>
           </div>
           <div class="location-item">
-            <div class="location-item-icon"><i class="fas fa-umbrella-beach" style="color:var(--or);"></i></div>
+            <div class="location-item-icon"><i class="fas fa-umbrella-beach"></i></div>
             <div>
               <span class="location-item-name">Voyageurs Loisirs</span>
               <span class="location-item-desc">Point de départ parfait pour découvrir les merveilles de la région et ses paysages authentiques.</span>
             </div>
           </div>
           <div class="location-item">
-            <div class="location-item-icon"><i class="fas fa-plane-departure" style="color:var(--or);"></i></div>
+            <div class="location-item-icon"><i class="fas fa-plane-departure"></i></div>
             <div>
               <span class="location-item-name">Accès Facilité</span>
               <span class="location-item-desc">Accès rapide aux grands axes. Service de transfert privé disponible sur réservation.</span>
             </div>
           </div>
           <div class="location-item">
-            <div class="location-item-icon"><i class="fas fa-parking" style="color:var(--or);"></i></div>
+            <div class="location-item-icon"><i class="fas fa-parking"></i></div>
             <div>
               <span class="location-item-name">Parking Sécurisé</span>
               <span class="location-item-desc">Espace de stationnement privé et surveillé 24h/24 pour une totale sérénité.</span>
@@ -1112,7 +1163,7 @@
 
     <div class="services6-top reveal">
       <div>
-        <span class="section-label" style="color:rgba(201,168,76,0.7);">Notre Engagement</span>
+        <span class="section-label" style="color:var(--or);">Notre Engagement</span>
         <h2 class="services6-heading">
           L'Excellence<br>du <em>Service</em>
         </h2>
@@ -1129,28 +1180,28 @@
     <div class="services6-grid reveal">
 
       <div class="service6-card">
-        <span class="service6-icon"><i class="fas fa-concierge-bell" style="color:var(--or);"></i></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-concierge-bell"></i></div>
         <h4 class="service6-name">Conciergerie Dédiée</h4>
         <p class="service6-desc">Réserver un taxi, organiser une visite guidée, recommander le meilleur restaurant local — notre conciergerie est votre allié pour un séjour réussi.</p>
         <span class="service6-badge">Disponible 24h/24</span>
       </div>
 
       <div class="service6-card">
-        <span class="service6-icon"><i class="fas fa-utensils" style="color:var(--or);"></i></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-utensils"></i></div>
         <h4 class="service6-name">Room Service 24h/24</h4>
         <p class="service6-desc">Une petite faim en pleine nuit ou un dîner en toute intimité ? Notre service en chambre propose une sélection de plats à toute heure.</p>
         <span class="service6-badge">Toute la nuit</span>
       </div>
 
       <div class="service6-card">
-        <span class="service6-icon"><i class="fas fa-user-tie" style="color:var(--or);"></i></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-user-tie"></i></div>
         <h4 class="service6-name">Blanchisserie &amp; Pressing</h4>
         <p class="service6-desc">Un service rapide et soigné pour être impeccable en toutes circonstances lors de votre séjour. Nettoyage à sec disponible.</p>
         <span class="service6-badge">Express disponible</span>
       </div>
 
       <div class="service6-card">
-        <span class="service6-icon"><i class="fas fa-car" style="color:var(--or);"></i></span>
+        <div class="about-icon-badge about-icon-badge-lg"><i class="fas fa-car"></i></div>
         <h4 class="service6-name">Parking Sécurisé</h4>
         <p class="service6-desc">Un espace de stationnement privé et surveillé à la disposition de notre clientèle pour une tranquillité d'esprit totale.</p>
         <span class="service6-badge">Inclus</span>
@@ -1197,7 +1248,7 @@
 <section class="team-section">
   <div class="team-header reveal">
     <span class="section-label">Les Ambassadeurs de l'Excellence</span>
-    <h2 class="section-heading" style="font-size:clamp(2rem,3.5vw,3rem);color:var(--vert);max-width:500px;margin:0 auto;">
+    <h2 class="team-heading" style="font-size:clamp(2rem,3.5vw,3rem);max-width:500px;margin:0 auto;">
       Une équipe passionnée,<br>à votre <em>service</em>
     </h2>
   </div>
@@ -1253,32 +1304,32 @@
 <section class="values-section">
   <div class="values-header reveal">
     <span class="section-label">Ce qui nous anime</span>
-    <h2 class="section-heading" style="font-size:clamp(2rem,3.5vw,3rem);color:var(--vert);max-width:480px;margin:0 auto;">
+    <h2 class="section-heading" style="font-size:clamp(2rem,3.5vw,3rem);max-width:480px;margin:0 auto;">
       Nos <em>valeurs</em>,<br>notre identité
     </h2>
   </div>
   <div class="values-timeline reveal">
     <div class="value-item">
       <div class="value-dot"></div>
-      <span class="value-icon"><i class="fas fa-dove" style="color:var(--or); font-size:1.6rem;"></i></span>
+      <div class="about-icon-badge about-icon-badge-lg" style="margin: 0 auto 18px;"><i class="fas fa-dove"></i></div>
       <h4 class="value-name">Sérénité</h4>
       <p class="value-desc">Chaque espace, chaque interaction est pensée pour libérer nos clients du stress. Un vrai havre de paix dédié au ressourcement.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
-      <span class="value-icon"><i class="fas fa-bullseye" style="color:var(--or); font-size:1.6rem;"></i></span>
+      <div class="about-icon-badge about-icon-badge-lg" style="margin: 0 auto 18px;"><i class="fas fa-bullseye"></i></div>
       <h4 class="value-name">Excellence</h4>
       <p class="value-desc">Des standards internationaux dans chaque prestation : connectivité haut débit, literie de prestige, gastronomie soignée, propreté irréprochable.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
-      <span class="value-icon"><i class="fas fa-heart" style="color:var(--or); font-size:1.6rem;"></i></span>
+      <div class="about-icon-badge about-icon-badge-lg" style="margin: 0 auto 18px;"><i class="fas fa-heart"></i></div>
       <h4 class="value-name">Hospitalité</h4>
       <p class="value-desc">La chaleur authentique de l'accueil attentionné au service de vos attentes — nous veillons sur chaque instant de votre séjour.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
-      <span class="value-icon"><i class="fas fa-lightbulb" style="color:var(--or); font-size:1.6rem;"></i></span>
+      <div class="about-icon-badge about-icon-badge-lg" style="margin: 0 auto 18px;"><i class="fas fa-lightbulb"></i></div>
       <h4 class="value-name">Harmonie</h4>
       <p class="value-desc">Le raffinement harmonieux n'est pas un compromis — c'est une philosophie. Se sentir parfaitement privilégié dans un cadre exceptionnel.</p>
     </div>

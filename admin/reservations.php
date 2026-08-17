@@ -191,10 +191,10 @@ $stats = [
 $statuts_labels = [
     'en_cours'  => 'En cours', 
     'validee'   => 'Validée',
-    'en_sejour' => 'En séjour 🏨',
+    'en_sejour' => 'En séjour',
     'modifiee'  => 'Modifiée', 
     'annulee'   => 'Annulée', 
-    'terminee'  => 'Terminée ✓',
+    'terminee'  => 'Terminée',
 ];
 ?>
 <!DOCTYPE html>
