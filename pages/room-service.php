@@ -193,11 +193,12 @@ body {
 
 .rs-categories {
     display: flex;
-    gap: 8px;
+    gap: 8px 10px;
     margin-bottom: 24px;
     border-bottom: 1.5px solid rgba(201,168,76,0.25);
     padding-bottom: 12px;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    overflow: visible;
 }
 
 .rs-cat-btn {

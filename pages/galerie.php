@@ -109,28 +109,38 @@ include(__DIR__ . '/../layouts/header.php');
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 10px 12px;
     margin-bottom: 45px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 6px 4px;
+    flex-wrap: wrap;
+    padding: 6px 0;
+    overflow: visible;
 }
 
 .g-filter-btn {
     background: #ffffff;
     border: 1px solid rgba(var(--or-rgb),0.35);
-    padding: 10px 22px;
+    padding: 11px 22px;
     border-radius: 0;
     font-family: 'Jost', sans-serif;
-    font-size: 0.68rem;
+    font-size: 0.70rem;
     font-weight: 500;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--noir, #111111);
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.35s ease;
-    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.g-filter-btn i {
+    color: var(--or);
+    font-size: 0.82rem;
+    transition: color 0.3s;
 }
 
 .g-filter-btn.active, .g-filter-btn:hover {
@@ -138,6 +148,10 @@ include(__DIR__ . '/../layouts/header.php');
     color: var(--or-pale);
     border-color: var(--noir, #111111);
     box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.g-filter-btn.active i, .g-filter-btn:hover i {
+    color: var(--or-pale);
 }
 
 .galerie-grid {
@@ -258,12 +272,12 @@ include(__DIR__ . '/../layouts/header.php');
     
     <!-- Filtres -->
     <div class="galerie-filters">
-        <button type="button" class="g-filter-btn active" onclick="filterGallery('all', this)">Toutes les Photos</button>
-        <button type="button" class="g-filter-btn" onclick="filterGallery('chambres', this)"><i class="fas fa-bed" style="margin-right:6px; color:var(--or);"></i> Chambres &amp; Suites</button>
-        <button type="button" class="g-filter-btn" onclick="filterGallery('piscine', this)"><i class="fas fa-water" style="margin-right:6px; color:var(--or);"></i> Piscine &amp; Lagon</button>
-        <button type="button" class="g-filter-btn" onclick="filterGallery('gastro', this)"><i class="fas fa-wine-glass-alt" style="margin-right:6px; color:var(--or);"></i> Gastronomie &amp; Bar</button>
-        <button type="button" class="g-filter-btn" onclick="filterGallery('spa', this)"><i class="fas fa-spa" style="margin-right:6px; color:var(--or);"></i> Spa &amp; Bien-être</button>
-        <button type="button" class="g-filter-btn" onclick="filterGallery('evenements', this)"><i class="fas fa-glass-cheers" style="margin-right:6px; color:var(--or);"></i> Événements &amp; Réceptions</button>
+        <button type="button" class="g-filter-btn active" onclick="filterGallery('all', this)"><i class="fas fa-images"></i> Toutes les Photos</button>
+        <button type="button" class="g-filter-btn" onclick="filterGallery('chambres', this)"><i class="fas fa-bed"></i> Chambres &amp; Suites</button>
+        <button type="button" class="g-filter-btn" onclick="filterGallery('piscine', this)"><i class="fas fa-water"></i> Piscine &amp; Lagon</button>
+        <button type="button" class="g-filter-btn" onclick="filterGallery('gastro', this)"><i class="fas fa-wine-glass-alt"></i> Gastronomie &amp; Bar</button>
+        <button type="button" class="g-filter-btn" onclick="filterGallery('spa', this)"><i class="fas fa-spa"></i> Spa &amp; Bien-être</button>
+        <button type="button" class="g-filter-btn" onclick="filterGallery('evenements', this)"><i class="fas fa-glass-cheers"></i> Événements &amp; Réceptions</button>
     </div>
 
     <!-- Grille -->

@@ -590,9 +590,8 @@ include(__DIR__ . '/../layouts/header.php');
   @media (max-width: 768px) {
     .compte-container { margin: 80px auto 60px; padding: 0 14px; }
     .compte-header { padding: 24px 18px; flex-direction: column; align-items: flex-start; }
-    .compte-nom { font-size: 1.6rem; }
-    .client-tabs-nav { overflow-x: auto !important; flex-wrap: nowrap !important; padding-bottom: 8px; -webkit-overflow-scrolling: touch; }
-    .tab-nav-btn { white-space: nowrap !important; flex-shrink: 0 !important; padding: 8px 16px !important; font-size: 0.85rem !important; }
+    .client-tabs-nav { flex-wrap: wrap !important; gap: 8px !important; padding-bottom: 8px; }
+    .tab-nav-btn { padding: 10px 16px !important; font-size: 0.72rem !important; }
     .reservation-card { padding: 20px 16px; }
     .form-row { grid-template-columns: 1fr; }
     .modal-content { padding: 28px 18px; }
