@@ -61,10 +61,11 @@
               <p><a href="mailto:<?= htmlspecialchars(hotel_email()) ?>"><?= htmlspecialchars(hotel_email()) ?></a></p>
               <p><a href="mailto:<?= htmlspecialchars(defined('HOTEL_CONTACT_EMAIL') ? HOTEL_CONTACT_EMAIL : hotel_email()) ?>"><?= htmlspecialchars(defined('HOTEL_CONTACT_EMAIL') ? HOTEL_CONTACT_EMAIL : hotel_email()) ?></a></p>
             </div>
-            <div class="footer-social mt-4">
-              <a href="#" title="Instagram">IG</a>
-              <a href="#" title="Facebook">FB</a>
-              <a href="#" title="LinkedIn">LI</a>
+            <div class="footer-social mt-4" style="display: flex; gap: 12px;">
+              <a href="#" title="Instagram" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(var(--or-rgb), 0.4); border-radius: 50%; color: var(--or); text-decoration: none; transition: all 0.3s;"><i class="fab fa-instagram"></i></a>
+              <a href="#" title="Facebook" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(var(--or-rgb), 0.4); border-radius: 50%; color: var(--or); text-decoration: none; transition: all 0.3s;"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" title="WhatsApp Conciergerie" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(var(--or-rgb), 0.4); border-radius: 50%; color: var(--or); text-decoration: none; transition: all 0.3s;"><i class="fab fa-whatsapp"></i></a>
+              <a href="#" title="LinkedIn" style="display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid rgba(var(--or-rgb), 0.4); border-radius: 50%; color: var(--or); text-decoration: none; transition: all 0.3s;"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>

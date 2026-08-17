@@ -828,7 +828,7 @@ $TYPES = ['standard'=>'Standard','superieure'=>'Supérieure','suite'=>'Suite','v
       </div>
       <div class="price-body">
         <span class="price-body-from">À partir de</span>
-        <span class="price-body-amount"><?= number_format($featured['prix_nuit'],0,',',' ') ?> <small style="font-size:1.2rem">FCFA</small></span>
+        <span class="price-body-amount"><?= number_format($featured['prix_nuit'],0,',',' ') ?> <small style="font-size:1.2rem"><?= htmlspecialchars(hotel_currency()) ?></small></span>
         <span class="price-body-night">/ nuit</span>
       </div>
       <div class="chambre-footer">
@@ -862,7 +862,7 @@ $TYPES = ['standard'=>'Standard','superieure'=>'Supérieure','suite'=>'Suite','v
           <div class="chambre-price-tag">
             <span class="price-from">Dès</span>
             <span class="price-amount"><?= number_format($ch['prix_nuit'],0,',',' ') ?></span>
-            <span class="price-night">FCFA / nuit</span>
+            <span class="price-night"><?= htmlspecialchars(hotel_currency()) ?> / nuit</span>
           </div>
         </div>
         <div class="chambre-body">
