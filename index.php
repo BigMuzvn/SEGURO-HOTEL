@@ -119,7 +119,7 @@
       
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px;">
         <!-- Suite Royale -->
-        <div style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+        <div style="background: white; border-radius: 0; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); border: 1px solid rgba(var(--or-rgb), 0.15);">
           <div style="height: 280px; overflow: hidden;">
             <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&h=400&fit=crop" 
                  alt="Suite Royale - Vue océan" 
@@ -137,7 +137,7 @@
         </div>
         
         <!-- Villa Privée -->
-        <div style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+        <div style="background: white; border-radius: 0; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); border: 1px solid rgba(var(--or-rgb), 0.15);">
           <div style="height: 280px; overflow: hidden;">
             <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop" 
                  alt="Villa Privée - Piscine privée" 
@@ -155,7 +155,7 @@
         </div>
         
         <!-- Chambre Supérieure -->
-        <div style="background: white; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+        <div style="background: white; border-radius: 0; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); border: 1px solid rgba(var(--or-rgb), 0.15);">
           <div style="height: 280px; overflow: hidden;">
             <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&h=400&fit=crop" 
                  alt="Chambre Supérieure - Vue jardin" 
@@ -174,7 +174,7 @@
       </div>
       
       <div style="text-align: center; margin-top: 48px;">
-        <a href="pages/chambres.php" class="cta-primary" style="display: inline-block; background: var(--vert); color: var(--or-pale); padding: 16px 40px; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px;">Voir toutes les chambres</a>
+        <a href="pages/chambres.php" class="cta-primary" style="display: inline-block; background: var(--vert); color: var(--or-pale); padding: 16px 40px; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 0;">Voir toutes les chambres</a>
       </div>
     </div>
   </section>
@@ -186,7 +186,7 @@
     .experience-card-item {
       background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(var(--or-rgb), 0.22);
-      border-radius: 12px;
+      border-radius: 0;
       padding: 38px 32px;
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
@@ -351,7 +351,7 @@
     <div style="max-width: 600px; margin: 0 auto;">
       <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--or-pale); margin-bottom: 24px; font-weight: 300;">Réservez votre évasion</h2>
       <p style="font-size: 1rem; color: rgba(250,248,243,0.8); margin-bottom: 40px; line-height: 1.7;">Profitez de nos offres spéciales pour les séjours de 3 nuits ou plus. Petit-déjeuner gastronomique inclus.</p>
-      <a href="pages/reservation-system.php" style="display: inline-block; background: var(--or); color: #111; padding: 18px 48px; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px; font-weight: 600;">Réserver maintenant</a>
+      <a href="pages/reservation-system.php" style="display: inline-block; background: var(--or); color: #111; padding: 18px 48px; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 0; font-weight: 600;">Réserver maintenant</a>
     </div>
   </section>
 

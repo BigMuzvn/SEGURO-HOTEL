@@ -278,8 +278,8 @@ include(__DIR__ . '/../layouts/header.php');
   }
   .compte-code {
     background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 4px;
+    border: 1px solid rgba(var(--or-rgb),0.3);
+    border-radius: 0;
     padding: 8px 18px;
     display: inline-block;
     font-family: 'Jost', sans-serif;
@@ -308,6 +308,7 @@ include(__DIR__ . '/../layouts/header.php');
     white-space: nowrap;
     align-self: flex-start;
     margin-top: 8px;
+    border-radius: 0;
   }
   .btn-deconnexion:hover {
     background: rgba(220,53,69,0.2);
@@ -324,7 +325,7 @@ include(__DIR__ . '/../layouts/header.php');
     font-family: 'Cormorant Garamond', serif;
     font-weight: 300;
     font-size: 2rem;
-    color: var(--vert);
+    color: var(--noir, #111111);
     margin-bottom: 32px;
     padding-bottom: 16px;
     position: relative;
@@ -343,10 +344,11 @@ include(__DIR__ . '/../layouts/header.php');
     padding: 16px 20px;
     margin-bottom: 24px;
     font-family: 'Jost', sans-serif;
-    font-weight: 200;
-    font-size: 0.8rem;
+    font-weight: 300;
+    font-size: 0.85rem;
     letter-spacing: 0.04em;
     border-left: 3px solid;
+    border-radius: 0;
   }
   .alert-success { background: rgba(40,167,69,0.06); color: #1e7e34; border-left-color: #28a745; }
   .alert-error   { background: rgba(220,53,69,0.06); color: #c0392b; border-left-color: #dc3545; }
@@ -357,13 +359,16 @@ include(__DIR__ . '/../layouts/header.php');
   .reservation-card {
     background: #fff;
     border-left: 3px solid var(--or);
+    border-radius: 0;
     padding: 32px 36px;
-    box-shadow: 0 4px 20px rgba(var(--vert-rgb),0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border: 1px solid rgba(var(--or-rgb), 0.15);
+    border-left: 3px solid var(--or);
     transition: box-shadow 0.3s, transform 0.3s;
   }
   .reservation-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 36px rgba(var(--vert-rgb),0.1);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.08);
   }
 
   .reservation-header {
@@ -376,29 +381,29 @@ include(__DIR__ . '/../layouts/header.php');
   }
   .reservation-ref {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    font-size: 1.2rem;
-    color: var(--vert);
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--noir, #111111);
     letter-spacing: 0.04em;
   }
   .reservation-date-creation {
     font-family: 'Jost', sans-serif;
-    font-weight: 200;
-    font-size: 0.62rem;
-    color: #aaa;
+    font-weight: 300;
+    font-size: 0.68rem;
+    color: #888;
     letter-spacing: 0.12em;
     margin-top: 4px;
   }
 
-  /* Statuts — Badges Visibles et Raffinés */
+  /* Statuts — Badges Visibles et Angles Droits */
   .reservation-statut {
     font-family: 'Jost', sans-serif;
-    font-weight: 500;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    padding: 8px 18px;
-    border-radius: 30px;
+    padding: 6px 14px;
+    border-radius: 0;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -624,43 +629,43 @@ include(__DIR__ . '/../layouts/header.php');
   </div>
 
   <!-- ── Carte Club Fidélité VIP ── -->
-  <div style="background: linear-gradient(135deg, var(--vert) 0%, var(--vert-sombre, var(--color-dark)) 100%); border: 1.5px solid var(--or); border-radius: 12px; padding: 26px 30px; margin-bottom: 30px; color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
+  <div style="background: linear-gradient(145deg, var(--noir, #111111) 0%, var(--noir-surface, #181818) 100%); border: 1.5px solid var(--or); border-radius: 0; padding: 26px 30px; margin-bottom: 30px; color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
     <div style="position: absolute; right: -20px; bottom: -20px; font-family:'Cormorant Garamond',serif; font-size: 8rem; color: rgba(201,168,76,0.06); font-weight: 700; pointer-events:none;">VIP</div>
     
     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
       <div>
-        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--or); font-weight: 500;">Programme Privilège <?= htmlspecialchars(hotel_short_name()) ?></div>
+        <div style="font-family:'Jost',sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--or); font-weight: 500;">Programme Privilège <?= htmlspecialchars(hotel_short_name()) ?></div>
         <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin: 4px 0 0 0; color: #fff; display: flex; align-items: center; gap: 10px;">
           <i class="fas fa-crown" style="color: <?= $fidelite['badge_color'] ?>;"></i>
           <?= htmlspecialchars($fidelite['grade_label']) ?>
         </h3>
       </div>
       <div style="text-align: right;">
-        <span style="font-size: 0.8rem; background: rgba(201,168,76,0.2); border: 1px solid var(--or); color: var(--or); padding: 5px 14px; border-radius: 20px; font-weight: 500;">
+        <span style="font-family:'Jost',sans-serif; font-size: 0.72rem; letter-spacing:0.1em; text-transform:uppercase; background: rgba(201,168,76,0.15); border: 1px solid var(--or); color: var(--or); padding: 6px 16px; border-radius: 0; font-weight: 500;">
           <?= $fidelite['remise_pourcentage'] > 0 ? ('-' . $fidelite['remise_pourcentage'] . '% automatique sur vos séjours') : 'Cumulez des nuits pour débloquer -5%' ?>
         </span>
       </div>
     </div>
 
     <!-- Stats compteurs -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; background: rgba(255,255,255,0.05); padding: 14px 18px; border-radius: 8px; margin-bottom: 18px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; background: rgba(255,255,255,0.04); padding: 14px 18px; border-radius: 0; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.08);">
       <div>
-        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.6);">Séjours validés</div>
-        <div style="font-size: 1.3rem; font-weight: 600; color: var(--or);"><?= $fidelite['nb_sejours'] ?></div>
+        <div style="font-family:'Jost',sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.1em;">Séjours validés</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size: 1.6rem; font-weight: 600; color: var(--or);"><?= $fidelite['nb_sejours'] ?></div>
       </div>
       <div>
-        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.6);">Nuits cumulées</div>
-        <div style="font-size: 1.3rem; font-weight: 600; color: var(--or);"><?= $fidelite['nb_nuits'] ?> nuit(s)</div>
+        <div style="font-family:'Jost',sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.1em;">Nuits cumulées</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size: 1.6rem; font-weight: 600; color: var(--or);"><?= $fidelite['nb_nuits'] ?> nuit(s)</div>
       </div>
       <div>
-        <div style="font-size: 0.75rem; color: rgba(255,255,255,0.6);">Dépenses totales</div>
-        <div style="font-size: 1.3rem; font-weight: 600; color: #fff;"><?= number_format($fidelite['total_depense'], 0, ',', ' ') ?> F</div>
+        <div style="font-family:'Jost',sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.1em;">Dépenses totales</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size: 1.6rem; font-weight: 600; color: #fff;"><?= number_format($fidelite['total_depense'], 0, ',', ' ') ?> F</div>
       </div>
     </div>
 
     <!-- Avantages -->
-    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 14px;">
-      <strong style="color: var(--or); display: block; margin-bottom: 4px;">Vos privilèges actuels :</strong>
+    <div style="font-family:'Jost',sans-serif; font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-bottom: 14px;">
+      <strong style="color: var(--or); display: block; margin-bottom: 4px; letter-spacing:0.05em; text-transform:uppercase; font-size:0.75rem;">Vos privilèges actuels :</strong>
       <?php foreach ($fidelite['avantages'] as $av): ?>
         <div>✓ <?= htmlspecialchars($av) ?></div>
       <?php endforeach; ?>
@@ -669,24 +674,24 @@ include(__DIR__ . '/../layouts/header.php');
     <!-- Jauge progression -->
     <?php if (!empty($fidelite['prochain_grade'])): ?>
       <div style="margin-top: 14px;">
-        <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.7); margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; font-family:'Jost',sans-serif; font-size: 0.72rem; color: rgba(255,255,255,0.7); margin-bottom: 4px; text-transform:uppercase; letter-spacing:0.1em;">
           <span>Progression vers <strong><?= htmlspecialchars($fidelite['prochain_grade']) ?></strong></span>
           <span>Encore <strong><?= $fidelite['nuits_restantes'] ?> nuit(s)</strong></span>
         </div>
-        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.15); border-radius: 4px; overflow: hidden;">
-          <div style="width: <?= $fidelite['progression'] ?>%; height: 100%; background: var(--or); border-radius: 4px; transition: width 0.5s;"></div>
+        <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.15); border-radius: 0; overflow: hidden;">
+          <div style="width: <?= $fidelite['progression'] ?>%; height: 100%; background: var(--or); border-radius: 0; transition: width 0.5s;"></div>
         </div>
       </div>
     <?php endif; ?>
   </div>
 
   <?php if ($user->email_verified == 0): ?>
-    <div style="background: rgba(201,168,76,0.12); border-left: 4px solid var(--or); padding: 16px 20px; border-radius: 0 8px 8px 0; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+    <div style="background: rgba(201,168,76,0.12); border-left: 4px solid var(--or); padding: 16px 20px; border-radius: 0; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
       <div>
-        <strong style="color: var(--vert);"><i class="fas fa-shield-alt" style="color:var(--or);"></i> Protégez votre compte :</strong>
-        <span style="color: #555; font-size: .9rem;"> Votre adresse email n'est pas encore vérifiée.</span>
+        <strong style="color: var(--noir, #111111); font-family:'Cormorant Garamond',serif; font-size:1.1rem;"><i class="fas fa-shield-alt" style="color:var(--or);"></i> Protégez votre compte :</strong>
+        <span style="color: #555; font-size: .88rem; font-family:'Jost',sans-serif;"> Votre adresse email n'est pas encore vérifiée.</span>
       </div>
-      <a href="verifier-email.php" style="background: var(--vert); color: var(--or); padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: .85rem; font-weight: 500;">
+      <a href="verifier-email.php" style="background: var(--or); color: var(--noir, #111111); padding: 10px 22px; border-radius: 0; text-decoration: none; font-family:'Jost',sans-serif; font-size: .72rem; font-weight: 600; text-transform:uppercase; letter-spacing:0.2em;">
         Vérifier mon email (OTP)
       </a>
     </div>
@@ -700,18 +705,18 @@ include(__DIR__ . '/../layouts/header.php');
     <div class="alert alert-success"><i class="fas fa-check-circle" style="margin-right:6px;"></i> <?= htmlspecialchars($succes) ?></div>
   <?php endif; ?>
 
-  <!-- ── Navigation des Onglets Espace Client ── -->
-  <div class="client-tabs-nav" style="display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 1.5px solid rgba(201,168,76,0.25); padding-bottom: 12px; flex-wrap: wrap;">
-    <button type="button" class="tab-nav-btn active" onclick="switchTab('reservations')" id="tab_btn_reservations" style="background: rgba(201,168,76,0.15); border: 1px solid var(--or); font-family: 'Jost', sans-serif; font-size: 0.95rem; color: var(--vert); font-weight: 600; padding: 10px 22px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
+  <!-- ── Navigation des Onglets Espace Client (Angles droits de rigueur) ── -->
+  <div class="client-tabs-nav" style="display: flex; gap: 8px; margin-bottom: 30px; border-bottom: 1.5px solid rgba(201,168,76,0.25); padding-bottom: 12px; flex-wrap: wrap;">
+    <button type="button" class="tab-nav-btn active" onclick="switchTab('reservations')" id="tab_btn_reservations" style="background: var(--noir, #111111); border: 1px solid var(--noir, #111111); font-family: 'Jost', sans-serif; font-size: 0.72rem; color: var(--or-pale); font-weight: 600; letter-spacing:0.18em; text-transform:uppercase; padding: 12px 24px; border-radius: 0; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
       <i class="fas fa-calendar-alt" style="color:var(--or);"></i> Mes Réservations (<?= count($reservations) ?>)
     </button>
-    <button type="button" class="tab-nav-btn" onclick="switchTab('room_service')" id="tab_btn_room_service" style="background: transparent; border: 1px solid transparent; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: #666; font-weight: 500; padding: 10px 22px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
+    <button type="button" class="tab-nav-btn" onclick="switchTab('room_service')" id="tab_btn_room_service" style="background: transparent; border: 1px solid rgba(var(--or-rgb),0.3); font-family: 'Jost', sans-serif; font-size: 0.72rem; color: #555; font-weight: 500; letter-spacing:0.18em; text-transform:uppercase; padding: 12px 24px; border-radius: 0; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
       <i class="fas fa-concierge-bell" style="color:var(--or);"></i> Room Service (<?= count($roomServiceOrders) ?>)
     </button>
-    <button type="button" class="tab-nav-btn" onclick="switchTab('profil')" id="tab_btn_profil" style="background: transparent; border: 1px solid transparent; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: #666; font-weight: 500; padding: 10px 22px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
+    <button type="button" class="tab-nav-btn" onclick="switchTab('profil')" id="tab_btn_profil" style="background: transparent; border: 1px solid rgba(var(--or-rgb),0.3); font-family: 'Jost', sans-serif; font-size: 0.72rem; color: #555; font-weight: 500; letter-spacing:0.18em; text-transform:uppercase; padding: 12px 24px; border-radius: 0; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
       <i class="fas fa-user-edit" style="color:var(--or);"></i> Mon Profil &amp; Coordonnées
     </button>
-    <button type="button" class="tab-nav-btn" onclick="switchTab('securite')" id="tab_btn_securite" style="background: transparent; border: 1px solid transparent; font-family: 'Jost', sans-serif; font-size: 0.95rem; color: #666; font-weight: 500; padding: 10px 22px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
+    <button type="button" class="tab-nav-btn" onclick="switchTab('securite')" id="tab_btn_securite" style="background: transparent; border: 1px solid rgba(var(--or-rgb),0.3); font-family: 'Jost', sans-serif; font-size: 0.72rem; color: #555; font-weight: 500; letter-spacing:0.18em; text-transform:uppercase; padding: 12px 24px; border-radius: 0; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: all 0.3s;">
       <i class="fas fa-key" style="color:var(--or);"></i> Sécurité &amp; Code Client
     </button>
   </div>
@@ -733,24 +738,24 @@ include(__DIR__ . '/../layouts/header.php');
       ?>
 
       <?php if ($sejour_actif): ?>
-        <div style="background: linear-gradient(135deg, var(--vert) 0%, var(--vert-clair) 100%); color: #fff; padding: 24px 28px; border-radius: 10px; margin-bottom: 28px; border: 1.5px solid var(--or); box-shadow: 0 8px 24px rgba(var(--vert-rgb),0.25);">
+        <div style="background: linear-gradient(145deg, var(--noir, #111111) 0%, var(--noir-surface, #181818) 100%); color: #fff; padding: 24px 28px; border-radius: 0; margin-bottom: 28px; border: 1.5px solid var(--or); box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
             <div>
-              <span style="background: var(--or); color: #111; font-size: 0.65rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.15em; display: inline-block; margin-bottom: 8px;">
+              <span style="background: var(--or); color: #111; font-family:'Jost',sans-serif; font-size: 0.65rem; font-weight: 700; padding: 4px 12px; border-radius: 0; text-transform: uppercase; letter-spacing: 0.18em; display: inline-block; margin-bottom: 8px;">
                 <i class="fas fa-key"></i> Séjour Actif · Bienvenue à l'Hôtel
               </span>
               <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #fff; margin: 0 0 6px 0;">
                 Vous séjournez actuellement dans la <?= htmlspecialchars($sejour_actif['chambre_nom'] ?? 'Chambre') ?>
               </h3>
-              <p style="margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.85);">
+              <p style="margin: 0; font-family:'Jost',sans-serif; font-size: 0.88rem; color: rgba(255,255,255,0.85);">
                 Réf: <strong><?= htmlspecialchars($sejour_actif['reference'] ?? '') ?></strong> · Du <?= date('d/m/Y', strtotime($sejour_actif['date_arrivee'])) ?> au <?= date('d/m/Y', strtotime($sejour_actif['date_depart'])) ?>.
               </p>
             </div>
             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-              <a href="room-service.php" style="background: var(--or); color: #111; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
+              <a href="room-service.php" style="background: var(--or); color: var(--noir, #111111); padding: 10px 22px; border-radius: 0; text-decoration: none; font-family:'Jost',sans-serif; font-size: 0.72rem; font-weight: 600; text-transform:uppercase; letter-spacing:0.18em; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fas fa-concierge-bell"></i> Room Service 24h/24
               </a>
-              <a href="facture.php?id=<?= $sejour_actif['id'] ?>" target="_blank" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.4); color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 8px;">
+              <a href="facture.php?id=<?= $sejour_actif['id'] ?>" target="_blank" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 10px 20px; border-radius: 0; text-decoration: none; font-family:'Jost',sans-serif; font-size: 0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.18em; display: inline-flex; align-items: center; gap: 8px;">
                 <i class="fas fa-file-invoice"></i> Voir Facture
               </a>
             </div>
@@ -836,14 +841,14 @@ include(__DIR__ . '/../layouts/header.php');
             $optsRes = $reservation->getOptions($res['id']);
             if (!empty($optsRes)): 
             ?>
-              <div style="background:rgba(201,168,76,0.06); border-radius:6px; padding:12px 16px; margin-bottom:18px; border:1px solid rgba(201,168,76,0.2);">
-                <div style="font-size:0.8rem; font-weight:600; color:var(--vert); margin-bottom:6px;">
+              <div style="background:rgba(201,168,76,0.06); border-radius:0; padding:12px 16px; margin-bottom:18px; border:1px solid rgba(201,168,76,0.2);">
+                <div style="font-family:'Jost',sans-serif; font-size:0.75rem; font-weight:600; color:var(--noir, #111111); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px;">
                   <i class="fas fa-concierge-bell" style="color:var(--or);"></i> Services &amp; Options inclus :
                 </div>
                 <div style="display:flex; flex-wrap:wrap; gap:8px;">
                   <?php foreach ($optsRes as $o): ?>
-                    <span style="font-size:0.8rem; background:#fff; border:1px solid #e2dac9; padding:4px 12px; border-radius:15px; color:#333; font-weight:500;">
-                      <i class="fas fa-check" style="color:var(--or); font-size:0.75rem;"></i> <?= htmlspecialchars($o['nom']) ?> (<?= number_format($o['prix_unitaire'], 0, ',', ' ') ?> FCFA <?= htmlspecialchars($o['unite'] ?? '') ?>)
+                    <span style="font-family:'Jost',sans-serif; font-size:0.75rem; background:#fff; border:1px solid #e2dac9; padding:4px 12px; border-radius:0; color:#333; font-weight:500;">
+                      <i class="fas fa-check" style="color:var(--or); font-size:0.72rem;"></i> <?= htmlspecialchars($o['nom']) ?> (<?= number_format($o['prix_unitaire'], 0, ',', ' ') ?> FCFA <?= htmlspecialchars($o['unite'] ?? '') ?>)
                     </span>
                   <?php endforeach; ?>
                 </div>
@@ -945,9 +950,9 @@ include(__DIR__ . '/../layouts/header.php');
        ONGLET 2 : MON PROFIL & COORDONNÉES
   ══════════════════════════════════════════════════════ -->
   <div id="tab_pane_profil" class="tab-content-pane" style="display:none;">
-    <div style="background:#fff; border-radius:12px; padding:36px; box-shadow:0 4px 24px rgba(var(--vert-rgb),0.06); border-left:4px solid var(--or); margin-bottom:30px;">
+    <div style="background:#fff; border-radius:0; padding:36px; box-shadow:0 4px 24px rgba(0,0,0,0.04); border:1px solid rgba(var(--or-rgb),0.2); border-left:4px solid var(--or); margin-bottom:30px;">
       <h2 class="section-title" style="margin-bottom:24px;">Mes informations personnelles</h2>
-      <p style="color:#666; font-size:0.9rem; margin-bottom:28px;">
+      <p style="color:#666; font-family:'Jost',sans-serif; font-size:0.9rem; margin-bottom:28px;">
         Ces informations sont utilisées lors de la confirmation de vos séjours et pour vos factures officielles.
       </p>
 
@@ -955,39 +960,39 @@ include(__DIR__ . '/../layouts/header.php');
         <?= csrf_field() ?>
         <div class="form-row" style="margin-bottom:20px;">
           <div class="form-group">
-            <label class="form-label" style="font-weight:600; color:var(--vert); font-size:0.85rem;">Prénom *</label>
+            <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Prénom *</label>
             <input type="text" name="prenom" class="form-control" value="<?= htmlspecialchars($user->prenom) ?>" required style="border-bottom:1.5px solid #ccc; padding:8px 0; font-size:0.95rem;">
           </div>
           <div class="form-group">
-            <label class="form-label" style="font-weight:600; color:var(--vert); font-size:0.85rem;">Nom de famille *</label>
+            <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Nom de famille *</label>
             <input type="text" name="nom" class="form-control" value="<?= htmlspecialchars($user->nom) ?>" required style="border-bottom:1.5px solid #ccc; padding:8px 0; font-size:0.95rem;">
           </div>
         </div>
 
         <div class="form-row" style="margin-bottom:20px;">
           <div class="form-group">
-            <label class="form-label" style="font-weight:600; color:var(--vert); font-size:0.85rem;">Numéro de Téléphone (WhatsApp)</label>
+            <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Numéro de Téléphone (WhatsApp)</label>
             <input type="tel" name="telephone" class="form-control" placeholder="+228 90 00 00 00" value="<?= htmlspecialchars($user->telephone ?? '') ?>" style="border-bottom:1.5px solid #ccc; padding:8px 0; font-size:0.95rem;">
           </div>
           <div class="form-group">
-            <label class="form-label" style="font-weight:600; color:var(--vert); font-size:0.85rem;">Pays de résidence</label>
+            <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Pays de résidence</label>
             <input type="text" name="pays" class="form-control" placeholder="Togo, France, Côte d'Ivoire, Bénin..." value="<?= htmlspecialchars($user->pays ?? 'Togo') ?>" style="border-bottom:1.5px solid #ccc; padding:8px 0; font-size:0.95rem;">
           </div>
         </div>
 
         <div class="form-row" style="margin-bottom:28px;">
           <div class="form-group">
-            <label class="form-label" style="font-weight:600; color:var(--vert); font-size:0.85rem;">Ville</label>
+            <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Ville</label>
             <input type="text" name="ville" class="form-control" placeholder="Lomé, Cotonou, Abidjan, Paris..." value="<?= htmlspecialchars($user->ville ?? '') ?>" style="border-bottom:1.5px solid #ccc; padding:8px 0; font-size:0.95rem;">
           </div>
           <div class="form-group">
-            <label class="form-label" style="font-weight:600; color:var(--vert); font-size:0.85rem;">Adresse de résidence</label>
+            <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Adresse de résidence</label>
             <input type="text" name="adresse" class="form-control" placeholder="Quartier, Rue, N° de porte..." value="<?= htmlspecialchars($user->adresse ?? '') ?>" style="border-bottom:1.5px solid #ccc; padding:8px 0; font-size:0.95rem;">
           </div>
         </div>
 
         <div style="display:flex; justify-content:flex-end;">
-          <button type="submit" name="action_modifier_profil" class="btn-action btn-modifier" style="background:var(--vert); color:var(--or); padding:14px 32px; font-size:0.9rem; cursor:pointer;">
+          <button type="submit" name="action_modifier_profil" class="btn-action btn-modifier" style="background:var(--or); color:var(--noir, #111111); border:1px solid var(--or); padding:14px 32px; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.25em; cursor:pointer; border-radius:0;">
             <i class="fas fa-save" style="margin-right:6px;"></i> Enregistrer mes coordonnées
           </button>
         </div>
@@ -1002,55 +1007,55 @@ include(__DIR__ . '/../layouts/header.php');
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:28px; margin-bottom:30px;">
       
       <!-- Carte 1 : Changer Email -->
-      <div style="background:#fff; border-radius:12px; padding:32px; box-shadow:0 4px 24px rgba(var(--vert-rgb),0.06); border-left:4px solid var(--vert);">
-        <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--vert); margin-bottom:8px;">
+      <div style="background:#fff; border-radius:0; padding:32px; box-shadow:0 4px 24px rgba(0,0,0,0.04); border:1px solid rgba(var(--or-rgb),0.2); border-left:4px solid var(--or);">
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--noir, #111111); margin-bottom:8px;">
           <i class="fas fa-envelope-open-text" style="color:var(--or); margin-right:6px;"></i> Adresse Email
         </h3>
-        <p style="color:#666; font-size:0.85rem; margin-bottom:20px; line-height:1.5;">
-          Email actuel : <strong style="color:var(--vert);"><?= htmlspecialchars($user->email) ?></strong>
+        <p style="color:#666; font-family:'Jost',sans-serif; font-size:0.85rem; margin-bottom:20px; line-height:1.5;">
+          Email actuel : <strong style="color:var(--noir, #111111);"><?= htmlspecialchars($user->email) ?></strong>
         </p>
 
         <form method="post" action="mon-compte.php#securite">
           <?= csrf_field() ?>
           <div class="form-group" style="margin-bottom:20px;">
-            <label class="form-label" style="font-weight:600; color:var(--vert); font-size:0.85rem;">Nouvelle adresse email *</label>
+            <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Nouvelle adresse email *</label>
             <input type="email" name="nouvel_email" class="form-control" placeholder="nouveau@email.com" required style="border-bottom:1.5px solid #ccc; padding:8px 0; font-size:0.95rem;">
             <small style="color:#777; font-size:0.8rem; margin-top:6px; display:block;">
               Un code de validation OTP vous sera envoyé sur cette nouvelle adresse.
             </small>
           </div>
 
-          <button type="submit" name="action_changer_email" class="btn-action btn-modifier" style="background:var(--vert); color:var(--or); width:100%; padding:12px; justify-content:center;">
+          <button type="submit" name="action_changer_email" class="btn-action btn-modifier" style="background:var(--or); color:var(--noir, #111111); border:1px solid var(--or); width:100%; padding:14px; justify-content:center; border-radius:0; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em;">
             <i class="fas fa-paper-plane" style="margin-right:6px;"></i> Mettre à jour mon email
           </button>
         </form>
       </div>
 
       <!-- Carte 2 : Renouveler Code Client -->
-      <div style="background:#fff; border-radius:12px; padding:32px; box-shadow:0 4px 24px rgba(var(--vert-rgb),0.06); border-left:4px solid var(--or);">
-        <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--vert); margin-bottom:8px;">
+      <div style="background:#fff; border-radius:0; padding:32px; box-shadow:0 4px 24px rgba(0,0,0,0.04); border:1px solid rgba(var(--or-rgb),0.2); border-left:4px solid var(--or);">
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--noir, #111111); margin-bottom:8px;">
           <i class="fas fa-key" style="color:var(--or); margin-right:6px;"></i> Mon Code Client
         </h3>
         
-        <div style="background:#faf8f3; border:1px solid rgba(201,168,76,0.3); border-radius:8px; padding:14px 18px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
+        <div style="background:#faf8f3; border:1px solid rgba(201,168,76,0.3); border-radius:0; padding:14px 18px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center;">
           <div>
-            <div style="font-size:0.75rem; color:#777; text-transform:uppercase; letter-spacing:0.05em;">Code Actuel</div>
-            <div style="font-size:1.2rem; font-weight:700; color:var(--vert); letter-spacing:0.1em;"><?= htmlspecialchars($user->code_client) ?></div>
+            <div style="font-family:'Jost',sans-serif; font-size:0.7rem; color:#777; text-transform:uppercase; letter-spacing:0.1em;">Code Actuel</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:700; color:var(--noir, #111111); letter-spacing:0.05em;"><?= htmlspecialchars($user->code_client) ?></div>
           </div>
-          <button type="button" onclick="copierCodeClient('<?= htmlspecialchars($user->code_client) ?>')" style="background:var(--vert); color:var(--or); border:none; padding:6px 12px; border-radius:4px; font-size:0.8rem; cursor:pointer;">
+          <button type="button" onclick="copierCodeClient('<?= htmlspecialchars($user->code_client) ?>')" style="background:var(--or); color:var(--noir, #111111); border:none; padding:8px 16px; border-radius:0; font-family:'Jost',sans-serif; font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.15em; cursor:pointer;">
             <i class="fas fa-copy"></i> Copier
           </button>
         </div>
 
-        <p style="color:#666; font-size:0.85rem; margin-bottom:20px; line-height:1.5;">
+        <p style="color:#666; font-family:'Jost',sans-serif; font-size:0.85rem; margin-bottom:20px; line-height:1.5;">
           Pour des raisons de sécurité, vous pouvez renouveler votre Code Client à tout moment. Un nouveau code vous sera envoyé par email.
         </p>
 
         <!-- Étape 1 : Demander un nouveau code -->
         <form method="post" action="mon-compte.php#securite" style="margin-bottom:24px;">
           <?= csrf_field() ?>
-          <button type="submit" name="action_demander_code_client" class="btn-action btn-detail" style="width:100%; padding:12px; justify-content:center; border-color:var(--vert); color:var(--vert); font-weight:600;">
-            <i class="fas fa-paper-plane" style="margin-right:6px;"></i> Demander un nouveau Code Client par email
+          <button type="submit" name="action_demander_code_client" class="btn-action btn-detail" style="width:100%; padding:14px; justify-content:center; border-color:var(--or); color:var(--noir, #111111); font-weight:600; border-radius:0; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.2em;">
+            <i class="fas fa-paper-plane" style="margin-right:6px;"></i> Demander un nouveau Code Client
           </button>
         </form>
 
@@ -1058,14 +1063,14 @@ include(__DIR__ . '/../layouts/header.php');
         <form method="post" action="mon-compte.php#securite" style="border-top:1px dashed rgba(201,168,76,0.4); padding-top:20px;">
           <?= csrf_field() ?>
           <div class="form-group" style="margin-bottom:16px;">
-            <label class="form-label" style="font-weight:600; color:var(--vert); font-size:0.85rem;">Entrez le nouveau Code Client reçu par email *</label>
+            <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Entrez le nouveau Code Client reçu par email *</label>
             <input type="text" name="nouveau_code_saisi" class="form-control" placeholder="Ex: SEG-2026-XXXX" required style="border-bottom:1.5px solid #ccc; padding:8px 0; letter-spacing:0.08em; text-transform:uppercase; font-weight:600;">
             <small style="color:#777; font-size:0.8rem; margin-top:6px; display:block;">
               Saisissez le code reçu pour l'activer définitivement sur votre compte.
             </small>
           </div>
 
-          <button type="submit" name="action_confirmer_code_client" class="btn-action btn-modifier" style="background:var(--vert); color:var(--or); width:100%; padding:12px; justify-content:center;">
+          <button type="submit" name="action_confirmer_code_client" class="btn-action btn-modifier" style="background:var(--or); color:var(--noir, #111111); border:1px solid var(--or); width:100%; padding:14px; justify-content:center; border-radius:0; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em;">
             <i class="fas fa-check-circle" style="margin-right:6px;"></i> Confirmer et Activer mon Nouveau Code
           </button>
         </form>
@@ -1081,14 +1086,14 @@ include(__DIR__ . '/../layouts/header.php');
   <div id="tab_pane_room_service" class="tab-content-pane" style="display:none;">
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:24px;">
       <div>
-        <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:var(--vert); margin:0;">
+        <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:var(--noir, #111111); margin:0;">
           Mes Commandes Room Service &amp; Carte en Chambre
         </h3>
-        <p style="color:#666; font-size:0.85rem; margin:4px 0 0 0;">
+        <p style="color:#666; font-family:'Jost',sans-serif; font-size:0.85rem; margin:4px 0 0 0;">
           Suivez la préparation et la livraison de vos plateaux gastronomiques et soins en temps réel.
         </p>
       </div>
-      <a href="room-service.php" style="background:var(--vert); color:var(--or); border:1px solid var(--vert); padding:10px 22px; border-radius:6px; text-decoration:none; font-size:0.8rem; font-weight:600; display:inline-flex; align-items:center; gap:8px;">
+      <a href="room-service.php" style="background:var(--or); color:var(--noir, #111111); border:1px solid var(--or); padding:12px 24px; border-radius:0; text-decoration:none; font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; display:inline-flex; align-items:center; gap:8px;">
         <i class="fas fa-plus-circle"></i> Commander au Room Service
       </a>
     </div>
@@ -1098,7 +1103,7 @@ include(__DIR__ . '/../layouts/header.php');
         <div class="empty-state-icon"><i class="fas fa-concierge-bell"></i></div>
         <h3 class="empty-state-title">Aucune commande Room Service</h3>
         <p>Vous n'avez pas encore passé de commande en chambre.</p>
-        <a href="room-service.php" class="btn-action btn-modifier" style="background:var(--vert); color:var(--or); text-decoration:none; display:inline-block;">
+        <a href="room-service.php" class="btn-action btn-modifier" style="background:var(--or); color:var(--noir, #111111); text-decoration:none; display:inline-block; border-radius:0;">
           Découvrir la Carte Room Service
         </a>
       </div>
@@ -1130,23 +1135,23 @@ include(__DIR__ . '/../layouts/header.php');
               $stStep = 0;
             }
           ?>
-          <div style="background:#fff; border-radius:10px; padding:24px 28px; box-shadow:0 4px 18px rgba(0,0,0,0.05); border-top:3px solid var(--or); border-left:1px solid #eee; border-right:1px solid #eee; border-bottom:1px solid #eee;">
+          <div style="background:#fff; border-radius:0; padding:24px 28px; box-shadow:0 4px 18px rgba(0,0,0,0.04); border-top:3px solid var(--or); border:1px solid rgba(var(--or-rgb),0.2); border-top:3px solid var(--or);">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:16px; border-bottom:1px solid #f0ede6; padding-bottom:14px;">
               <div>
-                <span style="font-size:0.75rem; color:#888; text-transform:uppercase; letter-spacing:0.1em;">Commande Room Service</span>
-                <h4 style="font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:var(--vert); margin:2px 0 0 0;">
+                <span style="font-family:'Jost',sans-serif; font-size:0.7rem; color:#888; text-transform:uppercase; letter-spacing:0.15em;">Commande Room Service</span>
+                <h4 style="font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:var(--noir, #111111); margin:2px 0 0 0;">
                   Ref : <?= htmlspecialchars($ro['reference']) ?>
                 </h4>
-                <div style="font-size:0.8rem; color:#666; margin-top:3px;">
+                <div style="font-family:'Jost',sans-serif; font-size:0.8rem; color:#666; margin-top:3px;">
                   <i class="fas fa-calendar-alt" style="color:var(--or);"></i> <?= date('d/m/Y à H:i', strtotime($ro['created_at'])) ?> · 
                   <i class="fas fa-door-closed" style="color:var(--or);"></i> <strong>Chambre : <?= htmlspecialchars($ro['chambre_numero']) ?></strong>
                 </div>
               </div>
               <div style="text-align:right;">
-                <span style="background:<?= $stBg ?>; color:<?= $stColor ?>; border:1px solid <?= $stColor ?>; padding:6px 14px; border-radius:20px; font-size:0.82rem; font-weight:600; display:inline-block;">
+                <span style="background:<?= $stBg ?>; color:<?= $stColor ?>; border:1px solid <?= $stColor ?>; padding:6px 14px; border-radius:0; font-family:'Jost',sans-serif; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; display:inline-block;">
                   <?= $stBadge ?>
                 </span>
-                <div style="font-size:1.15rem; font-weight:700; color:var(--vert); margin-top:6px;">
+                <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:700; color:var(--or-texte); margin-top:6px;">
                   <?= number_format($ro['total_estime'], 0, ',', ' ') ?> FCFA
                 </div>
               </div>
@@ -1154,30 +1159,30 @@ include(__DIR__ . '/../layouts/header.php');
 
             <!-- Mini Stepper -->
             <?php if ($rStatut !== 'annulee'): ?>
-              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin:16px 0 20px; text-align:center; background:#faf8f3; padding:12px 10px; border-radius:8px;">
+              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin:16px 0 20px; text-align:center; background:#faf8f3; padding:12px 10px; border-radius:0; border:1px solid rgba(var(--or-rgb),0.15);">
                 <div>
-                  <div style="width:26px; height:26px; border-radius:50%; background:<?= $stStep >= 1 ? ($stStep === 1 ? '#c9a84c' : '#28a745') : '#ddd' ?>; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:bold;">1</div>
-                  <div style="font-size:0.72rem; font-weight:600; color:var(--vert); margin-top:2px;">Reçue</div>
+                  <div style="width:26px; height:26px; border-radius:0; background:<?= $stStep >= 1 ? ($stStep === 1 ? 'var(--or)' : '#28a745') : '#ddd' ?>; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:bold;">1</div>
+                  <div style="font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; color:var(--noir, #111111); margin-top:2px;">Reçue</div>
                 </div>
                 <div>
-                  <div style="width:26px; height:26px; border-radius:50%; background:<?= $stStep >= 2 ? ($stStep === 2 ? '#c9a84c' : '#28a745') : '#ddd' ?>; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:bold;">2</div>
-                  <div style="font-size:0.72rem; font-weight:600; color:var(--vert); margin-top:2px;">En Cuisine</div>
+                  <div style="width:26px; height:26px; border-radius:0; background:<?= $stStep >= 2 ? ($stStep === 2 ? 'var(--or)' : '#28a745') : '#ddd' ?>; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:bold;">2</div>
+                  <div style="font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; color:var(--noir, #111111); margin-top:2px;">En Cuisine</div>
                 </div>
                 <div>
-                  <div style="width:26px; height:26px; border-radius:50%; background:<?= $stStep >= 3 ? '#28a745' : '#ddd' ?>; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:bold;">3</div>
-                  <div style="font-size:0.72rem; font-weight:600; color:var(--vert); margin-top:2px;">Livrée</div>
+                  <div style="width:26px; height:26px; border-radius:0; background:<?= $stStep >= 3 ? '#28a745' : '#ddd' ?>; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:bold;">3</div>
+                  <div style="font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; color:var(--noir, #111111); margin-top:2px;">Livrée</div>
                 </div>
               </div>
             <?php endif; ?>
 
             <!-- Articles commandés -->
             <div style="margin-top:12px;">
-              <div style="font-size:0.8rem; font-weight:600; color:#555; margin-bottom:8px;">Plats &amp; Soins commandés :</div>
-              <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+              <div style="font-family:'Jost',sans-serif; font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:#555; margin-bottom:8px;">Plats &amp; Soins commandés :</div>
+              <table style="width:100%; border-collapse:collapse; font-size:0.85rem; font-family:'Jost',sans-serif;">
                 <?php foreach ($rItems as $it): ?>
                   <tr style="border-bottom:1px solid #f5f5f5;">
                     <td style="padding:6px 0; color:#333;"><strong><?= htmlspecialchars($it['name'] ?? $it['titre'] ?? 'Article') ?></strong> x <?= intval($it['qty'] ?? 1) ?></td>
-                    <td style="padding:6px 0; text-align:right; font-weight:600; color:#1a3a2a;"><?= number_format(floatval($it['price'] ?? 0) * intval($it['qty'] ?? 1), 0, ',', ' ') ?> F</td>
+                    <td style="padding:6px 0; text-align:right; font-weight:600; color:var(--or-texte);"><?= number_format(floatval($it['price'] ?? 0) * intval($it['qty'] ?? 1), 0, ',', ' ') ?> F</td>
                   </tr>
                 <?php endforeach; ?>
               </table>
@@ -1189,8 +1194,8 @@ include(__DIR__ . '/../layouts/header.php');
             </div>
 
             <div style="margin-top:16px; text-align:right;">
-              <a href="room-service.php?suivi=<?= urlencode($ro['reference']) ?>" style="background:transparent; border:1px solid var(--or); color:var(--vert); padding:6px 14px; border-radius:4px; text-decoration:none; font-size:0.75rem; font-weight:600; display:inline-flex; align-items:center; gap:6px;">
-                <i class="fas fa-radar"></i> Suivre en temps réel
+              <a href="room-service.php?suivi=<?= urlencode($ro['reference']) ?>" style="background:transparent; border:1px solid var(--or); color:var(--noir, #111111); padding:8px 18px; border-radius:0; text-decoration:none; font-family:'Jost',sans-serif; font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.15em; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fas fa-search"></i> Suivre en direct
               </a>
             </div>
           </div>
@@ -1247,10 +1252,10 @@ include(__DIR__ . '/../layouts/header.php');
       </div>
 
       <div class="modal-actions">
-        <button type="submit" name="action_modifier" class="btn-action btn-modifier">
+        <button type="submit" name="action_modifier" class="btn-action btn-modifier" style="background:var(--or); color:var(--noir, #111111); border:1px solid var(--or); border-radius:0; padding:12px 24px; font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; cursor:pointer;">
           Enregistrer
         </button>
-        <button type="button" class="btn-action btn-detail"
+        <button type="button" class="btn-action btn-detail" style="border-radius:0; padding:12px 24px; font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; cursor:pointer;"
                 onclick="closeModal('modalModifier')">
           Annuler
         </button>
@@ -1261,15 +1266,15 @@ include(__DIR__ . '/../layouts/header.php');
 
 <!-- ── Modal Détails ── -->
 <div id="modalDetails" class="modal">
-  <div class="modal-content" style="max-width:680px;">
-    <button class="modal-close" onclick="closeModal('modalDetails')">×</button>
+  <div class="modal-content" style="max-width:680px; border-radius:0; border:1px solid rgba(var(--or-rgb),0.3);">
+    <button class="modal-close" style="border-radius:0;" onclick="closeModal('modalDetails')">×</button>
     <h3 class="modal-title">Détails de la <em>réservation</em></h3>
 
     <form method="post">
       <?= csrf_field() ?>
       <input type="hidden" name="reservation_id" id="detail_reservation_id">
 
-      <div style="background:#f9f7f2;padding:20px;margin-bottom:28px;border-left:2px solid var(--or);">
+      <div style="background:#f9f7f2;padding:20px;margin-bottom:28px;border-left:2px solid var(--or); border-radius:0;">
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
           <div>
             <div class="detail-label">Référence</div>
@@ -1281,7 +1286,7 @@ include(__DIR__ . '/../layouts/header.php');
           </div>
           <div>
             <div class="detail-label">Total</div>
-            <div class="detail-value" style="color:var(--or);" id="detail_total">—</div>
+            <div class="detail-value" style="color:var(--or-texte);" id="detail_total">—</div>
           </div>
         </div>
       </div>
@@ -1333,18 +1338,18 @@ include(__DIR__ . '/../layouts/header.php');
         <textarea name="demandes_speciales" id="detail_demandes" class="form-control" rows="3"></textarea>
       </div>
 
-      <div id="detail_note_hotel_box" style="display:none; background:#fdfbf7; padding:16px 20px; margin-bottom:20px; border-left:4px solid var(--vert); border-radius:0 8px 8px 0;">
-        <div style="font-size:0.8rem; font-weight:600; color:var(--vert); margin-bottom:4px;">
+      <div id="detail_note_hotel_box" style="display:none; background:#fdfbf7; padding:16px 20px; margin-bottom:20px; border-left:4px solid var(--or); border-radius:0;">
+        <div style="font-size:0.8rem; font-weight:600; color:var(--noir, #111111); margin-bottom:4px; font-family:'Jost',sans-serif; text-transform:uppercase; letter-spacing:0.1em;">
           <i class="fas fa-concierge-bell" style="color:var(--or);"></i> Message de l'Hôtel :
         </div>
         <div id="detail_note_hotel" style="font-size:0.9rem; color:#444; font-style:italic;"></div>
       </div>
 
       <div class="modal-actions">
-        <button type="submit" name="action_modifier" class="btn-action btn-modifier">
+        <button type="submit" name="action_modifier" class="btn-action btn-modifier" style="background:var(--or); color:var(--noir, #111111); border:1px solid var(--or); border-radius:0; padding:12px 24px; font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; cursor:pointer;">
           Enregistrer les modifications
         </button>
-        <button type="button" class="btn-action btn-detail"
+        <button type="button" class="btn-action btn-detail" style="border-radius:0; padding:12px 24px; font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; cursor:pointer;"
                 onclick="closeModal('modalDetails')">
           Fermer
         </button>
@@ -1404,9 +1409,9 @@ function switchTab(tabId) {
     el.style.display = 'none';
   });
   document.querySelectorAll('.tab-nav-btn').forEach(function(btn) {
-    btn.style.color = '#666';
+    btn.style.color = '#555';
     btn.style.background = 'transparent';
-    btn.style.borderColor = 'transparent';
+    btn.style.borderColor = 'rgba(var(--or-rgb),0.3)';
     btn.classList.remove('active');
   });
 
@@ -1414,9 +1419,9 @@ function switchTab(tabId) {
   var btn = document.getElementById('tab_btn_' + tabId);
   if (pane && btn) {
     pane.style.display = 'block';
-    btn.style.color = 'var(--vert)';
-    btn.style.background = 'rgba(201,168,76,0.15)';
-    btn.style.borderColor = 'var(--or)';
+    btn.style.color = 'var(--or-pale)';
+    btn.style.background = 'var(--noir, #111111)';
+    btn.style.borderColor = 'var(--noir, #111111)';
     btn.classList.add('active');
     if (window.history && window.history.replaceState) {
       window.history.replaceState(null, null, '#' + tabId);
@@ -1464,12 +1469,12 @@ document.querySelectorAll('.modal').forEach(m => {
 
 <!-- ── MODAL AVIS CLIENT ── -->
 <div id="modalAvis" class="modal">
-  <div class="modal-content" style="max-width:520px;">
-    <h2 style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:var(--vert); margin-bottom:8px;">
+  <div class="modal-content" style="max-width:520px; border-radius:0; border:1px solid rgba(var(--or-rgb),0.3);">
+    <h2 style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:var(--noir, #111111); margin-bottom:8px;">
       Votre avis sur votre séjour
     </h2>
-    <p style="color:#666; font-size:0.9rem; margin-bottom:20px;">
-      Hébergement : <strong id="avis_chambre_nom" style="color:var(--vert);"></strong>
+    <p style="color:#666; font-family:'Jost',sans-serif; font-size:0.9rem; margin-bottom:20px;">
+      Hébergement : <strong id="avis_chambre_nom" style="color:var(--or-texte);"></strong>
     </p>
 
     <form method="post">
@@ -1478,8 +1483,8 @@ document.querySelectorAll('.modal').forEach(m => {
       <input type="hidden" name="reservation_id" id="avis_reservation_id">
 
       <div class="form-group" style="margin-bottom:18px;">
-        <label class="form-label" style="font-weight:600;">Note globale *</label>
-        <select name="note" class="form-control" style="font-size:1rem;" required>
+        <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Note globale *</label>
+        <select name="note" class="form-control" style="font-size:0.95rem;" required>
           <option value="5">⭐⭐⭐⭐⭐ 5/5 — Exceptionnel</option>
           <option value="4">⭐⭐⭐⭐ 4/5 — Très bien</option>
           <option value="3">⭐⭐⭐ 3/5 — Bien</option>
@@ -1489,18 +1494,18 @@ document.querySelectorAll('.modal').forEach(m => {
       </div>
 
       <div class="form-group" style="margin-bottom:18px;">
-        <label class="form-label" style="font-weight:600;">Titre de votre avis</label>
+        <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Titre de votre avis</label>
         <input type="text" name="titre" class="form-control" placeholder="Ex: Séjour magique et inoubliable !">
       </div>
 
       <div class="form-group" style="margin-bottom:24px;">
-        <label class="form-label" style="font-weight:600;">Votre expérience détaillée *</label>
+        <label class="form-label" style="font-weight:600; color:var(--noir, #111111); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em;">Votre expérience détaillée *</label>
         <textarea name="commentaire" class="form-control" rows="4" placeholder="Ce que vous avez le plus apprécié (accueil, confort, repas, excursions...)" required></textarea>
       </div>
 
       <div class="modal-actions" style="display:flex; justify-content:flex-end; gap:12px;">
-        <button type="button" class="btn-action btn-detail" onclick="closeModal('modalAvis')">Annuler</button>
-        <button type="submit" class="btn-action btn-modifier" style="background:var(--vert); color:var(--or);">Publier mon avis</button>
+        <button type="button" class="btn-action btn-detail" style="border-radius:0; padding:12px 24px; font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; cursor:pointer;" onclick="closeModal('modalAvis')">Annuler</button>
+        <button type="submit" class="btn-action btn-modifier" style="background:var(--or); color:var(--noir, #111111); border:1px solid var(--or); border-radius:0; padding:12px 24px; font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; cursor:pointer;">Publier mon avis</button>
       </div>
     </form>
   </div>

@@ -292,7 +292,7 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : '/ACATHON';
       cursor: pointer;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(201, 168, 76, 0.35);
-      border-radius: 6px;
+      border-radius: 0;
       width: 40px;
       height: 40px;
       padding: 0;

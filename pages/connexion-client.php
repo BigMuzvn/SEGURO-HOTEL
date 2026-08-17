@@ -102,11 +102,12 @@ include(__DIR__ . '/../layouts/header.php');
 
 .connexion-box {
     background: white;
-    border-radius: 16px;
+    border-radius: 0;
     padding: 48px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.08);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(var(--or-rgb), 0.2);
 }
 
 .connexion-box::before {
@@ -116,13 +117,13 @@ include(__DIR__ . '/../layouts/header.php');
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(to right, var(--vert), var(--or));
+    background: var(--or);
 }
 
 .connexion-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
-    color: var(--vert);
+    color: var(--noir, #111111);
     text-align: center;
     margin-bottom: 16px;
 }
@@ -141,11 +142,11 @@ include(__DIR__ . '/../layouts/header.php');
 
 .form-label {
     font-family: 'Jost', sans-serif;
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: var(--vert);
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--noir, #111111);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.15em;
     margin-bottom: 8px;
     display: block;
 }
@@ -153,8 +154,8 @@ include(__DIR__ . '/../layouts/header.php');
 .form-control {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 8px;
+    border: 1px solid rgba(var(--or-rgb), 0.3);
+    border-radius: 0;
     font-family: 'Jost', sans-serif;
     font-size: 0.95rem;
     transition: all 0.3s;
@@ -163,45 +164,49 @@ include(__DIR__ . '/../layouts/header.php');
 .form-control:focus {
     outline: none;
     border-color: var(--or);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.1);
+    box-shadow: 0 0 0 3px rgba(var(--or-rgb), 0.1);
 }
 
 .btn-connexion {
     width: 100%;
-    background: var(--vert);
-    color: white;
-    border: none;
+    background: var(--or);
+    color: var(--noir, #111111);
+    border: 1px solid var(--or);
     padding: 16px;
-    border-radius: 8px;
+    border-radius: 0;
     font-family: 'Jost', sans-serif;
-    font-weight: 500;
+    font-size: 0.72rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.25em;
     cursor: pointer;
     transition: all 0.3s;
     margin-top: 32px;
 }
 
 .btn-connexion:hover {
-    background: var(--vert-clair);
+    background: var(--or-clair);
+    border-color: var(--or-clair);
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(var(--or-rgb), 0.25);
 }
 
-
-
 .help-section {
-    background: rgba(201,168,76,0.05);
-    border-radius: 12px;
+    background: rgba(var(--or-rgb), 0.05);
+    border: 1px solid rgba(var(--or-rgb), 0.2);
+    border-radius: 0;
     padding: 24px;
     margin-top: 32px;
 }
 
 .help-title {
     font-family: 'Jost', sans-serif;
-    font-weight: 500;
-    color: var(--vert);
+    font-weight: 600;
+    color: var(--noir, #111111);
     margin-bottom: 12px;
-    font-size: 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .help-text {
@@ -213,8 +218,8 @@ include(__DIR__ . '/../layouts/header.php');
 
 .code-format {
     background: white;
-    border: 1px solid rgba(201,168,76,0.2);
-    border-radius: 6px;
+    border: 1px solid rgba(var(--or-rgb), 0.25);
+    border-radius: 0;
     padding: 8px 12px;
     font-family: 'Courier New', monospace;
     font-weight: 600;

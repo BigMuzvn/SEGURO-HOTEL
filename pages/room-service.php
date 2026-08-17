@@ -183,7 +183,7 @@ body {
 
 .rs-menu-section {
     background: #fff;
-    border-radius: 14px;
+    border-radius: 0;
     padding: 24px 24px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.05);
     box-sizing: border-box;
@@ -203,11 +203,13 @@ body {
 .rs-cat-btn {
     background: transparent;
     border: 1px solid transparent;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    border-radius: 0;
     font-family: 'Jost', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.72rem;
     font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: #555;
     cursor: pointer;
     white-space: nowrap;
@@ -229,7 +231,7 @@ body {
 
 .rs-item-card {
     border: 1px solid #edf2f7;
-    border-radius: 10px;
+    border-radius: 0;
     padding: 16px;
     background: #faf8f3;
     transition: all 0.3s;
@@ -285,7 +287,7 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.35s ease;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .btn-add-tray:hover {
@@ -298,7 +300,7 @@ body {
 /* Plateau / Panier */
 .rs-tray-box {
     background: #fff;
-    border-radius: 14px;
+    border-radius: 0;
     padding: 22px 18px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.05);
     border-top: 4px solid var(--or);
@@ -379,9 +381,9 @@ body {
     </p>
     
     <!-- Barre de suivi rapide -->
-    <div style="max-width:480px; margin:20px auto 0; display:flex; gap:8px; background:rgba(255,255,255,0.1); padding:6px; border-radius:30px; backdrop-filter:blur(5px); border:1px solid rgba(201,168,76,0.4);">
-        <input type="text" id="trackRefInput" placeholder="Suivre ma commande (Ex: RS-2026-XXXX)" value="<?= htmlspecialchars($commande_ref) ?>" style="flex:1; background:transparent; border:none; color:#fff; padding:8px 16px; font-size:0.85rem; outline:none; font-family:'Jost',sans-serif;">
-        <button type="button" onclick="startTracking(document.getElementById('trackRefInput').value)" style="background:var(--or); color:#111; border:none; border-radius:20px; padding:8px 18px; font-size:0.75rem; font-weight:600; cursor:pointer; text-transform:uppercase; letter-spacing:1px; transition:all 0.3s;">
+    <div style="max-width:480px; margin:20px auto 0; display:flex; gap:0; background:rgba(255,255,255,0.08); padding:0; border-radius:0; backdrop-filter:blur(5px); border:1px solid rgba(201,168,76,0.4);">
+        <input type="text" id="trackRefInput" placeholder="Suivre ma commande (Ex: RS-2026-XXXX)" value="<?= htmlspecialchars($commande_ref) ?>" style="flex:1; background:transparent; border:none; color:#fff; padding:12px 18px; font-size:0.85rem; outline:none; font-family:'Jost',sans-serif; border-radius:0;">
+        <button type="button" onclick="startTracking(document.getElementById('trackRefInput').value)" style="background:var(--or); color:#111; border:none; border-radius:0; padding:12px 22px; font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; cursor:pointer; text-transform:uppercase; letter-spacing:0.18em; transition:all 0.3s;">
             <i class="fas fa-search"></i> Suivre
         </button>
     </div>
@@ -394,81 +396,81 @@ body {
     <div class="rs-menu-section">
         
         <!-- CARTE LIVE TRACKER DE COMMANDE -->
-        <div id="rsLiveTracker" style="display:none; background:#ffffff; border-radius:14px; padding:22px; box-shadow:0 8px 25px rgba(0,0,0,0.06); border-top:4px solid var(--or); margin-bottom:28px; border:1px solid rgba(201,168,76,0.25);">
+        <div id="rsLiveTracker" style="display:none; background:#ffffff; border-radius:0; padding:22px; box-shadow:0 8px 25px rgba(0,0,0,0.06); border-top:4px solid var(--or); margin-bottom:28px; border:1px solid rgba(201,168,76,0.25);">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; border-bottom:1px solid #f0ede6; padding-bottom:12px; margin-bottom:16px;">
                 <div>
-                    <span style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.18em; color:#888;">Suivi de votre commande en direct</span>
-                    <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--vert); margin:2px 0 0 0;" id="trackerRefDisplay">Ref : ...</h3>
+                    <span style="font-family:'Jost',sans-serif; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.18em; color:#888;">Suivi de votre commande en direct</span>
+                    <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--noir, #111111); margin:2px 0 0 0;" id="trackerRefDisplay">Ref : ...</h3>
                 </div>
                 <div style="text-align:right;">
-                    <span id="trackerStatusBadge" style="display:inline-block; padding:5px 12px; border-radius:20px; font-size:0.78rem; font-weight:600; background:#faf8f3; color:var(--or-texte); border:1px solid var(--or);">
+                    <span id="trackerStatusBadge" style="display:inline-block; padding:5px 12px; border-radius:0; font-family:'Jost',sans-serif; font-size:0.75rem; font-weight:600; background:#faf8f3; color:var(--or-texte); border:1px solid var(--or); text-transform:uppercase; letter-spacing:0.1em;">
                         <i class="fas fa-spinner fa-spin"></i> Recherche...
                     </span>
-                    <div style="font-size:0.75rem; color:#666; margin-top:3px;" id="trackerDestination">Chambre : ...</div>
+                    <div style="font-family:'Jost',sans-serif; font-size:0.75rem; color:#666; margin-top:3px;" id="trackerDestination">Chambre : ...</div>
                 </div>
             </div>
 
             <!-- Stepper visuel -->
             <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin:18px 0; text-align:center;">
                 <div class="tracker-step" id="step1">
-                    <div class="step-circle" style="width:34px; height:34px; border-radius:50%; background:#e0dacb; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:bold; margin-bottom:4px; transition:all 0.3s;">1</div>
-                    <div style="font-size:0.78rem; font-weight:600; color:var(--vert);">Reçue</div>
+                    <div class="step-circle" style="width:34px; height:34px; border-radius:0; background:#e0dacb; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:bold; margin-bottom:4px; transition:all 0.3s;">1</div>
+                    <div style="font-size:0.78rem; font-weight:600; color:var(--noir, #111111);">Reçue</div>
                     <div style="font-size:0.68rem; color:#888;">Réception</div>
                 </div>
                 <div class="tracker-step" id="step2">
-                    <div class="step-circle" style="width:34px; height:34px; border-radius:50%; background:#e0dacb; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:bold; margin-bottom:4px; transition:all 0.3s;">2</div>
-                    <div style="font-size:0.78rem; font-weight:600; color:var(--vert);">En Cuisine</div>
+                    <div class="step-circle" style="width:34px; height:34px; border-radius:0; background:#e0dacb; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:bold; margin-bottom:4px; transition:all 0.3s;">2</div>
+                    <div style="font-size:0.78rem; font-weight:600; color:var(--noir, #111111);">En Cuisine</div>
                     <div style="font-size:0.68rem; color:#888;">Préparation chef</div>
                 </div>
                 <div class="tracker-step" id="step3">
-                    <div class="step-circle" style="width:34px; height:34px; border-radius:50%; background:#e0dacb; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:bold; margin-bottom:4px; transition:all 0.3s;">3</div>
-                    <div style="font-size:0.78rem; font-weight:600; color:var(--vert);">Livrée</div>
+                    <div class="step-circle" style="width:34px; height:34px; border-radius:0; background:#e0dacb; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:bold; margin-bottom:4px; transition:all 0.3s;">3</div>
+                    <div style="font-size:0.78rem; font-weight:600; color:var(--noir, #111111);">Livrée</div>
                     <div style="font-size:0.68rem; color:#888;">En chambre</div>
                 </div>
             </div>
 
-            <div id="trackerMessage" style="background:#faf8f3; border-radius:8px; padding:10px 14px; font-size:0.82rem; color:#444; text-align:center; border:1px solid rgba(201,168,76,0.2);">
+            <div id="trackerMessage" style="background:#faf8f3; border-radius:0; padding:10px 14px; font-size:0.82rem; color:#444; text-align:center; border:1px solid rgba(201,168,76,0.2);">
                 Commande en cours de traitement...
             </div>
         </div>
 
         <?php if ($succes): ?>
-            <div style="background:rgba(40,167,69,0.1); border-left:4px solid #28a745; padding:18px 22px; border-radius:8px; margin-bottom:24px; color:#155724;">
+            <div style="background:rgba(40,167,69,0.1); border-left:4px solid #28a745; padding:18px 22px; border-radius:0; margin-bottom:24px; color:#155724;">
                 <h4 style="margin:0 0 4px 0; font-family:'Cormorant Garamond',serif; font-size:1.3rem;"><i class="fas fa-concierge-bell"></i> Commande transmise avec succès !</h4>
                 <p style="margin:0; font-size:0.9rem;"><?= htmlspecialchars($succes) ?></p>
             </div>
         <?php endif; ?>
 
         <?php if ($erreur): ?>
-            <div style="background:rgba(220,53,69,0.1); border-left:4px solid #dc3545; padding:14px 18px; border-radius:8px; margin-bottom:24px; color:#721c24;">
+            <div style="background:rgba(220,53,69,0.1); border-left:4px solid #dc3545; padding:14px 18px; border-radius:0; margin-bottom:24px; color:#721c24;">
                 <i class="fas fa-exclamation-triangle"></i> <?= htmlspecialchars($erreur) ?>
             </div>
         <?php endif; ?>
 
         <!-- BANDEAU STATUT DU SÉJOUR CLIENT -->
         <?php if ($sejour_actif): ?>
-            <div style="background:linear-gradient(135deg, var(--vert) 0%, var(--vert-clair) 100%); color:#fff; padding:20px 24px; border-radius:10px; margin-bottom:24px; border:1.5px solid var(--or); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; box-shadow:0 8px 24px rgba(var(--vert-rgb),0.2);">
+            <div style="background:linear-gradient(145deg, var(--noir, #111111) 0%, var(--noir-surface, #181818) 100%); color:#fff; padding:20px 24px; border-radius:0; margin-bottom:24px; border:1.5px solid var(--or); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; box-shadow:0 8px 24px rgba(0,0,0,0.15);">
                 <div>
-                    <span style="background:var(--or); color:#111; font-size:0.65rem; font-weight:700; padding:4px 12px; border-radius:20px; text-transform:uppercase; letter-spacing:0.15em; display:inline-block; margin-bottom:6px;">
+                    <span style="background:var(--or); color:#111; font-family:'Jost',sans-serif; font-size:0.65rem; font-weight:700; padding:4px 12px; border-radius:0; text-transform:uppercase; letter-spacing:0.18em; display:inline-block; margin-bottom:6px;">
                         <i class="fas fa-key"></i> Séjour Actif · Check-in Validé
                     </span>
                     <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; margin:0; color:#fff;">
                         Service d'Étage pour : <strong><?= htmlspecialchars($sejour_actif['chambre_nom']) ?></strong>
                     </h4>
-                    <div style="font-size:0.8rem; color:rgba(255,255,255,0.85); margin-top:2px;">
+                    <div style="font-family:'Jost',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.85); margin-top:2px;">
                         Réf séjour : <strong><?= htmlspecialchars($sejour_actif['reference']) ?></strong> · Du <?= date('d/m/Y', strtotime($sejour_actif['date_arrivee'])) ?> au <?= date('d/m/Y', strtotime($sejour_actif['date_depart'])) ?>
                     </div>
                 </div>
-                <div style="font-size:0.8rem; color:var(--or-pale); text-align:right;">
+                <div style="font-family:'Jost',sans-serif; font-size:0.8rem; color:var(--or-pale); text-align:right;">
                     <i class="fas fa-concierge-bell"></i> Service d'étage prioritaire 24h/24
                 </div>
             </div>
         <?php elseif ($reservation_attente): ?>
-            <div style="background:rgba(var(--or-rgb),0.12); border-left:4px solid var(--or); padding:18px 22px; border-radius:0 8px 8px 0; margin-bottom:24px;">
+            <div style="background:rgba(var(--or-rgb),0.12); border-left:4px solid var(--or); padding:18px 22px; border-radius:0; margin-bottom:24px;">
                 <div style="display:flex; align-items:flex-start; gap:12px;">
                     <i class="fas fa-clock" style="color:var(--or); font-size:1.3rem; margin-top:3px;"></i>
                     <div>
-                        <strong style="color:var(--vert); font-size:1.05rem; display:block; margin-bottom:4px;">
+                        <strong style="color:var(--noir, #111111); font-size:1.05rem; display:block; margin-bottom:4px; font-family:'Cormorant Garamond',serif;">
                             Réservation n° <?= htmlspecialchars($reservation_attente['reference']) ?> · En attente de Check-in
                         </strong>
                         <p style="margin:0; font-size:0.88rem; color:#444; line-height:1.5;">
@@ -478,13 +480,13 @@ body {
                 </div>
             </div>
         <?php else: ?>
-            <div style="background:rgba(var(--vert-rgb),0.06); border-left:4px solid var(--vert); padding:16px 20px; border-radius:0 8px 8px 0; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div style="background:rgba(var(--or-rgb),0.06); border-left:4px solid var(--or); padding:16px 20px; border-radius:0; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
                 <div>
-                    <strong style="color:var(--vert); font-size:0.95rem;"><i class="fas fa-info-circle" style="color:var(--or);"></i> Consultation de la Carte Room Service</strong>
+                    <strong style="color:var(--noir, #111111); font-size:0.95rem; font-family:'Cormorant Garamond',serif;"><i class="fas fa-info-circle" style="color:var(--or);"></i> Consultation de la Carte Room Service</strong>
                     <div style="color:#555; font-size:0.85rem; margin-top:2px;">Le service d'étage est exclusivement réservé à nos hôtes résidant à l'hôtel ayant effectué leur Check-in.</div>
                 </div>
                 <?php if (!$userId): ?>
-                    <a href="connexion-client.php" style="background:var(--vert); color:var(--or); border:1px solid var(--vert); padding:8px 18px; border-radius:6px; text-decoration:none; font-size:0.8rem; font-weight:600;">
+                    <a href="connexion-client.php" style="background:var(--or); color:var(--noir, #111111); border:1px solid var(--or); padding:10px 22px; border-radius:0; text-decoration:none; font-family:'Jost',sans-serif; font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.2em;">
                         <i class="fas fa-sign-in-alt"></i> Se Connecter
                     </a>
                 <?php endif; ?>
@@ -616,64 +618,64 @@ body {
                 <input type="hidden" name="total_estime" id="f_total_estime" value="0">
 
                 <div style="margin-bottom:14px;">
-                    <label style="font-size:0.8rem; font-weight:600; color:var(--vert); text-transform:uppercase;">Chambre de livraison</label>
-                    <input type="text" name="chambre_numero" value="<?= htmlspecialchars($sejour_actif['chambre_nom']) ?>" readonly style="width:100%; padding:10px; border:1px solid var(--or); background:#faf8f3; border-radius:6px; font-size:0.9rem; font-weight:600; color:var(--vert);">
+                    <label style="font-family:'Jost',sans-serif; font-size:0.7rem; font-weight:600; color:var(--noir, #111111); text-transform:uppercase; letter-spacing:0.15em;">Chambre de livraison</label>
+                    <input type="text" name="chambre_numero" value="<?= htmlspecialchars($sejour_actif['chambre_nom']) ?>" readonly style="width:100%; padding:12px; border:1px solid var(--or); background:#faf8f3; border-radius:0; font-size:0.9rem; font-weight:600; color:var(--noir, #111111);">
                 </div>
 
                 <div style="margin-bottom:14px;">
-                    <label style="font-size:0.8rem; font-weight:600; color:var(--vert); text-transform:uppercase;">Votre Nom *</label>
-                    <input type="text" name="client_nom" placeholder="Ex: M. Koffi" required value="<?= htmlspecialchars(trim(($_SESSION['user_prenom'] ?? '') . ' ' . ($_SESSION['user_nom'] ?? ''))) ?>" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:0.9rem;">
+                    <label style="font-family:'Jost',sans-serif; font-size:0.7rem; font-weight:600; color:var(--noir, #111111); text-transform:uppercase; letter-spacing:0.15em;">Votre Nom *</label>
+                    <input type="text" name="client_nom" placeholder="Ex: M. Koffi" required value="<?= htmlspecialchars(trim(($_SESSION['user_prenom'] ?? '') . ' ' . ($_SESSION['user_nom'] ?? ''))) ?>" style="width:100%; padding:12px; border:1px solid rgba(var(--or-rgb),0.3); border-radius:0; font-size:0.9rem;">
                 </div>
 
                 <div style="margin-bottom:14px;">
-                    <label style="font-size:0.8rem; font-weight:600; color:var(--vert); text-transform:uppercase;">Téléphone / WhatsApp</label>
-                    <input type="tel" name="client_telephone" placeholder="+228 90 00 00 00" value="<?= htmlspecialchars($_SESSION['user_telephone'] ?? '') ?>" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:0.9rem;">
+                    <label style="font-family:'Jost',sans-serif; font-size:0.7rem; font-weight:600; color:var(--noir, #111111); text-transform:uppercase; letter-spacing:0.15em;">Téléphone / WhatsApp</label>
+                    <input type="tel" name="client_telephone" placeholder="+228 90 00 00 00" value="<?= htmlspecialchars($_SESSION['user_telephone'] ?? '') ?>" style="width:100%; padding:12px; border:1px solid rgba(var(--or-rgb),0.3); border-radius:0; font-size:0.9rem;">
                 </div>
 
                 <div style="margin-bottom:14px;">
-                    <label style="font-size:0.8rem; font-weight:600; color:var(--vert); text-transform:uppercase;">Email pour reçu &amp; notifications</label>
-                    <input type="email" name="client_email" placeholder="votre.email@exemple.com" value="<?= htmlspecialchars($_SESSION['user_email'] ?? '') ?>" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:0.9rem;">
+                    <label style="font-family:'Jost',sans-serif; font-size:0.7rem; font-weight:600; color:var(--noir, #111111); text-transform:uppercase; letter-spacing:0.15em;">Email pour reçu &amp; notifications</label>
+                    <input type="email" name="client_email" placeholder="votre.email@exemple.com" value="<?= htmlspecialchars($_SESSION['user_email'] ?? '') ?>" style="width:100%; padding:12px; border:1px solid rgba(var(--or-rgb),0.3); border-radius:0; font-size:0.9rem;">
                 </div>
 
                 <div style="margin-bottom:20px;">
-                    <label style="font-size:0.8rem; font-weight:600; color:var(--vert); text-transform:uppercase;">Instructions spéciales</label>
-                    <textarea name="instructions" placeholder="Cuisson, heure souhaitée, allergies..." rows="2" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:0.85rem;"></textarea>
+                    <label style="font-family:'Jost',sans-serif; font-size:0.7rem; font-weight:600; color:var(--noir, #111111); text-transform:uppercase; letter-spacing:0.15em;">Instructions spéciales</label>
+                    <textarea name="instructions" placeholder="Cuisson, heure souhaitée, allergies..." rows="2" style="width:100%; padding:12px; border:1px solid rgba(var(--or-rgb),0.3); border-radius:0; font-size:0.85rem;"></textarea>
                 </div>
 
-                <button type="submit" style="width:100%; background:var(--vert); color:#ffffff !important; border:1px solid var(--vert); padding:15px; font-family:'Jost',sans-serif; font-weight:300; font-size:0.65rem; letter-spacing:0.32em; text-transform:uppercase; cursor:pointer; transition:all 0.4s ease;">
-                    <i class="fas fa-concierge-bell" style="margin-right:8px; color:var(--or);"></i> Valider la commande
+                <button type="submit" style="width:100%; background:var(--or); color:var(--noir, #111111) !important; border:1px solid var(--or); padding:16px; font-family:'Jost',sans-serif; font-weight:600; font-size:0.72rem; letter-spacing:0.25em; text-transform:uppercase; cursor:pointer; transition:all 0.4s ease; border-radius:0;">
+                    <i class="fas fa-concierge-bell" style="margin-right:8px;"></i> Valider la commande
                 </button>
             </form>
         <?php elseif ($reservation_attente): ?>
-            <div style="background:#fdfbf7; border:1.5px dashed var(--or); border-radius:10px; padding:20px; text-align:center; margin-top:16px;">
+            <div style="background:#fdfbf7; border:1.5px dashed var(--or); border-radius:0; padding:24px; text-align:center; margin-top:16px;">
                 <i class="fas fa-lock" style="font-size:2rem; color:var(--or); margin-bottom:8px; display:block;"></i>
-                <div style="font-size:0.9rem; font-weight:600; color:var(--vert);">Commande verrouillée</div>
-                <div style="font-size:0.78rem; color:#666; margin:8px 0 16px; line-height:1.5;">
+                <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:600; color:var(--noir, #111111);">Commande verrouillée</div>
+                <div style="font-family:'Jost',sans-serif; font-size:0.82rem; color:#666; margin:8px 0 16px; line-height:1.6;">
                     Votre réservation n° <strong><?= htmlspecialchars($reservation_attente['reference']) ?></strong> est enregistrée. Le Room Service sera disponible dès votre arrivée à l'hôtel une fois votre Check-in validé.
                 </div>
-                <a href="mon-compte.php#reservations" style="background:var(--vert); color:var(--or); padding:9px 18px; border-radius:6px; font-size:0.75rem; text-decoration:none; font-weight:600; display:inline-block;">
+                <a href="mon-compte.php#reservations" style="background:var(--or); color:var(--noir, #111111); padding:12px 22px; border-radius:0; font-family:'Jost',sans-serif; font-size:0.7rem; text-decoration:none; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; display:inline-block;">
                     <i class="fas fa-calendar-check"></i> Voir ma réservation
                 </a>
             </div>
         <?php elseif ($userId): ?>
-            <div style="background:#fdfbf7; border:1.5px dashed #ccc; border-radius:10px; padding:20px; text-align:center; margin-top:16px;">
+            <div style="background:#fdfbf7; border:1.5px dashed #ccc; border-radius:0; padding:24px; text-align:center; margin-top:16px;">
                 <i class="fas fa-bed" style="font-size:2rem; color:#aaa; margin-bottom:8px; display:block;"></i>
-                <div style="font-size:0.9rem; font-weight:600; color:var(--vert);">Aucun séjour actif</div>
-                <div style="font-size:0.78rem; color:#666; margin:8px 0 16px; line-height:1.5;">
+                <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:600; color:var(--noir, #111111);">Aucun séjour actif</div>
+                <div style="font-family:'Jost',sans-serif; font-size:0.82rem; color:#666; margin:8px 0 16px; line-height:1.6;">
                     Le service d'étage est réservé aux clients séjournant actuellement dans notre établissement.
                 </div>
-                <a href="chambres.php" style="background:var(--vert); color:var(--or); padding:9px 18px; border-radius:6px; font-size:0.75rem; text-decoration:none; font-weight:600; display:inline-block;">
+                <a href="chambres.php" style="background:var(--or); color:var(--noir, #111111); padding:12px 22px; border-radius:0; font-family:'Jost',sans-serif; font-size:0.7rem; text-decoration:none; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; display:inline-block;">
                     Réserver une Chambre
                 </a>
             </div>
         <?php else: ?>
-            <div style="background:#faf8f3; border:1.5px dashed var(--or); border-radius:10px; padding:20px; text-align:center; margin-top:16px;">
+            <div style="background:#faf8f3; border:1.5px dashed var(--or); border-radius:0; padding:24px; text-align:center; margin-top:16px;">
                 <i class="fas fa-user-lock" style="font-size:2rem; color:var(--or); margin-bottom:8px; display:block;"></i>
-                <div style="font-size:0.9rem; font-weight:600; color:var(--vert);">Espace Réservé aux Hôtes</div>
-                <div style="font-size:0.78rem; color:#666; margin:8px 0 16px; line-height:1.5;">
+                <div style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:600; color:var(--noir, #111111);">Espace Réservé aux Hôtes</div>
+                <div style="font-family:'Jost',sans-serif; font-size:0.82rem; color:#666; margin:8px 0 16px; line-height:1.6;">
                     Connectez-vous à votre compte client pour commander directement dans votre chambre.
                 </div>
-                <a href="connexion-client.php" style="background:var(--vert); color:var(--or); padding:9px 20px; border-radius:6px; font-size:0.75rem; text-decoration:none; font-weight:600; display:inline-block;">
+                <a href="connexion-client.php" style="background:var(--or); color:var(--noir, #111111); padding:12px 24px; border-radius:0; font-family:'Jost',sans-serif; font-size:0.7rem; text-decoration:none; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; display:inline-block;">
                     <i class="fas fa-sign-in-alt"></i> Se Connecter
                 </a>
             </div>

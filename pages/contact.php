@@ -191,7 +191,7 @@
   .horaire-24 { color: var(--or-texte); font-style: italic; font-weight: 600; }
 
   .social-row { display: flex; gap: 12px; }
-  .social-btn { display: flex; align-items: center; gap: 10px; padding: 10px 18px; border: 1px solid rgba(var(--or-rgb),0.35); color: #4a5568; text-decoration: none; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.3s; border-radius: 4px; }
+  .social-btn { display: flex; align-items: center; gap: 10px; padding: 10px 18px; border: 1px solid rgba(var(--or-rgb),0.35); color: #4a5568; text-decoration: none; font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; transition: all 0.3s; border-radius: 0; }
   .social-btn:hover { border-color: var(--or); color: var(--or-texte); background: rgba(var(--or-rgb),0.08); transform: translateY(-1px); }
 
   /* ════════════════════════════════════════════
@@ -232,7 +232,7 @@
   .interlocuteur-card {
     background: rgba(255,255,255,0.035);
     border: 1px solid rgba(var(--or-rgb),0.22);
-    border-radius: 12px;
+    border-radius: 0;
     padding: 46px 42px;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
@@ -250,7 +250,7 @@
     position: absolute; top: 0; left: 0;
     width: 0; height: 3px; background: var(--or);
     transition: width 0.5s ease;
-    border-radius: 12px 12px 0 0;
+    border-radius: 0;
   }
   .interlocuteur-card:hover::before { width: 100%; }
 
@@ -258,7 +258,8 @@
     font-family: 'Jost', sans-serif; font-weight: 500;
     font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--or); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
-    background: rgba(var(--or-rgb), 0.1); padding: 4px 12px; border-radius: 20px;
+    background: rgba(var(--or-rgb), 0.1); padding: 5px 14px; border-radius: 0;
+    border-left: 2px solid var(--or);
   }
   .interlocuteur-name {
     font-family: 'Cormorant Garamond', serif; font-weight: 400;
@@ -331,24 +332,25 @@
     color: #718096; max-width: 600px; margin: 0 auto; line-height: 1.7;
   }
 
-  /* Filtres par Catégorie */
+  /* Filtres par Catégorie (Angles droits de rigueur) */
   .faq-filter-bar {
     display: flex; justify-content: center; align-items: center;
-    gap: 10px; flex-wrap: wrap; margin-bottom: 40px;
+    gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
   }
   .faq-filter-btn {
     background: #ffffff;
     border: 1px solid rgba(var(--or-rgb), 0.3);
-    padding: 10px 20px;
-    border-radius: 30px;
+    padding: 12px 22px;
+    border-radius: 0;
     font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
     color: #4a5568;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-flex; align-items: center; gap: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   }
   .faq-filter-btn i { color: var(--or); font-size: 0.85rem; }
@@ -366,14 +368,14 @@
   }
   .faq-filter-btn.active i { color: var(--or-pale); }
 
-  /* Grille des Cartes Accordéon */
+  /* Grille des Cartes Accordéon (Angles droits de rigueur) */
   .faq-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
   }
   .faq-card {
     background: #ffffff;
     border: 1px solid rgba(var(--or-rgb), 0.18);
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 16px rgba(0,0,0,0.03);
@@ -408,7 +410,7 @@
   .faq-header-content { display: flex; flex-direction: column; gap: 6px; }
   .faq-badge-tag {
     font-family: 'Jost', sans-serif; font-size: 0.6rem; font-weight: 600;
-    letter-spacing: 0.18em; text-transform: uppercase; color: var(--or-texte);
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--or-texte);
     display: inline-flex; align-items: center; gap: 6px;
   }
   .faq-q-title {
@@ -424,13 +426,13 @@
   .faq-card:hover .faq-q-title, .faq-card.open .faq-q-title { color: var(--or-texte); }
 
   .faq-icon-bubble {
-    width: 36px; height: 36px;
+    width: 32px; height: 32px;
     background: rgba(var(--or-rgb), 0.1);
     border: 1px solid rgba(var(--or-rgb), 0.25);
-    border-radius: 50%;
+    border-radius: 0;
     display: flex; align-items: center; justify-content: center;
     color: var(--or-texte);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     flex-shrink: 0;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
@@ -464,7 +466,7 @@
     padding: 10px 16px;
     background: #faf8f3;
     border-left: 2px solid var(--or);
-    border-radius: 4px;
+    border-radius: 0;
     font-size: 0.85rem;
     color: #2d3748;
     font-weight: 400;

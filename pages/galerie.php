@@ -119,12 +119,12 @@ include(__DIR__ . '/../layouts/header.php');
 .g-filter-btn {
     background: #ffffff;
     border: 1px solid rgba(var(--or-rgb),0.35);
-    padding: 9px 18px;
-    border-radius: 25px;
+    padding: 10px 22px;
+    border-radius: 0;
     font-family: 'Jost', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--noir, #111111);
     cursor: pointer;
@@ -148,7 +148,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 .galerie-card {
     position: relative;
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
     height: 280px;
     cursor: pointer;

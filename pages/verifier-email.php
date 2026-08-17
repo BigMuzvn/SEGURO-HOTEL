@@ -115,35 +115,37 @@ include(__DIR__ . '/../layouts/header.php');
     background: #ffffff;
     max-width: 480px;
     width: 100%;
-    border-radius: 16px;
+    border-radius: 0;
     box-shadow: 0 12px 40px rgba(0,0,0,0.06);
-    border: 1px solid rgba(201,168,76,0.2);
+    border: 1px solid rgba(var(--or-rgb), 0.25);
     padding: 40px 35px;
     text-align: center;
 }
 
 .otp-icon {
-    width: 70px;
-    height: 70px;
-    background: rgba(201,168,76,0.12);
-    color: var(--or);
-    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    background: rgba(var(--or-rgb), 0.12);
+    color: var(--or-texte);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin: 0 auto 20px;
+    border: 1px solid rgba(var(--or-rgb), 0.3);
 }
 
 .otp-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: var(--vert);
+    font-size: 2.2rem;
+    color: var(--noir, #111111);
     margin-bottom: 8px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .otp-subtitle {
+    font-family: 'Jost', sans-serif;
     font-size: .9rem;
     color: #666;
     line-height: 1.6;
@@ -161,44 +163,49 @@ include(__DIR__ . '/../layouts/header.php');
     text-align: center;
     font-family: monospace;
     padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    color: var(--vert);
+    border: 1px solid rgba(var(--or-rgb), 0.35);
+    border-radius: 0;
+    color: var(--noir, #111111);
     outline: none;
     transition: all .3s;
+    background: #faf8f3;
 }
 
 .otp-input:focus {
     border-color: var(--or);
-    box-shadow: 0 0 0 4px rgba(201,168,76,0.15);
+    box-shadow: 0 0 0 4px rgba(var(--or-rgb), 0.15);
 }
 
 .btn-otp-primary {
     width: 100%;
-    background: var(--vert);
-    color: #ffffff;
-    border: 1px solid var(--vert);
-    padding: 14px;
-    border-radius: 8px;
+    background: var(--or);
+    color: var(--noir, #111111);
+    border: 1px solid var(--or);
+    padding: 16px;
+    border-radius: 0;
     font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    font-size: 0.75rem;
-    letter-spacing: 0.28em;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     cursor: pointer;
     transition: all .3s ease;
 }
 
 .btn-otp-primary:hover {
-    background: var(--vert-sombre, var(--color-dark));
-    border-color: var(--vert-sombre, var(--color-dark));
+    background: var(--or-clair);
+    border-color: var(--or-clair);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(var(--or-rgb), 0.25);
 }
 
 .btn-resend {
     background: none;
     border: none;
-    color: var(--vert);
-    font-size: .85rem;
+    color: var(--or-texte);
+    font-family: 'Jost', sans-serif;
+    font-size: .82rem;
+    letter-spacing: 0.05em;
     cursor: pointer;
     text-decoration: underline;
     margin-top: 18px;
@@ -206,7 +213,8 @@ include(__DIR__ . '/../layouts/header.php');
 
 .alert-custom {
     padding: 12px 16px;
-    border-radius: 8px;
+    border-radius: 0;
+    font-family: 'Jost', sans-serif;
     font-size: .88rem;
     margin-bottom: 20px;
     text-align: left;
@@ -217,7 +225,7 @@ include(__DIR__ . '/../layouts/header.php');
 .local-dev-box {
     background: #fdfaf0;
     border: 1px dashed var(--or);
-    border-radius: 8px;
+    border-radius: 0;
     padding: 12px;
     font-size: .85rem;
     color: #795548;

@@ -416,7 +416,7 @@
   .events-main-img {
     width: 100%; aspect-ratio: 4/3;
     object-fit: cover; display: block;
-    border-radius: 8px;
+    border-radius: 0;
   }
   .events-img-badge {
     position: absolute; bottom: 28px; left: -24px;
@@ -497,9 +497,9 @@
   .about-cta-title em { font-style: italic; color: var(--or-pale); }
   .about-cta-text { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.85rem; color: rgba(255,255,255,0.8); letter-spacing: 0.03em; line-height: 2; margin-bottom: 48px; }
   .about-cta-btns { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
-  .btn-cta-or { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--noir, #111111); background: var(--or); padding: 16px 44px; text-decoration: none; display: inline-block; transition: background 0.3s, transform 0.25s; border-radius: 4px; }
+  .btn-cta-or { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--noir, #111111); background: var(--or); padding: 16px 44px; text-decoration: none; display: inline-block; transition: background 0.3s, transform 0.25s; border-radius: 0; }
   .btn-cta-or:hover { background: var(--or-clair); transform: translateY(-2px); color: var(--noir, #111111); }
-  .btn-cta-ghost { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.4); padding: 15px 40px; text-decoration: none; display: inline-block; transition: all 0.3s; border-radius: 4px; }
+  .btn-cta-ghost { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.4); padding: 15px 40px; text-decoration: none; display: inline-block; transition: all 0.3s; border-radius: 0; }
   .btn-cta-ghost:hover { border-color: var(--or); color: var(--or); }
 
   /* ── Reveal ── */
@@ -533,7 +533,7 @@
   .nautique-title em { font-style:italic; color:var(--or-pale); }
   .nautique-desc { font-family:'Jost',sans-serif; font-weight:300; font-size:0.82rem; color:rgba(255,255,255,0.78); line-height:2; letter-spacing:0.03em; margin-bottom:32px; }
   .nautique-items { display:flex; flex-direction:column; gap:16px; }
-  .nautique-item { display:flex; align-items:flex-start; gap:16px; padding:18px 22px; background:rgba(255,255,255,0.05); border:1px solid rgba(var(--or-rgb),0.2); border-left:3px solid var(--or); border-radius:6px; transition:all 0.3s; }
+  .nautique-item { display:flex; align-items:flex-start; gap:16px; padding:18px 22px; background:rgba(255,255,255,0.05); border:1px solid rgba(var(--or-rgb),0.2); border-left:3px solid var(--or); border-radius:0; transition:all 0.3s; }
   .nautique-item:hover { background:rgba(255,255,255,0.09); transform: translateX(4px); }
   .nautique-item-name { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.15rem; color:#ffffff; display:block; margin-bottom:4px; }
   .nautique-item-desc { font-family:'Jost',sans-serif; font-weight:300; font-size:0.75rem; color:rgba(255,255,255,0.75); letter-spacing:0.02em; line-height:1.7; }
@@ -562,9 +562,9 @@
   .location-item:hover .location-item-icon { background:var(--or); color:var(--noir, #111111); border-color:var(--or); }
   .location-item-name { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.15rem; color:var(--noir, #111111); display:block; margin-bottom:4px; }
   .location-item-desc { font-family:'Jost',sans-serif; font-weight:300; font-size:0.78rem; color:#4a5568; line-height:1.8; letter-spacing:0.02em; }
-  .location-map-embed { width:100%; height:300px; display:block; border:none; filter:grayscale(20%); transition:filter 0.4s; border-radius: 8px 8px 0 0; }
+  .location-map-embed { width:100%; height:300px; display:block; border:none; filter:grayscale(20%); transition:filter 0.4s; border-radius: 0; }
   .location-map-embed:hover { filter:grayscale(0%); }
-  .location-address-card { background:var(--noir, #111111); padding:26px 30px; border-top:3px solid var(--or); border-radius: 0 0 8px 8px; }
+  .location-address-card { background:var(--noir, #111111); padding:26px 30px; border-top:3px solid var(--or); border-radius: 0; }
   .location-address-label { font-family:'Jost',sans-serif; font-weight:300; font-size:0.55rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--or); display:block; margin-bottom:10px; }
   .location-address-text { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:1.1rem; color:#ffffff; line-height:1.8; }
   .location-address-text a { color:var(--or); text-decoration:none; font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; font-family:'Jost',sans-serif; font-weight:400; display:block; margin-top:12px; transition:color 0.3s; }
@@ -583,11 +583,11 @@
   .services6-heading em { font-style:italic; color:var(--or-pale); }
   .services6-intro { font-family:'Jost',sans-serif; font-weight:300; font-size:0.85rem; color:rgba(255,255,255,0.78); line-height:2; letter-spacing:0.03em; }
   .services6-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-  .service6-card { background:rgba(255,255,255,0.04); border:1px solid rgba(var(--or-rgb),0.2); border-radius:8px; padding:36px 28px; transition:background 0.4s, transform 0.3s; }
+  .service6-card { background:rgba(255,255,255,0.04); border:1px solid rgba(var(--or-rgb),0.2); border-radius:0; padding:36px 28px; transition:background 0.4s, transform 0.3s; }
   .service6-card:hover { background:rgba(255,255,255,0.08); transform: translateY(-4px); }
   .service6-name { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:1.2rem; color:#ffffff; margin-bottom:12px; letter-spacing:0.03em; }
   .service6-desc { font-family:'Jost',sans-serif; font-weight:300; font-size:0.76rem; color:rgba(255,255,255,0.75); line-height:1.9; letter-spacing:0.02em; }
-  .service6-badge { display:inline-block; margin-top:16px; font-family:'Jost',sans-serif; font-weight:300; font-size:0.52rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--or); border:1px solid rgba(var(--or-rgb),0.35); padding:4px 12px; border-radius:4px; }
+  .service6-badge { display:inline-block; margin-top:16px; font-family:'Jost',sans-serif; font-weight:300; font-size:0.52rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--or); border:1px solid rgba(var(--or-rgb),0.35); padding:4px 12px; border-radius:0; }
 
   @media (max-width: 1100px) {
     .story-inner, .vision-inner, .gallery-header, .gallery-mosaic,

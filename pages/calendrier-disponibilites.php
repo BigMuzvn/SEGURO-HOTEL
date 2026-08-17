@@ -122,23 +122,23 @@ include(__DIR__ . '/../layouts/header.php');
 
 <style>
 .calendrier-container{max-width:1200px;margin:80px auto 60px;padding:0 20px;}
-.calendrier-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--vert);margin-bottom:8px;text-align:center;}
-.calendrier-subtitle{color:#888;font-size:1rem;margin-bottom:40px;text-align:center;}
-.filtres-section{background:#fff;border-radius:12px;padding:24px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,.05);}
+.calendrier-title{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--noir, #111111);margin-bottom:8px;text-align:center;}
+.calendrier-subtitle{color:#666;font-family:'Jost',sans-serif;font-size:0.95rem;margin-bottom:40px;text-align:center;}
+.filtres-section{background:#fff;border-radius:0;border:1px solid rgba(var(--or-rgb),0.2);padding:24px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,.05);}
 .filtres-row{display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
 .filtre-group{display:flex;align-items:center;gap:8px;}
-.filtre-label{font-family:'Jost',sans-serif;font-weight:500;color:var(--vert);font-size:.9rem;}
-.filtre-select{padding:8px 12px;border:1px solid rgba(201,168,76,.25);border-radius:6px;font-family:'Jost',sans-serif;min-width:200px;cursor:pointer;}
+.filtre-label{font-family:'Jost',sans-serif;font-weight:600;color:var(--noir, #111111);font-size:.78rem;text-transform:uppercase;letter-spacing:0.12em;}
+.filtre-select{padding:10px 14px;border:1px solid rgba(var(--or-rgb),.3);border-radius:0;font-family:'Jost',sans-serif;font-size:0.85rem;min-width:200px;cursor:pointer;background:#faf8f3;}
 .filtre-select:focus{outline:none;border-color:var(--or);}
 .nav-mois{display:flex;justify-content:center;align-items:center;gap:40px;margin-bottom:28px;}
-.btn-nav{background:var(--vert);color:#fff;border:none;padding:10px 22px;border-radius:8px;cursor:pointer;font-family:'Jost',sans-serif;font-weight:500;transition:all .3s;}
-.btn-nav:hover{background:var(--vert-clair);transform:translateY(-1px);}
-.mois-label{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--vert);text-transform:capitalize;}
-.cal-wrap{background:#fff;border-radius:16px;padding:32px;box-shadow:0 8px 40px rgba(0,0,0,.08);}
+.btn-nav{background:var(--or);color:var(--noir, #111111);border:1px solid var(--or);padding:10px 22px;border-radius:0;cursor:pointer;font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.2em;transition:all .3s;}
+.btn-nav:hover{background:var(--or-clair);border-color:var(--or-clair);transform:translateY(-1px);}
+.mois-label{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--noir, #111111);text-transform:capitalize;}
+.cal-wrap{background:#fff;border-radius:0;border:1px solid rgba(var(--or-rgb),0.2);padding:32px;box-shadow:0 8px 40px rgba(0,0,0,.08);}
 .cal-table{width:100%;border-collapse:collapse;}
-.cal-table thead th{font-family:'Jost',sans-serif;font-weight:600;color:var(--vert);text-align:center;padding:14px 8px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--or);}
-.cal-day{height:90px;border:1px solid rgba(201,168,76,.1);vertical-align:top;position:relative;cursor:default;transition:background .2s;}
-.cal-day:hover{background:rgba(201,168,76,.04);}
+.cal-table thead th{font-family:'Jost',sans-serif;font-weight:600;color:var(--noir, #111111);text-align:center;padding:14px 8px;font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;border-bottom:2px solid var(--or);}
+.cal-day{height:90px;border:1px solid rgba(var(--or-rgb),.15);vertical-align:top;position:relative;cursor:default;transition:background .2s;}
+.cal-day:hover{background:rgba(var(--or-rgb),.04);}
 .day-num{font-family:'Jost',sans-serif;font-weight:500;font-size:.88rem;color:#333;padding:8px;display:inline-block;}
 /* Statuts */
 .cal-day.passe{opacity:.45;}
@@ -152,7 +152,7 @@ include(__DIR__ . '/../layouts/header.php');
 .cal-day.partiellement{background:rgba(255,160,0,.08);}
 .cal-day.partiellement .day-num{color:#e67e00;}
 .cal-day.hors-mois{opacity:.2;}
-.cal-day.aujourd-hui .day-num{background:var(--or);color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;margin:4px;}
+.cal-day.aujourd-hui .day-num{background:var(--or);color:#fff;border-radius:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;margin:4px;}
 /* Barre de statut en bas de la cellule */
 .day-barre{position:absolute;bottom:0;left:0;right:0;height:4px;}
 .barre-disponible{background:rgba(40,167,69,.5);}
@@ -160,24 +160,24 @@ include(__DIR__ . '/../layouts/header.php');
 .barre-en_attente{background:rgba(255,193,7,.7);}
 .barre-partiellement{background:linear-gradient(to right,rgba(40,167,69,.5),rgba(220,53,69,.5));}
 /* Tooltip au hover */
-.day-tooltip{display:none;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--vert);color:#fff;font-size:.72rem;padding:6px 10px;border-radius:6px;white-space:nowrap;z-index:100;max-width:200px;white-space:normal;text-align:center;line-height:1.4;}
+.day-tooltip{display:none;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--noir, #111111);color:#fff;font-size:.72rem;padding:6px 10px;border-radius:0;white-space:nowrap;z-index:100;max-width:200px;white-space:normal;text-align:center;line-height:1.4;}
 .cal-day:hover .day-tooltip{display:block;}
 /* Légende */
 .legende{display:flex;justify-content:center;gap:28px;margin-top:24px;flex-wrap:wrap;}
-.legende-item{display:flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:.82rem;color:#666;cursor:pointer;padding:5px 10px;border-radius:6px;transition:all .2s;}
-.legende-item:hover{background:rgba(var(--or-rgb),.1);transform:translateY(-1px);}
-.legende-item.active{font-weight:700;background:rgba(var(--or-rgb),.18);}
-.legende-couleur{width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.1);}
+.legende-item{display:flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:0.08em;color:#666;cursor:pointer;padding:6px 12px;border-radius:0;border:1px solid transparent;transition:all .2s;}
+.legende-item:hover{background:rgba(var(--or-rgb),.1);border-color:rgba(var(--or-rgb),0.3);transform:translateY(-1px);}
+.legende-item.active{font-weight:700;background:rgba(var(--or-rgb),.18);border-color:var(--or);}
+.legende-couleur{width:14px;height:14px;border-radius:0;border:1px solid rgba(0,0,0,.15);}
 /* Infos chambre */
-.chambre-info-box{background:linear-gradient(135deg,rgba(var(--vert-rgb),.05),rgba(var(--or-rgb),.05));border-radius:12px;padding:24px;margin-bottom:28px;}
-.chambre-nom{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--vert);margin-bottom:6px;}
-.chambre-details{color:#666;font-size:.9rem;}
+.chambre-info-box{background:linear-gradient(135deg,rgba(var(--or-rgb),.08),rgba(var(--or-rgb),.02));border-radius:0;border-left:3px solid var(--or);padding:24px;margin-bottom:28px;}
+.chambre-nom{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--noir, #111111);margin-bottom:6px;}
+.chambre-details{color:#666;font-family:'Jost',sans-serif;font-size:.9rem;}
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}
-.stat-box{background:#fff;border-radius:8px;padding:16px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05);}
-.stat-val{font-size:1.8rem;font-weight:600;color:var(--or);}
-.stat-lbl{font-size:.75rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
+.stat-box{background:#fff;border-radius:0;border:1px solid rgba(var(--or-rgb),0.2);padding:16px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05);}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--or-texte);}
+.stat-lbl{font-family:'Jost',sans-serif;font-size:.72rem;color:#888;text-transform:uppercase;letter-spacing:.12em;margin-top:2px;}
 /* Légende globale toutes chambres */
-.info-banner{background:rgba(var(--vert-rgb),.05);border-left:3px solid var(--or);padding:12px 20px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:.88rem;color:#555;}
+.info-banner{background:rgba(var(--or-rgb),.06);border-left:3px solid var(--or);padding:12px 20px;border-radius:0;margin-bottom:20px;font-family:'Jost',sans-serif;font-size:.88rem;color:#555;}
 @media(max-width:768px){.filtres-row{flex-direction:column;align-items:stretch;}.filtre-select{width:100%;}.cal-day{height:60px;}.day-num{font-size:.75rem;padding:4px;}.legende{gap:12px;}.stats-grid{grid-template-columns:1fr;}}
 </style>
 
