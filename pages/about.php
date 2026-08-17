@@ -1050,28 +1050,28 @@
         </p>
         <div style="display:flex;flex-direction:column;">
           <div class="location-item">
-            <div class="location-item-icon">💼</div>
+            <div class="location-item-icon"><i class="fas fa-briefcase" style="color:var(--or);"></i></div>
             <div>
               <span class="location-item-name">Clientèle d'Affaires</span>
               <span class="location-item-desc">Proximité avec les centres d'affaires et pôles décisionnels. Le cadre idéal pour optimiser votre séjour.</span>
             </div>
           </div>
           <div class="location-item">
-            <div class="location-item-icon">🌴</div>
+            <div class="location-item-icon"><i class="fas fa-umbrella-beach" style="color:var(--or);"></i></div>
             <div>
               <span class="location-item-name">Voyageurs Loisirs</span>
               <span class="location-item-desc">Point de départ parfait pour découvrir les merveilles de la région et ses paysages authentiques.</span>
             </div>
           </div>
           <div class="location-item">
-            <div class="location-item-icon">✈️</div>
+            <div class="location-item-icon"><i class="fas fa-plane-departure" style="color:var(--or);"></i></div>
             <div>
               <span class="location-item-name">Accès Facilité</span>
               <span class="location-item-desc">Accès rapide aux grands axes. Service de transfert privé disponible sur réservation.</span>
             </div>
           </div>
           <div class="location-item">
-            <div class="location-item-icon">🅿️</div>
+            <div class="location-item-icon"><i class="fas fa-parking" style="color:var(--or);"></i></div>
             <div>
               <span class="location-item-name">Parking Sécurisé</span>
               <span class="location-item-desc">Espace de stationnement privé et surveillé 24h/24 pour une totale sérénité.</span>
@@ -1129,28 +1129,28 @@
     <div class="services6-grid reveal">
 
       <div class="service6-card">
-        <span class="service6-icon">🛎️</span>
+        <span class="service6-icon"><i class="fas fa-concierge-bell" style="color:var(--or);"></i></span>
         <h4 class="service6-name">Conciergerie Dédiée</h4>
         <p class="service6-desc">Réserver un taxi, organiser une visite guidée, recommander le meilleur restaurant local — notre conciergerie est votre allié pour un séjour réussi.</p>
         <span class="service6-badge">Disponible 24h/24</span>
       </div>
 
       <div class="service6-card">
-        <span class="service6-icon">🍽️</span>
+        <span class="service6-icon"><i class="fas fa-utensils" style="color:var(--or);"></i></span>
         <h4 class="service6-name">Room Service 24h/24</h4>
         <p class="service6-desc">Une petite faim en pleine nuit ou un dîner en toute intimité ? Notre service en chambre propose une sélection de plats à toute heure.</p>
         <span class="service6-badge">Toute la nuit</span>
       </div>
 
       <div class="service6-card">
-        <span class="service6-icon">👔</span>
+        <span class="service6-icon"><i class="fas fa-user-tie" style="color:var(--or);"></i></span>
         <h4 class="service6-name">Blanchisserie &amp; Pressing</h4>
         <p class="service6-desc">Un service rapide et soigné pour être impeccable en toutes circonstances lors de votre séjour. Nettoyage à sec disponible.</p>
         <span class="service6-badge">Express disponible</span>
       </div>
 
       <div class="service6-card">
-        <span class="service6-icon">🚗</span>
+        <span class="service6-icon"><i class="fas fa-car" style="color:var(--or);"></i></span>
         <h4 class="service6-name">Parking Sécurisé</h4>
         <p class="service6-desc">Un espace de stationnement privé et surveillé à la disposition de notre clientèle pour une tranquillité d'esprit totale.</p>
         <span class="service6-badge">Inclus</span>
@@ -1260,25 +1260,25 @@
   <div class="values-timeline reveal">
     <div class="value-item">
       <div class="value-dot"></div>
-      <span class="value-icon">🕊️</span>
+      <span class="value-icon"><i class="fas fa-dove" style="color:var(--or); font-size:1.6rem;"></i></span>
       <h4 class="value-name">Sérénité</h4>
       <p class="value-desc">Chaque espace, chaque interaction est pensée pour libérer nos clients du stress. Un vrai havre de paix dédié au ressourcement.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
-      <span class="value-icon">🎯</span>
+      <span class="value-icon"><i class="fas fa-bullseye" style="color:var(--or); font-size:1.6rem;"></i></span>
       <h4 class="value-name">Excellence</h4>
       <p class="value-desc">Des standards internationaux dans chaque prestation : connectivité haut débit, literie de prestige, gastronomie soignée, propreté irréprochable.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
-      <span class="value-icon">❤️</span>
+      <span class="value-icon"><i class="fas fa-heart" style="color:var(--or); font-size:1.6rem;"></i></span>
       <h4 class="value-name">Hospitalité</h4>
       <p class="value-desc">La chaleur authentique de l'accueil attentionné au service de vos attentes — nous veillons sur chaque instant de votre séjour.</p>
     </div>
     <div class="value-item">
       <div class="value-dot"></div>
-      <span class="value-icon">💡</span>
+      <span class="value-icon"><i class="fas fa-lightbulb" style="color:var(--or); font-size:1.6rem;"></i></span>
       <h4 class="value-name">Harmonie</h4>
       <p class="value-desc">Le raffinement harmonieux n'est pas un compromis — c'est une philosophie. Se sentir parfaitement privilégié dans un cadre exceptionnel.</p>
     </div>

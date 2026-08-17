@@ -800,7 +800,7 @@ include(__DIR__ . '/../layouts/header.php');
                 ?>
                 <div style="margin: 36px 0 28px;">
                     <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
-                        <span style="font-size:1.4rem;">✨</span>
+                        <span style="font-size:1.3rem; color:var(--or);"><i class="fas fa-concierge-bell"></i></span>
                         <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--vert); margin:0;">
                             Personnalisez votre séjour avec nos options exclusives
                         </h3>
@@ -899,7 +899,7 @@ include(__DIR__ . '/../layouts/header.php');
                 <!-- ── CHOIX DU MODE DE RÈGLEMENT & PAIEMENT ── -->
                 <div style="background:#ffffff; border:1.5px solid rgba(var(--vert-rgb),0.15); border-radius:10px; padding:24px 28px; margin:32px 0;">
                     <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
-                        <span style="font-size:1.4rem;">💳</span>
+                        <span style="font-size:1.3rem; color:var(--or);"><i class="fas fa-credit-card"></i></span>
                         <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.5rem; color:var(--vert); margin:0;">
                             Mode de règlement de votre séjour
                         </h3>
@@ -942,11 +942,11 @@ include(__DIR__ . '/../layouts/header.php');
                         <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:14px;">
                             <label style="display:flex; align-items:center; gap:8px; cursor:pointer; background:#fff; border:1.5px solid #dcd5c5; padding:10px 18px; border-radius:6px;">
                                 <input type="radio" name="moyen_paiement" value="mobile_money" checked style="accent-color:var(--vert); width:18px; height:18px;">
-                                <span style="font-size:0.95rem;">📱 <strong>Paiement Mobile Money</strong> <small style="color:#666;">(Moov, MTN, Orange, Wave, T-Money...)</small></span>
+                                <span style="font-size:0.95rem;"><i class="fas fa-mobile-alt" style="color:var(--or); margin-right:4px;"></i> <strong>Paiement Mobile Money</strong> <small style="color:#666;">(Moov, MTN, Orange, Wave, T-Money...)</small></span>
                             </label>
                             <label style="display:flex; align-items:center; gap:8px; cursor:pointer; background:#fff; border:1.5px solid #dcd5c5; padding:10px 18px; border-radius:6px;">
                                 <input type="radio" name="moyen_paiement" value="carte_bancaire" style="accent-color:var(--vert); width:18px; height:18px;">
-                                <span style="font-size:0.95rem;">💳 <strong>Carte Bancaire</strong> <small style="color:#666;">(Visa, Mastercard)</small></span>
+                                <span style="font-size:0.95rem;"><i class="fas fa-credit-card" style="color:var(--or); margin-right:4px;"></i> <strong>Carte Bancaire</strong> <small style="color:#666;">(Visa, Mastercard)</small></span>
                             </label>
                         </div>
                         <div class="form-group" style="max-width:380px; margin-bottom:0;">

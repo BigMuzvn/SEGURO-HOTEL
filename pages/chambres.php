@@ -803,7 +803,7 @@ $TYPES = ['standard'=>'Standard','superieure'=>'Supérieure','suite'=>'Suite','v
       <?php if($featured['image_principale']): ?>
       <img src="<?= htmlspecialchars($featured['image_principale']) ?>" alt="<?= htmlspecialchars($featured['nom']) ?>">
       <?php else: ?>
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--vert),var(--vert-clair));display:flex;align-items:center;justify-content:center;font-size:5rem;color:rgba(var(--or-rgb),.3);">🏨</div>
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--vert),var(--vert-clair));display:flex;align-items:center;justify-content:center;font-size:4rem;color:rgba(var(--or-rgb),.4);"><i class="fas fa-hotel"></i></div>
       <?php endif; ?>
       <div class="chambre-overlay">
         <a href="<?= $baseUrl ?>/pages/reservation-system.php" class="overlay-cta">Réserver cette chambre →</a>
@@ -853,7 +853,7 @@ $TYPES = ['standard'=>'Standard','superieure'=>'Supérieure','suite'=>'Suite','v
           <?php if($ch['image_principale']): ?>
           <img src="<?= htmlspecialchars($ch['image_principale']) ?>" alt="<?= htmlspecialchars($ch['nom']) ?>">
           <?php else: ?>
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8f0ea,#d4e4d8);display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(var(--vert-rgb),.2);">🛏️</div>
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8f0ea,#d4e4d8);display:flex;align-items:center;justify-content:center;font-size:2.8rem;color:rgba(var(--vert-rgb),.35);"><i class="fas fa-bed"></i></div>
           <?php endif; ?>
           <div class="chambre-overlay">
             <a href="<?= $baseUrl ?>/pages/reservation-system.php" class="overlay-cta">Réserver →</a>

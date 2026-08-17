@@ -462,7 +462,7 @@ require_once __DIR__ . '/includes/header.php';
         <div id="sim_navbar" style="background:#143323; padding:14px 20px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:2px solid #c9a84c;">
           <div style="display:flex; align-items:center; gap:12px;">
             <div id="sim_crest" style="width:40px; height:40px; border-radius:6px; border:1.5px solid #c9a84c; background:#143323; color:#c9a84c; display:flex; flex-direction:column; align-items:center; justify-content:center; font-family:'Cormorant Garamond', serif; font-weight:700; font-size:1.1rem; line-height:1;">
-              <span style="font-size:0.55rem;">👑</span>
+              <span style="font-size:0.55rem;"><i class="fas fa-crown"></i></span>
               <span id="sim_crest_letters">HTL</span>
             </div>
             <div>

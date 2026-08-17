@@ -472,30 +472,30 @@ $statuts_labels = [
     <div class="modal-ref"   id="mRefCode"></div>
     <div class="modal-statut-badge"><span class="badge" id="mBadge"></span></div>
 
-    <div class="section-title">🏨 Séjour</div>
+    <div class="section-title"><i class="fas fa-bed" style="color:var(--or); margin-right:6px;"></i> Séjour</div>
     <div class="detail-row"><span class="detail-label">Chambre</span><span class="detail-val" id="mChambre"></span></div>
     <div class="detail-row"><span class="detail-label">Arrivée</span><span class="detail-val" id="mArrivee"></span></div>
     <div class="detail-row"><span class="detail-label">Départ</span><span class="detail-val" id="mDepart"></span></div>
     <div class="detail-row"><span class="detail-label">Adultes / Enfants</span><span class="detail-val" id="mPers"></span></div>
 
-    <div class="section-title">✨ Options & Services de séjour</div>
+    <div class="section-title"><i class="fas fa-concierge-bell" style="color:var(--or); margin-right:6px;"></i> Options &amp; Services de séjour</div>
     <div id="mOptionsList" style="background:#faf8f3; border:1px solid #e8e3d6; border-radius:6px; padding:10px 14px; margin-bottom:12px; font-size:0.88rem; line-height:1.6;"></div>
 
-    <div class="section-title">💰 Tarifs & Règlement</div>
+    <div class="section-title"><i class="fas fa-coins" style="color:var(--or); margin-right:6px;"></i> Tarifs &amp; Règlement</div>
     <div class="detail-row"><span class="detail-label">Prix / nuit</span><span class="detail-val" id="mNuit"></span></div>
     <div class="detail-row"><span class="detail-label">Sous-total options</span><span class="detail-val" id="mOpts"></span></div>
     <div class="detail-row" id="mRowPromo" style="display:none;"><span class="detail-label" style="color:#28a745;">Code Promo</span><span class="detail-val" id="mPromo" style="color:#28a745; font-weight:600;"></span></div>
     <div class="detail-row"><span class="detail-label">Total Net</span><span class="detail-val" id="mTotal" style="color:var(--or);font-weight:700;font-size:1.1rem;"></span></div>
     <div class="detail-row"><span class="detail-label">Paiement</span><span class="detail-val" id="mStatutPaiement"></span></div>
 
-    <div class="section-title">👤 Client</div>
+    <div class="section-title"><i class="fas fa-user" style="color:var(--or); margin-right:6px;"></i> Client</div>
     <div class="detail-row"><span class="detail-label">Nom</span><span class="detail-val" id="mClient"></span></div>
     <div class="detail-row"><span class="detail-label">Email</span><span class="detail-val" id="mEmail"></span></div>
 
-    <div class="section-title">📝 Demandes spéciales</div>
+    <div class="section-title"><i class="fas fa-pen-alt" style="color:var(--or); margin-right:6px;"></i> Demandes spéciales</div>
     <div id="mDemandes" style="font-size:.88rem;color:#666;padding:4px 0 8px;"></div>
 
-    <div class="section-title">🔒 Note interne admin</div>
+    <div class="section-title"><i class="fas fa-shield-alt" style="color:var(--or); margin-right:6px;"></i> Note interne admin</div>
     <textarea id="mNote" class="note-area" placeholder="Ajouter une note…"></textarea>
     <div style="display:flex;justify-content:flex-end;margin-top:6px;gap:10px;align-items:center;">
         <span id="noteOk" class="note-ok">✓ Enregistré</span>
@@ -591,14 +591,14 @@ function ouvrirModal(r) {
     if (r.statut === 'validee') {
         btns.innerHTML +=
             '<button class="btn" style="background:#1a3a2a; color:#c9a84c; border:1px solid #c9a84c;" onclick="changerStatut(\'en_sejour\')">'
-          + '<i class="fas fa-key"></i> 🛎️ Check-in (Client Arrivé)</button>'
+          + '<i class="fas fa-key" style="margin-right:6px;"></i> Check-in (Client Arrivé)</button>'
           + '<button class="btn btn-danger" onclick="changerStatut(\'annulee\')">'
           + '<i class="fas fa-times"></i> Annuler</button>';
     }
     if (r.statut === 'en_sejour') {
         btns.innerHTML +=
             '<button class="btn btn-success" onclick="changerStatut(\'terminee\')">'
-          + '<i class="fas fa-door-open"></i> 🚪 Check-out (Départ & Inviter Avis)</button>';
+          + '<i class="fas fa-door-open" style="margin-right:6px;"></i> Check-out (Départ & Inviter Avis)</button>';
     }
     if (r.statut === 'annulee') {
         btns.innerHTML +=

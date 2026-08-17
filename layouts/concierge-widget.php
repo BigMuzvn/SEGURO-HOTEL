@@ -285,7 +285,7 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
     
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('active')">
-        <span>🕒 Heures de Check-in &amp; Check-out</span>
+        <span><i class="far fa-clock" style="color:var(--or); margin-right:8px;"></i> Heures de Check-in &amp; Check-out</span>
         <i class="fas fa-chevron-down" style="font-size:0.75rem; transition:transform 0.2s;"></i>
       </div>
       <div class="faq-a">
@@ -295,7 +295,7 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
 
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('active')">
-        <span>🚗 Navette aéroport disponible ?</span>
+        <span><i class="fas fa-shuttle-van" style="color:var(--or); margin-right:8px;"></i> Navette aéroport disponible ?</span>
         <i class="fas fa-chevron-down" style="font-size:0.75rem; transition:transform 0.2s;"></i>
       </div>
       <div class="faq-a">
@@ -305,7 +305,7 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
 
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('active')">
-        <span>💳 Moyens de paiement acceptés</span>
+        <span><i class="far fa-credit-card" style="color:var(--or); margin-right:8px;"></i> Moyens de paiement acceptés</span>
         <i class="fas fa-chevron-down" style="font-size:0.75rem; transition:transform 0.2s;"></i>
       </div>
       <div class="faq-a">
@@ -315,7 +315,7 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
 
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('active')">
-        <span>🥐 Petit-déjeuner buffet</span>
+        <span><i class="fas fa-coffee" style="color:var(--or); margin-right:8px;"></i> Petit-déjeuner buffet</span>
         <i class="fas fa-chevron-down" style="font-size:0.75rem; transition:transform 0.2s;"></i>
       </div>
       <div class="faq-a">

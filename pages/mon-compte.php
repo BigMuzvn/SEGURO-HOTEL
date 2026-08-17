@@ -762,7 +762,7 @@ include(__DIR__ . '/../layouts/header.php');
 
       <?php if (empty($reservations)): ?>
         <div class="empty-state">
-          <div class="empty-state-icon">📅</div>
+          <div class="empty-state-icon"><i class="far fa-calendar-alt"></i></div>
           <div class="empty-state-title">Aucune réservation</div>
           <p>Vous n'avez pas encore effectué de réservation à <?= htmlspecialchars(hotel_name()) ?>.</p>
           <a href="<?= $baseUrl ?>/pages/reservation-system.php" class="btn-action btn-modifier"

@@ -180,39 +180,142 @@
   </section>
 
   <!-- ══════════════════════════════════════════
-       EXPÉRIENCES
+       EXPÉRIENCES & SENSORIALITÉ
   ══════════════════════════════════════════ -->
-  <section style="padding: 120px 60px; background: var(--vert); color: var(--blanc);">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <div style="text-align: center; margin-bottom: 64px;">
-        <span style="font-family: 'Jost', sans-serif; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--or);">Expériences</span>
-        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; margin-top: 16px; font-weight: 300;">S'évader, se ressourcer, se découvrir</h2>
+  <style>
+    .experience-card-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(var(--or-rgb), 0.22);
+      border-radius: 12px;
+      padding: 38px 32px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .experience-card-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--or), transparent);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .experience-card-item:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--or);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    }
+    .experience-card-item:hover::before {
+      opacity: 1;
+    }
+    .experience-card-item:hover .exp-icon-badge {
+      background: var(--or);
+      border-color: var(--or);
+      transform: scale(1.06);
+    }
+    .exp-icon-badge {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: rgba(var(--or-rgb), 0.12);
+      border: 1.5px solid rgba(var(--or-rgb), 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: all 0.35s ease;
+      flex-shrink: 0;
+    }
+    .exp-icon-badge img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+  </style>
+
+  <section style="padding: 120px 40px; background: linear-gradient(140deg, var(--vert) 0%, var(--vert-sombre, var(--color-dark, #0d1e16)) 100%); color: #ffffff; position: relative;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 64px;">
+        <div style="display: inline-flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <span style="width: 35px; height: 1px; background: linear-gradient(to right, transparent, var(--or));"></span>
+          <span style="font-family: 'Jost', sans-serif; font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--or); font-weight: 500;">Moments d'Exception</span>
+          <span style="width: 35px; height: 1px; background: linear-gradient(to left, transparent, var(--or));"></span>
+        </div>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); color: #ffffff; font-weight: 300; line-height: 1.2; margin: 0;">
+          S'évader, se ressourcer, <em>se réinventer</em>
+        </h2>
+        <p style="font-size: 0.95rem; color: rgba(255,255,255,0.7); margin-top: 14px; font-weight: 300; line-height: 1.8;">
+          Une sélection d'expériences exclusives sur-mesure pour sublimer chaque instant de votre séjour.
+        </p>
       </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
-        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/mastery.png" alt="" srcset=""> Détente & Bien-être</h3>
-          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Spa ouvert sur la nature, massages traditionnels aux huiles locales, yoga au lever du soleil sur la plage.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 28px;">
+        
+        <!-- 1. Détente & Bien-être -->
+        <div class="experience-card-item">
+          <div>
+            <div class="exp-icon-badge">
+              <img src="./assets/images/mastery.png" alt="Détente &amp; Bien-être">
+            </div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--or); margin-bottom: 12px; font-weight: 600; letter-spacing: 0.02em;">
+              Détente &amp; Bien-être
+            </h3>
+            <p style="font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.78); font-weight: 300; margin: 0;">
+              Spa ouvert sur la nature, massages traditionnels aux huiles rares locales et séances de yoga au lever du soleil sur la plage.
+            </p>
+          </div>
         </div>
-        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/food.png" alt="" srcset=""> Gastronomie & Mixologie</h3>
-          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Restaurant gastronomique, bar à cocktails avec vue océan, dégustations de vins et accords mets-vins.</p>
+
+        <!-- 2. Gastronomie & Mixologie -->
+        <div class="experience-card-item">
+          <div>
+            <div class="exp-icon-badge">
+              <img src="./assets/images/food.png" alt="Gastronomie &amp; Mixologie">
+            </div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--or); margin-bottom: 12px; font-weight: 600; letter-spacing: 0.02em;">
+              Gastronomie &amp; Mixologie
+            </h3>
+            <p style="font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.78); font-weight: 300; margin: 0;">
+              Restaurant gastronomique, bar à cocktails avec vue océan, dégustations privées et accords mets-vins prestigieux.
+            </p>
+          </div>
         </div>
-        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/sport.png" alt="" srcset=""> Activités Nautiques</h3>
-          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Plongée sous-marine, pêche sportive, excursions en bateau traditionnel, paddle et kayak dans la mangrove.</p>
+
+        <!-- 3. Activités Nautiques -->
+        <div class="experience-card-item">
+          <div>
+            <div class="exp-icon-badge">
+              <img src="./assets/images/sport.png" alt="Activités Nautiques">
+            </div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--or); margin-bottom: 12px; font-weight: 600; letter-spacing: 0.02em;">
+              Activités Nautiques
+            </h3>
+            <p style="font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.78); font-weight: 300; margin: 0;">
+              Plongée sous-marine, pêche sportive, excursions en bateau traditionnel, paddle et escapades en kayak dans la mangrove.
+            </p>
+          </div>
         </div>
-        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/theater.png" alt="" srcset=""> Culture & Découverte</h3>
-          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Visites des villages voisins, ateliers de tissage traditionnel, marchés locaux et rencontres avec les artisans.</p>
-        </div>
-        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/theater.png" alt="" srcset=""> Culture & Découverte</h3>
-          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Visites des villages voisins, ateliers de tissage traditionnel, marchés locaux et rencontres avec les artisans.</p>
-        </div>
-        <div style="border: 1px solid rgba(201,168,76,0.3); padding: 40px; border-radius: 4px;">
-          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--or); margin-bottom: 16px;"><img src="./assets/images/sport.png" alt="" srcset=""> Activités Nautiques</h3>
-          <p style="font-size: 0.95rem; line-height: 1.7; color: rgba(250,248,243,0.8);">Plongée sous-marine, pêche sportive, excursions en bateau traditionnel, paddle et kayak dans la mangrove.</p>
+
+        <!-- 4. Culture & Découverte -->
+        <div class="experience-card-item">
+          <div>
+            <div class="exp-icon-badge">
+              <img src="./assets/images/theater.png" alt="Culture &amp; Découverte">
+            </div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--or); margin-bottom: 12px; font-weight: 600; letter-spacing: 0.02em;">
+              Culture &amp; Découverte
+            </h3>
+            <p style="font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.78); font-weight: 300; margin: 0;">
+              Visites des villages voisins, ateliers de tissage traditionnel, marchés locaux et rencontres exclusives avec les maîtres artisans.
+            </p>
+          </div>
         </div>
         
       </div>

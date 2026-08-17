@@ -871,15 +871,15 @@ exit;
     </div>
     <div class="resa-guarantees">
       <div class="guarantee-item">
-        <span class="guarantee-icon">🔒</span>
+        <span class="guarantee-icon"><i class="fas fa-lock"></i></span>
         <span class="guarantee-text">Paiement<br>sécurisé</span>
       </div>
       <div class="guarantee-item">
-        <span class="guarantee-icon">✓</span>
+        <span class="guarantee-icon"><i class="fas fa-check"></i></span>
         <span class="guarantee-text">Meilleur tarif<br>garanti</span>
       </div>
       <div class="guarantee-item">
-        <span class="guarantee-icon">↩</span>
+        <span class="guarantee-icon"><i class="fas fa-undo-alt"></i></span>
         <span class="guarantee-text">Annulation<br>gratuite 48h</span>
       </div>
     </div>
@@ -1112,7 +1112,7 @@ exit;
         <div class="option-item" onclick="toggleOption(this, 25000)">
           <input type="checkbox" name="options" value="petit-dej">
           <div class="option-checkbox">✓</div>
-          <span class="option-icon">☕</span>
+          <span class="option-icon"><i class="fas fa-mug-hot"></i></span>
           <div>
             <span class="option-name">Petit-déjeuner</span>
             <span class="option-desc">Buffet tropical complet chaque matin pour toute la chambre.</span>
@@ -1123,7 +1123,7 @@ exit;
         <div class="option-item" onclick="toggleOption(this, 35000)">
           <input type="checkbox" name="options" value="transfert">
           <div class="option-checkbox">✓</div>
-          <span class="option-icon">🚘</span>
+          <span class="option-icon"><i class="fas fa-car-side"></i></span>
           <div>
             <span class="option-name">Transfert aéroport</span>
             <span class="option-desc">Véhicule climatisé avec chauffeur privé, aller ou aller-retour.</span>
@@ -1134,7 +1134,7 @@ exit;
         <div class="option-item" onclick="toggleOption(this, 60000)">
           <input type="checkbox" name="options" value="spa">
           <div class="option-checkbox">✓</div>
-          <span class="option-icon">🌿</span>
+          <span class="option-icon"><i class="fas fa-spa"></i></span>
           <div>
             <span class="option-name">Soin Spa 60 min</span>
             <span class="option-desc">Massage aux huiles botaniques locales pour 2 personnes.</span>
@@ -1145,7 +1145,7 @@ exit;
         <div class="option-item" onclick="toggleOption(this, 45000)">
           <input type="checkbox" name="options" value="dinner">
           <div class="option-checkbox">✓</div>
-          <span class="option-icon">🍽️</span>
+          <span class="option-icon"><i class="fas fa-utensils"></i></span>
           <div>
             <span class="option-name">Dîner romantique</span>
             <span class="option-desc">Table privative en terrasse, menu 4 services pour 2 personnes.</span>
@@ -1156,7 +1156,7 @@ exit;
         <div class="option-item" onclick="toggleOption(this, 20000)">
           <input type="checkbox" name="options" value="excursion">
           <div class="option-checkbox">✓</div>
-          <span class="option-icon">🛶</span>
+          <span class="option-icon"><i class="fas fa-water"></i></span>
           <div>
             <span class="option-name">Excursion Ganvié</span>
             <span class="option-desc">Pirogue guidée sur le lac Nokoué, village lacustre de Ganvié.</span>
@@ -1167,7 +1167,7 @@ exit;
         <div class="option-item" onclick="toggleOption(this, 15000)">
           <input type="checkbox" name="options" value="champagne">
           <div class="option-checkbox">✓</div>
-          <span class="option-icon">🥂</span>
+          <span class="option-icon"><i class="fas fa-glass-cheers"></i></span>
           <div>
             <span class="option-name">Accueil Champagne</span>
             <span class="option-desc">Bouteille de champagne et fruits de saison à l'arrivée.</span>
@@ -1202,13 +1202,13 @@ exit;
 
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;">
           <label style="cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid rgba(201,168,76,0.2);font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:200;color:#666;letter-spacing:0.1em;">
-            <input type="radio" name="paiement" value="carte" checked style="accent-color:var(--vert);"> 💳 Carte bancaire
+            <input type="radio" name="paiement" value="carte" checked style="accent-color:var(--vert);"> <i class="fas fa-credit-card" style="color:var(--or);"></i> Carte bancaire
           </label>
           <label style="cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid rgba(201,168,76,0.2);font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:200;color:#666;letter-spacing:0.1em;">
-            <input type="radio" name="paiement" value="mobile" style="accent-color:var(--vert);"> 📱 Mobile Money
+            <input type="radio" name="paiement" value="mobile" style="accent-color:var(--vert);"> <i class="fas fa-mobile-alt" style="color:var(--or);"></i> Mobile Money
           </label>
           <label style="cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 20px;border:1px solid rgba(201,168,76,0.2);font-family:'Jost',sans-serif;font-size:0.7rem;font-weight:200;color:#666;letter-spacing:0.1em;">
-            <input type="radio" name="paiement" value="hotel" style="accent-color:var(--vert);"> 🏨 Paiement à l'hôtel
+            <input type="radio" name="paiement" value="hotel" style="accent-color:var(--vert);"> <i class="fas fa-hotel" style="color:var(--or);"></i> Paiement à l'hôtel
           </label>
         </div>
 
@@ -1309,9 +1309,9 @@ exit;
     </div>
 
     <div class="summary-badges">
-      <div class="guarantee-badge"><span>✓</span> Meilleur tarif garanti</div>
-      <div class="guarantee-badge"><span>↩</span> Annulation gratuite jusqu'à 48h avant</div>
-      <div class="guarantee-badge"><span>🔒</span> Paiement 100% sécurisé</div>
+      <div class="guarantee-badge"><span><i class="fas fa-check"></i></span> Meilleur tarif garanti</div>
+      <div class="guarantee-badge"><span><i class="fas fa-undo-alt"></i></span> Annulation gratuite jusqu'à 48h avant</div>
+      <div class="guarantee-badge"><span><i class="fas fa-lock"></i></span> Paiement 100% sécurisé</div>
     </div>
 
     <div class="summary-help">
