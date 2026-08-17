@@ -2,7 +2,7 @@
     "hotels": [
         {
             "id": "hotel_default",
-            "code": "HTL-5A43",
+            "code": "HTL-020D",
             "name": "Hôtel Grand Prestige & Spa",
             "short_name": "Grand Prestige",
             "initials": "GP",
@@ -25,23 +25,24 @@
             "checkout_time": "12:00",
             "tva_rate": "18",
             "tourist_tax": "1000",
-            "theme_preset": "terracotta_sunset",
+            "theme_preset": "bordeaux_champagne",
             "theme_colors": {
-                "id": "terracotta_sunset",
-                "name": "Terracotta Sunset & Cuivre",
-                "desc": "Chaleur balnéaire et authenticité (Idéal Lodge, Villa & Écolodge)",
-                "primary": "#3a1d17",
-                "primary_light": "#5c2d24",
-                "accent": "#e09f3e",
-                "accent_light": "#f3b865",
-                "accent_pale": "#fdf3e2",
-                "dark": "#1f0c08",
-                "light": "#fbf7f4"
+                "primary": "#3d0c18",
+                "primary_light": "#754450",
+                "primary_dark": "#050000",
+                "accent": "#d66f4c",
+                "accent_light": "#ff9d7a",
+                "accent_dark": "#a8411e",
+                "accent_pale": "#e4c4b8",
+                "dark": "#170308",
+                "dark_surface": "#362227",
+                "light": "#e7d3cb",
+                "light_surface": "#ffffff"
             },
             "hero_media": "video",
             "is_active": true,
-            "created_at": "2026-08-16 13:59:19",
-            "updated_at": "2026-08-16 13:59:19",
+            "created_at": "2026-08-16 14:34:42",
+            "updated_at": "2026-08-16 14:34:42",
             "notes": ""
         }
     ],

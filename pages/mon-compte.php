@@ -358,12 +358,12 @@ include(__DIR__ . '/../layouts/header.php');
     background: #fff;
     border-left: 3px solid var(--or);
     padding: 32px 36px;
-    box-shadow: 0 4px 20px rgba(26,58,42,0.06);
+    box-shadow: 0 4px 20px rgba(var(--vert-rgb),0.06);
     transition: box-shadow 0.3s, transform 0.3s;
   }
   .reservation-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 36px rgba(26,58,42,0.1);
+    box-shadow: 0 10px 36px rgba(var(--vert-rgb),0.1);
   }
 
   .reservation-header {
@@ -497,7 +497,7 @@ include(__DIR__ . '/../layouts/header.php');
   .btn-modifier:hover { background: #b8941f; transform: translateY(-1px); color: #fff; }
   .btn-annuler  { background: #dc3545; color: #fff; }
   .btn-annuler:hover { background: #c82333; transform: translateY(-1px); }
-  .btn-detail   { background: transparent; color: var(--vert); border: 1px solid rgba(26,58,42,0.3); }
+  .btn-detail   { background: transparent; color: var(--vert); border: 1px solid rgba(var(--vert-rgb),0.3); }
   .btn-detail:hover { background: var(--vert); color: #fff; }
 
   /* ── Empty state ── */
@@ -624,7 +624,7 @@ include(__DIR__ . '/../layouts/header.php');
   </div>
 
   <!-- ── Carte Club Fidélité VIP ── -->
-  <div style="background: linear-gradient(135deg, #1a3a2a 0%, #0e2218 100%); border: 1.5px solid #c9a84c; border-radius: 12px; padding: 26px 30px; margin-bottom: 30px; color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
+  <div style="background: linear-gradient(135deg, var(--vert) 0%, var(--vert-sombre, var(--color-dark)) 100%); border: 1.5px solid var(--or); border-radius: 12px; padding: 26px 30px; margin-bottom: 30px; color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
     <div style="position: absolute; right: -20px; bottom: -20px; font-family:'Cormorant Garamond',serif; font-size: 8rem; color: rgba(201,168,76,0.06); font-weight: 700; pointer-events:none;">VIP</div>
     
     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
@@ -733,7 +733,7 @@ include(__DIR__ . '/../layouts/header.php');
       ?>
 
       <?php if ($sejour_actif): ?>
-        <div style="background: linear-gradient(135deg, #1a3a2a 0%, #2d5c40 100%); color: #fff; padding: 24px 28px; border-radius: 10px; margin-bottom: 28px; border: 1.5px solid var(--or); box-shadow: 0 8px 24px rgba(26,58,42,0.25);">
+        <div style="background: linear-gradient(135deg, var(--vert) 0%, var(--vert-clair) 100%); color: #fff; padding: 24px 28px; border-radius: 10px; margin-bottom: 28px; border: 1.5px solid var(--or); box-shadow: 0 8px 24px rgba(var(--vert-rgb),0.25);">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
             <div>
               <span style="background: var(--or); color: #111; font-size: 0.65rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.15em; display: inline-block; margin-bottom: 8px;">
@@ -945,7 +945,7 @@ include(__DIR__ . '/../layouts/header.php');
        ONGLET 2 : MON PROFIL & COORDONNÉES
   ══════════════════════════════════════════════════════ -->
   <div id="tab_pane_profil" class="tab-content-pane" style="display:none;">
-    <div style="background:#fff; border-radius:12px; padding:36px; box-shadow:0 4px 24px rgba(26,58,42,0.06); border-left:4px solid var(--or); margin-bottom:30px;">
+    <div style="background:#fff; border-radius:12px; padding:36px; box-shadow:0 4px 24px rgba(var(--vert-rgb),0.06); border-left:4px solid var(--or); margin-bottom:30px;">
       <h2 class="section-title" style="margin-bottom:24px;">Mes informations personnelles</h2>
       <p style="color:#666; font-size:0.9rem; margin-bottom:28px;">
         Ces informations sont utilisées lors de la confirmation de vos séjours et pour vos factures officielles.
@@ -1002,7 +1002,7 @@ include(__DIR__ . '/../layouts/header.php');
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:28px; margin-bottom:30px;">
       
       <!-- Carte 1 : Changer Email -->
-      <div style="background:#fff; border-radius:12px; padding:32px; box-shadow:0 4px 24px rgba(26,58,42,0.06); border-left:4px solid var(--vert);">
+      <div style="background:#fff; border-radius:12px; padding:32px; box-shadow:0 4px 24px rgba(var(--vert-rgb),0.06); border-left:4px solid var(--vert);">
         <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--vert); margin-bottom:8px;">
           <i class="fas fa-envelope-open-text" style="color:var(--or); margin-right:6px;"></i> Adresse Email
         </h3>
@@ -1027,7 +1027,7 @@ include(__DIR__ . '/../layouts/header.php');
       </div>
 
       <!-- Carte 2 : Renouveler Code Client -->
-      <div style="background:#fff; border-radius:12px; padding:32px; box-shadow:0 4px 24px rgba(26,58,42,0.06); border-left:4px solid var(--or);">
+      <div style="background:#fff; border-radius:12px; padding:32px; box-shadow:0 4px 24px rgba(var(--vert-rgb),0.06); border-left:4px solid var(--or);">
         <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:var(--vert); margin-bottom:8px;">
           <i class="fas fa-key" style="color:var(--or); margin-right:6px;"></i> Mon Code Client
         </h3>

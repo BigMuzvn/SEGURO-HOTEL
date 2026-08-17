@@ -31,7 +31,7 @@
   .contact-hero-img:hover .contact-hero-img-bg { transform: scale(1.04); }
   .contact-hero-img-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(26,58,42,0.65) 0%, rgba(13,26,18,0.3) 100%);
+    background: linear-gradient(135deg, rgba(var(--vert-rgb),0.65) 0%, rgba(var(--noir-rgb),0.3) 100%);
     z-index: 1;
   }
   .hero-img-badge {
@@ -153,7 +153,7 @@
   .btn-send { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: #fff; background: var(--vert); border: none; padding: 18px 56px; cursor: pointer; transition: background 0.3s, transform 0.25s; display: inline-block; }
   .btn-send:hover { background: var(--vert-clair); transform: translateY(-2px); }
 
-  .form-success { display: none; padding: 24px 28px; background: rgba(26,58,42,0.05); border-left: 3px solid var(--vert); margin-top: 24px; }
+  .form-success { display: none; padding: 24px 28px; background: rgba(var(--vert-rgb),0.05); border-left: 3px solid var(--vert); margin-top: 24px; }
   .form-success p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--vert); }
 
   /* ── Infos contact ── */
@@ -273,7 +273,7 @@
 
   /* ── FAQ ── */
   .faq-section { padding: 100px 80px; background: #f9f7f2; position: relative; overflow: hidden; }
-  .faq-section::before { content: '?'; position: absolute; right: -40px; top: -60px; font-family: 'Cormorant Garamond', serif; font-size: 30vw; color: rgba(26,58,42,0.03); line-height: 1; pointer-events: none; }
+  .faq-section::before { content: '?'; position: absolute; right: -40px; top: -60px; font-family: 'Cormorant Garamond', serif; font-size: 30vw; color: rgba(var(--vert-rgb),0.03); line-height: 1; pointer-events: none; }
   .faq-header { margin-bottom: 60px; }
   .faq-heading { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--vert); line-height: 1.2; }
   .faq-heading em { font-style: italic; color: var(--or); }

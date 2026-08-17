@@ -160,16 +160,16 @@ include(__DIR__ . '/../layouts/header.php');
 .barre-en_attente{background:rgba(255,193,7,.7);}
 .barre-partiellement{background:linear-gradient(to right,rgba(40,167,69,.5),rgba(220,53,69,.5));}
 /* Tooltip au hover */
-.day-tooltip{display:none;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#1a3a2a;color:#fff;font-size:.72rem;padding:6px 10px;border-radius:6px;white-space:nowrap;z-index:100;max-width:200px;white-space:normal;text-align:center;line-height:1.4;}
+.day-tooltip{display:none;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--vert);color:#fff;font-size:.72rem;padding:6px 10px;border-radius:6px;white-space:nowrap;z-index:100;max-width:200px;white-space:normal;text-align:center;line-height:1.4;}
 .cal-day:hover .day-tooltip{display:block;}
 /* Légende */
 .legende{display:flex;justify-content:center;gap:28px;margin-top:24px;flex-wrap:wrap;}
 .legende-item{display:flex;align-items:center;gap:8px;font-family:'Jost',sans-serif;font-size:.82rem;color:#666;cursor:pointer;padding:5px 10px;border-radius:6px;transition:all .2s;}
-.legende-item:hover{background:rgba(201,168,76,.1);transform:translateY(-1px);}
-.legende-item.active{font-weight:700;background:rgba(201,168,76,.18);}
+.legende-item:hover{background:rgba(var(--or-rgb),.1);transform:translateY(-1px);}
+.legende-item.active{font-weight:700;background:rgba(var(--or-rgb),.18);}
 .legende-couleur{width:16px;height:16px;border-radius:4px;border:1px solid rgba(0,0,0,.1);}
 /* Infos chambre */
-.chambre-info-box{background:linear-gradient(135deg,rgba(26,58,42,.05),rgba(201,168,76,.05));border-radius:12px;padding:24px;margin-bottom:28px;}
+.chambre-info-box{background:linear-gradient(135deg,rgba(var(--vert-rgb),.05),rgba(var(--or-rgb),.05));border-radius:12px;padding:24px;margin-bottom:28px;}
 .chambre-nom{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--vert);margin-bottom:6px;}
 .chambre-details{color:#666;font-size:.9rem;}
 .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px;}
@@ -177,7 +177,7 @@ include(__DIR__ . '/../layouts/header.php');
 .stat-val{font-size:1.8rem;font-weight:600;color:var(--or);}
 .stat-lbl{font-size:.75rem;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}
 /* Légende globale toutes chambres */
-.info-banner{background:rgba(26,58,42,.05);border-left:3px solid var(--or);padding:12px 20px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:.88rem;color:#555;}
+.info-banner{background:rgba(var(--vert-rgb),.05);border-left:3px solid var(--or);padding:12px 20px;border-radius:0 8px 8px 0;margin-bottom:20px;font-size:.88rem;color:#555;}
 @media(max-width:768px){.filtres-row{flex-direction:column;align-items:stretch;}.filtre-select{width:100%;}.cal-day{height:60px;}.day-num{font-size:.75rem;padding:4px;}.legende{gap:12px;}.stats-grid{grid-template-columns:1fr;}}
 </style>
 

@@ -175,7 +175,7 @@
   }
 
   .service-card:hover {
-    box-shadow: 0 20px 60px rgba(26,58,42,0.1);
+    box-shadow: 0 20px 60px rgba(var(--vert-rgb),0.1);
     transform: translateY(-4px);
   }
 
@@ -199,7 +199,7 @@
   .service-img-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(26,58,42,0.5) 100%);
+    background: linear-gradient(180deg, transparent 40%, rgba(var(--vert-rgb),0.5) 100%);
     z-index: 1;
     transition: opacity 0.4s;
   }
@@ -298,7 +298,7 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(90deg, rgba(26,58,42,0.92) 0%, rgba(26,58,42,0.7) 50%, transparent 100%),
+      linear-gradient(90deg, rgba(var(--vert-rgb),0.92) 0%, rgba(var(--vert-rgb),0.7) 50%, transparent 100%),
       url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=85') center/cover no-repeat;
     z-index: 0;
   }
@@ -477,7 +477,7 @@
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--vert);
-    border: 1px solid rgba(26,58,42,0.3);
+    border: 1px solid rgba(var(--vert-rgb),0.3);
     padding: 15px 40px;
     text-decoration: none;
     display: inline-block;
@@ -508,7 +508,7 @@
     .signature-section { height: auto; padding: 80px 0; }
     .signature-bg {
       background:
-        linear-gradient(180deg, rgba(26,58,42,0.88) 0%, rgba(26,58,42,0.75) 100%),
+        linear-gradient(180deg, rgba(var(--vert-rgb),0.88) 0%, rgba(var(--vert-rgb),0.75) 100%),
         url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=85') center/cover no-repeat;
     }
     .extra-badge { display: none; }

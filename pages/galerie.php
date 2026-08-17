@@ -70,7 +70,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 <style>
 .galerie-hero {
-    background: linear-gradient(rgba(26,58,42,0.85), rgba(13,26,18,0.92)), 
+    background: linear-gradient(rgba(var(--vert-rgb),0.85), rgba(var(--noir-rgb),0.92)), 
                 url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80') center/cover no-repeat;
     padding: 140px 24px 75px;
     text-align: center;
@@ -157,7 +157,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 .galerie-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 36px rgba(26,58,42,0.2);
+    box-shadow: 0 16px 36px rgba(var(--vert-rgb),0.2);
 }
 
 .galerie-img {
@@ -174,7 +174,7 @@ include(__DIR__ . '/../layouts/header.php');
 .galerie-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent 40%, rgba(26,58,42,0.92) 100%);
+    background: linear-gradient(180deg, transparent 40%, rgba(var(--vert-rgb),0.92) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

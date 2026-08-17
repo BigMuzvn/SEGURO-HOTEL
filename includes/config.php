@@ -211,6 +211,10 @@ if (!defined('HOTEL_CONFIG_LOADED')) {
                 --noir-surface: var(--color-dark-surface) !important;
                 --blanc: var(--color-light) !important;
                 --blanc-surface: var(--color-light-surface) !important;
+                --vert-rgb: ' . $primaryRgb . ' !important;
+                --or-rgb: ' . $accentRgb . ' !important;
+                --noir-rgb: ' . $darkRgb . ' !important;
+                --blanc-rgb: ' . $lightRgb . ' !important;
                 --bordure-form: rgba(' . $accentRgb . ', 0.45) !important;
             }
 

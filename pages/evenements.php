@@ -94,7 +94,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 <style>
 .event-hero {
-    background: linear-gradient(rgba(26,58,42,0.82), rgba(13,26,18,0.92)), 
+    background: linear-gradient(rgba(var(--vert-rgb),0.82), rgba(var(--noir-rgb),0.92)), 
                 url('https://images.unsplash.com/photo-1511578314322-379afb476865?w=1920&q=80') center/cover no-repeat;
     padding: 140px 24px 80px;
     text-align: center;
@@ -149,7 +149,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 .space-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(26,58,42,0.15);
+    box-shadow: 0 20px 40px rgba(var(--vert-rgb),0.15);
 }
 
 .space-img {
@@ -275,7 +275,7 @@ include(__DIR__ . '/../layouts/header.php');
     outline: none;
     border-color: var(--vert);
     background: #fff;
-    box-shadow: 0 0 0 3px rgba(26,58,42,0.1);
+    box-shadow: 0 0 0 3px rgba(var(--vert-rgb),0.1);
 }
 
 .services-checkboxes {
@@ -328,7 +328,7 @@ include(__DIR__ . '/../layouts/header.php');
     border-color: var(--or-clair) !important;
     color: var(--noir) !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(201, 168, 76, 0.25);
+    box-shadow: 0 8px 24px rgba(var(--or-rgb), 0.25);
 }
 
 .btn-submit-devis {
@@ -351,7 +351,7 @@ include(__DIR__ . '/../layouts/header.php');
     background: var(--vert-clair) !important;
     color: #ffffff !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(26,58,42,0.25);
+    box-shadow: 0 8px 24px rgba(var(--vert-rgb),0.25);
 }
 
 @media (max-width: 768px) {

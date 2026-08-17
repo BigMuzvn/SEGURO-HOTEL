@@ -19,11 +19,11 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
   display: flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #1a3a2a, #0e2218);
-  color: #c9a84c;
+  background: linear-gradient(135deg, var(--vert), var(--vert-sombre, var(--color-dark)));
+  color: var(--or);
   padding: 12px 20px;
   border-radius: 50px;
-  border: 1.5px solid rgba(201, 168, 76, 0.4);
+  border: 1.5px solid rgba(var(--or-rgb), 0.4);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -32,9 +32,9 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
 }
 .concierge-floating-btn:hover {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(201, 168, 76, 0.35);
-  border-color: #c9a84c;
-  color: #f7e6b8;
+  box-shadow: 0 12px 30px rgba(var(--or-rgb), 0.35);
+  border-color: var(--or);
+  color: var(--or-pale);
 }
 .concierge-pulse-dot {
   width: 10px;
@@ -59,7 +59,7 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
 .concierge-modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(14, 34, 24, 0.55);
+  background: rgba(var(--noir-rgb), 0.55);
   backdrop-filter: blur(4px);
   z-index: 9998;
   opacity: 0;
@@ -77,10 +77,10 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
   width: 380px;
   max-width: calc(100vw - 40px);
   max-height: 80vh;
-  background: #ffffff;
+  background: var(--blanc-surface, #ffffff);
   border-radius: 16px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
-  border: 1px solid #eae5d7;
+  border: 1px solid rgba(var(--or-rgb), 0.25);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -98,19 +98,19 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
 
 /* En-tête Concierge */
 .concierge-header {
-  background: linear-gradient(135deg, #1a3a2a, #0e2218);
+  background: linear-gradient(135deg, var(--vert), var(--vert-sombre, var(--color-dark)));
   color: #fff;
   padding: 18px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #c9a84c;
+  border-bottom: 2px solid var(--or);
 }
 .concierge-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #c9a84c;
+  color: var(--or);
   margin: 0;
 }
 .concierge-status {
@@ -124,7 +124,7 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
 .concierge-close {
   background: none;
   border: none;
-  color: #c9a84c;
+  color: var(--or);
   font-size: 1.2rem;
   cursor: pointer;
   padding: 4px;
@@ -168,12 +168,12 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
   margin-bottom: 18px;
 }
 .quick-btn {
-  background: #faf8f3;
-  border: 1px solid #e8e2d4;
+  background: var(--blanc);
+  border: 1px solid rgba(var(--or-rgb), 0.25);
   border-radius: 8px;
   padding: 10px;
   text-align: center;
-  color: #1a3a2a;
+  color: var(--vert);
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 500;
@@ -184,13 +184,13 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
   gap: 4px;
 }
 .quick-btn i {
-  color: #c9a84c;
+  color: var(--or);
   font-size: 1.1rem;
 }
 .quick-btn:hover {
-  background: #f4efe4;
-  border-color: #c9a84c;
-  color: #1a3a2a;
+  background: var(--blanc-surface, #ffffff);
+  border-color: var(--or);
+  color: var(--vert);
 }
 
 /* Mini FAQ Accordéon */
@@ -199,17 +199,17 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #8c6d1f;
+  color: var(--or-texte, var(--or));
   margin: 12px 0 8px;
 }
 .faq-item {
-  border-bottom: 1px solid #f0ecdf;
+  border-bottom: 1px solid rgba(var(--or-rgb), 0.15);
   padding: 8px 0;
 }
 .faq-q {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #1a3a2a;
+  color: var(--vert);
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -232,8 +232,8 @@ $hotelEmail = defined('HOTEL_EMAIL') ? HOTEL_EMAIL : 'reservations@grandprestige
 /* Footer widget */
 .concierge-footer {
   padding: 10px 18px;
-  background: #faf8f3;
-  border-top: 1px solid #eae5d7;
+  background: var(--blanc);
+  border-top: 1px solid rgba(var(--or-rgb), 0.15);
   text-align: center;
   font-size: 0.75rem;
   color: #888;

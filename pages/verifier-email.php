@@ -190,8 +190,8 @@ include(__DIR__ . '/../layouts/header.php');
 }
 
 .btn-otp-primary:hover {
-    background: #0e2218;
-    border-color: #0e2218;
+    background: var(--vert-sombre, var(--color-dark));
+    border-color: var(--vert-sombre, var(--color-dark));
 }
 
 .btn-resend {

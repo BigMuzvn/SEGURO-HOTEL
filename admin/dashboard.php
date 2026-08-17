@@ -354,7 +354,7 @@ $typesStats = $stmtTypes->fetchAll(PDO::FETCH_ASSOC);
             font-size: 1.2rem;
         }
         
-        .stat-icon.blue { background: rgba(26,58,42,0.1); color: var(--vert); }
+        .stat-icon.blue { background: rgba(var(--vert-rgb),0.1); color: var(--vert); }
         .stat-icon.orange { background: rgba(201,168,76,0.15); color: var(--or); }
         .stat-icon.green { background: rgba(40,167,69,0.1); color: var(--success); }
         .stat-icon.red { background: rgba(220,53,69,0.1); color: var(--danger); }

@@ -30,7 +30,7 @@
   }
   .about-hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(13,26,18,0.2) 0%, rgba(13,26,18,0.55) 50%, rgba(13,26,18,0.85) 100%);
+    background: linear-gradient(180deg, rgba(var(--noir-rgb),0.2) 0%, rgba(var(--noir-rgb),0.55) 50%, rgba(var(--noir-rgb),0.85) 100%);
   }
   .about-hero-content {
     position: relative; z-index: 2;
@@ -78,7 +78,7 @@
   .story-section::before {
     content: '<?= substr(hotel_short_name(), 0, 1) ?>'; position: absolute; top: -60px; right: -40px;
     font-family: 'Cormorant Garamond', serif; font-size: 40vw;
-    color: rgba(26,58,42,0.03); line-height: 1; pointer-events: none; user-select: none;
+    color: rgba(var(--vert-rgb),0.03); line-height: 1; pointer-events: none; user-select: none;
   }
   .story-inner {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -187,7 +187,7 @@
   }
   .promise-card:hover {
     background: #fff; border-top-color: var(--or);
-    box-shadow: 0 20px 60px rgba(26,58,42,0.07);
+    box-shadow: 0 20px 60px rgba(var(--vert-rgb),0.07);
   }
   .promise-icon { font-size: 2rem; display: block; margin-bottom: 20px; }
   .promise-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.5rem; color: var(--vert); margin-bottom: 16px; letter-spacing: 0.03em; }
@@ -229,7 +229,7 @@
 
   .gastro-card-img-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(180deg, transparent 30%, rgba(13,26,18,0.65) 100%);
+    background: linear-gradient(180deg, transparent 30%, rgba(var(--noir-rgb),0.65) 100%);
     z-index: 1;
   }
 
@@ -238,7 +238,7 @@
     top: 20px; left: 20px; z-index: 2;
     font-family: 'Jost', sans-serif; font-weight: 200;
     font-size: 0.48rem; letter-spacing: 0.4em; text-transform: uppercase;
-    color: #fff; background: rgba(26,58,42,0.65);
+    color: #fff; background: rgba(var(--vert-rgb),0.65);
     backdrop-filter: blur(6px); padding: 5px 12px;
     border-left: 2px solid var(--or);
   }
@@ -400,7 +400,7 @@
   .mosaic-item:hover img { transform: scale(1.05); }
   .mosaic-caption {
     position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
-    background: linear-gradient(transparent, rgba(13,26,18,0.6));
+    background: linear-gradient(transparent, rgba(var(--noir-rgb),0.6));
     font-family: 'Jost', sans-serif; font-weight: 200; font-size: 0.58rem;
     letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.7);
     opacity: 0; transition: opacity 0.4s;
@@ -415,7 +415,7 @@
   .team-photo { position: relative; aspect-ratio: 3/4; overflow: hidden; }
   .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.6s ease; filter: grayscale(20%); }
   .team-card:hover .team-photo img { transform: scale(1.04); filter: grayscale(0%); }
-  .team-photo-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(26,58,42,0.7) 100%); opacity: 0; transition: opacity 0.5s; }
+  .team-photo-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(var(--vert-rgb),0.7) 100%); opacity: 0; transition: opacity 0.5s; }
   .team-card:hover .team-photo-overlay { opacity: 1; }
   .team-info { padding: 24px 20px; background: #fff; border-top: 2px solid transparent; transition: border-color 0.4s; }
   .team-card:hover .team-info { border-top-color: var(--or); }
@@ -442,7 +442,7 @@
   .about-cta { position: relative; padding: 140px 0; overflow: hidden; text-align: center; }
   .about-cta-bg {
     position: absolute; inset: 0;
-    background: linear-gradient(rgba(13,26,18,0.7), rgba(13,26,18,0.7)),
+    background: linear-gradient(rgba(var(--noir-rgb),0.7), rgba(var(--noir-rgb),0.7)),
       url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=85') center/cover no-repeat;
   }
   .about-cta-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; padding: 0 32px; }
@@ -472,7 +472,7 @@
   .nautique-img { position: relative; overflow: hidden; }
   .nautique-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s; }
   .nautique-wrap:hover .nautique-img img { transform: scale(1.04); }
-  .nautique-img-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 50%, rgba(13,26,18,0.5) 100%); }
+  .nautique-img-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, transparent 50%, rgba(var(--noir-rgb),0.5) 100%); }
   .nautique-content {
     background: var(--vert); padding: 60px 56px;
     display: flex; flex-direction: column; justify-content: center; position: relative;
@@ -496,7 +496,7 @@
   .exp-card { position:relative; overflow:hidden; min-height:400px; display:flex; flex-direction:column; justify-content:flex-end; }
   .exp-card-bg { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform 0.8s; }
   .exp-card:hover .exp-card-bg { transform:scale(1.05); }
-  .exp-card-overlay { position:absolute; inset:0; background:linear-gradient(180deg, transparent 20%, rgba(13,26,18,0.88) 100%); }
+  .exp-card-overlay { position:absolute; inset:0; background:linear-gradient(180deg, transparent 20%, rgba(var(--noir-rgb),0.88) 100%); }
   .exp-card-body { position:relative; z-index:2; padding:36px; }
   .exp-card-tag { font-family:'Jost',sans-serif; font-weight:200; font-size:0.5rem; letter-spacing:0.5em; text-transform:uppercase; color:var(--or); display:block; margin-bottom:10px; }
   .exp-card-title { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:1.7rem; color:#fff; letter-spacing:0.04em; margin-bottom:12px; line-height:1.2; }

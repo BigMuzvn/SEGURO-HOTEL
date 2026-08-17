@@ -478,9 +478,9 @@ include(__DIR__ . '/../layouts/header.php');
 }
 
 .alert-success {
-    background: rgba(26,58,42,0.1);
+    background: rgba(var(--vert-rgb),0.1);
     color: var(--vert);
-    border: 1px solid rgba(26,58,42,0.2);
+    border: 1px solid rgba(var(--vert-rgb),0.2);
 }
 
 .alert-error {
@@ -490,7 +490,7 @@ include(__DIR__ . '/../layouts/header.php');
 }
 
 .confirmation-box {
-    background: linear-gradient(135deg, rgba(26,58,42,0.05), rgba(201,168,76,0.05));
+    background: linear-gradient(135deg, rgba(var(--vert-rgb),0.05), rgba(var(--or-rgb),0.05));
     border-radius: 12px;
     padding: 40px;
     text-align: center;
@@ -897,7 +897,7 @@ include(__DIR__ . '/../layouts/header.php');
                 </div>
 
                 <!-- ── CHOIX DU MODE DE RÈGLEMENT & PAIEMENT ── -->
-                <div style="background:#ffffff; border:1.5px solid rgba(26,58,42,0.15); border-radius:10px; padding:24px 28px; margin:32px 0;">
+                <div style="background:#ffffff; border:1.5px solid rgba(var(--vert-rgb),0.15); border-radius:10px; padding:24px 28px; margin:32px 0;">
                     <div style="display:flex; align-items:center; gap:10px; margin-bottom:18px;">
                         <span style="font-size:1.4rem;">💳</span>
                         <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.5rem; color:var(--vert); margin:0;">

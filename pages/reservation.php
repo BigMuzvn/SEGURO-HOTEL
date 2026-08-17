@@ -43,9 +43,9 @@ exit;
     position: absolute; inset: 0;
     background:
       linear-gradient(180deg,
-        rgba(13,26,18,0.25) 0%,
-        rgba(13,26,18,0.65) 70%,
-        rgba(13,26,18,0.88) 100%
+        rgba(var(--noir-rgb),0.25) 0%,
+        rgba(var(--noir-rgb),0.65) 70%,
+        rgba(var(--noir-rgb),0.88) 100%
       ),
       url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920&q=85')
       center/cover no-repeat;
@@ -322,7 +322,7 @@ exit;
   .form-group select:focus,
   .form-group textarea:focus { border-bottom-color: var(--vert); }
   .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(26,58,42,0.2); font-style: italic; }
+  .form-group textarea::placeholder { color: rgba(var(--vert-rgb),0.2); font-style: italic; }
   .form-group select { cursor: pointer; color: #888; }
   .form-group select option { color: #1a1a1a; }
   .form-group::after {
@@ -363,7 +363,7 @@ exit;
   }
   .chambre-option input:checked + .chambre-option-card {
     border-color: var(--vert);
-    background: rgba(26,58,42,0.03);
+    background: rgba(var(--vert-rgb),0.03);
   }
   .chambre-option input:checked + .chambre-option-card::before {
     content: '✓';
@@ -478,7 +478,7 @@ exit;
   .option-item input[type="checkbox"] { position: absolute; opacity: 0; }
   .option-item.checked {
     border-color: var(--vert);
-    background: rgba(26,58,42,0.03);
+    background: rgba(var(--vert-rgb),0.03);
   }
 
   .option-checkbox {
@@ -612,7 +612,7 @@ exit;
   }
   .summary-chambre-img-placeholder {
     width: 100%; height: 180px;
-    background: rgba(26,58,42,0.06);
+    background: rgba(var(--vert-rgb),0.06);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -719,7 +719,7 @@ exit;
   .summary-help {
     margin-top: 32px;
     padding: 20px;
-    background: rgba(26,58,42,0.04);
+    background: rgba(var(--vert-rgb),0.04);
     border-left: 2px solid rgba(201,168,76,0.3);
   }
   .summary-help p {

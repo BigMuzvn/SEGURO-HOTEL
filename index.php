@@ -244,11 +244,11 @@
   <!-- ══════════════════════════════════════════
        CALL TO ACTION
   ══════════════════════════════════════════ -->
-  <section style="padding: 100px 60px; background: linear-gradient(135deg, #2d5c40 0%, #1a3a2a 100%); text-align: center;">
+  <section style="padding: 100px 60px; background: linear-gradient(135deg, var(--vert-clair) 0%, var(--vert) 100%); text-align: center;">
     <div style="max-width: 600px; margin: 0 auto;">
       <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--or-pale); margin-bottom: 24px; font-weight: 300;">Réservez votre évasion</h2>
       <p style="font-size: 1rem; color: rgba(250,248,243,0.8); margin-bottom: 40px; line-height: 1.7;">Profitez de nos offres spéciales pour les séjours de 3 nuits ou plus. Petit-déjeuner gastronomique inclus.</p>
-      <a href="pages/reservation-system.php" style="display: inline-block; background: var(--or); color: var(--vert); padding: 18px 48px; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px; font-weight: 400;">Réserver maintenant</a>
+      <a href="pages/reservation-system.php" style="display: inline-block; background: var(--or); color: #111; padding: 18px 48px; text-decoration: none; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; border-radius: 2px; font-weight: 600;">Réserver maintenant</a>
     </div>
   </section>
 

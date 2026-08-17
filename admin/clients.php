@@ -200,7 +200,7 @@ $clients       = array_slice($clients, ($page - 1) * $per_page, $per_page);
         tr:hover td{background:#fafafa;}
         .badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:500;}
         .badge-admin{background:rgba(201,168,76,.15);color:#856404;}
-        .badge-client{background:rgba(26,58,42,.15);color:var(--vert);}
+        .badge-client{background:rgba(var(--vert-rgb),.15);color:var(--vert);}
         .badge-super{background:rgba(220,53,69,.12);color:#721c24;}
         .actions{display:flex;gap:8px;}
         .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:4px;font-size:.85rem;transition:all .3s;cursor:pointer;border:none;font-family:'Jost',sans-serif;}

@@ -127,7 +127,7 @@ include(__DIR__ . '/../layouts/header.php');
 .btn-submit:hover {
     background: var(--vert-clair);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(26,58,42,0.15);
+    box-shadow: 0 6px 20px rgba(var(--vert-rgb),0.15);
 }
 
 .alert {

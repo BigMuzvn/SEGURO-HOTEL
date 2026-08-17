@@ -311,8 +311,8 @@ body{font-family:'Jost',sans-serif;background:var(--gris);color:var(--vert);disp
 .ch-img{height:200px;overflow:hidden;position:relative;}
 .ch-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
 .ch-card:hover .ch-img img{transform:scale(1.04);}
-.ch-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#e8f0ea,#d4e4d8);display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(26,58,42,.2);}
-.ch-badge{position:absolute;top:12px;left:12px;background:rgba(26,58,42,.8);color:var(--or);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:4px 12px;backdrop-filter:blur(6px);}
+.ch-img-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#e8f0ea,#d4e4d8);display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(var(--vert-rgb),.2);}
+.ch-badge{position:absolute;top:12px;left:12px;background:rgba(var(--vert-rgb),.8);color:var(--or);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:4px 12px;backdrop-filter:blur(6px);}
 .ch-dispo{position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%;cursor:pointer;}
 .ch-dispo.on{background:#28a745;box-shadow:0 0 0 3px rgba(40,167,69,.3);}
 .ch-dispo.off{background:#dc3545;box-shadow:0 0 0 3px rgba(220,53,69,.3);}

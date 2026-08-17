@@ -42,7 +42,7 @@ include(__DIR__ . '/../layouts/header.php');
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(105deg, rgba(13,26,18,0.75) 0%, rgba(13,26,18,0.3) 55%, transparent 100%),
+      linear-gradient(105deg, rgba(var(--vert-rgb),0.75) 0%, rgba(var(--vert-rgb),0.3) 55%, transparent 100%),
       url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920&q=85') center/cover no-repeat;
     transform-origin: center;
     animation: slowZoom 14s ease-in-out infinite alternate;
@@ -246,7 +246,7 @@ include(__DIR__ . '/../layouts/header.php');
     transition: box-shadow 0.5s ease;
   }
   .chambre-card:hover {
-    box-shadow: 0 30px 80px rgba(26,58,42,0.12);
+    box-shadow: 0 30px 80px rgba(var(--vert-rgb),0.12);
   }
 
   /* Image wrapper */
@@ -272,7 +272,7 @@ include(__DIR__ . '/../layouts/header.php');
     inset: 0;
     background: linear-gradient(180deg,
       transparent 30%,
-      rgba(13,26,18,0.65) 100%
+      rgba(var(--noir-rgb),0.65) 100%
     );
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -308,7 +308,7 @@ include(__DIR__ . '/../layouts/header.php');
     letter-spacing: 0.4em;
     text-transform: uppercase;
     color: #fff;
-    background: rgba(26,58,42,0.7);
+    background: rgba(var(--vert-rgb),0.7);
     backdrop-filter: blur(8px);
     padding: 6px 14px;
     border-left: 2px solid var(--or);
@@ -416,7 +416,7 @@ include(__DIR__ . '/../layouts/header.php');
   }
   .chambre-card:hover .amenity {
     color: var(--vert);
-    border-color: rgba(26,58,42,0.25);
+    border-color: rgba(var(--vert-rgb),0.25);
   }
 
   /* Footer de carte */
@@ -607,7 +607,7 @@ include(__DIR__ . '/../layouts/header.php');
     font-family: 'Cormorant Garamond', serif;
     font-size: 18vw;
     font-weight: 300;
-    color: rgba(26,58,42,0.03);
+    color: rgba(var(--vert-rgb),0.03);
     letter-spacing: 0.3em;
     white-space: nowrap;
     pointer-events: none;
@@ -803,7 +803,7 @@ $TYPES = ['standard'=>'Standard','superieure'=>'Supérieure','suite'=>'Suite','v
       <?php if($featured['image_principale']): ?>
       <img src="<?= htmlspecialchars($featured['image_principale']) ?>" alt="<?= htmlspecialchars($featured['nom']) ?>">
       <?php else: ?>
-      <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a3a2a,#2d5c40);display:flex;align-items:center;justify-content:center;font-size:5rem;color:rgba(201,168,76,.3);">🏨</div>
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--vert),var(--vert-clair));display:flex;align-items:center;justify-content:center;font-size:5rem;color:rgba(var(--or-rgb),.3);">🏨</div>
       <?php endif; ?>
       <div class="chambre-overlay">
         <a href="<?= $baseUrl ?>/pages/reservation-system.php" class="overlay-cta">Réserver cette chambre →</a>
@@ -853,7 +853,7 @@ $TYPES = ['standard'=>'Standard','superieure'=>'Supérieure','suite'=>'Suite','v
           <?php if($ch['image_principale']): ?>
           <img src="<?= htmlspecialchars($ch['image_principale']) ?>" alt="<?= htmlspecialchars($ch['nom']) ?>">
           <?php else: ?>
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8f0ea,#d4e4d8);display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(26,58,42,.2);">🛏️</div>
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,#e8f0ea,#d4e4d8);display:flex;align-items:center;justify-content:center;font-size:3rem;color:rgba(var(--vert-rgb),.2);">🛏️</div>
           <?php endif; ?>
           <div class="chambre-overlay">
             <a href="<?= $baseUrl ?>/pages/reservation-system.php" class="overlay-cta">Réserver →</a>

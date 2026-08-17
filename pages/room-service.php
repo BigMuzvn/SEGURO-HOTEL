@@ -133,7 +133,7 @@ include(__DIR__ . '/../layouts/header.php');
 
 <style>
 .rs-hero {
-    background: linear-gradient(rgba(26,58,42,0.85), rgba(13,26,18,0.92)), 
+    background: linear-gradient(rgba(var(--vert-rgb),0.85), rgba(var(--noir-rgb),0.92)), 
                 url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1920&q=80') center/cover no-repeat;
     padding: 130px 24px 70px;
     text-align: center;
@@ -446,7 +446,7 @@ body {
 
         <!-- BANDEAU STATUT DU SÉJOUR CLIENT -->
         <?php if ($sejour_actif): ?>
-            <div style="background:linear-gradient(135deg, #1a3a2a 0%, #2d5c40 100%); color:#fff; padding:20px 24px; border-radius:10px; margin-bottom:24px; border:1.5px solid var(--or); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; box-shadow:0 8px 24px rgba(26,58,42,0.2);">
+            <div style="background:linear-gradient(135deg, var(--vert) 0%, var(--vert-clair) 100%); color:#fff; padding:20px 24px; border-radius:10px; margin-bottom:24px; border:1.5px solid var(--or); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; box-shadow:0 8px 24px rgba(var(--vert-rgb),0.2);">
                 <div>
                     <span style="background:var(--or); color:#111; font-size:0.65rem; font-weight:700; padding:4px 12px; border-radius:20px; text-transform:uppercase; letter-spacing:0.15em; display:inline-block; margin-bottom:6px;">
                         <i class="fas fa-key"></i> Séjour Actif · Check-in Validé
@@ -463,7 +463,7 @@ body {
                 </div>
             </div>
         <?php elseif ($reservation_attente): ?>
-            <div style="background:rgba(201,168,76,0.12); border-left:4px solid var(--or); padding:18px 22px; border-radius:0 8px 8px 0; margin-bottom:24px;">
+            <div style="background:rgba(var(--or-rgb),0.12); border-left:4px solid var(--or); padding:18px 22px; border-radius:0 8px 8px 0; margin-bottom:24px;">
                 <div style="display:flex; align-items:flex-start; gap:12px;">
                     <i class="fas fa-clock" style="color:var(--or); font-size:1.3rem; margin-top:3px;"></i>
                     <div>
@@ -477,7 +477,7 @@ body {
                 </div>
             </div>
         <?php else: ?>
-            <div style="background:rgba(26,58,42,0.06); border-left:4px solid var(--vert); padding:16px 20px; border-radius:0 8px 8px 0; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            <div style="background:rgba(var(--vert-rgb),0.06); border-left:4px solid var(--vert); padding:16px 20px; border-radius:0 8px 8px 0; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
                 <div>
                     <strong style="color:var(--vert); font-size:0.95rem;"><i class="fas fa-info-circle" style="color:var(--or);"></i> Consultation de la Carte Room Service</strong>
                     <div style="color:#555; font-size:0.85rem; margin-top:2px;">Le service d'étage est exclusivement réservé à nos hôtes résidant à l'hôtel ayant effectué leur Check-in.</div>

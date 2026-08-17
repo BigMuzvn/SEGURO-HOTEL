@@ -45,13 +45,13 @@ include(__DIR__ . '/../layouts/header.php');
 .confirm-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #1a3a2a, #2d5c40);
+    background: linear-gradient(135deg, var(--vert), var(--vert-clair));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    box-shadow: 0 8px 24px rgba(26,58,42,.25);
+    box-shadow: 0 8px 24px rgba(var(--vert-rgb),.25);
 }
 
 .confirm-icon i {
